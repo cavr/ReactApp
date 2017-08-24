@@ -1,0 +1,37 @@
+@import '../../../scss/theme/variables';
+
+$section-padding: 25px;
+$section-title-height: 70px;
+
+html.desktop section {
+  position: relative;
+  background-color: white;
+  padding: get-rem($section-padding);
+  padding-top: get-rem(70px + $section-padding);
+  overflow: hidden;
+  margin-bottom: get-rem(30px);
+  .section-title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: get-rem($section-title-height);
+    
+    .section-title__text {
+      @include centerer;
+      font-weight: 500;
+      font-size: get-rem(18px);
+      text-transform: uppercase;
+      color: white;
+      z-index: 2;
+    }
+    .section-title__background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: $bluetab-red;
+    }
+  }
+}

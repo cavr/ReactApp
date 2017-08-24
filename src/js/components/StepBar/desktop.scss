@@ -1,0 +1,19 @@
+@import '../../../scss/theme/variables';
+
+.bluetab-stepbar-wrapper {
+  display: flex;
+  width: get-rem(250px);
+  margin: get-rem(32px) auto;
+  .bluetab-stepbar {
+    display: inline-block;
+    flex: 1 1 auto;
+    height: get-rem(8px);
+    margin: 0 get-rem(8px);
+    $bluetab-gray: $bluetab-gray;
+    opacity: 0.2;
+    &.bluetab-stepbar--active {
+      opacity: 1;
+      background-color: $bluetab-red;
+    }
+  }
+}

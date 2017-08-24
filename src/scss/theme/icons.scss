@@ -1,0 +1,11 @@
+.icon {
+  $list: 
+    'avatar';
+
+  @each $key in $list {
+    &.icon__#{$key} {
+      background: url('../assets/icons/common/#{$key}.svg') center no-repeat;
+      background-size: contain;
+    }
+  }
+}

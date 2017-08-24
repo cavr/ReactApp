@@ -1,0 +1,36 @@
+@import 'base/normalize';
+@import 'base/corrections';
+
+@import 'theme/colors';
+@import 'theme/fonts';
+@import 'theme/mixins';
+
+@import 'theme/icons';
+
+html {
+  width: 100vw;
+  overflow-x: hidden;
+  &.fullscreen {
+    overflow: hidden;
+  }
+}
+
+html.desktop {
+  font-size: get-desktop-vw(10px);
+}
+
+html.mobile {
+  -webkit-overflow-scrolling: touch;
+  
+  font-size: get-mobile-vw(10px);
+  @media screen and (min-aspect-ratio: 2/3) {
+    font-size: get-mobile-vh(10px);
+  }
+}
+
+body {
+  font-size: get-rem(16px);
+  font-family: 'Montserrat';
+}
+
+

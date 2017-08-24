@@ -1,0 +1,59 @@
+$desktop-design-width: 1440;
+$desktop-design-height: 1024;
+
+@function get-desktop-vw($target) {
+  $design-width: $desktop-design-width;
+  $vw-context: ($design-width * .01) * 1px;
+  @return ($target / $vw-context) * 1vw;
+}
+
+@function get-desktop-vh($target) {
+  $design-height: $desktop-design-height;
+  $vw-context: ($design-height * .01) * 1px;
+  @return ($target / $vw-context) * 1vh;
+}
+
+@function get-mobile-vw($target) {
+  $design-width: 320;
+  $vw-context: ($design-width * .01) * 1px;
+  @return ($target / $vw-context) * 1vw;
+}
+
+@function get-mobile-vh($target) {
+  $design-height: 480;
+  $vw-context: ($design-height * .01) * 1px;
+  @return ($target / $vw-context) * 1vh;
+}
+
+@function get-desktop-pct($target) {
+  $design-width: 1440px;
+  @return ($target / $design-width) * 100%;
+}
+
+@function get-mobile-pct($target) {
+  $design-width: 320px;
+  @return ($target / $design-width) * 100%;
+}
+
+@function get-rem($target) {
+  @return ($target * .1 / 1px) * 1rem;
+}
+
+@mixin centerer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin vertical-center {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin horizontal-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}

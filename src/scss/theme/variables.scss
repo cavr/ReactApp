@@ -1,0 +1,10 @@
+@import 'colors';
+@import 'mixins';
+@import 'layout';
+
+$overlay-padding: 28px;
+$overlay-padding--mobile: 5px;
+$section-padding: 250px;
+$column-separation: 55px;
+
+$easing: cubic-bezier(0.23, 1, 0.32, 1);

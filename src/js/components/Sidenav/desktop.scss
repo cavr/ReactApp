@@ -1,0 +1,10 @@
+@import '../../../scss/theme/variables';
+
+html.desktop .bluetab-sns-sidenav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: get-rem($sidenav-width);
+  height: 100%;
+  background-color: $bluetab-red;
+}

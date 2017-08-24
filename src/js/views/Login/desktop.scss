@@ -1,0 +1,13 @@
+@import '../../../scss/theme/variables';
+
+html.desktop .bluetab-sns-login {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: $bluetab-red;
+  .bluetab-sns-login__wrapper {
+    @include centerer;
+    display: flex;
+    flex-direction: column;
+  }
+}

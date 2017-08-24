@@ -1,0 +1,15 @@
+@import '../../../scss/theme/variables';
+
+html.desktop .bluetab-sns-app {
+  min-height: 100vh;
+  .bluetab-sns-app__wrapper {
+    height: 100%;
+    width: 100%;
+    padding-left: get-rem($sidenav-width);
+    background-color: $bluetab-light-gray;
+    overflow: hidden;
+    &.bluetab-sns-app__wrapper--login {
+      padding-left: 0;
+    }
+  }
+}
