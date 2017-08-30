@@ -11,17 +11,21 @@ html.desktop .bluetab-button {
   font-size: get-rem(14px);
   color: white;
   
-  background-color: $bluetab-dark-gray-2;
+  background-color: $bluetab-gray-2;
   border: none;
   border-radius: get-rem(3px);
 
   cursor: pointer;
-
-  &.bluetab-button--light {
-    height: get-rem(34px);
-    min-width: get-rem(122px);
-    background-color: white;
-    border: get-rem(2px) solid $bluetab-red;
+  &.bluetab-button--selected {
     color: $bluetab-gray-2;
+    background-color: $bluetab-light-gray-2;
   }
+}
+
+html.desktop .bluetab-button--light {
+  height: get-rem(34px);
+  min-width: get-rem(122px);
+  background-color: white;
+  border: get-rem(2px) solid $bluetab-red;
+  color: $bluetab-gray-2;
 }

@@ -3,8 +3,6 @@ import { Map } from 'immutable';
 import {
   SET_TOKEN,
   DELETE_TOKEN,
-  NEXT_STEP,
-  PREVIOUS_STEP,
   SET_STEP,
 } from '../actions/app';
 
@@ -19,12 +17,6 @@ const actionsMap = {
   },
   [DELETE_TOKEN]: (state) => {
     return state.set('token', null);
-  },
-  [NEXT_STEP]: (state) => {
-    return state.set('currentStep');
-  },
-  [PREVIOUS_STEP]: (state) => {
-    return state.set('currentStep');
   },
   [SET_STEP]: (state, action) => {
     return state.set('currentStep', action.step);

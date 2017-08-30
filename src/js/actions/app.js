@@ -1,10 +1,10 @@
 
-import { loadMainGraph } from 'actions/mis/mainGraph';
+import { loadMainGraph, clearEvolutionData } from 'actions/mis/mainGraph';
+import { loadSubindexes } from 'actions/mis/subindexes';
+import { loadBusinessElements, clearBusinessElementEvolution } from 'actions/mis/businessElements';
 
 export const SET_TOKEN = 'SET_TOKEN';
 export const DELETE_TOKEN = 'DELETE_TOKEN';
-export const NEXT_STEP = 'NEXT_STEP';
-export const PREVIOUS_STEP = 'PREVIOUS_STEP';
 export const SET_STEP = 'SET_STEP';
 
 export function setToken(data) {
@@ -15,23 +15,23 @@ export function deleteToken() {
   return { type: DELETE_TOKEN };
 }
 
-export function nextStep() {
-  return { type: NEXT_STEP };
-}
-
-export function previousStep() {
-  return { type: PREVIOUS_STEP };
-}
-
 export function setStep(step) {
   return (dispatch, getState) => {
-    if (step === 2) {
-      const request = '';
-      dispatch(loadMainGraph(request));
-    } else if (step === 3) {
-      dispatch();
-    } else if (step === 4) {
-      dispatch();
+    const currentState = getState();
+    const previousStep = currentState.app.get('currentStep');
+    if (currentState.mainGraph.get('evolutionData') && step < 2) dispatch(clearEvolutionData());
+    if (currentState.businessElements.get('evolutionData')) dispatch(clearBusinessElementEvolution());
+    if (previousStep < step) {
+      if (step === 2) {
+        const request = '';
+        dispatch(loadMainGraph(request));
+      } else if (step === 3) {
+        const request = '';
+        dispatch(loadSubindexes(request));
+      } else if (step === 4) {
+        const request = '';
+        dispatch(loadBusinessElements(request));
+      }
     }
     dispatch({ type: SET_STEP, step });
   };

@@ -1,0 +1,57 @@
+{
+  "businessElements": [
+    {
+      "selector": {
+        "id": 2,
+        "label": "Business Unit",
+        "values": [{
+            "value": 1,
+            "label": "Retail Banking"
+          },
+          {
+            "value": 2,
+            "label": "Consumer Banking"
+          },
+          {
+            "value": 3,
+            "label": "Global Banking"
+          }
+        ]
+      },
+      "metrics": [{
+        "id": "M4",
+        "label": "CHARGE",
+        "state": 1
+      }]
+    },
+    {
+      "selector": {
+        "id": 3,
+        "label": "Site Category",
+        "values": [{
+            "value": 1,
+            "label": "Data Centre / Head Office"
+          },
+          {
+            "value": 2,
+            "label": "Head Office / Branch"
+          },
+          {
+            "value": 3,
+            "label": "Branch"
+          },
+          {
+            "value": 4,
+            "label": "Other Sites"
+          }
+        ]
+      },
+      "metrics": [{
+        "id": "M4",
+        "label": "CHARGE",
+        "state": 1
+      }]
+    }
+  ]
+}
+

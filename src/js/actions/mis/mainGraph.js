@@ -15,7 +15,7 @@ export function loadMainGraph() {
   return (dispatch) => {
     dispatch({ type: BEGIN_MAINGRAPH_LOAD });
     MainGraphServices.getMainGraphData().then((response) => {
-      const data = response.indeces;
+      const data = response.indexes;
       dispatch({ type: SET_MAINGRAPH, data });
       dispatch({ type: SET_SELECTED_INDEX, value: data[0].id, label: data[0].label });
       dispatch({ type: END_MAINGRAPH_LOAD });

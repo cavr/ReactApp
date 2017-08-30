@@ -1,0 +1,18 @@
+@import '../../../../scss/theme/variables';
+
+html.desktop .bluetab-sns-subindex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: get-rem(30px) 0;
+  border-bottom: get-rem(1px) solid $bluetab-light-gray;
+  .bluetab-sns-subindex__variation-wrapper {
+    position: relative;
+    flex: 0 0 auto;
+    width: get-rem(145px);
+    .bluetab-sns-subindex__value {
+      font-size: get-rem(16px);
+      font-weight: 300;
+    }
+  }
+}

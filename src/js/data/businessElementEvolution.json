@@ -1,0 +1,33 @@
+{
+  "label": "COST IN €",
+  "variation": 13,
+  "points": [{
+      "value": 74.20,
+      "date": "Julio-2017"
+    },
+    {
+      "value": 76.68,
+      "date": "Junio-2017"
+    },
+    {
+      "value": 82.17,
+      "date": "Mayo-2017"
+    },
+    {
+      "value": 85.72,
+      "date": "Abril-2017"
+    },
+    {
+      "value": 86.65,
+      "date": "Marzo-2017"
+    },
+    {
+      "value": 91.63,
+      "date": "Febrero-2017"
+    },
+    {
+      "value": 84.74,
+      "date": "Enero-2017"
+    }
+  ]
+}

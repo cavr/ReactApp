@@ -4,7 +4,7 @@ html.desktop .bluetab-sns-main-graph {
   width: get-rem($section-width);
   margin: 0 auto;
   .bluetab-sns-main-graph__content {
-    padding: 0 get-rem(30px);
+    padding: 0 get-rem(20px);
     .bluetab-sns-main-graph__graph-wrapper {
       position: relative;
       margin-top: get-rem(70px);
@@ -22,5 +22,8 @@ html.desktop .bluetab-sns-main-graph {
     .bluetab-sns-main-graph__separator {
       margin: get-rem(35px) 0;
     }
+  }
+  .bluetab-sns-main-graph__details {
+    padding: get-rem(25px) get-rem(30px);
   }
 }

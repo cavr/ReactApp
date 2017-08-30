@@ -17,6 +17,7 @@
     border-radius: get-rem(20px);
     background-color: $bluetab-light-gray-2;
     z-index: 3;
+    transition: all 0.6s $easing;
     &.bluetab-stepbar--active {
       opacity: 1;
       background-color: $bluetab-red;
@@ -33,6 +34,7 @@
       background-color: $bluetab-red;
       opacity: 1;
       z-index: 1;
+      transition: all 0.6s $easing;
     }
   }
 }

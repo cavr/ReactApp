@@ -1,0 +1,33 @@
+{
+  "subindexes": [{
+      "id": "S1",
+      "label": "COST REFERENCE",
+      "type": 1,
+      "data": {
+        "value": 60.35,
+        "target": 80.00,
+        "variation": 5,
+        "sections": {
+          "low": 0,
+          "mid": 50,
+          "high": 100
+        }
+      }
+    },
+    {
+      "id": "S2",
+      "label": "FLEXIBILITY",
+      "type": 2,
+      "data": {
+        "value": 73.87,
+        "target": 75.00,
+        "variation": 5,
+        "sections": {
+          "low": 0,
+          "mid": 50,
+          "high": 100
+        }
+      }
+    }
+  ]
+}

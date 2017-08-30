@@ -9,7 +9,7 @@ import {
 } from '../../actions/mis/selectors';
 
 const initialState = Map({
-  data: null,
+  data: [],
   loading: true,
   selected: null,
   loaded: false,

@@ -1,0 +1,21 @@
+@import '../../../scss/theme/variables';
+
+html.desktop .business-elements {
+  .business-elements__content {
+    .bluetab-sns-main-graph__separator {
+      margin-top: get-rem(47px);
+      margin-bottom: get-rem(30px);
+    }
+    .bluetab-sns-main-graph__benchmarking {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .bluetab-subtitle--centered {
+        margin-right: get-rem(10px);
+      }
+      .bluetab-button {
+        margin: 0 get-rem(5px);
+      }
+    }
+  }
+}

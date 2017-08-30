@@ -5,12 +5,13 @@ import {
   BEGIN_SUBINDICES_LOAD,
   END_SUBINDICES_LOAD,
   SET_SUBINDEX_VALUE,
-} from '../../actions/mis/subIndeces';
+  CLEAR_SUBINDEX_VALUE,
+} from '../../actions/mis/subindexes';
 
 const initialState = Map({
-  data: null,
+  data: [],
   loading: true,
-  selected: null,
+  selected: {},
 });
 
 const actionsMap = {
@@ -25,6 +26,9 @@ const actionsMap = {
   },
   [SET_SUBINDEX_VALUE]: (state, action) => {
     return state.set('selected', { value: action.value, label: action.label });
+  },
+  [CLEAR_SUBINDEX_VALUE]: (state) => {
+    return state.set('selected', {});
   },
 };
 

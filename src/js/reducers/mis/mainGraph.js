@@ -16,7 +16,7 @@ import {
 const initialState = Map({
   data: [],
   loading: false,
-  selected: null,
+  selected: {},
   evolutionData: null,
   loadingEvolution: null,
   showComparativeData: false,

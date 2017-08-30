@@ -25,12 +25,14 @@ export class MainGraph extends PureComponent {
 
   render() {
     const { data, selected, evolutionData, loadingEvolution, loading, currentStep, setStep, setSelectedIndex, setEvolutionData, clearEvolutionData } = this.props;
-    const indeces = data && data.map((index) => {
+    const indexes = data && data.map((index) => {
       return {
         value: index.id,
         label: index.label,
       };
     });
+    const showingEvolution = loadingEvolution || evolutionData;
+
     return (
       <div className='bluetab-sns-main-graph'>
         <Section currentStep={ currentStep } sectionNumber={ 2 } title='Selecciona un índice de una gráfica' >
@@ -44,12 +46,12 @@ export class MainGraph extends PureComponent {
                     <Selector
                       className='bluetab-sns-selectors__selector'
                       title={ 'Select an index' }
-                      values={ indeces }
+                      values={ indexes }
                       currentValue={ selected && selected.value }
                       onChange={ (option) => setSelectedIndex(option.value, option.label) }
                     />
-                    <Button title={ 'Subindices' } onClick={ () => setStep(3) } />
-                    <Button title={ 'Evolucion' } onClick={ () => (!evolutionData ? setEvolutionData(selected.value) : clearEvolutionData()) } />
+                    <Button title={ 'Subindices' } selected={ currentStep > 2 } onClick={ () => (currentStep === 2 ? setStep(3) : setStep(2)) } />
+                    <Button title={ 'Evolucion' } selected={ showingEvolution } onClick={ () => (!evolutionData ? setEvolutionData(selected.value) : clearEvolutionData()) } />
                   </div>
                 </div>
                 <hr className='bluetab-sns-main-graph__separator' />
@@ -60,12 +62,12 @@ export class MainGraph extends PureComponent {
           }
         </Section>
         {
-          (loadingEvolution || evolutionData) &&
-          <div className='main-graph__details'>
+          showingEvolution &&
+          <section className='bluetab-sns-main-graph__details'>
             {
               loadingEvolution ? 'Loading' : 'Evolution'
             }
-          </div>
+          </section>
         }
       </div>
     );

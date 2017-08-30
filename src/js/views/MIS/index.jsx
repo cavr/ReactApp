@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import StepBar from 'components/StepBar';
 import MainSelectors from 'components/MainSelectors';
 import MainGraph from 'components/MainGraph';
-import Subindeces from 'components/Subindeces';
+import Subindexes from 'components/Subindexes';
 import BusinessElements from 'components/BusinessElements';
 
 export class MIS extends PureComponent {
@@ -20,7 +20,7 @@ export class MIS extends PureComponent {
         <StepBar currentStep={ currentStep } />
         <MainSelectors currentStep={ currentStep } />
         <MainGraph currentStep={ currentStep } />
-        <Subindeces currentStep={ currentStep } />
+        <Subindexes currentStep={ currentStep } />
         <BusinessElements currentStep={ currentStep } />
       </div>
     );

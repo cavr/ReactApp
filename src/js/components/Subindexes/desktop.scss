@@ -1,0 +1,10 @@
+@import '../../../scss/theme/variables';
+
+html.desktop .bluetab-sns-subindexes {
+  .bluetab-sns-subindexes__content {
+    padding: 0 get-rem(20px);
+    .bluetab-sns-subindexes__subindex-list {
+      margin-top: get-rem(30px);
+    }
+  }
+}
