@@ -7,6 +7,10 @@
 
 @import 'theme/icons';
 
+@import 'theme/texts';
+
+@import '../../node_modules/react-select/dist/react-select.min.css';
+
 html {
   width: 100vw;
   overflow-x: hidden;

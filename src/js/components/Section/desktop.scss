@@ -1,14 +1,13 @@
 @import '../../../scss/theme/variables';
 
-$section-padding: 25px;
-$section-title-height: 70px;
-
 html.desktop section {
   position: relative;
+  width: get-rem($section-width);
   background-color: white;
+  box-shadow: 0 0 get-rem(2px) 0 rgba(0,0,0,0.12), 0 get-rem(2px) get-rem(2px) 0 rgba(0,0,0,0.24);
   padding: get-rem($section-padding);
   padding-top: get-rem(70px + $section-padding);
-  overflow: hidden;
+  margin: 0 auto;
   margin-bottom: get-rem(30px);
   .section-title {
     position: absolute;
@@ -16,12 +15,10 @@ html.desktop section {
     left: 0;
     width: 100%;
     height: get-rem($section-title-height);
-    
     .section-title__text {
       @include centerer;
       font-weight: 500;
       font-size: get-rem(18px);
-      text-transform: uppercase;
       color: white;
       z-index: 2;
     }
@@ -31,7 +28,28 @@ html.desktop section {
       left: 0;
       height: 100%;
       width: 100%;
-      background-color: $bluetab-red;
+      background: linear-gradient(86deg, $bluetab-red 0%, $bluetab-light-red 100%);
     }
+  }
+}
+
+html.desktop .section--static {
+  .section-title {
+    border-bottom: get-rem(1px) solid $bluetab-light-gray-2;
+    .section-title__text {
+      color: $bluetab-gray-2;
+    }
+    .section-title__background {
+      height: get-rem(10px);
+    }
+  }
+}
+
+html.desktop .section--inactive {
+  height: get-rem($section-title-height);
+  padding: 0;
+  overflow: hidden;
+  .section-title .section-title__background {
+    background: linear-gradient(90deg, #707B8B 0%, #C0C6CF 100%);
   }
 }

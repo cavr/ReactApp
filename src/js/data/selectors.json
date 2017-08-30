@@ -1,0 +1,116 @@
+{
+  "selectors": [{
+      "id": 1,
+      "label": "Country",
+      "values": [{
+          "value": 1,
+          "label": "UK"
+        },
+        {
+          "value": 2,
+          "label": "Spain"
+        },
+        {
+          "value": 3,
+          "label": "Brazil"
+        },
+        {
+          "value": 4,
+          "label": "Portugal"
+        },
+        {
+          "value": 5,
+          "label": "USA"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "label": "Business Unit",
+      "values": [{
+          "value": 1,
+          "label": "Retail Banking"
+        },
+        {
+          "value": 2,
+          "label": "Consumer Banking"
+        },
+        {
+          "value": 3,
+          "label": "Global Banking"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "label": "Site Category",
+      "values": [{
+          "value": 1,
+          "label": "Data Centre / Head Office"
+        },
+        {
+          "value": 2,
+          "label": "Head Office / Branch"
+        },
+        {
+          "value": 3,
+          "label": "Branch"
+        },
+        {
+          "value": 4,
+          "label": "Other Sites"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "label": "Service",
+      "values": [{
+          "value": 1,
+          "label": "Data Services"
+        },
+        {
+          "value": 2,
+          "label": "Voice Service"
+        },
+        {
+          "value": 3,
+          "label": "Mobile Service"
+        },
+        {
+          "value": 4,
+          "label": "Conferencing Service"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "label": "User",
+      "values": [{
+          "value": 1,
+          "label": "Administrator"
+        },
+        {
+          "value": 2,
+          "label": "Manager"
+        },
+        {
+          "value": 3,
+          "label": "Top Executive"
+        },
+        {
+          "value": 4,
+          "label": "Intense User"
+        },
+        {
+          "value": 5,
+          "label": "Expert"
+        },
+        {
+          "value": 6,
+          "label": "Employee"
+        }
+      ]
+    }
+  ]
+}

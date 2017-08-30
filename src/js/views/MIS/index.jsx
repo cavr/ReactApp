@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import StepBar from 'components/StepBar';
-import Selectors from 'components/Selectors';
+import MainSelectors from 'components/MainSelectors';
 import MainGraph from 'components/MainGraph';
-import SubindexGraphs from 'components/SubindexGraphs';
+import Subindeces from 'components/Subindeces';
 import BusinessElements from 'components/BusinessElements';
 
 export class MIS extends PureComponent {
@@ -18,9 +18,9 @@ export class MIS extends PureComponent {
     return (
       <div className='bluetab-sns-mis'>
         <StepBar currentStep={ currentStep } />
-        <Selectors currentStep={ currentStep } />
+        <MainSelectors currentStep={ currentStep } />
         <MainGraph currentStep={ currentStep } />
-        <SubindexGraphs currentStep={ currentStep } />
+        <Subindeces currentStep={ currentStep } />
         <BusinessElements currentStep={ currentStep } />
       </div>
     );

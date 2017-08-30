@@ -7,4 +7,90 @@ html.desktop .bluetab-sns-sidenav {
   width: get-rem($sidenav-width);
   height: 100%;
   background-color: $bluetab-red;
+  padding-right: get-rem($sidenav-detail-bar);
+  .bluetab-sns-sidenav__logo {
+    display: block;
+    width: get-rem(125px);
+    height: get-rem(25px);
+    object-fit: contain;
+    margin: 0 auto;
+    margin-top: get-rem(22px);
+    margin-bottom: get-rem(42px);
+  }
+
+  .bluetab-sns-sidenav__nav-button {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: get-rem(60px);
+    text-decoration: none;
+    color: white;
+    font-size: get-rem(16px);
+    border-left: get-rem(13px) solid $bluetab-red;
+    cursor: pointer;
+    .bluetab-sns-sidenav__icon {
+      width: get-rem(25px);
+      height: get-rem(25px);
+      margin-left: get-rem(12px);
+      margin-right: get-rem(14px);
+    }
+  }
+
+  &.bluetab-sns-sidenav--MIS-active,
+  &.bluetab-sns-sidenav--RO-active,
+  &.bluetab-sns-sidenav--change-active,
+  &.bluetab-sns-sidenav--innovation-active {
+    &:after {
+      content: " ";
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      width: get-rem(7px);
+    }
+  }
+
+  &.bluetab-sns-sidenav--MIS-active {
+    &:after {
+      background-color:  $bluetab-light-green;
+    }
+    .bluetab-sns-sidenav__nav-button--MIS {
+      border-bottom: none;
+      border-color: $bluetab-light-green;
+      background-color: $bluetab-green;
+    }
+  }
+
+  &.bluetab-sns-sidenav--RO-active {
+    &:after {
+      background-color:  $bluetab-light-orange;
+    }
+    .bluetab-sns-sidenav__nav-button--RO {
+      border-bottom: none;
+      border-color: $bluetab-light-orange;
+      background-color: $bluetab-orange;
+    }
+  }
+
+  &.bluetab-sns-sidenav--change-active {
+    &:after {
+      background-color:  $bluetab-light-purple;
+    }
+    .bluetab-sns-sidenav__nav-button--change {
+      border-bottom: none;
+      border-color: $bluetab-light-purple;
+      background-color: $bluetab-purple;
+    }
+  }
+
+  &.bluetab-sns-sidenav--innovation-active {
+    &:after {
+      background-color:  $bluetab-light-blue;
+    }
+    .bluetab-sns-sidenav__nav-button--innovation {
+      border-color: $bluetab-light-blue;
+      background-color: $bluetab-blue;
+    }
+  }
+   
 }

@@ -5,11 +5,12 @@ import {
   DELETE_TOKEN,
   NEXT_STEP,
   PREVIOUS_STEP,
+  SET_STEP,
 } from '../actions/app';
 
 const initialState = Map({
   token: null,
-  currentStep: 2,
+  currentStep: 1,
 });
 
 const actionsMap = {
@@ -24,6 +25,9 @@ const actionsMap = {
   },
   [PREVIOUS_STEP]: (state) => {
     return state.set('currentStep');
+  },
+  [SET_STEP]: (state, action) => {
+    return state.set('currentStep', action.step);
   },
 };
 

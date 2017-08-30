@@ -1,0 +1,26 @@
+@import '../../../scss/theme/variables';
+
+html.desktop .bluetab-sns-main-graph {
+  width: get-rem($section-width);
+  margin: 0 auto;
+  .bluetab-sns-main-graph__content {
+    padding: 0 get-rem(30px);
+    .bluetab-sns-main-graph__graph-wrapper {
+      position: relative;
+      margin-top: get-rem(70px);
+      height: get-rem(300px);
+      .bluetab-sns-main-graph__graph-controls {
+        position: absolute;
+        top: 0;
+        left: get-rem(20px);
+        z-index: 2;
+        .bluetab-button {
+          margin-bottom: get-rem(9px);
+        }
+      }
+    }
+    .bluetab-sns-main-graph__separator {
+      margin: get-rem(35px) 0;
+    }
+  }
+}

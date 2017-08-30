@@ -1,1 +1,9 @@
-$sidenav-width: 205px;
+$sidenav-content-width: 205px;
+$sidenav-detail-bar: 7px;
+$sidenav-width: $sidenav-content-width + $sidenav-detail-bar;
+
+$section-width: 720px;
+$section-padding: 25px;
+$section-title-height: 70px;
+
+$selectors-margin: 22px;

@@ -38,7 +38,7 @@ export class App extends PureComponent {
     return (
       <div className='bluetab-sns-app'>
         <div className={ `bluetab-sns-app__wrapper ${ loginScreen ? 'bluetab-sns-app__wrapper--login' : '' }` }>
-          { !loginScreen && <Sidenav /> }
+          { !loginScreen && <Sidenav currentRoute={ location.pathname } /> }
           { this.props.children }
         </div>
       </div>

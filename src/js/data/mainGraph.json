@@ -1,0 +1,27 @@
+{
+  "indeces": [{
+      "id": "I1",
+      "label": "COST EFFICIENCY",
+      "value": 7.23,
+      "target": 8.75
+    },
+    {
+      "id": "I2",
+      "label": "QUALITY OF SERVICE",
+      "value": 8.36,
+      "target": 9.00
+    },
+    {
+      "id": "I3",
+      "label": "USAGE",
+      "value": 9.25,
+      "target": 8.5
+    },
+    {
+      "id": "I4",
+      "label": "SATISFACTION",
+      "value": 9.00,
+      "target": 9.00
+    }
+  ]
+}

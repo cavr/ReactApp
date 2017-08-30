@@ -26,7 +26,7 @@ export default class Section extends PureComponent {
     return (
       <section className={ cssClass }>
         <div className='section-title'>
-          <div className='section-title__text'>{ `${ sectionNumber }. ${ title }` }</div>
+          <h1 className='section-title__text'>{ `${ sectionNumber }. ${ title }` }</h1>
           <div className='section-title__background' />
         </div>
         { sectionNumber <= currentStep && children }

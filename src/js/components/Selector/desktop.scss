@@ -1,0 +1,51 @@
+@import '../../../scss/theme/variables';
+
+$selector-font-size: 14px;
+
+html.desktop .bluetab-selector {
+  margin-bottom: get-rem(20px);
+  .bluetab-selector__title-wrapper {
+    margin-bottom: get-rem(10px);
+    .bluetab-selector__title {
+      font-size: get-rem($selector-font-size);
+      color: $bluetab-gray;
+    }
+  }
+  .bluetab-selector__select {
+    font-size: get-rem($selector-font-size);
+    .Select-control {
+      position: relative;
+      height: get-rem(45px);
+      border-color: $bluetab-light-gray;
+      cursor: pointer;
+      .Select-multi-value-wrapper {
+        display: block;
+        height: 100%;
+        .Select-value,
+        .Select-input {
+          padding-left: get-rem(20px);
+        }
+        .Select-value .Select-value-label,
+        .Select-input {
+          height: 100%;
+          display: flex !important;
+          align-items: center;
+        }
+      }
+      .Select-arrow-zone {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: get-rem(45px);
+        height: 100%;
+        padding: 0 !important;
+        background: rgba(218,224,228,0.30);
+        border-left: get-rem(1px) solid $bluetab-light-gray;
+        
+      }
+    }
+  }
+}

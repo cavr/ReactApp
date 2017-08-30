@@ -1,19 +1,38 @@
 @import '../../../scss/theme/variables';
 
 .bluetab-stepbar-wrapper {
+  position: relative;
   display: flex;
+  justify-content: space-between;
   width: get-rem(250px);
   margin: get-rem(32px) auto;
   .bluetab-stepbar {
-    display: inline-block;
-    flex: 1 1 auto;
-    height: get-rem(8px);
-    margin: 0 get-rem(8px);
-    $bluetab-gray: $bluetab-gray;
-    opacity: 0.2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 auto;
+    width: get-rem(33px);
+    height: get-rem(33px);
+    color: white;
+    border-radius: get-rem(20px);
+    background-color: $bluetab-light-gray-2;
+    z-index: 3;
     &.bluetab-stepbar--active {
       opacity: 1;
       background-color: $bluetab-red;
+    }
+  }
+  .bluetab-stepbar__background-bar {
+    @include vertical-center;
+    left: 0;
+    width: 100%;
+    height: get-rem(3px);
+    background-color: $bluetab-gray;
+    opacity: 0.1;
+    &.bluetab-stepbar__background-bar--red {
+      background-color: $bluetab-red;
+      opacity: 1;
+      z-index: 1;
     }
   }
 }

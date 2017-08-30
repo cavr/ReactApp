@@ -1,10 +1,25 @@
 .icon {
-  $list: 
+  $list:
+    'santander',
+    'network-logo', 
     'avatar';
 
   @each $key in $list {
     &.icon__#{$key} {
       background: url('../assets/icons/common/#{$key}.svg') center no-repeat;
+      background-size: contain;
+    }
+  }
+
+  $list:
+    'MIS',
+    'RO',
+    'change',
+    'innovation';
+  
+  @each $key in $list {
+    &.icon__#{$key} {
+      background: url('../assets/icons/sections/#{$key}.svg') center no-repeat;
       background-size: contain;
     }
   }
