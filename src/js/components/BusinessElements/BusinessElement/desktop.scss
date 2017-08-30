@@ -1,0 +1,10 @@
+@import '../../../../scss/theme/variables';
+
+html.desktop .business-element {
+  padding-bottom: get-rem(20px);
+  margin-bottom: get-rem(40px);
+  border-bottom: get-rem(1px) solid $bluetab-light-gray;
+  .business-element__selector {
+    margin-bottom: get-rem(42px);
+  }
+}

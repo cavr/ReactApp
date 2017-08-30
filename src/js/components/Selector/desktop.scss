@@ -49,3 +49,23 @@ html.desktop .bluetab-selector {
     }
   }
 }
+
+html.desktop .bluetab-selector--inline {
+  display: flex;
+  align-items: center;
+  .bluetab-selector__title-wrapper {
+    margin-bottom: 0;
+    margin-right: get-rem(10px);
+    .bluetab-selector__title {
+      font-size: get-rem(14px);
+      font-weight: 500;
+    }
+  }
+  .bluetab-selector__select {
+    flex: 1 1 auto;
+    .Select-control {
+      position: relative;
+      height: get-rem(35px);
+    }
+  }
+}

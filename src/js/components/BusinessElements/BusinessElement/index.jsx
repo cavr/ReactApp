@@ -9,19 +9,26 @@ export default class BusinessElement extends PureComponent {
 
   static propTypes = {
     data: PropTypes.object,
-    selected: PropTypes.bool,
+    currentValue: PropTypes.object,
     handleSelectorChange: PropTypes.func,
-    handleMetric: PropTypes.func.
   };
 
   render() {
-    const { data, selected, onClick } = this.props;
+    const { data, handleSelectorChange } = this.props;
+    const selector = data.selector;
     const metrics = data.metrics.map((metric, index) => {
-      return <Metric key={ `metric-${ index }` } data={ metric } selected={ selected } onClick={ } />;
+      return <Metric key={ `metric-${ index }` } data={ metric } selector={ selector.id } />;
     });
     return (
       <li className='business-element'>
-        <Selector title={ data.label } onClick={ () => onClick(data.id, data.label) } />
+        <Selector
+          className='business-element__selector'
+          id={ selector.id }
+          title={ selector.label }
+          values={ selector.values }
+          inline={ true }
+          onChange={ () => handleSelectorChange(data.id, data.label) }
+        />
         <ul className='business-element__metrics'>
           { metrics }
         </ul>

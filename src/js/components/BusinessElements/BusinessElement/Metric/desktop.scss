@@ -1,0 +1,36 @@
+@import '../../../../../scss/theme/variables';
+
+$semaphore-size: 20px;
+$semaphore-margin: 15px;
+
+html.desktop .business-element-metric {
+  .business-element-metric__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: get-rem(32px);
+    .business-element-metric__semaphores {
+      width: get-rem(2 * $semaphore-margin + 3 * $semaphore-size);
+      display: flex;
+      justify-content: space-between;
+      .business-element-metric__semaphore {
+        width: get-rem($semaphore-size);
+        height: get-rem($semaphore-size);
+        border-radius: get-rem(10px);
+        opacity: 0.2;
+        &.business-element-metric__semaphore--active {
+          opacity: 1;
+        }
+        &.business-element-metric__semaphore--red {
+          background-color: $bluetab-red;
+        }
+        &.business-element-metric__semaphore--yellow {
+          background-color: $bluetab-light-orange;
+        }
+        &.business-element-metric__semaphore--green {
+          background-color: $bluetab-light-green;
+        }
+      }
+    }
+  }
+}
