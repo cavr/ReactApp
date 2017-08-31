@@ -8,8 +8,7 @@ export function loadBusinessElements() {
   return (dispatch) => {
     dispatch({ type: BEGIN_BUSINESS_ELEMENTS_LOAD });
     BusinessElementsServices.getBusinessElements().then((response) => {
-      const data = response.businessElements;
-      dispatch({ type: SET_BUSINESS_ELEMENTS, data });
+      dispatch({ type: SET_BUSINESS_ELEMENTS, data: response });
       dispatch({ type: END_BUSINESS_ELEMENTS_LOAD });
     });
   };

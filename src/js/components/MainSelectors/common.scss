@@ -1,0 +1,15 @@
+.main-selectors-transition-enter {
+  opacity: 0;
+  &.main-selectors-transition-enter-active {
+    opacity: 1;
+    transition: opacity 500ms ease-out;
+  }
+}
+
+.main-selectors-transition-leave {
+  transform: translateX(0);
+  &.main-selectors-transition-leave-active {
+    transform: translateX(100%);
+    transition: transform 300ms ease-in;
+  }
+}

@@ -5,11 +5,12 @@ JSON recibido:
   selectors: [ //Array de selectores (Array por que es necesario que esten ordenados)
     {
       id: key //Key interna para posteriores peticiones
-      name: string //Copy del selector
+      label: string //Copy del selector
+      icon: string //Url del icono (Ya se la pongo yo)
       values: [
         {
           value: key //Key interna o valor de este selector
-          name: string //Copy de este valor
+          label: string //Copy de este valor
         }
         ...
       ]
@@ -30,8 +31,12 @@ JSON recibido:
   index: [ //Array de indices (Array por que es necesario que esten ordenados)
     {
       id: key //Key interna para posteriores peticiones
-      name: string //Copy del indices
+      label: string //Copy del indices
+      icon: string //Url del icono (Ya se la pongo yo)
       value: number //Valor de este indice (del tipo que sea, con tal de que sea numero)
+      target: number //Valor del target
+      minValue: number //Valor de la cota inferior
+      maxValue: number //Valor de la cota superior
     },
     ...
   ]
@@ -53,7 +58,7 @@ JSON recibido:
   subindexes: [
     {
       id: key //Key interna para posteriores peticiones,
-      name: string //Copy del subindice
+      label: string //Copy del subindice
       type: integer //Tipo de grafica (Por ahora dejemos que 1 es la grafica de barra con secciones y 2 la de calor)
       data: { //Asumo que las graficas son lineales
         value: number //Valor
@@ -82,7 +87,7 @@ JSON envio:
 }
 JSON recibido:
 {
-  name: string //Nombre del indice
+  label: string //Nombre del indice
   variation: number //Variacion
   points: [ //Puntos para la grafica
     {
@@ -92,7 +97,7 @@ JSON recibido:
   ]
 }
 
-Quinta peticion -> getBusinessElements() -> Recibir los business elements de un subindice (Aqui entiendo que puede haber varias secciones en funcion)
+Quinta peticion -> getMetric() -> Recibir la metrica de un subindice (Aqui entiendo que puede haber varias secciones en funcion)
 JSON envio: {
   selectors: { //Entiendo que es necesario que os envie siempre los selectores
     //Par de valores, id del selector y value asociado
@@ -104,49 +109,48 @@ JSON envio: {
   subindex: key //Key del subindice seleccionado
 }
 JSON recibido: {
-  businessElements: [
-    {
-      selector: {
-        id: key //Key interna para posteriores peticiones
-        name: string //Copy del selector
-        values: [
-          {
-            value: key //Key interna o valor de este selector
-            name: string //Copy de este valor
-          }
-          ...
-        ]
-      },
-      metrics: [ //Array de metricas (Array por que tiene que estar ordenado)
+      metric: {
+        id: key, //Key interna o valor de esta metrica
+        label: string, //Copy de esta metrica
+        units: string, //Unidades de esta metrica
+      }
+      selectors: [
         {
-          id: key //Key de esta metrica,
-          name: string //Copy de esta metrica,
-          state: number //Estado del semaforo (0 -> rojo, 1 -> amarillo, 2 -> rojo),
-        }
-      ]
+          id: key //Key interna para posteriores peticiones
+          label: string //Copy del selector
+          values: [
+            {
+              value: key //Key interna o valor de este selector
+              label: string //Copy de este valor
+              state: number //Estado del semaforo (0 -> rojo, 1 -> amarillo, 2 -> rojo)
+            },
+            ...
+          ]
+        },
+        ...
+      ],
     }
   ]
 }
 
-Sexta peticion -> getBusinessElementEvolution() -> Recibir la evolucion de un business element
+Sexta peticion -> getMetricEvolution() -> Recibir la evolucion de una metrica para un business element
 JSON envio: {
-  selectors: { //Entiendo que es necesario que os envie siempre los selectores
+  selector: {
     //Par de valores, id del selector y value asociado
     id: value,
-    id: value,
-    ...
   },
   index: key //Entiendo que es necesario que se envie tambien la key del indice,
   subindex: key //Entiendo que es necesario que se envie tambien la key del subindice,
   metric: key //Key de la metrica 
 }
 JSON recibido: { //Por ahora no incluyo la grafica extra que salia en el diseño inicial por que aun no esta definida.
-  name: string //Nombre del indice
+  label: string //Nombre del indice
   variation: number //Variacion
   points: [ //Puntos para la grafica
     {
       value: number
       date: date 
-    }
+    },
+    ...
   ]
 }

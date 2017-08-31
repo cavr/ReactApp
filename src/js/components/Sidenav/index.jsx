@@ -2,13 +2,13 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router';
 import { routeCodes } from 'routes';
+import Avatar from './Avatar';
 
 import logo from '../../../assets/img/common/logo.png';
 import './desktop.scss';
 
 export default class Sidenav extends PureComponent {
   static propTypes = {
-    setToken: PropTypes.func,
     currentRoute: PropTypes.string,
   };
 
@@ -25,6 +25,7 @@ export default class Sidenav extends PureComponent {
     return (
       <div className={ `bluetab-sns-sidenav ${ activeClass }` }>
         <img className='bluetab-sns-sidenav__logo' src={ logo } alt='logo' />
+        <Avatar />
         <ul className='bluetab-sns-sidenav__nav'>
           <Link
             className='bluetab-sns-sidenav__nav-button bluetab-sns-sidenav__nav-button--MIS'

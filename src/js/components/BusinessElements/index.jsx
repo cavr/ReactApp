@@ -42,7 +42,7 @@ export class BusinessElements extends PureComponent {
                 </ul>
                 <hr className='business-elements__separator' />
                 <div className='business-elements__benchmarking'>
-                  <h2 className='bluetab-subtitle--centered'>Benchmarking</h2>
+                  <h2 className='bluetab-subtitle--centered'>Actions</h2>
                   <Button title={ 'Alerts' } onClick={ () => console.log(2) } light={ true } />
                   <Button title={ 'Resume PDF' } onClick={ () => console.log(2) } light={ true } />
                 </div>

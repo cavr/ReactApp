@@ -1,49 +1,50 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { routeCodes } from 'routes';
-import LoginServices from 'services/api/login';
 import { connect } from 'react-redux';
-import { setToken } from 'actions/app';
+import { login } from 'actions/app';
+
+import avatar from '../../../assets/img/common/avatar.svg';
 
 import './desktop.scss';
 
 export class Login extends PureComponent {
   static propTypes = {
-    setToken: PropTypes.func,
-    router: PropTypes.obj,
+    loading: PropTypes.bool,
+    login: PropTypes.func,
   };
 
   constructor() {
     super();
     this.state = {
-      loading: false,
+      otherUser: false,
       username: null,
       password: null,
       errors: '',
     };
   }
   login() {
-    const { username, password } = this.state;
-    this.setState({ loading: true });
-    LoginServices.login(username, password).then((response) => {
-      this.props.setToken('token');
-      this.setState({ loading: false });
-      this.props.router.push(routeCodes.MIS);
-      console.log(response);
-    });
   }
   render() {
+    const { otherUser, username, password } = this.state;
+    const login = this.props.login;
+
+    const testImage = 'https://lesliemcnulty.com/wp-content/uploads/2015/02/Kevin_Avatar_Circular.png';
     return (
-      <div className='bluetab-sns-login'>
-        <div className='bluetab-sns-login__wrapper'>
-          <div className='bluetab-sns-login__brand'>
+      <div className='login'>
+        <div className='login__wrapper'>
+          <div className='login__brand'>
             SNS | Santander Network
             <br />
             Services
           </div>
-          <input placeholder='User' onChange={ (username) => this.setState({ username }) } />
-          <input placeholder='Password' onChange={ (password) => this.setState({ password }) } />
-          <button type='submit' onClick={ () => this.login() }>Login</button>
+          <div className='login__avatar'>
+            <img className='login__avatar-image' src={ otherUser ? avatar : testImage } alt='avatar' />
+            { !otherUser && <div className='login__name'>Jorge Glas</div> }
+          </div>
+          { otherUser && <input className='login__input' placeholder='User' onChange={ (username) => this.setState({ username }) } /> }
+          <input className='login__input' placeholder='Password' type='password' onChange={ (password) => this.setState({ password }) } />
+          <button className='login__submit' type='submit' onClick={ () => login(username, password) }>Login</button>
+          { !otherUser && <div className='login__switch icon icon__avatar' onClick={ () => this.setState({ otherUser: true }) }>Switch user</div> }
         </div>
       </div>
     );
@@ -52,7 +53,7 @@ export class Login extends PureComponent {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    setToken: (token) => dispatch(setToken(token)),
+    login: (user, password) => dispatch(login(user, password)),
   };
 };
 

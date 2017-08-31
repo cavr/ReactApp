@@ -1,0 +1,45 @@
+@import '../../../../scss/theme/variables';
+
+html.desktop .sidenav-avatar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .sidenav-avatar__image {
+    width: get-rem(100px);
+    height: get-rem(100px);
+    margin-bottom: get-rem(13px);
+  }
+  .sidenav-avatar__user-info-wrapper {
+    position: relative;
+    width: 100%;
+    color: white;
+    text-align: center;
+    padding-bottom: get-rem(20px);
+    cursor: pointer;
+    .sidenav-avatar__name {
+      font-weight: 500;
+      font-size: get-rem(18px);
+    }
+    .sidenav-avatar__role {
+      font-size: get-rem(12px);
+      font-weight: 300;
+    }
+    .sidenav-avatar__arrow {
+      @include vertical-center;
+    }
+  }
+  .sidenav-avatar__menu {
+    width: 100%;
+    background-color: $bluetab-dark-red;
+    .sidenav-avatar__option {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: get-rem(12px);
+      color: white;
+      height: get-rem(45px);
+      border-bottom: get-rem(1px) solid $bluetab-darker-red;
+      cursor: pointer;
+    }
+  }
+}

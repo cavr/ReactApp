@@ -1,57 +1,54 @@
 {
-  "businessElements": [
+  "metric": {
+    "id": "M1",
+    "label": "COST IN €",
+    "units": "€"
+  },
+  "selectors": [
     {
-      "selector": {
-        "id": 2,
-        "label": "Business Unit",
-        "values": [{
-            "value": 1,
-            "label": "Retail Banking"
-          },
-          {
-            "value": 2,
-            "label": "Consumer Banking"
-          },
-          {
-            "value": 3,
-            "label": "Global Banking"
-          }
-        ]
-      },
-      "metrics": [{
-        "id": "M4",
-        "label": "CHARGE",
-        "state": 1
-      }]
+      "id": 2,
+      "label": "Business Unit",
+      "values": [{
+          "value": 1,
+          "label": "Retail Banking",
+          "state": 0
+        },
+        {
+          "value": 2,
+          "label": "Consumer Banking",
+          "state": 1
+        },
+        {
+          "value": 3,
+          "label": "Global Banking",
+          "state": 2
+        }
+      ]
     },
     {
-      "selector": {
-        "id": 3,
-        "label": "Site Category",
-        "values": [{
-            "value": 1,
-            "label": "Data Centre / Head Office"
-          },
-          {
-            "value": 2,
-            "label": "Head Office / Branch"
-          },
-          {
-            "value": 3,
-            "label": "Branch"
-          },
-          {
-            "value": 4,
-            "label": "Other Sites"
-          }
-        ]
-      },
-      "metrics": [{
-        "id": "M4",
-        "label": "CHARGE",
-        "state": 1
-      }]
+      "id": 3,
+      "label": "Site Category",
+      "values": [{
+          "value": 1,
+          "label": "Data Centre / Head Office",
+          "state": 2
+        },
+        {
+          "value": 2,
+          "label": "Head Office / Branch",
+          "state": 1
+        },
+        {
+          "value": 3,
+          "label": "Branch",
+          "state": 2
+        },
+        {
+          "value": 4,
+          "label": "Other Sites",
+          "state": 0
+        }
+      ]
     }
   ]
 }
-

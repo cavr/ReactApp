@@ -5,23 +5,20 @@ html.desktop section {
   width: get-rem($section-width);
   background-color: white;
   box-shadow: 0 0 get-rem(2px) 0 rgba(0,0,0,0.12), 0 get-rem(2px) get-rem(2px) 0 rgba(0,0,0,0.24);
-  padding: get-rem($section-padding);
-  padding-top: get-rem(70px + $section-padding);
   margin: 0 auto;
   margin-bottom: get-rem(30px);
-  transition: all 2s $easing;
   .section-title {
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: relative;
     width: 100%;
     height: get-rem($section-title-height);
+    transition: all 0.6s $easing;
     .section-title__text {
       @include centerer;
       font-weight: 500;
       font-size: get-rem(18px);
       color: white;
       z-index: 2;
+      transition: inherit;
     }
     .section-title__background {
       position: absolute;
@@ -30,6 +27,24 @@ html.desktop section {
       height: 100%;
       width: 100%;
       background: linear-gradient(86deg, $bluetab-red 0%, $bluetab-light-red 100%);
+      transition: inherit;
+    }
+  }
+  .section__content {
+    padding: get-rem($section-padding);
+  }
+  .section-transition-enter {
+    opacity: 0;
+    &.section-transition-enter-active {
+      opacity: 1;
+      transition: opacity 500ms ease-in;
+    }
+  }
+  .section-transition-leave {
+    opacity: 1;
+    &.section-transition-leave-active {
+      opacity: 0;
+      transition: opacity 300ms ease-in;
     }
   }
 }
@@ -47,9 +62,6 @@ html.desktop .section--static {
 }
 
 html.desktop .section--inactive {
-  height: get-rem($section-title-height);
-  padding: 0;
-  overflow: hidden;
   .section-title .section-title__background {
     background: linear-gradient(90deg, #707B8B 0%, #C0C6CF 100%);
   }

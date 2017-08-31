@@ -6,6 +6,7 @@ import { setStep } from 'actions/app';
 import Section from 'components/Section';
 import Button from 'components/Button';
 import Selector from 'components/Selector';
+import Evolution from 'components/Evolution';
 
 import './desktop.scss';
 
@@ -31,41 +32,45 @@ export class MainGraph extends PureComponent {
         label: index.label,
       };
     });
-    const showingEvolution = loadingEvolution || evolutionData;
+    const showingEvolution = loadingEvolution || evolutionData !== null;
 
     return (
-      <div className='bluetab-sns-main-graph'>
+      <div className='main-graph'>
         <Section currentStep={ currentStep } sectionNumber={ 2 } title='Selecciona un índice de una gráfica' >
           {
             loading ?
               <div>Loading</div> :
-              <div className='bluetab-sns-main-graph__content'>
+              <div className='main-graph__content'>
                 <h2 className='bluetab-subtitle--centered'>Select the index of which you want to see the evolution or the subindices that form it</h2>
-                <div className='bluetab-sns-main-graph__graph-wrapper'>
-                  <div className='bluetab-sns-main-graph__graph-controls'>
+                <div className='main-graph__graph-wrapper'>
+                  <div className='main-graph__graph-controls'>
                     <Selector
-                      className='bluetab-sns-selectors__selector'
+                      className='selectors__selector'
                       title={ 'Select an index' }
                       values={ indexes }
                       currentValue={ selected && selected.value }
                       onChange={ (option) => setSelectedIndex(option.value, option.label) }
                     />
                     <Button title={ 'Subindices' } selected={ currentStep > 2 } onClick={ () => (currentStep === 2 ? setStep(3) : setStep(2)) } />
-                    <Button title={ 'Evolucion' } selected={ showingEvolution } onClick={ () => (!evolutionData ? setEvolutionData(selected.value) : clearEvolutionData()) } />
+                    <Button title={ 'Evolucion' } light={ true } selected={ showingEvolution } onClick={ () => (!evolutionData ? setEvolutionData(selected.value) : clearEvolutionData()) } />
                   </div>
                 </div>
-                <hr className='bluetab-sns-main-graph__separator' />
-                <div className='bluetab-sns-main-graph__benchmarking'>
-                  <Button title={ 'Comparative' } onClick={ () => setStep(2) } light={ true } />
+                <hr className='main-graph__separator' />
+                <div className='main-graph__benchmarking'>
+                  <h2 className='bluetab-subtitle--centered'>Benchmarking</h2>
+                  <Button title={ 'Peers' } onClick={ () => setStep(2) } light={ true } />
+                  <Button title={ 'Competition' } onClick={ () => setStep(2) } light={ true } />
+                  <Button title={ 'Market' } onClick={ () => setStep(2) } light={ true } />
                 </div>
               </div>
           }
         </Section>
         {
           showingEvolution &&
-          <section className='bluetab-sns-main-graph__details'>
+          <section className='main-graph__details'>
             {
-              loadingEvolution ? 'Loading' : 'Evolution'
+              loadingEvolution ? 'Loading' :
+              <Evolution label={ evolutionData.label } variation={ evolutionData.variation } points={ evolutionData.points } />
             }
           </section>
         }

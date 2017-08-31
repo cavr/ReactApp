@@ -9,6 +9,9 @@ html.desktop .bluetab-sns-app {
     padding-left: get-rem($sidenav-width);
     background-color: $bluetab-light-gray;
     overflow: hidden;
+    .bluetab-sns-mis {
+      padding-top: get-rem($stepbar-height);
+    }
     &.bluetab-sns-app__wrapper--login {
       padding-left: 0;
     }

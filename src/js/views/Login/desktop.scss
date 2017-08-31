@@ -1,13 +1,56 @@
 @import '../../../scss/theme/variables';
 
-html.desktop .bluetab-sns-login {
+html.desktop .login {
   position: relative;
   width: 100vw;
   height: 100vh;
   background-color: $bluetab-red;
-  .bluetab-sns-login__wrapper {
+  .login__wrapper {
+    width: get-rem(300px);
     @include centerer;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    .login__avatar {
+      margin-bottom: get-rem(25px);
+      .login__avatar-image {
+        height: get-rem(135px);
+        width: get-rem(135px);
+        margin-bottom: get-rem(12px);
+      }
+      .login__name {
+        font-size: get-rem(22px);
+        font-weight: 500;
+        color: white;
+        text-align: center;
+      }
+    }
+    .login__input {
+      width: 100%;
+      height: get-rem(45px);
+      padding-left: get-rem(13px);
+      color: white;
+      margin-bottom: get-rem(18px);
+      background-color: rgba(255, 255, 255, 0.25);
+      border: none;
+      outline: none;
+    }
+    .login__submit {
+      width: 100%;
+      height: get-rem(60px);
+      background-color: white;
+      border-radius: get-rem(5px);
+      border: none;
+      cursor: pointer;
+    }
+    .login__switch {
+      margin-top: get-rem(35px);
+      display: inline-block;
+      padding-left: get-rem(32px);
+      background-position: left;
+      line-height: get-rem(26px);
+      color: white;
+      cursor: pointer;
+    }
   }
 }

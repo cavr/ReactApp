@@ -1,18 +1,32 @@
 
+import { browserHistory } from 'react-router';
+import { routeCodes } from 'routes';
+
 import { loadMainGraph, clearEvolutionData } from 'actions/mis/mainGraph';
 import { loadSubindexes } from 'actions/mis/subindexes';
 import { loadBusinessElements } from 'actions/mis/businessElements';
 
-export const SET_TOKEN = 'SET_TOKEN';
-export const DELETE_TOKEN = 'DELETE_TOKEN';
+import LoginServices from 'services/api/login';
+
+export const LOGIN = 'LOGIN';
+export const LOGIN_LOAD = 'LOGIN_LOAD';
+export const LOGOUT = 'LOGOUT';
 export const SET_STEP = 'SET_STEP';
 
-export function setToken(data) {
-  return { type: SET_TOKEN, data };
+export function login(user, password) {
+  return (dispatch) => {
+    LoginServices.login(user, password).then((response) => {
+      const userInfo = response;
+      const token = 'token';
+      dispatch({ type: LOGIN, token, userInfo });
+      browserHistory.push(routeCodes.MIS);
+    });
+  };
 }
 
-export function deleteToken() {
-  return { type: DELETE_TOKEN };
+export function logout() {
+  browserHistory.push(routeCodes.LOGIN);
+  return { type: LOGOUT };
 }
 
 export function setStep(step) {
@@ -31,5 +45,9 @@ export function setStep(step) {
       dispatch(loadBusinessElements(request));
     }
     dispatch({ type: SET_STEP, step });
+    setTimeout(() => {
+      const top = document.getElementById(`section-${ step }`).getBoundingClientRect().top - 100;
+      window.scrollBy({ top, behavior: 'smooth' });
+    }, 350);
   };
 }

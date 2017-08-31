@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Button from 'components/Button';
-import MetricEvolution from './MetricEvolution';
+import Evolution from 'components/Evolution';
 
 import './desktop.scss';
 
@@ -35,7 +35,10 @@ export default class Metric extends PureComponent {
           </div>
         </div>
         {
-          showEvolution && <MetricEvolution />
+          showEvolution &&
+          <div className='business-element-metric-evolution'>
+            <Evolution />
+          </div>
         }
       </li>
     );

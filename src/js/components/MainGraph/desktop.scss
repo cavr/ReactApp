@@ -1,15 +1,15 @@
 @import '../../../scss/theme/variables';
 
-html.desktop .bluetab-sns-main-graph {
+html.desktop .main-graph {
   width: get-rem($section-width);
   margin: 0 auto;
-  .bluetab-sns-main-graph__content {
+  .main-graph__content {
     padding: 0 get-rem(20px);
-    .bluetab-sns-main-graph__graph-wrapper {
+    .main-graph__graph-wrapper {
       position: relative;
       margin-top: get-rem(70px);
       height: get-rem(300px);
-      .bluetab-sns-main-graph__graph-controls {
+      .main-graph__graph-controls {
         position: absolute;
         top: 0;
         left: get-rem(20px);
@@ -19,11 +19,22 @@ html.desktop .bluetab-sns-main-graph {
         }
       }
     }
-    .bluetab-sns-main-graph__separator {
+    .main-graph__separator {
       margin: get-rem(35px) 0;
     }
+    .main-graph__benchmarking {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .bluetab-subtitle--centered {
+        margin-right: get-rem(10px);
+      }
+      .bluetab-button {
+        margin: 0 get-rem(5px);
+      }
+    }
   }
-  .bluetab-sns-main-graph__details {
+  .main-graph__details {
     padding: get-rem(25px) get-rem(30px);
   }
 }

@@ -1,27 +1,49 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { setStep } from 'actions/app';
 
 import './desktop.scss';
 
-export default class StepBar extends PureComponent {
+export class StepBar extends PureComponent {
   static propTypes = {
     currentStep: PropTypes.number,
+    setStep: PropTypes.func,
   };
 
   render() {
     const steps = [];
-    const currentStep = this.props.currentStep;
+    const { currentStep, setStep } = this.props;
     for (let i = 0; i < 4; i++) {
       steps.push(
-        <div key={ `stepBar${ i }` } className={ `bluetab-stepbar ${ currentStep > i ? 'bluetab-stepbar--active' : '' }` }>{ i + 1 }</div>
+        <div
+          key={ `stepBar${ i }` }
+          className={ `stepbar ${ currentStep > i ? 'stepbar--active' : '' }` }
+          onClick={ () => { if (currentStep > i + 1) setStep(i + 1); } }
+        >
+          { i + 1 }
+        </div>
       );
     }
     return (
-      <div className='bluetab-stepbar-wrapper'>
-        { steps }
-        <div style={ { width: `${ (99 / 3) * (currentStep - 1) }%` } } className='bluetab-stepbar__background-bar bluetab-stepbar__background-bar--red' />
-        <div className='bluetab-stepbar__background-bar' />
+      <div className='stepbar-navigation'>
+        <div className='stepbar-wrapper'>
+          { steps }
+          <div style={ { width: `${ (99 / 3) * (currentStep - 1) }%` } } className='stepbar__background-bar stepbar__background-bar--red' />
+          <div className='stepbar__background-bar' />
+        </div>
       </div>
     );
   }
 }
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setStep: (step) => dispatch(setStep(step)),
+  };
+};
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(StepBar);

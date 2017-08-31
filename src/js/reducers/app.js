@@ -1,22 +1,33 @@
 import { Map } from 'immutable';
+import avatar from '../../assets/img/common/avatar.svg';
 
 import {
-  SET_TOKEN,
-  DELETE_TOKEN,
+  LOGIN,
+  LOGIN_LOAD,
+  LOGOUT,
   SET_STEP,
 } from '../actions/app';
 
 const initialState = Map({
+  loading: false,
   token: null,
+  userInfo: {
+    name: 'Jorge Glas',
+    role: 'Managing Director',
+    image: avatar,
+  },
   currentStep: 1,
 });
 
 const actionsMap = {
-  [SET_TOKEN]: (state, action) => {
-    return state.set('token', action.data);
+  [LOGIN]: (state, action) => {
+    return state.set('token', action.token).set('userInfo', action.userInfo).set('loading', false);
   },
-  [DELETE_TOKEN]: (state) => {
-    return state.set('token', null);
+  [LOGIN_LOAD]: (state) => {
+    return state.set('loading', true);
+  },
+  [LOGOUT]: (state) => {
+    return state.set('token', null).set('userInfo', null);
   },
   [SET_STEP]: (state, action) => {
     return state.set('currentStep', action.step);
