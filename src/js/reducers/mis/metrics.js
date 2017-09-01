@@ -1,10 +1,10 @@
 import { Map } from 'immutable';
 
 import {
-  SET_BUSINESS_ELEMENTS,
-  BEGIN_BUSINESS_ELEMENTS_LOAD,
-  END_BUSINESS_ELEMENTS_LOAD,
-} from '../../actions/mis/businessElements';
+  SET_METRICS,
+  BEGIN_METRICS_LOAD,
+  END_METRICS_LOAD,
+} from 'actions/mis/metrics';
 
 const initialState = Map({
   data: [],
@@ -12,13 +12,13 @@ const initialState = Map({
 });
 
 const actionsMap = {
-  [SET_BUSINESS_ELEMENTS]: (state, action) => {
+  [SET_METRICS]: (state, action) => {
     return state.set('data', action.data);
   },
-  [BEGIN_BUSINESS_ELEMENTS_LOAD]: (state) => {
+  [BEGIN_METRICS_LOAD]: (state) => {
     return state.set('loading', true);
   },
-  [END_BUSINESS_ELEMENTS_LOAD]: (state) => {
+  [END_METRICS_LOAD]: (state) => {
     return state.set('loading', false);
   },
 };

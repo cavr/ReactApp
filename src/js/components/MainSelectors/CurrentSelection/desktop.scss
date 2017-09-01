@@ -3,15 +3,15 @@
 $button-size: 92px;
 $selection-margin: 12px;
 
-html.desktop .bluetab-sns-selection {
-  .bluetab-sns-selection__wrapper {
+html.desktop .selection {
+  .selection__wrapper {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     margin-right: get-rem(-$selection-margin);
     margin-left: get-rem(-$selection-margin);
-    .bluetab-sns-selection__option {
+    .selection__option {
       flex: 0 0 auto;
       min-width: get-rem($button-size);
       margin: 0 get-rem($selection-margin);
@@ -22,7 +22,7 @@ html.desktop .bluetab-sns-selection {
       background-color: white;
       text-align: center;
     }
-    .bluetab-sns-selection__button {
+    .selection__button {
       cursor: pointer;
       &:hover {
         background-color: $bluetab-red;

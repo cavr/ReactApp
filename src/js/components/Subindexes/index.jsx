@@ -25,16 +25,14 @@ export class Subindexes extends PureComponent {
       );
     });
     return (
-      <Section currentStep={ currentStep } sectionNumber={ 3 } title='Subindex'>
-        <div className='bluetab-sns-subindexes'>
-          { loading ? 'Loading' :
-          <div className='bluetab-sns-subindexes__content'>
+      <Section currentStep={ currentStep } sectionNumber={ 3 } title='Subindex' loading={ loading }>
+        <div className='subindexes'>
+          <div className='subindexes__content'>
             <h2 className='bluetab-subtitle--centered'>Select the subindex that you want to compare</h2>
-            <ul className='bluetab-sns-subindexes__subindex-list'>
+            <ul className='subindexes__subindex-list'>
               { subindexes }
             </ul>
           </div>
-          }
         </div>
       </Section>
     );

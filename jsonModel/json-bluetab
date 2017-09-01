@@ -92,7 +92,7 @@ JSON recibido:
   ]
 }
 
-Quinta peticion -> getBusinessElements() -> Recibir los business elements de un subindice (Aqui entiendo que puede haber varias secciones en funcion)
+Quinta peticion -> getMetrics() -> Recibir los business elements de un subindice (Aqui entiendo que puede haber varias secciones en funcion)
 JSON envio: {
   selectors: { //Entiendo que es necesario que os envie siempre los selectores
     //Par de valores, id del selector y value asociado
@@ -104,7 +104,7 @@ JSON envio: {
   subindex: key //Key del subindice seleccionado
 }
 JSON recibido: {
-  businessElements: [
+  Metrics: [
     {
       selector: {
         id: key //Key interna para posteriores peticiones

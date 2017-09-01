@@ -1,12 +1,10 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { setStep } from 'actions/app';
 import Button from 'components/Button';
 
 import './desktop.scss';
 
-export class CurrentSelection extends PureComponent {
+export default class CurrentSelection extends PureComponent {
   static propTypes = {
     data: PropTypes.array,
     selected: PropTypes.object,
@@ -17,32 +15,17 @@ export class CurrentSelection extends PureComponent {
     const { selected, setStep } = this.props;
     const selectors = selected && selected.toArray().map((value, index) => {
       return (
-        <div key={ `selectedValue-${ index }` } className='bluetab-sns-selection__option'>{ value.label }</div>
+        <div key={ `selectedValue-${ index }` } className='selection__option'>{ value.label }</div>
       );
     });
     return (
-      <div className='bluetab-sns-selection'>
-        <div className='bluetab-sns-selection__wrapper'>
+      <div className='selection'>
+        <div className='selection__wrapper'>
           { selectors }
-          <button className='bluetab-sns-selection__option bluetab-sns-selection__button' onClick={ () => setStep(1) }>...</button>
+          <button className='selection__option selection__button' onClick={ () => setStep(1) }>...</button>
         </div>
       </div>
     );
   }
 }
 
-const mapStateToProps = (state) => ({
-  data: state.selectors.get('data'),
-  selected: state.selectors.get('selected'),
-});
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    setStep: (step) => dispatch(setStep(step)),
-  };
-};
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(CurrentSelection);

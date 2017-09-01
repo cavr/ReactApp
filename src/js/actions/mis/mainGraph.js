@@ -1,5 +1,7 @@
 import MainGraphServices from 'services/api/mainGraph';
 
+import { setStep } from 'actions/app';
+
 export const SET_MAINGRAPH = 'SET_MAINGRAPH';
 export const BEGIN_MAINGRAPH_LOAD = 'BEGIN_MAINGRAPH_LOAD';
 export const END_MAINGRAPH_LOAD = 'END_MAINGRAPH_LOAD';
@@ -24,7 +26,11 @@ export function loadMainGraph() {
 }
 
 export function setSelectedIndex(value, label) {
-  return { type: SET_SELECTED_INDEX, value, label };
+  return (dispatch, getState) => {
+    const currentStep = getState().app.get('currentStep');
+    dispatch({ type: SET_SELECTED_INDEX, value, label });
+    if (currentStep > 2) dispatch(setStep(3));
+  };
 }
 
 export function setEvolutionData(index) {

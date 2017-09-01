@@ -5,7 +5,7 @@ export default class RO extends PureComponent {
   render() {
     return (
       <div className='bluetab-sns-ro'>
-        <SectionPlaceholder />
+        <SectionPlaceholder color='yellow' />
       </div>
     );
   }

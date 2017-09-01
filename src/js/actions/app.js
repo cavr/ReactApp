@@ -4,7 +4,7 @@ import { routeCodes } from 'routes';
 
 import { loadMainGraph, clearEvolutionData } from 'actions/mis/mainGraph';
 import { loadSubindexes } from 'actions/mis/subindexes';
-import { loadBusinessElements } from 'actions/mis/businessElements';
+import { loadMetrics } from 'actions/mis/metrics';
 
 import LoginServices from 'services/api/login';
 
@@ -37,12 +37,12 @@ export function setStep(step) {
     if (step === 2 && previousStep < step) {
       const request = '';
       dispatch(loadMainGraph(request));
-    } else if (step === 3 && previousStep < step) {
+    } else if (step === 3 && previousStep <= step) {
       const request = '';
       dispatch(loadSubindexes(request));
     } else if (step === 4) {
       const request = '';
-      dispatch(loadBusinessElements(request));
+      dispatch(loadMetrics(request));
     }
     dispatch({ type: SET_STEP, step });
     setTimeout(() => {

@@ -5,8 +5,7 @@ html.desktop section {
   width: get-rem($section-width);
   background-color: white;
   box-shadow: 0 0 get-rem(2px) 0 rgba(0,0,0,0.12), 0 get-rem(2px) get-rem(2px) 0 rgba(0,0,0,0.24);
-  margin: 0 auto;
-  margin-bottom: get-rem(30px);
+  margin: get-rem($section-margin) auto;
   .section-title {
     position: relative;
     width: 100%;
@@ -32,6 +31,9 @@ html.desktop section {
   }
   .section__content {
     padding: get-rem($section-padding);
+    &.section__content--no-padding {
+      padding: 0;
+    }
   }
   .section-transition-enter {
     opacity: 0;

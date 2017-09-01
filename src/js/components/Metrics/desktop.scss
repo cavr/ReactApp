@@ -1,0 +1,26 @@
+@import '../../../scss/theme/variables';
+
+$metrics-width: 450px;
+
+html.desktop .metrics {
+  padding: get-rem($section-padding) 0;
+  .metrics__wrapper {
+    width: get-rem($metrics-width);
+    margin: 0 auto;
+  }
+  .metrics__separator {
+    margin-top: get-rem(47px);
+    margin-bottom: get-rem(30px);
+  }
+  .metrics__benchmarking {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .bluetab-subtitle--centered {
+      margin-right: get-rem(10px);
+    }
+    .bluetab-button {
+      margin: 0 get-rem(5px);
+    }
+  }
+}

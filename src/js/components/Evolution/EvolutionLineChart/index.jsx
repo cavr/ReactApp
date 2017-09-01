@@ -9,7 +9,7 @@ export default class EvolutionLineChart extends PureComponent {
   render() {
     const { points } = this.props;
     return (
-      <div>Im a cool chart { points }</div>
+      <div>Im a cool chart</div>
     );
   }
 }

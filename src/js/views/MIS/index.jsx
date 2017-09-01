@@ -6,7 +6,7 @@ import StepBar from 'components/StepBar';
 import MainSelectors from 'components/MainSelectors';
 import MainGraph from 'components/MainGraph';
 import Subindexes from 'components/Subindexes';
-import BusinessElements from 'components/BusinessElements';
+import Metrics from 'components/Metrics';
 
 export class MIS extends PureComponent {
   static propTypes = {
@@ -21,7 +21,7 @@ export class MIS extends PureComponent {
         <MainSelectors currentStep={ currentStep } />
         <MainGraph currentStep={ currentStep } />
         <Subindexes currentStep={ currentStep } />
-        <BusinessElements currentStep={ currentStep } />
+        <Metrics currentStep={ currentStep } />
       </div>
     );
   }

@@ -1,14 +1,14 @@
 import endpoint from 'services/api/config';
-import devData from 'data/businessElements.json';
+import devData from 'data/metrics.json';
 import devDataEvolution from 'data/businessElementEvolution.json';
 
-export default class BusinessElementsServices {
+export default class MetricsServices {
   /* static getData() {
     return fetch('http://date.jsontest.com/')
       .then(response => response.json());
   } */
 
-  static getBusinessElements(request) {
+  static getMetrics(request) {
     const delay = 200;
     return new Promise((resolve) => setTimeout(() => resolve(devData), delay)).then(response => response);
   }

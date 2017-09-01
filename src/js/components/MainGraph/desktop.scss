@@ -2,7 +2,7 @@
 
 html.desktop .main-graph {
   width: get-rem($section-width);
-  margin: 0 auto;
+  margin: get-rem($section-margin) auto;
   .main-graph__content {
     padding: 0 get-rem(20px);
     .main-graph__graph-wrapper {
@@ -35,6 +35,9 @@ html.desktop .main-graph {
     }
   }
   .main-graph__details {
-    padding: get-rem(25px) get-rem(30px);
+    margin: 0;
+    .main-graph__details-wrapper {
+      padding: get-rem(25px) get-rem(30px);
+    }
   }
 }

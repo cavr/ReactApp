@@ -4,7 +4,7 @@ import app from 'reducers/app';
 import selectors from 'reducers/mis/selectors';
 import mainGraph from 'reducers/mis/mainGraph';
 import subindexes from 'reducers/mis/subindexes';
-import businessElements from 'reducers/mis/businessElements';
+import metrics from 'reducers/mis/metrics';
 import media from 'reducers/media';
 
 export default combineReducers({
@@ -12,7 +12,7 @@ export default combineReducers({
   selectors,
   mainGraph,
   subindexes,
-  businessElements,
+  metrics,
   media,
   routing,
 });

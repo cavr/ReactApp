@@ -1,0 +1,17 @@
+$big-loading-size: 200px;
+$small-loading-size: 60px;
+
+.loading {
+  padding: get-rem(30px);
+  display: flex;
+  justify-content: center;
+  .loading__image {
+    display: block;
+    width: get-rem($big-loading-size);
+    height: get-rem($big-loading-size);
+    &.loading__image--small {
+      width: get-rem($small-loading-size);
+      height: get-rem($small-loading-size);
+    }
+  }
+}
