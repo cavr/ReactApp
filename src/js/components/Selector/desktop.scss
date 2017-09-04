@@ -1,6 +1,7 @@
 @import '../../../scss/theme/variables';
 
 $selector-font-size: 12px;
+$selector-left-padding: 14px;
 
 html.desktop .bluetab-selector {
   margin-bottom: get-rem(20px);
@@ -23,7 +24,7 @@ html.desktop .bluetab-selector {
         height: 100%;
         .Select-value,
         .Select-input {
-          padding-left: get-rem(20px);
+          padding-left: get-rem($selector-left-padding);
         }
         .Select-value .Select-value-label,
         .Select-input {
@@ -45,6 +46,17 @@ html.desktop .bluetab-selector {
         background: rgba(218,224,228,0.30);
         border-left: get-rem(1px) solid $bluetab-light-gray;
         
+      }
+    }
+    .Select-menu-outer {
+      border: get-rem(1px) solid $bluetab-light-gray-2;
+      .Select-option.is-selected {
+        background-color: white;
+      }
+      .Select-option.is-focused {
+        background-color: $bluetab-red;
+        color: white;
+        z-index: 99;
       }
     }
   }

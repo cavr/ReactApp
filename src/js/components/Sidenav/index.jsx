@@ -63,6 +63,7 @@ export default class Sidenav extends PureComponent {
             Innovation
           </Link>
         </ul>
+        <div className='bluetab-sns-sidenav__powered'>Powered by produban</div>
       </div>
     );
   }

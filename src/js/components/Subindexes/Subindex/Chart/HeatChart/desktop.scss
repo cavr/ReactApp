@@ -1,0 +1,42 @@
+@import '../../../../../../scss/theme/variables';
+
+$subindex-heat-color--target: #7ED321;
+
+.subindex-heat-chart {
+  position: relative;
+  width: get-rem(230px);
+  .subindex-heat-chart__line {
+    width: 100%;
+    height: get-rem(14px);
+    overflow: hidden;
+    border-radius: get-rem(2px);
+  }
+  .subindex-heat-chart__droplet {
+    position: absolute;
+    bottom: 100%;
+    transform: translateX(-50%);
+    &.subindex-heat-chart__droplet--current {
+      width: get-rem(38px);
+      height: get-rem(46px);
+      path {
+        fill: $bluetab-gray-2;
+      }
+    }
+    &.subindex-heat-chart__droplet--target {
+      width: get-rem(29px);
+      height: get-rem(36px);
+      path {
+        fill: $subindex-heat-color--target;
+      }
+    }
+  }
+
+  .subindex-heat-chart__labels {
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    display: flex;
+    font-size: get-rem(10px);
+    color: $bluetab-light-gray-2;
+  }
+}

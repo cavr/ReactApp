@@ -18,6 +18,16 @@ html.desktop .bluetab-sns-sidenav {
     margin-bottom: get-rem(42px);
   }
 
+  .bluetab-sns-sidenav__powered {
+    width: 100%;
+    padding-right: get-rem($sidenav-detail-bar); 
+    @include horizontal-center;
+    bottom: get-rem(27px);
+    font-size: get-rem(12px);
+    text-align: center;
+    color: white;
+  }
+
   .bluetab-sns-sidenav__nav-button {
     display: flex;
     align-items: center;

@@ -56,6 +56,7 @@ html.desktop .section--static {
     border-bottom: get-rem(1px) solid $bluetab-light-gray-2;
     .section-title__text {
       color: $bluetab-gray-2;
+      margin-top: get-rem(5px);
     }
     .section-title__background {
       height: get-rem(10px);

@@ -18,16 +18,10 @@ html.desktop .selection {
       margin-bottom: get-rem($selection-margin);
       line-height: get-rem(26px);
       padding: 0 get-rem(18px);
-      border: get-rem(2px) solid $bluetab-red;
+      border: get-rem(2px) solid $bluetab-gray; 
+      color: $bluetab-gray-2;
       background-color: white;
       text-align: center;
-    }
-    .selection__button {
-      cursor: pointer;
-      &:hover {
-        background-color: $bluetab-red;
-        color: white;
-      }
     }
     .selection__change-selection {
       width: get-rem(32px);

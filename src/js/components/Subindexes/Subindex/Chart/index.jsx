@@ -1,6 +1,9 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
+import LineChart from './LineChart';
+import HeatChart from './HeatChart';
+
 export default class Chart extends PureComponent {
 
   static propTypes = {
@@ -17,9 +20,9 @@ export default class Chart extends PureComponent {
     const { type, data } = this.props;
     switch (type) {
       case 2:
-        return <div>Cool heat chart</div>;
+        return <HeatChart data={ data } />;
       default:
-        return <div>Cool line chart</div>;
+        return <LineChart data={ data } />;
     }
   }
 

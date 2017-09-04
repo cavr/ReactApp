@@ -1,0 +1,36 @@
+$subindex-line-color: #50E3C2;
+@import '../../../../../../scss/theme/variables';
+
+.subindex-line-chart {
+  position: relative;
+  width: get-rem(230px);
+  .subindex-line-chart__line {
+    width: 100%;
+    height: get-rem(14px);
+    overflow: hidden;
+    border-radius: get-rem(2px);
+    background-color: $bluetab-light-gray;
+    .subindex-line-chart__filled {
+      height: 100%;
+      background-color: $subindex-line-color;
+    }
+  }
+  .subindex-line-chart__droplet {
+    position: absolute;
+    bottom: 100%;
+    width: get-rem(38px);
+    height: get-rem(46px);
+    transform: translateX(-50%);
+    path {
+      fill: $subindex-line-color;
+    }
+  }
+  .subindex-line-chart__labels {
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    display: flex;
+    font-size: get-rem(10px);
+    color: $bluetab-light-gray-2;
+  }
+}

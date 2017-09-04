@@ -20,6 +20,7 @@ export default class MainRadarChart extends PureComponent {
 
     this.renderAxis = this.renderAxis.bind(this);
     this.renderPolygon = this.renderPolygon.bind(this);
+    this.renderLabels = this.renderLabels.bind(this);
   }
   renderAxis() {
     const verticalAxisDetails = [];
@@ -65,7 +66,6 @@ export default class MainRadarChart extends PureComponent {
       return point + 50;
     });
     const pointsString = `50, ${ normPoints[0] } ${ normPoints[1] },50 50,${ normPoints[2] } ${ normPoints[3] },50`;
-    console.log(pointsString);
     return (
       <g className={ name }>
         <polygon strokeWidth='1' fillOpacity='0.5' fill={ `url(#${ name }-background)` } points={ '50,50 50,50 50,50 50,50' }>
@@ -78,31 +78,56 @@ export default class MainRadarChart extends PureComponent {
       </g>
     );
   }
+  renderLabels(indexNames) {
+    return (
+      <div className='main-graph-chart__labels'>
+        <div className='main-graph-chart__label main-graph-chart__label--top'>{ indexNames[0] }</div>
+        <div className='main-graph-chart__label main-graph-chart__label--right'>{ indexNames[1] }</div>
+        <div className='main-graph-chart__label main-graph-chart__label--bottom'>{ indexNames[2] }</div>
+        <div className='main-graph-chart__label main-graph-chart__label--left'>{ indexNames[3] }</div>
+      </div>
+    );
+  }
   render() {
     const { data } = this.props;
     const currentPoints = [];
     const targetPoints = [];
+    const indexNames = [];
     for (let i = 0, l = data ? data.length : 0; i < l; i++) {
       currentPoints.push({ value: data[i].value, max: 15 });
       targetPoints.push({ value: data[i].target, max: 15 });
+      indexNames.push(data[i].label);
     }
     return (
       <div className='main-graph-chart'>
-        <svg className='main-graph-chart__svg' viewBox='0 0 100 100' style={ { backgroundColor: 'white' } }>
-          <defs>
-            <linearGradient x1='50%' y1='0%' x2='50%' y2='100%' id='current-background'>
-              <stop stopColor='#EF3535' offset='0%' />
-              <stop stopColor='#F27A7A' offset='100%' />
-            </linearGradient>
-            <linearGradient x1='50%' y1='0%' x2='50%' y2='100%' id='target-background'>
-              <stop stopColor='#FAD961' offset='0%' />
-              <stop stopColor='#F76B1C' offset='100%' />
-            </linearGradient>
-          </defs>
-          { this.renderAxis() }
-          { this.renderPolygon(targetPoints, 'target') }
-          { this.renderPolygon(currentPoints, 'current', 300) }
-        </svg>
+        <div className='main-graph-chart__svg-wrapper'>
+          { this.renderLabels(indexNames) }
+          <div className='main-graph-chart__legend-wrapper'>
+            <div className='main-graph-chart__legend'>
+              <i className='main-graph-chart__legend-icon main-graph-chart__legend-icon--target' />
+              Target
+            </div>
+            <div className='main-graph-chart__legend'>
+              <i className='main-graph-chart__legend-icon main-graph-chart__legend-icon--current' />
+              Current
+            </div>
+          </div>
+          <svg className='main-graph-chart__svg' viewBox='0 0 100 100' style={ { backgroundColor: 'white' } }>
+            <defs>
+              <linearGradient x1='50%' y1='0%' x2='50%' y2='100%' id='current-background'>
+                <stop stopColor='#EF3535' offset='0%' />
+                <stop stopColor='#F27A7A' offset='100%' />
+              </linearGradient>
+              <linearGradient x1='50%' y1='0%' x2='50%' y2='100%' id='target-background'>
+                <stop stopColor='#FAD961' offset='0%' />
+                <stop stopColor='#F76B1C' offset='100%' />
+              </linearGradient>
+            </defs>
+            { this.renderAxis() }
+            { this.renderPolygon(targetPoints, 'target') }
+            { this.renderPolygon(currentPoints, 'current', 300) }
+          </svg>
+        </div>
       </div>
     );
   }

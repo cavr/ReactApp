@@ -1,25 +1,78 @@
 @import '../../../../scss/theme/variables';
 
 .main-graph-chart {
+  position: relative;
   display: flex;
   justify-content: flex-end;
-  .main-graph-chart__svg {
+  padding: get-rem(27px) get-rem(88px) get-rem(65px) get-rem(88px);
+  .main-graph-chart__svg-wrapper {
+    position: relative;
     width: get-rem(224px);
     height: get-rem(224px);
-    .current {
-      circle {
-        fill: $bluetab-red;
+    .main-graph-chart__label {
+      font-size: get-rem(12px);
+      color: $bluetab-gray-2;
+      text-align: center;
+      text-transform: capitalize;
+      &.main-graph-chart__label--top {
+        @include horizontal-center;
+        bottom: calc(100% + #{ get-rem(10px) });
       }
-      polygon {
-        stroke: $bluetab-red;
+      &.main-graph-chart__label--right {
+        @include vertical-center;
+        left: calc(100% + #{ get-rem(10px) });
+      }
+      &.main-graph-chart__label--left {
+        @include vertical-center;
+        right: calc(100% + #{ get-rem(10px) });
+      }
+      &.main-graph-chart__label--bottom {
+        @include horizontal-center;
+        top: calc(100% + #{ get-rem(10px) });
       }
     }
-    .target {
-      circle {
-        fill: #F5A623;
+    .main-graph-chart__svg {
+      width: 100%;
+      height: 100%;
+      .current {
+        circle {
+          fill: $bluetab-red;
+        }
+        polygon {
+          stroke: $bluetab-red;
+        }
       }
-      polygon {
-        stroke: #F5A623;
+      .target {
+        circle {
+          fill: #F5A623;
+        }
+        polygon {
+          stroke: #F5A623;
+        }
+      }
+    }
+  }
+  .main-graph-chart__legend-wrapper {
+    @include horizontal-center;
+    bottom: get-rem(-65px);
+    display: flex;
+    .main-graph-chart__legend {
+      display: inline-flex;
+      align-items: center;
+      color: $bluetab-gray-2;
+      font-size: get-rem(11px);
+      margin: 0 get-rem(15px);
+      .main-graph-chart__legend-icon {
+        width: get-rem(10px);
+        height: get-rem(10px);
+        border-radius: get-rem(7px);
+        margin-right: get-rem(6px);
+        &.main-graph-chart__legend-icon--target {
+          background-color: $bluetab-orange;
+        }
+        &.main-graph-chart__legend-icon--current {
+          background-color: $bluetab-red;
+        }
       }
     }
   }
