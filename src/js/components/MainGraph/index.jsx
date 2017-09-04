@@ -52,7 +52,7 @@ export class MainGraph extends PureComponent {
                   onChange={ (option) => setSelectedIndex(option.value, option.label) }
                 />
                 <Button title={ 'Subindices' } selected={ currentStep > 2 } onClick={ () => (currentStep === 2 ? setStep(3) : setStep(2)) } />
-                <Button title={ 'Evolucion' } light={ true } selected={ showingEvolution } onClick={ () => (!evolutionData ? setEvolutionData(selected.value) : clearEvolutionData()) } />
+                <Button title={ 'Evolucion' } icon={ 'graph' } light={ true } selected={ showingEvolution } onClick={ () => (!evolutionData ? setEvolutionData(selected.value) : clearEvolutionData()) } />
               </div>
               <MainRadarChart data={ data } />
             </div>
@@ -72,7 +72,7 @@ export class MainGraph extends PureComponent {
               <div className='main-graph__details-wrapper'>
                 {
                   loadingEvolution ? <Loading small={ true } /> :
-                  <Evolution label={ evolutionData.label } variation={ evolutionData.variation } points={ evolutionData.points } />
+                  <Evolution label={ evolutionData.label } variation={ evolutionData.variation } points={ evolutionData.points } maxValue={ 10 } />
                 }
               </div>
             }

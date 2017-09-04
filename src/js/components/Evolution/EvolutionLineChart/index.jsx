@@ -42,7 +42,7 @@ export default class EvolutionLineChart extends PureComponent {
     const { points } = this.props;
     return (
       <div className='evolution-line-chart'>
-        <svg viewBox={ `0 0 ${ this.width } ${ this.height }` } preserveAspectRatio='none'>
+        <svg className='evolution-line-chart__svg' viewBox={ `0 0 ${ this.width } ${ this.height }` } preserveAspectRatio='none'>
           <defs>
             <linearGradient x1='25%' y1='75%' x2='75%' y2='75%' id='evolution-gradient'>
               <stop stopColor='#F2745F' offset='0%' />

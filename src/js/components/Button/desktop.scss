@@ -18,6 +18,11 @@ html.desktop .bluetab-button {
   outline: none;
 
   cursor: pointer;
+  .bluetab-button__icon {
+    width: get-rem(23px);
+    height: get-rem(14px);
+    background-position: left;
+  }
   &.bluetab-button--selected {
     color: white;
     background-color: $bluetab-light-red;

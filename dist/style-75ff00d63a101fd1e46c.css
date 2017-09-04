@@ -58,6 +58,17 @@ html.desktop .bluetab-sns-sidenav {
     margin: 0 auto;
     margin-top: 2.2rem;
     margin-bottom: 4.2rem; }
+  html.desktop .bluetab-sns-sidenav .bluetab-sns-sidenav__powered {
+    width: 100%;
+    padding-right: 0.7rem;
+    position: absolute;
+    left: 50%;
+    -ms-transform: translateX(-50%);
+        transform: translateX(-50%);
+    bottom: 2.7rem;
+    font-size: 1.2rem;
+    text-align: center;
+    color: white; }
   html.desktop .bluetab-sns-sidenav .bluetab-sns-sidenav__nav-button {
     display: -ms-flexbox;
     display: flex;
@@ -310,7 +321,8 @@ html.desktop section {
 html.desktop .section--static .section-title {
   border-bottom: 0.1rem solid #BFC6CE; }
   html.desktop .section--static .section-title .section-title__text {
-    color: #5A6574; }
+    color: #5A6574;
+    margin-top: 0.5rem; }
   html.desktop .section--static .section-title .section-title__background {
     height: 1rem; }
 
@@ -335,7 +347,7 @@ html.desktop .bluetab-selector {
         height: 100%; }
         html.desktop .bluetab-selector .bluetab-selector__select .Select-control .Select-multi-value-wrapper .Select-value,
         html.desktop .bluetab-selector .bluetab-selector__select .Select-control .Select-multi-value-wrapper .Select-input {
-          padding-left: 2rem; }
+          padding-left: 1.4rem; }
         html.desktop .bluetab-selector .bluetab-selector__select .Select-control .Select-multi-value-wrapper .Select-value .Select-value-label,
         html.desktop .bluetab-selector .bluetab-selector__select .Select-control .Select-multi-value-wrapper .Select-input {
           height: 100%;
@@ -358,6 +370,14 @@ html.desktop .bluetab-selector {
         padding: 0 !important;
         background: rgba(218, 224, 228, 0.3);
         border-left: 0.1rem solid #F1EFEF; }
+    html.desktop .bluetab-selector .bluetab-selector__select .Select-menu-outer {
+      border: 0.1rem solid #BFC6CE; }
+      html.desktop .bluetab-selector .bluetab-selector__select .Select-menu-outer .Select-option.is-selected {
+        background-color: white; }
+      html.desktop .bluetab-selector .bluetab-selector__select .Select-menu-outer .Select-option.is-focused {
+        background-color: #F83838;
+        color: white;
+        z-index: 99; }
 
 html.desktop .bluetab-selector--inline {
   display: -ms-flexbox;
@@ -394,6 +414,10 @@ html.desktop .bluetab-button {
   border-radius: 0.3rem;
   outline: none;
   cursor: pointer; }
+  html.desktop .bluetab-button .bluetab-button__icon {
+    width: 2.3rem;
+    height: 1.4rem;
+    background-position: left; }
   html.desktop .bluetab-button.bluetab-button--selected {
     color: white;
     background-color: #E8877E;
@@ -454,14 +478,10 @@ html.desktop .selection .selection__wrapper {
     margin-bottom: 1.2rem;
     line-height: 2.6rem;
     padding: 0 1.8rem;
-    border: 0.2rem solid #F83838;
+    border: 0.2rem solid #4A4A4A;
+    color: #5A6574;
     background-color: white;
     text-align: center; }
-  html.desktop .selection .selection__wrapper .selection__button {
-    cursor: pointer; }
-    html.desktop .selection .selection__wrapper .selection__button:hover {
-      background-color: #F83838;
-      color: white; }
   html.desktop .selection .selection__wrapper .selection__change-selection {
     width: 3.2rem;
     height: 2rem;
@@ -483,6 +503,15 @@ html.desktop .selection .selection__wrapper {
     -ms-transform: translateX(100%);
         transform: translateX(100%);
     transition: transform 300ms ease-in; }
+.evolution-line-chart {
+  width: 29rem;
+  height: 6.5rem; }
+  .evolution-line-chart .evolution-line-chart__svg {
+    width: 100%;
+    height: 100%; }
+  .evolution-line-chart path {
+    stroke: #F83838;
+    stroke-width: 2; }
 html.desktop .evolution {
   display: -ms-flexbox;
   display: flex;
@@ -531,56 +560,175 @@ html.desktop .evolution {
       text-align: center;
       font-size: 1rem; }
 .main-graph-chart {
+  position: relative;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: end;
-      justify-content: flex-end; }
-  .main-graph-chart .main-graph-chart__svg {
+      justify-content: flex-end;
+  padding: 2.7rem 8.8rem 6.5rem 8.8rem; }
+  .main-graph-chart .main-graph-chart__svg-wrapper {
+    position: relative;
     width: 22.4rem;
     height: 22.4rem; }
-    .main-graph-chart .main-graph-chart__svg .current circle {
-      fill: #F83838; }
-    .main-graph-chart .main-graph-chart__svg .current polygon {
-      stroke: #F83838; }
-    .main-graph-chart .main-graph-chart__svg .target circle {
-      fill: #F5A623; }
-    .main-graph-chart .main-graph-chart__svg .target polygon {
-      stroke: #F5A623; }
+    .main-graph-chart .main-graph-chart__svg-wrapper .main-graph-chart__label {
+      font-size: 1.2rem;
+      color: #5A6574;
+      text-align: center;
+      text-transform: capitalize; }
+      .main-graph-chart .main-graph-chart__svg-wrapper .main-graph-chart__label.main-graph-chart__label--top {
+        position: absolute;
+        left: 50%;
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+        bottom: calc(100% + 1rem); }
+      .main-graph-chart .main-graph-chart__svg-wrapper .main-graph-chart__label.main-graph-chart__label--right {
+        position: absolute;
+        top: 50%;
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+        left: calc(100% + 1rem); }
+      .main-graph-chart .main-graph-chart__svg-wrapper .main-graph-chart__label.main-graph-chart__label--left {
+        position: absolute;
+        top: 50%;
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+        right: calc(100% + 1rem); }
+      .main-graph-chart .main-graph-chart__svg-wrapper .main-graph-chart__label.main-graph-chart__label--bottom {
+        position: absolute;
+        left: 50%;
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+        top: calc(100% + 1rem); }
+    .main-graph-chart .main-graph-chart__svg-wrapper .main-graph-chart__svg {
+      width: 100%;
+      height: 100%; }
+      .main-graph-chart .main-graph-chart__svg-wrapper .main-graph-chart__svg .current circle {
+        fill: #F83838; }
+      .main-graph-chart .main-graph-chart__svg-wrapper .main-graph-chart__svg .current polygon {
+        stroke: #F83838; }
+      .main-graph-chart .main-graph-chart__svg-wrapper .main-graph-chart__svg .target circle {
+        fill: #F5A623; }
+      .main-graph-chart .main-graph-chart__svg-wrapper .main-graph-chart__svg .target polygon {
+        stroke: #F5A623; }
+  .main-graph-chart .main-graph-chart__legend-wrapper {
+    position: absolute;
+    left: 50%;
+    -ms-transform: translateX(-50%);
+        transform: translateX(-50%);
+    bottom: -6.5rem;
+    display: -ms-flexbox;
+    display: flex; }
+    .main-graph-chart .main-graph-chart__legend-wrapper .main-graph-chart__legend {
+      display: -ms-inline-flexbox;
+      display: inline-flex;
+      -ms-flex-align: center;
+          align-items: center;
+      color: #5A6574;
+      font-size: 1.1rem;
+      margin: 0 1.5rem; }
+      .main-graph-chart .main-graph-chart__legend-wrapper .main-graph-chart__legend .main-graph-chart__legend-icon {
+        width: 1rem;
+        height: 1rem;
+        border-radius: 0.7rem;
+        margin-right: 0.6rem; }
+        .main-graph-chart .main-graph-chart__legend-wrapper .main-graph-chart__legend .main-graph-chart__legend-icon.main-graph-chart__legend-icon--target {
+          background-color: #D27B32; }
+        .main-graph-chart .main-graph-chart__legend-wrapper .main-graph-chart__legend .main-graph-chart__legend-icon.main-graph-chart__legend-icon--current {
+          background-color: #F83838; }
 html.desktop .main-graph {
   width: 72rem;
   margin: 3rem auto; }
-  html.desktop .main-graph .main-graph__content {
-    padding: 0 2rem; }
-    html.desktop .main-graph .main-graph__content .main-graph__graph-wrapper {
-      position: relative;
-      margin-top: 7rem;
-      height: 30rem; }
-      html.desktop .main-graph .main-graph__content .main-graph__graph-wrapper .main-graph__graph-controls {
-        position: absolute;
-        top: 0;
-        left: 2rem;
-        z-index: 2; }
-        html.desktop .main-graph .main-graph__content .main-graph__graph-wrapper .main-graph__graph-controls .bluetab-button {
-          width: 100%;
-          height: 3.7rem;
-          margin-bottom: 0.9rem; }
-    html.desktop .main-graph .main-graph__content .main-graph__separator {
-      margin: 3.5rem 0; }
-    html.desktop .main-graph .main-graph__content .main-graph__benchmarking {
-      display: -ms-flexbox;
-      display: flex;
-      -ms-flex-pack: center;
-          justify-content: center;
-      -ms-flex-align: center;
-          align-items: center; }
-      html.desktop .main-graph .main-graph__content .main-graph__benchmarking .bluetab-subtitle--centered {
-        margin-right: 1rem; }
-      html.desktop .main-graph .main-graph__content .main-graph__benchmarking .bluetab-button {
-        margin: 0 0.5rem; }
+  html.desktop .main-graph .main-graph__content .main-graph__graph-wrapper {
+    position: relative;
+    margin-top: 7rem; }
+    html.desktop .main-graph .main-graph__content .main-graph__graph-wrapper .main-graph__graph-controls {
+      position: absolute;
+      top: 0;
+      left: 2rem;
+      z-index: 2; }
+      html.desktop .main-graph .main-graph__content .main-graph__graph-wrapper .main-graph__graph-controls .Select-control {
+        height: 2.8rem; }
+      html.desktop .main-graph .main-graph__content .main-graph__graph-wrapper .main-graph__graph-controls .bluetab-button {
+        width: 100%;
+        height: 3.7rem;
+        margin-bottom: 0.9rem; }
+  html.desktop .main-graph .main-graph__content .main-graph__separator {
+    margin: 3.5rem 0; }
+  html.desktop .main-graph .main-graph__content .main-graph__benchmarking {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+        justify-content: center;
+    -ms-flex-align: center;
+        align-items: center; }
+    html.desktop .main-graph .main-graph__content .main-graph__benchmarking .bluetab-subtitle--centered {
+      margin-right: 1rem; }
+    html.desktop .main-graph .main-graph__content .main-graph__benchmarking .bluetab-button {
+      margin: 0 0.5rem; }
   html.desktop .main-graph .main-graph__details {
     margin: 0; }
     html.desktop .main-graph .main-graph__details .main-graph__details-wrapper {
       padding: 2.5rem 3rem; }
+.subindex-line-chart {
+  position: relative;
+  width: 23rem; }
+  .subindex-line-chart .subindex-line-chart__line {
+    width: 100%;
+    height: 1.4rem;
+    overflow: hidden;
+    border-radius: 0.2rem;
+    background-color: #F1EFEF; }
+    .subindex-line-chart .subindex-line-chart__line .subindex-line-chart__filled {
+      height: 100%;
+      background-color: #50E3C2; }
+  .subindex-line-chart .subindex-line-chart__droplet {
+    position: absolute;
+    bottom: 100%;
+    width: 3.8rem;
+    height: 4.6rem;
+    -ms-transform: translateX(-50%);
+        transform: translateX(-50%); }
+    .subindex-line-chart .subindex-line-chart__droplet path {
+      fill: #50E3C2; }
+  .subindex-line-chart .subindex-line-chart__labels {
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 1rem;
+    color: #BFC6CE; }
+.subindex-heat-chart {
+  position: relative;
+  width: 23rem; }
+  .subindex-heat-chart .subindex-heat-chart__line {
+    width: 100%;
+    height: 1.4rem;
+    overflow: hidden;
+    border-radius: 0.2rem; }
+  .subindex-heat-chart .subindex-heat-chart__droplet {
+    position: absolute;
+    bottom: 100%;
+    -ms-transform: translateX(-50%);
+        transform: translateX(-50%); }
+    .subindex-heat-chart .subindex-heat-chart__droplet.subindex-heat-chart__droplet--current {
+      width: 3.8rem;
+      height: 4.6rem; }
+      .subindex-heat-chart .subindex-heat-chart__droplet.subindex-heat-chart__droplet--current path {
+        fill: #5A6574; }
+    .subindex-heat-chart .subindex-heat-chart__droplet.subindex-heat-chart__droplet--target {
+      width: 2.9rem;
+      height: 3.6rem; }
+      .subindex-heat-chart .subindex-heat-chart__droplet.subindex-heat-chart__droplet--target path {
+        fill: #7ED321; }
+  .subindex-heat-chart .subindex-heat-chart__labels {
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 1rem;
+    color: #BFC6CE; }
 html.desktop .subindex {
   display: -ms-flexbox;
   display: flex;
@@ -1246,12 +1394,16 @@ h1, p {
   background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNSAxOCIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPgogIDxkZWZzPgogICAgPHBhdGggaWQ9ImEiIGQ9Ik0xNS41IDIzLjhjLjk3IDAgMS43Ni0uOCAxLjc2LTEuNzVoLTMuNTJjMCAuOTYuOCAxLjc2IDEuNzYgMS43NnptNS43Mi01LjI4di00Ljg0YzAtMi43My0xLjg0LTQuOTMtNC40LTUuNTVWNy41YzAtLjctLjYyLTEuMy0xLjMyLTEuMy0uNyAwLTEuMzIuNi0xLjMyIDEuM3YuNjNjLTIuNTYuNjItNC40IDIuODItNC40IDUuNTV2NC44NEw4IDIwLjI4di45aDE1di0uOWwtMS43OC0xLjc2em0tMS43Ni44OGgtNy45MnYtNS43MmMwLTIuMiAxLjc2LTMuOTYgMy45Ni0zLjk2czMuOTYgMS43NiAzLjk2IDMuOTZ2NS43MnoiLz4KICA8L2RlZnM+CiAgPHVzZSBmaWxsPSIjRjgzODM4IiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIHhsaW5rOmhyZWY9IiNhIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtOCAtNikiLz4KPC9zdmc+) center no-repeat;
   background-size: contain; }
 
+.icon.icon__graph {
+  background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMS40NSAyMS40NSI+DQogIDxwYXRoIGZpbGw9IiNGRkYiIGQ9Ik0xLjY1IDE5LjhoMTguOThjLjQ1IDAgLjgyLjM3LjgyLjgycy0uMzcuODMtLjgyLjgzSC44M2MtLjI0IDAtLjQ1LS4xLS42LS4yNC0uMTUtLjEtLjI0LS4zLS4yNC0uNVYuOEMwIC4zNi4zIDAgLjggMHMuODMuMzcuODMuODJWMTkuOHptOS40Ni01LjQzbC0yLjUtNC4xNC0zLjcgNi40NWMtLjIuNC0uNy41NC0xLjEuMy0uNC0uMi0uNS0uNzItLjMtMS4xTDcuOCA4LjJjLjMyLS41MyAxLjEtLjU1IDEuNDMtLjAybDIuNDMgMy45MyAzLjgtOS40Yy4yNy0uNiAxLjIzLS42IDEuNTIgMGwzLjM4IDcuN2MuMTguNCAwIC45LS40MyAxLjEtLjQuMi0uOSAwLTEuMDgtLjRsLTIuNi01LjktMy42NyA5LjFjLS4yNi42Ni0xLjEuNy0xLjQ3LjE2eiIvPg0KPC9zdmc+DQoNCg==) center no-repeat;
+  background-size: contain; }
+
 .icon.icon__avatar {
   background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyOCAyOSI+CiAgPGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2U9IiNGRkYiIHN0cm9rZS13aWR0aD0iMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMSAxLjE3OCkiPgogICAgPHBhdGggZD0iTTQgMjIuNzdjMi4wNi00LjA4IDUtNi4xMiA4Ljc4LTYuMTIgMy43OCAwIDYuNzQgMS44MiA4Ljg2IDUuNDYiLz4KICAgIDxjaXJjbGUgY3g9IjEzIiBjeT0iMTAiIHI9IjUiLz4KICAgIDxjaXJjbGUgY3g9IjEzIiBjeT0iMTMiIHI9IjEzIi8+CiAgPC9nPgo8L3N2Zz4=) center no-repeat;
   background-size: contain; }
 
 .icon.icon__MIS {
-  background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMiAyMiIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPgogIDx0aXRsZT4KICAgIGljb24vTUlTCiAgPC90aXRsZT4KICA8ZGVmcz4KICAgIDxwYXRoIGlkPSJhIiBkPSJNMTQuMDQgMTMuMmMtLjkuMy0xLjU2IDEuMTQtMS41NyAyLjE1LS4wMyAxLjI2Ljk1IDIuMyAyLjE3IDIuMzIuNzUgMCAxLjQtLjM1IDEuODItLjkzbC4wMy4wNCA0LjktNi44Mi03LjQgMy4ydi4wNXoiLz4KICAgIDxwYXRoIGlkPSJjIiBkPSJNMjMuNSAyMS41NGMtLjU3Ljg0LTEuMjYgMS42LTIuMDUgMi4yM2wtMS4zMy0xLjdjLjYzLS42IDEuMTctMS4zIDEuNi0yLjA2bDEuOCAxLjZ6bTEuNTItMy4yM2MuMjUtLjkuMzgtMS44LjM4LTIuOCAwLTEuOC0uNDUtMy41LTEuMjUtNUwyMi4yMiAxM2MuMzYuOS41NSAxLjk0LjU1IDMgMCAuNjYtLjA3IDEuMy0uMiAxLjlsMi40NS41MnptLTYuMDQgN2MtLjg0LjQtMS43NC42LTIuNjguN2wtLjEzLTEuOGgtLjEyYy44My0uMSAxLjYyLS40IDIuMzQtLjhsLjUgMnptLTUuMzMuN2MtLjg3LS4xLTEuNy0uMy0yLjQ4LS43bC41Mi0xLjVjLjcuMyAxLjQuNSAyLjMuNTdsLS40IDEuN3pNOC43IDIzLjhjLS40NS0uMzctLjg3LS43OC0xLjI2LTEuMmwxLTEuM2MuMzUuNDUuNzYuODYgMS4yIDEuMmwtLjk0IDEuM3ptLTMuNDUtNS4yYy0uMjgtLjk4LS40NC0yLS40NC0zLjA4IDAtNS44NiA0LjctMTAuNiAxMC4zLTEwLjYgMi43IDAgNS4xIDEuMDMgNi45IDIuNzNsLTMuMSAxLjFjLTEuMy0uNzUtMi43LTEuMTctNC4yLTEuMTctNC41IDAtOC4xIDMuNzMtOC4xIDguMzMgMCAuOC4xIDEuNi4zIDIuM2wtMS42LjN6Ii8+CiAgPC9kZWZzPgogIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTQgLTQpIj4KICAgIDxtYXNrIGlkPSJiIiBmaWxsPSIjZmZmIj4KICAgICAgPHVzZSB4bGluazpocmVmPSIjYSIvPgogICAgPC9tYXNrPgogICAgPHVzZSBmaWxsPSIjRkZGIiBzdHJva2U9IiNGRkYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgeGxpbms6aHJlZj0iI2EiLz4KICAgIDxwYXRoIGZpbGw9IiNGRkYiIGQ9Ik0wIDBoMjh2MjguMTdIMHoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEgMSkiIG1hc2s9InVybCgjYikiLz4KICAgIDxtYXNrIGlkPSJkIiBmaWxsPSIjZmZmIj4KICAgICAgPHVzZSB4bGluazpocmVmPSIjYyIvPgogICAgPC9tYXNrPgogICAgPHVzZSBmaWxsPSIjRkZGIiB4bGluazpocmVmPSIjYyIvPgogICAgPHBhdGggZmlsbD0iI0ZGRiIgZD0iTTAgMGgyOHYyOC4xN0gweiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMSAxKSIgbWFzaz0idXJsKCNkKSIvPgogIDwvZz4KPC9zdmc+) center no-repeat;
+  background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMC41OSAyMS4wOSI+DQogIDxwYXRoIGZpbGw9IiNGRkYiIGQ9Ik05LjIyIDguMzVjLS45LjI4LTEuNTUgMS4xMy0xLjU3IDIuMTQtLjAyIDEuMjMuOTUgMi4zIDIuMTggMi4zLjc0IDAgMS40LS4zNiAxLjgyLS45aC4wMmw0LjkzLTYuOC03LjQgMy4yLjAyLjA0eiIvPg0KICA8cGF0aCBmaWxsPSIjRkZGIiBkPSJNMTguNyAxNi42OGMtLjU4Ljg1LTEuMjggMS42LTIuMDcgMi4yM2wtMS4zMi0xLjdjLjY2LS42IDEuMi0xLjI2IDEuNi0yLjAzbDEuOCAxLjUzem0xLjUtMy4yM2MuMjUtLjkuNC0xLjg4LjQtMi44Ny0uMDItMS44My0uNDctMy41NS0xLjI3LTUuMDZsLTEuOTIgMi41Yy4zOC45My41OCAxLjk1LjU4IDMuMDIgMCAuNjUtLjA4IDEuMjgtLjIgMS45bDIuNDQuNXptLTYuMDQgNi45M2MtLjg0LjM2LTEuNzMuNi0yLjY3LjdsLS4xNi0xLjgzaC0uMTNjLjg0LS4xNSAxLjYzLS40MiAyLjM2LS44bC41OCAxLjkzem0tNS4zMy42N2MtLjg2LS4xMi0xLjctLjM2LTIuNDctLjdsLjUyLTEuNTVjLjcyLjMgMS41LjQ4IDIuMy41NGwtLjM1IDEuN3ptLTQuOTUtMi4yYy0uNDUtLjM2LS44Ny0uNzctMS4yNS0xLjJsMS0xLjI4Yy4zNS40NS43Ni44NiAxLjIgMS4yMmwtLjk1IDEuMjR6bS0zLjQ0LTUuMmMtLjMtLjk3LS40NC0yLS40NC0zLjA3QzAgNC43NCA0LjYgMCAxMC4zIDBjMi42NSAwIDUuMDcgMS4wMyA2LjkgMi43M0wxNCAzLjg4Yy0xLjItLjc1LTIuNjMtMS4xOC00LjE1LTEuMTgtNC40OCAwLTguMSAzLjczLTguMSA4LjM0IDAgLjguMSAxLjU3LjMgMi4zbC0xLjYuM3oiLz4NCjwvc3ZnPg0K) center no-repeat;
   background-size: contain; }
 
 .icon.icon__RO {
@@ -1259,7 +1411,7 @@ h1, p {
   background-size: contain; }
 
 .icon.icon__change {
-  background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxOSAyMCIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPgogIDxkZWZzPgogICAgPHBhdGggaWQ9ImEiIGQ9Ik0zLjY4IDE1LjZIMFY0LjQ2aC4wMkwwIDQuMUMwIDEuODIgMS44MyAwIDQuMSAwaDhjMi4yNiAwIDQuMSAxLjgzIDQuMSA0LjEgMCAyLjI0LTEuODQgNC4wNy00LjEgNC4wN0g0LjQzdjUuOTVoLTEuNXYxLjQ4aC43NXptNy4zNi05LjY2YzEuMjIgMCAyLjItMSAyLjItMi4yMyAwLTEuMi0uOTgtMi4yLTIuMi0yLjItMS4yMiAwLTIuMiAxLTIuMiAyLjIgMCAxLjI3Ljk4IDIuMjYgMi4yIDIuMjZ6Ii8+CiAgICA8cGF0aCBpZD0iYiIgZD0iTS0xIDE3LjVjLjcyLjAyLjk4LjIzLjk4LjczIDAgMS4xMi43NSAxLjY4IDEuOTcgMS41NyAxLjE3IDAgMS45LS41NiAxLjktMS41NyAwLS4zOC4xNi0uNS43Ni0uNDUuNi4wMy44LjE3LjguNDUgMCAuOTguNiAxLjM1IDEuNiAxLjM4bC4zNi4wNGMuOSAwIDEuODgtLjY1IDEuODMtMS40MiAwLS4yNi4wNC0uMzIuNS0uMjcuMzMuMDUuNTUuMTIuNjUuMi4wNC4wMi4wNC4wNC4wNS4xdi4wN2MwIC4yNC4wMi4zNS4wNy41Mi4yLjczLjgyIDEuMTIgMS44Ni45OCAxLjI0LS4xNiAxLjkyLS43IDEuNjItMS42LS4wNS0uMiAwLS4yMi42OC0uMTNsLjEyLTFjLTEuMjgtLjE3LTIuMDUuMzItMS43NSAxLjQuMDMuMTQtLjEuMjQtLjguMzMtLjU3LjEtLjcyIDAtLjc4LS4yMy0uMDItLjA4LS4wMy0uMTUtLjA0LS4zM3YtLjEzYy0uMDgtLjY1LS41OC0xLjAyLTEuNi0xLjE2LTEuMS0uMTUtMS42Ni40Ny0xLjYgMS4zMyAwIC4wNy0uNDQuMzctLjg0LjM3aC0uM2MtLjUzLS4wMy0uNjYtLjEtLjY2LS40IDAtLjg4LS42NC0xLjM4LTEuNy0xLjQzLTEuMTMtLjEtMS44NC40LTEuODQgMS40MyAwIC40LS4yMy41Ni0uOTQuNTctLjcyLjA3LS45Mi0uMS0uOTItLjU3IDAtMS4xLS43My0xLjctMS45Ny0xLjczdjF6Ii8+CiAgPC9kZWZzPgogIDxnIGZpbGw9IiNGRkYiIGZpbGwtcnVsZT0iZXZlbm9kZCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMikiPgogICAgPHVzZSB4bGluazpocmVmPSIjYSIvPgogICAgPHVzZSBmaWxsLXJ1bGU9Im5vbnplcm8iIHhsaW5rOmhyZWY9IiNiIi8+CiAgPC9nPgo8L3N2Zz4=) center no-repeat;
+  background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMi4zNyAxOS41Ij4NCiAgPHBhdGggZmlsbD0iI0ZGRiIgZD0iTTEuMDUgMi45MmwuMTQgOS44NyA5LjQgNS4yVjcuN0wxIDIuOXptLS4zLTEuMjdMMTEuNCA2Ljk3Yy4xNi4wOC4yNy4yNi4yNy40NXYxMS40MmMwIC4zOC0uNC42Mi0uNzQuNDRMLjQ1IDEzLjUyQy4zIDEzLjQ0LjIgMTMuMjcuMiAxMy4xbC0uMTYtMTFjMC0uMzcuNC0uNi43Mi0uNDV6Ii8+DQogIDxwYXRoIGZpbGw9IiNGRkYiIGQ9Ik0xNS41IDExLjc0aDUuODdWNi41SDE1LjV2NS4yNHptLS4yNC45OHYzLjEyYzAgLjI3LS4yMy41LS41LjVoLS4wNmwtMy4xNCAzLjAyYy0uMi4yLS41LjE4LS43IDAtLjItLjItLjItLjUzIDAtLjcybDMuMy0zLjE3Yy4wMi0uMDMuMDYtLjA2LjEtLjA4VjExTDExIDEyLjk0Yy0uMTMuMS0uMy4xLS40Ny4wMmwtNC40NS0yLjIzdjMuN2MwIC4yNy0uMjMuNS0uNS41LS4yOCAwLS41LS4yMy0uNS0uNXYtNC4yTDEuMTIgOC4yNUMuODggOC4xMy43OCA3LjgzLjkgNy41OGMuMTItLjI1LjQyLS4zNS42Ny0uMjJsMy41IDEuNzVWNWMwLS4yLjEyLS4zNy4zLS40Nkw4LjkgMi43OCA1IDEuMDQuNjggMi41OGMtLjI3LjEtLjU2LS4wNC0uNjUtLjNzLjA0LS41NC4zLS42NGw0LjUtMS42Yy4xMi0uMDUuMjUtLjA1LjM3IDBMOC40NyAxLjV2LTFjMC0uMjguMjItLjUuNS0uNWgxMi45Yy4yOCAwIC41LjIyLjUuNXYxMS43NGMwIC4yOC0uMjIuNS0uNS41aC02LjQ1Yy0uMDYgMC0uMSAwLS4xNi0uMDJ6bS01LjgtMTAuOGwuNjMuM2MuMi0uMDcuNC4wMy41LjIzbDMuOCAxLjdWMWgtNXYuOTN6TTE1LjUgMXY0LjVoNS44N1YxSDE1LjV6TTYuMDggOS42bDQuNjYgMi4zMyAzLjUyLTIuMDhWNS44M2wtMi41IDEuNTZjLS4yMi4xLS41MyAwLS42OC0uMi0uMTUtLjMtLjA4LS42LjE2LS43bDIuNTUtMS42LTMuNy0xLjctNC4xIDJ2NC4zeiIvPg0KPC9zdmc+) center no-repeat;
   background-size: contain; }
 
 .icon.icon__innovation {

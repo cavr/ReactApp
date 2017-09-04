@@ -9,10 +9,11 @@ export default class Evolution extends PureComponent {
     label: PropTypes.string,
     variation: PropTypes.number,
     points: PropTypes.array,
+    maxValue: PropTypes.number,
   };
 
   render() {
-    const { points, label, variation } = this.props;
+    const { points, label, variation, maxValue } = this.props;
     let variationClass = 'green';
     if (variation === 0) variationClass = 'yellow';
     else if (variation < 0) variationClass = 'red';
@@ -24,7 +25,7 @@ export default class Evolution extends PureComponent {
           <div className={ `evolution__variation-number evolution__variation-number--${ variationClass }` }>{ variation } %</div>
           <div className='evolution__variation-text'>variation</div>
         </div>
-        <EvolutionLineChart points={ points } maxValue={ 10 } />
+        <EvolutionLineChart points={ points } maxValue={ maxValue } />
       </div>
     );
   }
