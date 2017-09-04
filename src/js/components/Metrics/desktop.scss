@@ -1,18 +1,16 @@
 @import '../../../scss/theme/variables';
 
 $metrics-width: 450px;
-
-html.desktop .metrics {
-  padding: get-rem($section-padding) 0;
-  .metrics__wrapper {
-    width: get-rem($metrics-width);
-    margin: 0 auto;
-  }
-  .metrics__separator {
-    margin-top: get-rem(47px);
-    margin-bottom: get-rem(30px);
+$metrics-horizontal-padding: 90px;
+html.desktop .business-metrics {
+  .business-element-wrapper {
+    padding: get-rem(36px) get-rem($metrics-horizontal-padding) get-rem(72px) get-rem($metrics-horizontal-padding);
+    .business-element__selector {
+      margin-bottom: get-rem(42px);
+    }
   }
   .metrics__benchmarking {
+    padding: get-rem(16px) 0;
     display: flex;
     justify-content: center;
     align-items: center;

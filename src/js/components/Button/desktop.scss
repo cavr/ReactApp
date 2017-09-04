@@ -6,26 +6,40 @@ html.desktop .bluetab-button {
   justify-content: center;
   align-items: center;
   min-width: get-rem(173px);
-  height: get-rem(40px);
+  height: get-rem(37px);
+  padding: 0 get-rem(19px);
 
-  font-size: get-rem(14px);
+  font-size: get-rem(12px);
   color: white;
   
-  background-color: $bluetab-gray-2;
-  border: none;
+  background-color: $bluetab-red;
+  border: get-rem(2px) solid $bluetab-red;
   border-radius: get-rem(3px);
+  outline: none;
 
   cursor: pointer;
   &.bluetab-button--selected {
-    color: $bluetab-gray-2;
-    background-color: $bluetab-light-gray-2;
+    color: white;
+    background-color: $bluetab-light-red;
+    border-color: $bluetab-light-red;
+  }
+  &:hover {
+    border-color: $bluetab-red;
+    color: $bluetab-red;
+    background-color: white;
   }
 }
 
 html.desktop .bluetab-button--light {
-  height: get-rem(34px);
-  min-width: get-rem(122px);
+  min-width: auto;
+  height: get-rem(27px);
+  font-size: get-rem(12px);
   background-color: white;
   border: get-rem(2px) solid $bluetab-red;
-  color: $bluetab-gray-2;
+  border-radius: get-rem(50px);
+  color: $bluetab-red;
+  &:hover {
+    background-color: $bluetab-red;
+    color: white;
+  }
 }

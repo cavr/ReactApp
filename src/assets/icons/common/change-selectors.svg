@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="31px" height="18px" viewBox="0 0 31 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.1 (43504) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="PASOS/1/INACT" transform="translate(-622.000000, -92.000000)">
+            <g id="Group-2" transform="translate(621.000000, 92.000000)">
+                <g id="Group" transform="translate(21.545942, 9.545942) rotate(-315.000000) translate(-21.545942, -9.545942) translate(19.045942, -1.454058)" stroke="#000000">
+                    <path d="M0.5,17.8397675 L2.5,20.6397675 L4.5,17.8397675 L4.5,17.5 L0.5,17.5 L0.5,17.8397675 Z" id="Path-20"></path>
+                    <path d="M1,3 L4,3" id="Path-22"></path>
+                    <rect id="Rectangle-8" x="0.5" y="0.5" width="4" height="17"></rect>
+                </g>
+                <text id="…" font-family=".SFNSText-Regular, .SF NS Text" font-size="14" font-weight="normal" fill="#000000">
+                    <tspan x="0.462890625" y="17">…</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,4 +1,5 @@
 import MetricsServices from 'services/api/metrics';
+import { loadMainGraph } from 'actions/mis/mainGraph';
 
 import { setStep } from 'actions/app';
 import { SET_SELECTOR_VALUE } from 'actions/mis/selectors';
@@ -20,6 +21,7 @@ export function loadMetrics() {
 export function setSelectorValue(value, selector) {
   return (dispatch) => {
     dispatch({ type: SET_SELECTOR_VALUE, value, selector });
+    dispatch(loadMainGraph());
     dispatch(setStep(2));
   };
 }

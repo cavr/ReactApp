@@ -5,7 +5,26 @@ html.desktop .login {
   width: 100vw;
   height: 100vh;
   background-color: $bluetab-red;
+  .login__logo-wrapper {
+    display: flex;
+    @include horizontal-center;
+    top: get-rem(80px);
+    .login__logo {
+      display: inline-block;
+      width: get-rem(87px);
+      height: get-rem(29px);
+    }
+    .login__brand {
+      padding-top: get-rem(5px);
+      padding-left: get-rem(60px);
+      color: white;
+      text-align: center;
+      font-weight: 300;
+      font-size: get-rem(22px);
+    }
+  }
   .login__wrapper {
+    margin-top: get-rem(40px);
     width: get-rem(300px);
     @include centerer;
     display: flex;

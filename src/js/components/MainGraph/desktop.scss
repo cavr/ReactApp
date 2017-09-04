@@ -15,6 +15,8 @@ html.desktop .main-graph {
         left: get-rem(20px);
         z-index: 2;
         .bluetab-button {
+          width: 100%;
+          height: get-rem(37px);
           margin-bottom: get-rem(9px);
         }
       }

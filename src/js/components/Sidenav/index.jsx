@@ -34,6 +34,13 @@ export default class Sidenav extends PureComponent {
             <i className='bluetab-sns-sidenav__icon icon icon__MIS' />
             MIS
           </Link>
+          {
+            activeClass === 'bluetab-sns-sidenav--MIS-active' &&
+            <div className='bluetab-sns-sidenav__nav-button bluetab-sns-sidenav__parametrics'>
+              <i className='bluetab-sns-sidenav__icon icon icon__MIS' />
+              Parametrías
+            </div>
+          }
           <Link
             className='bluetab-sns-sidenav__nav-button bluetab-sns-sidenav__nav-button--RO'
             to={ routeCodes.RO }

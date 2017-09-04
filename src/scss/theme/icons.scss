@@ -1,7 +1,10 @@
 .icon {
   $list:
     'santander',
-    'network-logo', 
+    'network-logo',
+    'change-selectors',
+    'bell',
+    'bell--red',
     'avatar';
 
   @each $key in $list {

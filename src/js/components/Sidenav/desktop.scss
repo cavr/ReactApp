@@ -59,6 +59,11 @@ html.desktop .bluetab-sns-sidenav {
       border-color: $bluetab-light-green;
       background-color: $bluetab-green;
     }
+    .bluetab-sns-sidenav__parametrics {
+      background-color: $bluetab-dark;
+      border-color: $bluetab-dark;
+      font-size: get-rem(12px);
+    }
   }
 
   &.bluetab-sns-sidenav--RO-active {

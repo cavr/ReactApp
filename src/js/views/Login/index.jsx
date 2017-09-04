@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { login } from 'actions/app';
 
 import avatar from '../../../assets/img/common/avatar.svg';
+import logo from '../../../assets/img/common/logo--login.png';
 
 import './desktop.scss';
 
@@ -31,12 +32,15 @@ export class Login extends PureComponent {
     const testImage = 'https://lesliemcnulty.com/wp-content/uploads/2015/02/Kevin_Avatar_Circular.png';
     return (
       <div className='login'>
-        <div className='login__wrapper'>
+        <div className='login__logo-wrapper'>
+          <img className='login__logo' src={ logo } alt='Logo' />
           <div className='login__brand'>
             SNS | Santander Network
             <br />
             Services
           </div>
+        </div>
+        <div className='login__wrapper'>
           <div className='login__avatar'>
             <img className='login__avatar-image' src={ otherUser ? avatar : testImage } alt='avatar' />
             { !otherUser && <div className='login__name'>Jorge Glas</div> }

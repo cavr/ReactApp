@@ -2,8 +2,6 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import MetricState from './MetricState';
 
-import './desktop.scss';
-
 export default class BusinessElement extends PureComponent {
 
   static propTypes = {

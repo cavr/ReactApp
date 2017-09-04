@@ -1,0 +1,26 @@
+@import '../../../../scss/theme/variables';
+
+.main-graph-chart {
+  display: flex;
+  justify-content: flex-end;
+  .main-graph-chart__svg {
+    width: get-rem(224px);
+    height: get-rem(224px);
+    .current {
+      circle {
+        fill: $bluetab-red;
+      }
+      polygon {
+        stroke: $bluetab-red;
+      }
+    }
+    .target {
+      circle {
+        fill: #F5A623;
+      }
+      polygon {
+        stroke: #F5A623;
+      }
+    }
+  }
+}

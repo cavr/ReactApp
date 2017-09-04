@@ -29,6 +29,15 @@ html.desktop .selection {
         color: white;
       }
     }
+    .selection__change-selection {
+      width: get-rem(32px);
+      height: get-rem(20px);
+      border: none;
+      margin: 0 get-rem($selection-margin);
+      margin-bottom: get-rem($selection-margin);
+      outline: none;
+      cursor: pointer;
+    }
   }
   
 }

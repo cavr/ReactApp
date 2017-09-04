@@ -65,6 +65,6 @@ html.desktop .section--static {
 
 html.desktop .section--inactive {
   .section-title .section-title__background {
-    background: linear-gradient(90deg, #707B8B 0%, #C0C6CF 100%);
+    background: $bluetab-light-gray-2;
   }
 }

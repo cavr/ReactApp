@@ -9,6 +9,7 @@ import Button from 'components/Button';
 import Selector from 'components/Selector';
 import Evolution from 'components/Evolution';
 import Loading from 'components/Loading';
+import MainRadarChart from './MainRadarChart';
 
 import './desktop.scss';
 
@@ -53,6 +54,7 @@ export class MainGraph extends PureComponent {
                 <Button title={ 'Subindices' } selected={ currentStep > 2 } onClick={ () => (currentStep === 2 ? setStep(3) : setStep(2)) } />
                 <Button title={ 'Evolucion' } light={ true } selected={ showingEvolution } onClick={ () => (!evolutionData ? setEvolutionData(selected.value) : clearEvolutionData()) } />
               </div>
+              <MainRadarChart data={ data } />
             </div>
             <hr className='main-graph__separator' />
             <div className='main-graph__benchmarking'>

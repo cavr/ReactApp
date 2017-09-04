@@ -31,7 +31,6 @@ export class Avatar extends PureComponent {
         {
           showMenu &&
           <ul className='sidenav-avatar__menu'>
-            <li className='sidenav-avatar__option'>Parametrías</li>
             <li className='sidenav-avatar__option'>Settings</li>
             <li className='sidenav-avatar__option' onClick={ logout }>Logout</li>
           </ul>
