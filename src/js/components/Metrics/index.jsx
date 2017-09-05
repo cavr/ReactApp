@@ -3,10 +3,12 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { setSelectorValue } from 'actions/mis/metrics';
 import { UnmountClosed } from 'react-collapse';
+import { generatePDF } from 'services/pdfGenerator';
 import Section from 'components/Section';
 import Button from 'components/Button';
 import Selector from 'components/Selector';
 import BusinessElement from './BusinessElement';
+
 
 import './desktop.scss';
 import './mobile.scss';
@@ -54,7 +56,7 @@ export class Metrics extends PureComponent {
         <UnmountClosed isOpened={ currentStep === 4 }>
           <section className='metrics__benchmarking'>
             <h2 className='bluetab-subtitle--centered'>Actions</h2>
-            <Button title={ 'Resume PDF' } icon={ 'download' } onClick={ () => console.log(2) } />
+            <Button title={ 'Resume PDF' } icon={ 'download' } onClick={ () => generatePDF() } />
           </section>
         </UnmountClosed>
       </div>

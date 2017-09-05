@@ -20,17 +20,16 @@ html {
 }
 
 html.desktop {
-  //font-size: get-desktop-vw(10px);
   font-size: 10px;
+  @media (min-width:1920px)  {
+    font-size: get-desktop-vw(10px);
+  }
 }
 
 html.mobile {
   -webkit-overflow-scrolling: touch;
-  
   font-size: get-mobile-vw(8px);
-  @media screen and (min-aspect-ratio: 2/3) {
-    font-size: get-mobile-vh(8px);
-  }
+  @media (min-width:641px)  { font-size: get-mobile-vw(5px); }
 }
 
 body {

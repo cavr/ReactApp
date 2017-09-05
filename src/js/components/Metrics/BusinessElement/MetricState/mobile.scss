@@ -9,6 +9,8 @@ html.mobile .business-element-metric {
     padding: get-rem(20px) 0;
     .business-element-metric__button-wrapper {
       margin-top: get-rem(10px);
+      flex: 1 1 100%;
+      justify-content: center;
     }
   }
   .evolution {

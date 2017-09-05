@@ -704,6 +704,9 @@ html.mobile .selectors .selectors__selector-wrapper {
           background-color: #D27B32; }
         .main-graph-chart .main-graph-chart__legend-wrapper .main-graph-chart__legend .main-graph-chart__legend-icon.main-graph-chart__legend-icon--current {
           background-color: #F83838; }
+html.mobile .main-graph-chart {
+  -ms-flex-pack: center;
+      justify-content: center; }
 .main-graph .main-graph__graph-wrapper {
   position: relative;
   margin-top: 7rem; }
@@ -972,7 +975,11 @@ html.mobile .business-element-metric .business-element-metric__content {
   height: auto;
   padding: 2rem 0; }
   html.mobile .business-element-metric .business-element-metric__content .business-element-metric__button-wrapper {
-    margin-top: 1rem; }
+    margin-top: 1rem;
+    -ms-flex: 1 1 100%;
+        flex: 1 1 100%;
+    -ms-flex-pack: center;
+        justify-content: center; }
 
 html.mobile .business-element-metric .evolution .evolution__label {
   width: auto; }
@@ -1637,13 +1644,16 @@ html {
 
 html.desktop {
   font-size: 10px; }
+  @media (min-width: 1920px) {
+    html.desktop {
+      font-size: 0.69444vw; } }
 
 html.mobile {
   -webkit-overflow-scrolling: touch;
   font-size: 2.5vw; }
-  @media screen and (min-aspect-ratio: 2 / 3) {
+  @media (min-width: 641px) {
     html.mobile {
-      font-size: 1.66667vh; } }
+      font-size: 1.5625vw; } }
 
 body {
   font-size: 1.6rem;
