@@ -3,8 +3,10 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { checkDevice } from 'actions/media';
 import Sidenav from 'components/Sidenav';
+import Popup from 'react-popup';
 
 import './desktop.scss';
+import './mobile.scss';
 
 export class App extends PureComponent {
 
@@ -34,12 +36,19 @@ export class App extends PureComponent {
 
   render() {
     const { location } = this.props;
-    const loginScreen = (location.pathname === '/login');
+    const path = location.pathname;
+    const loginScreen = (path === '/login');
     return (
       <div className='bluetab-sns-app'>
+        <Popup
+          className='bluetab-sns-popup'
+          closeHtml={ null }
+          wildClasses={ false }
+          closeOnOutsideClick={ true }
+        />
         <div className={ `bluetab-sns-app__wrapper ${ loginScreen ? 'bluetab-sns-app__wrapper--login' : '' }` }>
-          { !loginScreen && <Sidenav currentRoute={ location.pathname } /> }
-          { this.props.children }
+          { !loginScreen && <Sidenav currentRoute={ path } /> }
+          { React.cloneElement(this.props.children, { key: path }) }
         </div>
       </div>
     );

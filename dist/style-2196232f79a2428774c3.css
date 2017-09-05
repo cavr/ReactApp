@@ -1,36 +1,36 @@
-html.desktop .sidenav-avatar {
+.sidenav-avatar {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
       flex-direction: column;
   -ms-flex-align: center;
       align-items: center; }
-  html.desktop .sidenav-avatar .sidenav-avatar__image {
+  .sidenav-avatar .sidenav-avatar__image {
     width: 10rem;
     height: 10rem;
     margin-bottom: 1.3rem; }
-  html.desktop .sidenav-avatar .sidenav-avatar__user-info-wrapper {
+  .sidenav-avatar .sidenav-avatar__user-info-wrapper {
     position: relative;
     width: 100%;
     color: white;
     text-align: center;
     padding-bottom: 2rem;
     cursor: pointer; }
-    html.desktop .sidenav-avatar .sidenav-avatar__user-info-wrapper .sidenav-avatar__name {
+    .sidenav-avatar .sidenav-avatar__user-info-wrapper .sidenav-avatar__name {
       font-weight: 500;
       font-size: 1.8rem; }
-    html.desktop .sidenav-avatar .sidenav-avatar__user-info-wrapper .sidenav-avatar__role {
+    .sidenav-avatar .sidenav-avatar__user-info-wrapper .sidenav-avatar__role {
       font-size: 1.2rem;
       font-weight: 300; }
-    html.desktop .sidenav-avatar .sidenav-avatar__user-info-wrapper .sidenav-avatar__arrow {
+    .sidenav-avatar .sidenav-avatar__user-info-wrapper .sidenav-avatar__arrow {
       position: absolute;
       top: 50%;
       -ms-transform: translateY(-50%);
           transform: translateY(-50%); }
-  html.desktop .sidenav-avatar .sidenav-avatar__menu {
+  .sidenav-avatar .sidenav-avatar__menu {
     width: 100%;
     background-color: #B4291C; }
-    html.desktop .sidenav-avatar .sidenav-avatar__menu .sidenav-avatar__option {
+    .sidenav-avatar .sidenav-avatar__menu .sidenav-avatar__option {
       display: -ms-flexbox;
       display: flex;
       -ms-flex-align: center;
@@ -42,7 +42,7 @@ html.desktop .sidenav-avatar {
       height: 4.5rem;
       border-bottom: 0.1rem solid #871B11;
       cursor: pointer; }
-html.desktop .bluetab-sns-sidenav {
+.bluetab-sns-sidenav {
   position: fixed;
   top: 0;
   left: 0;
@@ -50,7 +50,7 @@ html.desktop .bluetab-sns-sidenav {
   height: 100%;
   background-color: #F83838;
   padding-right: 0.7rem; }
-  html.desktop .bluetab-sns-sidenav .bluetab-sns-sidenav__logo {
+  .bluetab-sns-sidenav .bluetab-sns-sidenav__logo {
     display: block;
     width: 12.5rem;
     height: 2.5rem;
@@ -58,7 +58,7 @@ html.desktop .bluetab-sns-sidenav {
     margin: 0 auto;
     margin-top: 2.2rem;
     margin-bottom: 4.2rem; }
-  html.desktop .bluetab-sns-sidenav .bluetab-sns-sidenav__powered {
+  .bluetab-sns-sidenav .bluetab-sns-sidenav__powered {
     width: 100%;
     padding-right: 0.7rem;
     position: absolute;
@@ -69,7 +69,7 @@ html.desktop .bluetab-sns-sidenav {
     font-size: 1.2rem;
     text-align: center;
     color: white; }
-  html.desktop .bluetab-sns-sidenav .bluetab-sns-sidenav__nav-button {
+  .bluetab-sns-sidenav .bluetab-sns-sidenav__nav-button {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-align: center;
@@ -80,65 +80,97 @@ html.desktop .bluetab-sns-sidenav {
     color: white;
     font-size: 1.6rem;
     border-left: 1.3rem solid #F83838;
-    cursor: pointer; }
-    html.desktop .bluetab-sns-sidenav .bluetab-sns-sidenav__nav-button .bluetab-sns-sidenav__icon {
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1); }
+    .bluetab-sns-sidenav .bluetab-sns-sidenav__nav-button .bluetab-sns-sidenav__icon {
       width: 2.5rem;
       height: 2.5rem;
       margin-left: 1.2rem;
       margin-right: 1.4rem; }
-  html.desktop .bluetab-sns-sidenav.bluetab-sns-sidenav--MIS-active:after, html.desktop .bluetab-sns-sidenav.bluetab-sns-sidenav--RO-active:after, html.desktop .bluetab-sns-sidenav.bluetab-sns-sidenav--change-active:after, html.desktop .bluetab-sns-sidenav.bluetab-sns-sidenav--innovation-active:after {
+    .bluetab-sns-sidenav .bluetab-sns-sidenav__nav-button.bluetab-sns-sidenav__nav-button--secondary {
+      font-size: 1.2rem;
+      height: 4.5rem;
+      padding-left: 2rem; }
+      .bluetab-sns-sidenav .bluetab-sns-sidenav__nav-button.bluetab-sns-sidenav__nav-button--secondary .bluetab-sns-sidenav__icon {
+        width: 2rem;
+        height: 2rem; }
+    .bluetab-sns-sidenav .bluetab-sns-sidenav__nav-button.bluetab-sns-sidenav__nav-button--MIS {
+      border-color: #98DA65; }
+      .bluetab-sns-sidenav .bluetab-sns-sidenav__nav-button.bluetab-sns-sidenav__nav-button--MIS:hover {
+        background-color: #389437; }
+    .bluetab-sns-sidenav .bluetab-sns-sidenav__nav-button.bluetab-sns-sidenav__nav-button--RO {
+      border-color: #FBA742; }
+      .bluetab-sns-sidenav .bluetab-sns-sidenav__nav-button.bluetab-sns-sidenav__nav-button--RO:hover {
+        background-color: #D27B32; }
+    .bluetab-sns-sidenav .bluetab-sns-sidenav__nav-button.bluetab-sns-sidenav__nav-button--change {
+      border-color: #C186DB; }
+      .bluetab-sns-sidenav .bluetab-sns-sidenav__nav-button.bluetab-sns-sidenav__nav-button--change:hover {
+        background-color: #8559AE; }
+    .bluetab-sns-sidenav .bluetab-sns-sidenav__nav-button.bluetab-sns-sidenav__nav-button--innovation {
+      border-color: #81B6F1; }
+      .bluetab-sns-sidenav .bluetab-sns-sidenav__nav-button.bluetab-sns-sidenav__nav-button--innovation:hover {
+        background-color: #3C7CC0; }
+  .bluetab-sns-sidenav.bluetab-sns-sidenav--MIS-active:after, .bluetab-sns-sidenav.bluetab-sns-sidenav--RO-active:after, .bluetab-sns-sidenav.bluetab-sns-sidenav--change-active:after, .bluetab-sns-sidenav.bluetab-sns-sidenav--innovation-active:after {
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
     content: " ";
     position: absolute;
     right: 0;
     top: 0;
     height: 100%;
     width: 0.7rem; }
-  html.desktop .bluetab-sns-sidenav.bluetab-sns-sidenav--MIS-active:after {
+  .bluetab-sns-sidenav.bluetab-sns-sidenav--MIS-active:after {
     background-color: #98DA65; }
-  html.desktop .bluetab-sns-sidenav.bluetab-sns-sidenav--MIS-active .bluetab-sns-sidenav__nav-button--MIS {
-    border-bottom: none;
-    border-color: #98DA65;
+  .bluetab-sns-sidenav.bluetab-sns-sidenav--MIS-active .bluetab-sns-sidenav__nav-button--MIS {
     background-color: #389437; }
-  html.desktop .bluetab-sns-sidenav.bluetab-sns-sidenav--MIS-active .bluetab-sns-sidenav__parametrics {
-    background-color: #2C7A2B;
+  .bluetab-sns-sidenav.bluetab-sns-sidenav--MIS-active .bluetab-sns-sidenav__parametrics {
     border-color: #2C7A2B;
-    font-size: 1.2rem; }
-  html.desktop .bluetab-sns-sidenav.bluetab-sns-sidenav--RO-active:after {
+    background-color: #2C7A2B; }
+  .bluetab-sns-sidenav.bluetab-sns-sidenav--RO-active:after {
     background-color: #FBA742; }
-  html.desktop .bluetab-sns-sidenav.bluetab-sns-sidenav--RO-active .bluetab-sns-sidenav__nav-button--RO {
-    border-bottom: none;
-    border-color: #FBA742;
+  .bluetab-sns-sidenav.bluetab-sns-sidenav--RO-active .bluetab-sns-sidenav__nav-button--RO {
     background-color: #D27B32; }
-  html.desktop .bluetab-sns-sidenav.bluetab-sns-sidenav--change-active:after {
+  .bluetab-sns-sidenav.bluetab-sns-sidenav--change-active:after {
     background-color: #C186DB; }
-  html.desktop .bluetab-sns-sidenav.bluetab-sns-sidenav--change-active .bluetab-sns-sidenav__nav-button--change {
-    border-bottom: none;
-    border-color: #C186DB;
+  .bluetab-sns-sidenav.bluetab-sns-sidenav--change-active .bluetab-sns-sidenav__nav-button--change {
     background-color: #8559AE; }
-  html.desktop .bluetab-sns-sidenav.bluetab-sns-sidenav--innovation-active:after {
+  .bluetab-sns-sidenav.bluetab-sns-sidenav--innovation-active:after {
     background-color: #81B6F1; }
-  html.desktop .bluetab-sns-sidenav.bluetab-sns-sidenav--innovation-active .bluetab-sns-sidenav__nav-button--innovation {
-    border-color: #81B6F1;
+  .bluetab-sns-sidenav.bluetab-sns-sidenav--innovation-active .bluetab-sns-sidenav__nav-button--innovation {
     background-color: #3C7CC0; }
-html.desktop .bluetab-sns-app {
-  min-height: 100vh; }
-  html.desktop .bluetab-sns-app .bluetab-sns-app__wrapper {
+html.mobile .bluetab-sns-sidenav {
+  display: none; }
+.bluetab-sns-app {
+  min-height: 100vh;
+  background-color: #F83838; }
+  .bluetab-sns-app .bluetab-sns-app__wrapper {
     height: 100%;
     min-height: 100vh;
     width: 100%;
     padding-left: 21.2rem;
     background-color: #F1EFEF;
     overflow: hidden; }
-    html.desktop .bluetab-sns-app .bluetab-sns-app__wrapper .bluetab-sns-mis {
+    .bluetab-sns-app .bluetab-sns-app__wrapper .bluetab-sns-mis {
       padding-top: 8rem; }
-    html.desktop .bluetab-sns-app .bluetab-sns-app__wrapper.bluetab-sns-app__wrapper--login {
+    .bluetab-sns-app .bluetab-sns-app__wrapper.bluetab-sns-app__wrapper--login {
       padding-left: 0; }
-html.desktop .login {
+  .bluetab-sns-app .page-transition-enter {
+    opacity: 0; }
+    .bluetab-sns-app .page-transition-enter.page-transition-enter-active {
+      opacity: 1;
+      transition: opacity 500ms cubic-bezier(0.23, 1, 0.32, 1); }
+  .bluetab-sns-app .page-transition-leave {
+    opacity: 1; }
+    .bluetab-sns-app .page-transition-leave.page-transition-leave-active {
+      opacity: 0;
+      transition: opacity 300ms cubic-bezier(0.23, 1, 0.32, 1); }
+html.mobile .bluetab-sns-app .bluetab-sns-app__wrapper {
+  padding-left: 0; }
+.login {
   position: relative;
   width: 100vw;
   height: 100vh;
   background-color: #F83838; }
-  html.desktop .login .login__logo-wrapper {
+  .login .login__logo-wrapper {
     display: -ms-flexbox;
     display: flex;
     position: absolute;
@@ -146,18 +178,18 @@ html.desktop .login {
     -ms-transform: translateX(-50%);
         transform: translateX(-50%);
     top: 8rem; }
-    html.desktop .login .login__logo-wrapper .login__logo {
+    .login .login__logo-wrapper .login__logo {
       display: inline-block;
       width: 8.7rem;
       height: 2.9rem; }
-    html.desktop .login .login__logo-wrapper .login__brand {
+    .login .login__logo-wrapper .login__brand {
       padding-top: 0.5rem;
       padding-left: 6rem;
       color: white;
       text-align: center;
       font-weight: 300;
       font-size: 2.2rem; }
-  html.desktop .login .login__wrapper {
+  .login .login__wrapper {
     margin-top: 4rem;
     width: 30rem;
     position: absolute;
@@ -171,18 +203,18 @@ html.desktop .login {
         flex-direction: column;
     -ms-flex-align: center;
         align-items: center; }
-    html.desktop .login .login__wrapper .login__avatar {
+    .login .login__wrapper .login__avatar {
       margin-bottom: 2.5rem; }
-      html.desktop .login .login__wrapper .login__avatar .login__avatar-image {
+      .login .login__wrapper .login__avatar .login__avatar-image {
         height: 13.5rem;
         width: 13.5rem;
         margin-bottom: 1.2rem; }
-      html.desktop .login .login__wrapper .login__avatar .login__name {
+      .login .login__wrapper .login__avatar .login__name {
         font-size: 2.2rem;
         font-weight: 500;
         color: white;
         text-align: center; }
-    html.desktop .login .login__wrapper .login__input {
+    .login .login__wrapper .login__input {
       width: 100%;
       height: 4.5rem;
       padding-left: 1.3rem;
@@ -191,14 +223,14 @@ html.desktop .login {
       background-color: rgba(255, 255, 255, 0.25);
       border: none;
       outline: none; }
-    html.desktop .login .login__wrapper .login__submit {
+    .login .login__wrapper .login__submit {
       width: 100%;
       height: 6rem;
       background-color: white;
       border-radius: 0.5rem;
       border: none;
       cursor: pointer; }
-    html.desktop .login .login__wrapper .login__switch {
+    .login .login__wrapper .login__switch {
       margin-top: 3.5rem;
       display: inline-block;
       padding-left: 3.2rem;
@@ -260,6 +292,8 @@ html.desktop .login {
         opacity: 1;
         z-index: 1;
         transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1); }
+html.mobile .stepbar-navigation {
+  width: 100%; }
 .loading {
   padding: get-rem(30px);
   display: -ms-flexbox;
@@ -273,89 +307,94 @@ html.desktop .login {
     .loading .loading__image.loading__image--small {
       width: get-rem(60px);
       height: get-rem(60px); }
-html.desktop section {
+section {
   position: relative;
   width: 72rem;
   background-color: white;
   box-shadow: 0 0 0.2rem 0 rgba(0, 0, 0, 0.12), 0 0.2rem 0.2rem 0 rgba(0, 0, 0, 0.24);
   margin: 3rem auto; }
-  html.desktop section .section-title {
+  section .section-title {
     position: relative;
     width: 100%;
     height: 7rem;
     transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1); }
-    html.desktop section .section-title .section-title__text {
+    section .section-title .section-title__text {
       position: absolute;
       top: 50%;
-      left: 50%;
-      -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+      width: 100%;
+      text-align: center;
       font-weight: 500;
       font-size: 1.8rem;
       color: white;
       z-index: 2;
       transition: inherit; }
-    html.desktop section .section-title .section-title__background {
+    section .section-title .section-title__background {
       position: absolute;
       top: 0;
       left: 0;
       height: 100%;
       width: 100%;
-      background: linear-gradient(86deg, #F83838 0%, #E8877E 100%);
+      background: linear-gradient(86deg, #F83838 0%, #F47063 100%);
       transition: inherit; }
-  html.desktop section .section__content {
+  section .section__content {
     padding: 4.5rem; }
-    html.desktop section .section__content.section__content--no-padding {
+    section .section__content.section__content--no-padding {
       padding: 0; }
-  html.desktop section .section-transition-enter {
+  section .section-transition-enter {
     opacity: 0; }
-    html.desktop section .section-transition-enter.section-transition-enter-active {
+    section .section-transition-enter.section-transition-enter-active {
       opacity: 1;
       transition: opacity 500ms ease-in; }
-  html.desktop section .section-transition-leave {
+  section .section-transition-leave {
     opacity: 1; }
-    html.desktop section .section-transition-leave.section-transition-leave-active {
+    section .section-transition-leave.section-transition-leave-active {
       opacity: 0;
       transition: opacity 300ms ease-in; }
 
-html.desktop .section--static .section-title {
+.section--static .section-title {
   border-bottom: 0.1rem solid #BFC6CE; }
-  html.desktop .section--static .section-title .section-title__text {
+  .section--static .section-title .section-title__text {
     color: #5A6574;
     margin-top: 0.5rem; }
-  html.desktop .section--static .section-title .section-title__background {
+  .section--static .section-title .section-title__background {
     height: 1rem; }
 
-html.desktop .section--inactive .section-title .section-title__background {
+.section--inactive .section-title .section-title__background {
   background: #BFC6CE; }
-html.desktop .bluetab-selector {
+html.mobile section {
+  width: 100%; }
+  html.mobile section .section__content {
+    padding: 3rem; }
+.bluetab-selector {
   margin-bottom: 2rem; }
-  html.desktop .bluetab-selector .bluetab-selector__title-wrapper {
+  .bluetab-selector .bluetab-selector__title-wrapper {
     margin-bottom: 1rem; }
-    html.desktop .bluetab-selector .bluetab-selector__title-wrapper .bluetab-selector__title {
+    .bluetab-selector .bluetab-selector__title-wrapper .bluetab-selector__title {
       font-size: 1.2rem;
       color: #4A4A4A; }
-  html.desktop .bluetab-selector .bluetab-selector__select {
+  .bluetab-selector .bluetab-selector__select {
     font-size: 1.2rem; }
-    html.desktop .bluetab-selector .bluetab-selector__select .Select-control {
+    .bluetab-selector .bluetab-selector__select .Select-control {
       position: relative;
       height: 4.5rem;
       border-color: #F1EFEF;
       cursor: pointer; }
-      html.desktop .bluetab-selector .bluetab-selector__select .Select-control .Select-multi-value-wrapper {
+      .bluetab-selector .bluetab-selector__select .Select-control .Select-multi-value-wrapper {
         display: block;
         height: 100%; }
-        html.desktop .bluetab-selector .bluetab-selector__select .Select-control .Select-multi-value-wrapper .Select-value,
-        html.desktop .bluetab-selector .bluetab-selector__select .Select-control .Select-multi-value-wrapper .Select-input {
+        .bluetab-selector .bluetab-selector__select .Select-control .Select-multi-value-wrapper .Select-value,
+        .bluetab-selector .bluetab-selector__select .Select-control .Select-multi-value-wrapper .Select-input {
           padding-left: 1.4rem; }
-        html.desktop .bluetab-selector .bluetab-selector__select .Select-control .Select-multi-value-wrapper .Select-value .Select-value-label,
-        html.desktop .bluetab-selector .bluetab-selector__select .Select-control .Select-multi-value-wrapper .Select-input {
+        .bluetab-selector .bluetab-selector__select .Select-control .Select-multi-value-wrapper .Select-value .Select-value-label,
+        .bluetab-selector .bluetab-selector__select .Select-control .Select-multi-value-wrapper .Select-input {
           height: 100%;
           display: -ms-flexbox !important;
           display: flex !important;
           -ms-flex-align: center;
               align-items: center; }
-      html.desktop .bluetab-selector .bluetab-selector__select .Select-control .Select-arrow-zone {
+      .bluetab-selector .bluetab-selector__select .Select-control .Select-arrow-zone {
         display: -ms-flexbox !important;
         display: flex !important;
         -ms-flex-align: center;
@@ -370,33 +409,33 @@ html.desktop .bluetab-selector {
         padding: 0 !important;
         background: rgba(218, 224, 228, 0.3);
         border-left: 0.1rem solid #F1EFEF; }
-    html.desktop .bluetab-selector .bluetab-selector__select .Select-menu-outer {
+    .bluetab-selector .bluetab-selector__select .Select-menu-outer {
       border: 0.1rem solid #BFC6CE; }
-      html.desktop .bluetab-selector .bluetab-selector__select .Select-menu-outer .Select-option.is-selected {
+      .bluetab-selector .bluetab-selector__select .Select-menu-outer .Select-option.is-selected {
         background-color: white; }
-      html.desktop .bluetab-selector .bluetab-selector__select .Select-menu-outer .Select-option.is-focused {
+      .bluetab-selector .bluetab-selector__select .Select-menu-outer .Select-option.is-focused {
         background-color: #F83838;
         color: white;
         z-index: 99; }
 
-html.desktop .bluetab-selector--inline {
+.bluetab-selector--inline {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
       align-items: center; }
-  html.desktop .bluetab-selector--inline .bluetab-selector__title-wrapper {
+  .bluetab-selector--inline .bluetab-selector__title-wrapper {
     margin-bottom: 0;
     margin-right: 1rem; }
-    html.desktop .bluetab-selector--inline .bluetab-selector__title-wrapper .bluetab-selector__title {
+    .bluetab-selector--inline .bluetab-selector__title-wrapper .bluetab-selector__title {
       font-size: 1.4rem;
       font-weight: 500; }
-  html.desktop .bluetab-selector--inline .bluetab-selector__select {
+  .bluetab-selector--inline .bluetab-selector__select {
     -ms-flex: 1 1 auto;
         flex: 1 1 auto; }
-    html.desktop .bluetab-selector--inline .bluetab-selector__select .Select-control {
+    .bluetab-selector--inline .bluetab-selector__select .Select-control {
       position: relative;
       height: 3.5rem; }
-html.desktop .bluetab-button {
+.bluetab-button {
   position: relative;
   display: -ms-flexbox;
   display: flex;
@@ -414,20 +453,21 @@ html.desktop .bluetab-button {
   border-radius: 0.3rem;
   outline: none;
   cursor: pointer; }
-  html.desktop .bluetab-button .bluetab-button__icon {
-    width: 2.3rem;
+  .bluetab-button .bluetab-button__icon {
+    width: 1.4rem;
     height: 1.4rem;
-    background-position: left; }
-  html.desktop .bluetab-button.bluetab-button--selected {
+    background-position: left;
+    margin-right: 0.7rem; }
+  .bluetab-button.bluetab-button--selected {
     color: white;
-    background-color: #E8877E;
-    border-color: #E8877E; }
-  html.desktop .bluetab-button:hover {
+    background-color: #F47063;
+    border-color: #F47063; }
+  .bluetab-button:hover {
     border-color: #F83838;
     color: #F83838;
     background-color: white; }
 
-html.desktop .bluetab-button--light {
+.bluetab-button--light {
   min-width: auto;
   height: 2.7rem;
   font-size: 1.2rem;
@@ -435,17 +475,20 @@ html.desktop .bluetab-button--light {
   border: 0.2rem solid #F83838;
   border-radius: 5rem;
   color: #F83838; }
-  html.desktop .bluetab-button--light:hover {
+  .bluetab-button--light .bluetab-button__icon {
+    width: 1.2rem;
+    height: 1.2rem; }
+  .bluetab-button--light:hover {
     background-color: #F83838;
     color: white; }
-html.desktop .selectors {
+.selectors {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
       flex-direction: column;
   -ms-flex-align: center;
       align-items: center; }
-  html.desktop .selectors .selectors__selector-wrapper {
+  .selectors .selectors__selector-wrapper {
     width: 100%;
     margin: 3.8rem 0;
     display: -ms-flexbox;
@@ -454,12 +497,24 @@ html.desktop .selectors {
         flex-wrap: wrap;
     margin-right: -2.2rem;
     margin-left: -2.2rem; }
-    html.desktop .selectors .selectors__selector-wrapper .selectors__selector {
+    .selectors .selectors__selector-wrapper .selectors__selector {
       -ms-flex: 0 0 50%;
           flex: 0 0 50%;
       padding: 0 2.2rem;
       margin-bottom: 1.8rem; }
-html.desktop .selection .selection__wrapper {
+html.mobile .selectors .selectors__selector-wrapper {
+  width: 100%;
+  margin: get-rem(38px) 0;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+  html.mobile .selectors .selectors__selector-wrapper .selectors__selector {
+    -ms-flex: 1 1 100%;
+        flex: 1 1 100%;
+    padding: 0;
+    margin-bottom: get-rem(18px); }
+.selection .selection__wrapper {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
@@ -470,7 +525,7 @@ html.desktop .selection .selection__wrapper {
       justify-content: center;
   margin-right: -1.2rem;
   margin-left: -1.2rem; }
-  html.desktop .selection .selection__wrapper .selection__option {
+  .selection .selection__wrapper .selection__option {
     -ms-flex: 0 0 auto;
         flex: 0 0 auto;
     min-width: 9.2rem;
@@ -482,7 +537,7 @@ html.desktop .selection .selection__wrapper {
     color: #5A6574;
     background-color: white;
     text-align: center; }
-  html.desktop .selection .selection__wrapper .selection__change-selection {
+  .selection .selection__wrapper .selection__change-selection {
     width: 3.2rem;
     height: 2rem;
     border: none;
@@ -512,51 +567,52 @@ html.desktop .selection .selection__wrapper {
   .evolution-line-chart path {
     stroke: #F83838;
     stroke-width: 2; }
-html.desktop .evolution {
+.evolution {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: justify;
       justify-content: space-between;
   -ms-flex-align: center;
       align-items: center; }
-  html.desktop .evolution .evolution__label {
-    font-size: 1.6rem;
+  .evolution .evolution__label {
+    font-size: 1.2rem;
+    color: #4A4A4A;
     font-weight: 500;
     position: relative;
-    padding-bottom: 1.5rem; }
-    html.desktop .evolution .evolution__label:after {
+    padding-bottom: 1rem; }
+    .evolution .evolution__label:after {
       position: absolute;
       bottom: 0;
       left: 0;
       content: '';
       width: 5.2rem;
-      height: 0.4rem;
+      height: 0.3rem;
       border-radius: 0.2rem;
-      background-color: #F83838; }
-  html.desktop .evolution .evolution__variation {
+      background-color: #F47063; }
+  .evolution .evolution__variation {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-direction: column;
         flex-direction: column;
     -ms-flex-pack: justify;
         justify-content: space-between; }
-    html.desktop .evolution .evolution__variation .evolution__variation-number {
+    .evolution .evolution__variation .evolution__variation-number {
       padding-left: 2rem;
       font-size: 2.2rem;
       font-weight: 500;
       background-size: 1.2rem;
       background-position: left center;
       background-repeat: no-repeat; }
-      html.desktop .evolution .evolution__variation .evolution__variation-number.evolution__variation-number--green {
+      .evolution .evolution__variation .evolution__variation-number.evolution__variation-number--green {
         color: #389437;
         background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMC4yMDYgNC42ODgiPg0KICA8cGF0aCBmaWxsPSIjMzg5NDM3IiBkPSJNMCA0LjY4OEw1LjA3MSAwbDUuMTM1IDQuNjg4Ii8+DQo8L3N2Zz4NCg==); }
-      html.desktop .evolution .evolution__variation .evolution__variation-number.evolution__variation-number--yellow {
+      .evolution .evolution__variation .evolution__variation-number.evolution__variation-number--yellow {
         color: #D27B32;
         background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMC4yMDYgNC42ODgiPg0KICA8cGF0aCBmaWxsPSIjRDI3QjMyIiBkPSJNMTAuMjA2LjU2MnYzLjU2NEgwVi41NjIiLz4NCjwvc3ZnPg0K); }
-      html.desktop .evolution .evolution__variation .evolution__variation-number.evolution__variation-number--red {
+      .evolution .evolution__variation .evolution__variation-number.evolution__variation-number--red {
         color: #F83838;
         background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMC4yMDYgNC42ODgiPg0KICA8cGF0aCBmaWxsPSIjRjgzODM4IiBkPSJNMTAuMjA2IDBMNS4wNzEgNC42ODggMCAwIi8+DQo8L3N2Zz4NCg==); }
-    html.desktop .evolution .evolution__variation .evolution__variation-text {
+    .evolution .evolution__variation .evolution__variation-text {
       text-align: center;
       font-size: 1rem; }
 .main-graph-chart {
@@ -635,43 +691,77 @@ html.desktop .evolution {
           background-color: #D27B32; }
         .main-graph-chart .main-graph-chart__legend-wrapper .main-graph-chart__legend .main-graph-chart__legend-icon.main-graph-chart__legend-icon--current {
           background-color: #F83838; }
-html.desktop .main-graph {
-  width: 72rem;
-  margin: 3rem auto; }
-  html.desktop .main-graph .main-graph__content .main-graph__graph-wrapper {
+.main-graph .main-graph__graph-wrapper {
+  position: relative;
+  margin-top: 7rem; }
+  .main-graph .main-graph__graph-wrapper .main-graph__graph-controls {
+    position: absolute;
+    top: 0;
+    left: 2rem;
+    z-index: 2; }
+    .main-graph .main-graph__graph-wrapper .main-graph__graph-controls .Select-control {
+      height: 2.8rem; }
+    .main-graph .main-graph__graph-wrapper .main-graph__graph-controls .bluetab-button {
+      width: 100%;
+      height: 3.7rem;
+      margin-bottom: 0.9rem; }
+
+.main-graph .main-graph__separator {
+  border: none;
+  border-bottom: 0.1rem solid #BFC6CE;
+  margin-top: 3.5rem;
+  margin-bottom: 0; }
+
+.main-graph .main-graph__details .main-graph__details-wrapper {
+  padding: 2.5rem 3rem;
+  border-bottom: 0.1rem solid #BFC6CE; }
+
+.main-graph .main-graph__benchmarking {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  margin-top: 3.5rem; }
+  .main-graph .main-graph__benchmarking .bluetab-subtitle--centered {
+    margin-right: 1rem; }
+  .main-graph .main-graph__benchmarking .bluetab-button {
+    margin: 0 0.5rem; }
+html.mobile .main-graph .main-graph__graph-wrapper {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  margin-top: 4rem; }
+  html.mobile .main-graph .main-graph__graph-wrapper .main-graph__graph-controls {
+    -ms-flex-order: 2;
+        order: 2;
+    width: 100%;
     position: relative;
-    margin-top: 7rem; }
-    html.desktop .main-graph .main-graph__content .main-graph__graph-wrapper .main-graph__graph-controls {
-      position: absolute;
-      top: 0;
-      left: 2rem;
-      z-index: 2; }
-      html.desktop .main-graph .main-graph__content .main-graph__graph-wrapper .main-graph__graph-controls .Select-control {
-        height: 2.8rem; }
-      html.desktop .main-graph .main-graph__content .main-graph__graph-wrapper .main-graph__graph-controls .bluetab-button {
-        width: 100%;
-        height: 3.7rem;
-        margin-bottom: 0.9rem; }
-  html.desktop .main-graph .main-graph__content .main-graph__separator {
-    margin: 3.5rem 0; }
-  html.desktop .main-graph .main-graph__content .main-graph__benchmarking {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: center;
-        justify-content: center;
-    -ms-flex-align: center;
-        align-items: center; }
-    html.desktop .main-graph .main-graph__content .main-graph__benchmarking .bluetab-subtitle--centered {
-      margin-right: 1rem; }
-    html.desktop .main-graph .main-graph__content .main-graph__benchmarking .bluetab-button {
-      margin: 0 0.5rem; }
-  html.desktop .main-graph .main-graph__details {
-    margin: 0; }
-    html.desktop .main-graph .main-graph__details .main-graph__details-wrapper {
-      padding: 2.5rem 3rem; }
+    left: 0;
+    margin-top: 4rem;
+    margin-bottom: 0; }
+
+html.mobile .main-graph .main-graph__separator {
+  margin: 2.5rem 0; }
+
+html.mobile .main-graph .main-graph__benchmarking {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center; }
+  html.mobile .main-graph .main-graph__benchmarking .bluetab-subtitle--centered {
+    -ms-flex: 1 1 100%;
+        flex: 1 1 100%;
+    margin-bottom: 2rem; }
 .subindex-line-chart {
   position: relative;
-  width: 23rem; }
+  width: 100%; }
   .subindex-line-chart .subindex-line-chart__line {
     width: 100%;
     height: 1.4rem;
@@ -696,11 +786,13 @@ html.desktop .main-graph {
     top: 100%;
     display: -ms-flexbox;
     display: flex;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
     font-size: 1rem;
     color: #BFC6CE; }
 .subindex-heat-chart {
   position: relative;
-  width: 23rem; }
+  width: 100%; }
   .subindex-heat-chart .subindex-heat-chart__line {
     width: 100%;
     height: 1.4rem;
@@ -727,9 +819,11 @@ html.desktop .main-graph {
     top: 100%;
     display: -ms-flexbox;
     display: flex;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
     font-size: 1rem;
     color: #BFC6CE; }
-html.desktop .subindex {
+.subindex {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
@@ -738,18 +832,20 @@ html.desktop .subindex {
       justify-content: space-between;
   padding: 3rem 0;
   border-bottom: 0.1rem solid #F1EFEF; }
-  html.desktop .subindex .subindex__variation-wrapper {
+  .subindex .subindex__chart {
+    width: 23rem; }
+  .subindex .subindex__variation-wrapper {
     position: relative;
     -ms-flex: 0 0 auto;
         flex: 0 0 auto;
     width: 14.5rem;
     display: -ms-flexbox;
     display: flex; }
-    html.desktop .subindex .subindex__variation-wrapper .subindex__value {
+    .subindex .subindex__variation-wrapper .subindex__value {
       font-size: 1.6rem;
       font-weight: 300;
       margin-right: 1rem; }
-    html.desktop .subindex .subindex__variation-wrapper .subindex__variation {
+    .subindex .subindex__variation-wrapper .subindex__variation {
       padding-left: 2rem;
       width: 10rem;
       font-size: 1.6rem;
@@ -757,20 +853,32 @@ html.desktop .subindex {
       background-size: 1.2rem;
       background-position: left center;
       background-repeat: no-repeat; }
-      html.desktop .subindex .subindex__variation-wrapper .subindex__variation.subindex__variation--green {
+      .subindex .subindex__variation-wrapper .subindex__variation.subindex__variation--green {
         color: #389437;
         background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMC4yMDYgNC42ODgiPg0KICA8cGF0aCBmaWxsPSIjMzg5NDM3IiBkPSJNMCA0LjY4OEw1LjA3MSAwbDUuMTM1IDQuNjg4Ii8+DQo8L3N2Zz4NCg==); }
-      html.desktop .subindex .subindex__variation-wrapper .subindex__variation.subindex__variation--yellow {
+      .subindex .subindex__variation-wrapper .subindex__variation.subindex__variation--yellow {
         color: #D27B32;
         background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMC4yMDYgNC42ODgiPg0KICA8cGF0aCBmaWxsPSIjRDI3QjMyIiBkPSJNMTAuMjA2LjU2MnYzLjU2NEgwVi41NjIiLz4NCjwvc3ZnPg0K); }
-      html.desktop .subindex .subindex__variation-wrapper .subindex__variation.subindex__variation--red {
+      .subindex .subindex__variation-wrapper .subindex__variation.subindex__variation--red {
         color: #F83838;
         background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMC4yMDYgNC42ODgiPg0KICA8cGF0aCBmaWxsPSIjRjgzODM4IiBkPSJNMTAuMjA2IDBMNS4wNzEgNC42ODggMCAwIi8+DQo8L3N2Zz4NCg==); }
-html.desktop .subindexes .subindexes__content {
+html.mobile .subindex {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding-top: 7rem; }
+  html.mobile .subindex .bluetab-button {
+    -ms-flex-order: 2;
+        order: 2; }
+  html.mobile .subindex .subindex__chart {
+    margin-bottom: 2.5rem;
+    width: 100%; }
+.subindexes .subindexes__content {
   padding: 0 2rem; }
-  html.desktop .subindexes .subindexes__content .subindexes__subindex-list {
+  .subindexes .subindexes__content .subindexes__subindex-list {
     margin-top: 3rem; }
-html.desktop .business-element-metric .business-element-metric__content {
+.subindexes .subindexes__content {
+  padding: 0; }
+.business-element-metric .business-element-metric__content {
   height: 5.6rem;
   display: -ms-flexbox;
   display: flex;
@@ -779,62 +887,69 @@ html.desktop .business-element-metric .business-element-metric__content {
   -ms-flex-pack: justify;
       justify-content: space-between;
   border-bottom: 0.1rem solid #BFC6CE; }
-  html.desktop .business-element-metric .business-element-metric__content.business-element-metric__content--evolution {
+  .business-element-metric .business-element-metric__content.business-element-metric__content--evolution {
     transition: 0.5s all cubic-bezier(0.23, 1, 0.32, 1); }
-  html.desktop .business-element-metric .business-element-metric__content .business-element-metric__title {
+  .business-element-metric .business-element-metric__content .business-element-metric__title {
     width: 12rem;
     font-size: 1.2rem; }
-  html.desktop .business-element-metric .business-element-metric__content .business-element-metric__semaphores {
+  .business-element-metric .business-element-metric__content .business-element-metric__semaphores {
     width: 9rem;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-pack: justify;
         justify-content: space-between; }
-    html.desktop .business-element-metric .business-element-metric__content .business-element-metric__semaphores .business-element-metric__semaphore {
+    .business-element-metric .business-element-metric__content .business-element-metric__semaphores .business-element-metric__semaphore {
       width: 2rem;
       height: 2rem;
       border-radius: 1rem;
       opacity: 0.2; }
-      html.desktop .business-element-metric .business-element-metric__content .business-element-metric__semaphores .business-element-metric__semaphore.business-element-metric__semaphore--active {
+      .business-element-metric .business-element-metric__content .business-element-metric__semaphores .business-element-metric__semaphore.business-element-metric__semaphore--active {
         opacity: 1; }
-      html.desktop .business-element-metric .business-element-metric__content .business-element-metric__semaphores .business-element-metric__semaphore.business-element-metric__semaphore--red {
+      .business-element-metric .business-element-metric__content .business-element-metric__semaphores .business-element-metric__semaphore.business-element-metric__semaphore--red {
         background-color: #F83838; }
-      html.desktop .business-element-metric .business-element-metric__content .business-element-metric__semaphores .business-element-metric__semaphore.business-element-metric__semaphore--yellow {
+      .business-element-metric .business-element-metric__content .business-element-metric__semaphores .business-element-metric__semaphore.business-element-metric__semaphore--yellow {
         background-color: #FBA742; }
-      html.desktop .business-element-metric .business-element-metric__content .business-element-metric__semaphores .business-element-metric__semaphore.business-element-metric__semaphore--green {
+      .business-element-metric .business-element-metric__content .business-element-metric__semaphores .business-element-metric__semaphore.business-element-metric__semaphore--green {
         background-color: #98DA65; }
-  html.desktop .business-element-metric .business-element-metric__content .business-element-metric__button-wrapper {
+  .business-element-metric .business-element-metric__content .business-element-metric__button-wrapper {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-align: center;
         align-items: center; }
-    html.desktop .business-element-metric .business-element-metric__content .business-element-metric__button-wrapper .bluetab-button {
+    .business-element-metric .business-element-metric__content .business-element-metric__button-wrapper .bluetab-button {
       height: 2.7rem;
       margin-right: 1rem; }
-    html.desktop .business-element-metric .business-element-metric__content .business-element-metric__button-wrapper .business-element-metric__alert {
+    .business-element-metric .business-element-metric__content .business-element-metric__button-wrapper .business-element-metric__alert {
       margin-left: 0.9rem;
       width: 1.5rem;
       height: 1.8rem;
       cursor: pointer; }
 
-html.desktop .business-element-metric .evolution {
+.business-element-metric .evolution {
   padding: 1.3rem 0;
   border-bottom: 0.1rem solid #BFC6CE;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap; }
-  html.desktop .business-element-metric .evolution .evolution__label {
-    color: #4A4A4A;
-    font-size: 1.1rem;
+  .business-element-metric .evolution .evolution__label {
     width: 100%; }
-  html.desktop .business-element-metric .evolution .evolution__variation {
+  .business-element-metric .evolution .evolution__variation {
     padding-top: 2.5rem;
     padding-left: 3rem; }
-html.desktop .business-metrics .business-element-wrapper {
+html.mobile .business-element-metric .business-element-metric__content {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: center;
+      justify-content: center;
+  height: auto;
+  padding: 2rem 0; }
+  html.mobile .business-element-metric .business-element-metric__content .business-element-metric__button-wrapper {
+    margin-top: 1rem; }
+.business-metrics .business-element-wrapper {
   padding: 3.6rem 9rem 7.2rem 9rem; }
-  html.desktop .business-metrics .business-element-wrapper .business-element__selector {
+  .business-metrics .business-element-wrapper .business-element__selector {
     margin-bottom: 4.2rem; }
 
-html.desktop .business-metrics .metrics__benchmarking {
+.business-metrics .metrics__benchmarking {
   padding: 1.6rem 0;
   display: -ms-flexbox;
   display: flex;
@@ -842,10 +957,22 @@ html.desktop .business-metrics .metrics__benchmarking {
       justify-content: center;
   -ms-flex-align: center;
       align-items: center; }
-  html.desktop .business-metrics .metrics__benchmarking .bluetab-subtitle--centered {
+  .business-metrics .metrics__benchmarking .bluetab-subtitle--centered {
     margin-right: 1rem; }
-  html.desktop .business-metrics .metrics__benchmarking .bluetab-button {
+  .business-metrics .metrics__benchmarking .bluetab-button {
     margin: 0 0.5rem; }
+html.mobile .business-metrics .business-element-wrapper {
+  padding: 3.6rem 0 7.2rem 0; }
+
+html.mobile .business-metrics .bluetab-selector.bluetab-selector--inline.business-element__selector {
+  margin-bottom: 3rem;
+  -ms-flex-direction: column;
+      flex-direction: column; }
+  html.mobile .business-metrics .bluetab-selector.bluetab-selector--inline.business-element__selector .bluetab-selector__title-wrapper {
+    margin-bottom: 2rem;
+    margin-right: 0; }
+  html.mobile .business-metrics .bluetab-selector.bluetab-selector--inline.business-element__selector .bluetab-selector__select {
+    width: 100%; }
 .section-placeholder {
   padding: 7rem 3rem; }
   .section-placeholder .section-placeholder__title {
@@ -1398,6 +1525,42 @@ h1, p {
   background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMS40NSAyMS40NSI+DQogIDxwYXRoIGZpbGw9IiNGRkYiIGQ9Ik0xLjY1IDE5LjhoMTguOThjLjQ1IDAgLjgyLjM3LjgyLjgycy0uMzcuODMtLjgyLjgzSC44M2MtLjI0IDAtLjQ1LS4xLS42LS4yNC0uMTUtLjEtLjI0LS4zLS4yNC0uNVYuOEMwIC4zNi4zIDAgLjggMHMuODMuMzcuODMuODJWMTkuOHptOS40Ni01LjQzbC0yLjUtNC4xNC0zLjcgNi40NWMtLjIuNC0uNy41NC0xLjEuMy0uNC0uMi0uNS0uNzItLjMtMS4xTDcuOCA4LjJjLjMyLS41MyAxLjEtLjU1IDEuNDMtLjAybDIuNDMgMy45MyAzLjgtOS40Yy4yNy0uNiAxLjIzLS42IDEuNTIgMGwzLjM4IDcuN2MuMTguNCAwIC45LS40MyAxLjEtLjQuMi0uOSAwLTEuMDgtLjRsLTIuNi01LjktMy42NyA5LjFjLS4yNi42Ni0xLjEuNy0xLjQ3LjE2eiIvPg0KPC9zdmc+DQoNCg==) center no-repeat;
   background-size: contain; }
 
+.icon.icon__graph--red {
+  background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMS40NSAyMS40NSI+CiAgPHBhdGggZmlsbD0iI0Y4MzgzOCIgZD0iTTEuNjUgMTkuOGgxOC45OGMuNDUgMCAuODIuMzcuODIuODJzLS4zNy44My0uODIuODNILjgzYy0uMjQgMC0uNDUtLjEtLjYtLjI0LS4xNS0uMS0uMjQtLjMtLjI0LS41Vi44QzAgLjM2LjMgMCAuOCAwcy44My4zNy44My44MlYxOS44em05LjQ2LTUuNDNsLTIuNS00LjE0LTMuNyA2LjQ1Yy0uMi40LS43LjU0LTEuMS4zLS40LS4yLS41LS43Mi0uMy0xLjFMNy44IDguMmMuMzItLjUzIDEuMS0uNTUgMS40My0uMDJsMi40MyAzLjkzIDMuOC05LjRjLjI3LS42IDEuMjMtLjYgMS41MiAwbDMuMzggNy43Yy4xOC40IDAgLjktLjQzIDEuMS0uNC4yLS45IDAtMS4wOC0uNGwtMi42LTUuOS0zLjY3IDkuMWMtLjI2LjY2LTEuMS43LTEuNDcuMTZ6Ii8+Cjwvc3ZnPg==) center no-repeat;
+  background-size: contain; }
+
+.icon.icon__comparative {
+  background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMS4yOSA2LjE0Ij4NCiAgPHBhdGggZmlsbD0iI0ZGRiIgZD0iTTEyLjc4IDJjLjE0IDAgLjIzIDAgLjIuMi0uMS4zOC0uMS43Ny0uMDIgMS4xNi4wMy4xNS0uMDIuMi0uMTcuMThIOC4zMmMtLjE2IDAtLjItLjA0LS4xNy0uMi4wNy0uMzguMDYtLjc3IDAtMS4xNS0uMDQtLjE3IDAtLjIuMTYtLjJoNC40NXpNMTUuMTQgMy4wNWMwLTEuNyAxLjQtMy4wNSAzLjEtMy4wNSAxLjcgMCAzLjA1IDEuMzggMy4wNSAzLjEtLjAyIDEuNjgtMS40IDMuMDUtMy4xIDMuMDQtMS43IDAtMy4wNi0xLjM4LTMuMDYtMy4xek0wIDMuMDVDMCAxLjM1IDEuNCAwIDMuMDggMGMxLjcgMCAzLjA3IDEuMzggMy4wNiAzLjEgMCAxLjY4LTEuMzggMy4wNS0zLjA4IDMuMDRDMS4zNiA2LjE0IDAgNC43NiAwIDMuMDR6Ii8+DQo8L3N2Zz4NCg==) center no-repeat;
+  background-size: contain; }
+
+.icon.icon__comparative--red {
+  background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMS4yOSA2LjE0Ij4NCiAgPHBhdGggZmlsbD0iI0Y4MzgzOCIgZD0iTTEyLjc4IDJjLjE0IDAgLjIzIDAgLjIuMi0uMS4zOC0uMS43Ny0uMDIgMS4xNi4wMy4xNS0uMDIuMi0uMTcuMThIOC4zMmMtLjE2IDAtLjItLjA0LS4xNy0uMi4wNy0uMzguMDYtLjc3IDAtMS4xNS0uMDQtLjE3IDAtLjIuMTYtLjJoNC40NXpNMTUuMTQgMy4wNWMwLTEuNyAxLjQtMy4wNSAzLjEtMy4wNSAxLjcgMCAzLjA1IDEuMzggMy4wNSAzLjEtLjAyIDEuNjgtMS40IDMuMDUtMy4xIDMuMDQtMS43IDAtMy4wNi0xLjM4LTMuMDYtMy4xek0wIDMuMDVDMCAxLjM1IDEuNCAwIDMuMDggMGMxLjcgMCAzLjA3IDEuMzggMy4wNiAzLjEgMCAxLjY4LTEuMzggMy4wNS0zLjA4IDMuMDRDMS4zNiA2LjE0IDAgNC43NiAwIDMuMDR6Ii8+DQo8L3N2Zz4NCg==) center no-repeat;
+  background-size: contain; }
+
+.icon.icon__children {
+  background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMS4yOSAyNC4xNCI+DQogIDxwYXRoIGZpbGw9IiNGRkYiIGQ9Ik04LjAyIDE0bC4xLjA4IDUuNzggMy45NmMuMTMuMS4xNC4xMy4wMy4yNS0uMjguMjctLjUuNi0uNjYuOTUtLjA2LjEzLS4xLjE1LS4yMy4wN2wtNS44LTRjLS4xLS4wNy0uMTItLjEtLjA0LS4yLjMtLjMuNTMtLjY0LjctMSAuMDMtLjA1LjAyLS4xNC4xMi0uMTJ6bTYuMDUtOC42TDExLjc3IDdsLTMuNiAyLjQ3Yy0uMTMuMS0uMi4xMi0uMjgtLjA3LS4xOC0uNC0uNDUtLjc0LS43Ni0xLjA0LjAyLS4wOC4xLS4xLjEzLS4xM0wxMyA0LjI4Yy4xNi0uMS4yMi0uMTIuMy4wNi4xNy40LjQ0Ljc0Ljc3IDEuMDd6bS0xLjMgNS42Yy4xNSAwIC4yNCAwIC4yLjItLjA4LjM4LS4wOC43NyAwIDEuMTYuMDIuMTUtLjAzLjItLjE4LjItMS41LS4wMi0zLS4wMi00LjQ3LS4wMi0uMTYgMC0uMi0uMDQtLjE3LS4yLjA3LS4zOC4wNi0uNzcgMC0xLjE1LS4wNC0uMTcgMC0uMi4xNi0uMmg0LjQ1ek0xNS4xNCAzLjA1YzAtMS43IDEuNC0zLjA1IDMuMS0zLjA1IDEuNyAwIDMuMDUgMS4zOCAzLjA1IDMuMS0uMDIgMS42OC0xLjQgMy4wNS0zLjEgMy4wNC0xLjcgMC0zLjA2LTEuMzgtMy4wNi0zLjF6bTAgOWMwLTEuNyAxLjQtMy4wNSAzLjEtMy4wNSAxLjcgMCAzLjA1IDEuMzggMy4wNSAzLjEtLjAyIDEuNjgtMS40IDMuMDUtMy4xIDMuMDQtMS43IDAtMy4wNi0xLjM4LTMuMDYtMy4xek0wIDEyLjA1QzAgMTAuMzUgMS40IDkgMy4wOCA5YzEuNyAwIDMuMDcgMS4zOCAzLjA2IDMuMSAwIDEuNjgtMS4zOCAzLjA1LTMuMDggMy4wNC0xLjcgMC0zLjA2LTEuMzgtMy4wNi0zLjF6bTE1LjE0IDljMC0xLjcgMS40LTMuMDUgMy4xLTMuMDUgMS43IDAgMy4wNSAxLjM4IDMuMDUgMy4xLS4wMiAxLjY4LTEuNCAzLjA1LTMuMSAzLjA0LTEuNyAwLTMuMDYtMS4zOC0zLjA2LTMuMXoiLz4NCjwvc3ZnPg0K) center no-repeat;
+  background-size: contain; }
+
+.icon.icon__children--red {
+  background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMS4yOSAyNC4xNCI+CiAgPHBhdGggZmlsbD0iI0Y4MzgzOCIgZD0iTTguMDIgMTRsLjEuMDggNS43OCAzLjk2Yy4xMy4xLjE0LjEzLjAzLjI1LS4yOC4yNy0uNS42LS42Ni45NS0uMDYuMTMtLjEuMTUtLjIzLjA3bC01LjgtNGMtLjEtLjA3LS4xMi0uMS0uMDQtLjIuMy0uMy41My0uNjQuNy0xIC4wMy0uMDUuMDItLjE0LjEyLS4xMnptNi4wNS04LjZMMTEuNzcgN2wtMy42IDIuNDdjLS4xMy4xLS4yLjEyLS4yOC0uMDctLjE4LS40LS40NS0uNzQtLjc2LTEuMDQuMDItLjA4LjEtLjEuMTMtLjEzTDEzIDQuMjhjLjE2LS4xLjIyLS4xMi4zLjA2LjE3LjQuNDQuNzQuNzcgMS4wN3ptLTEuMyA1LjZjLjE1IDAgLjI0IDAgLjIuMi0uMDguMzgtLjA4Ljc3IDAgMS4xNi4wMi4xNS0uMDMuMi0uMTguMi0xLjUtLjAyLTMtLjAyLTQuNDctLjAyLS4xNiAwLS4yLS4wNC0uMTctLjIuMDctLjM4LjA2LS43NyAwLTEuMTUtLjA0LS4xNyAwLS4yLjE2LS4yaDQuNDV6TTE1LjE0IDMuMDVjMC0xLjcgMS40LTMuMDUgMy4xLTMuMDUgMS43IDAgMy4wNSAxLjM4IDMuMDUgMy4xLS4wMiAxLjY4LTEuNCAzLjA1LTMuMSAzLjA0LTEuNyAwLTMuMDYtMS4zOC0zLjA2LTMuMXptMCA5YzAtMS43IDEuNC0zLjA1IDMuMS0zLjA1IDEuNyAwIDMuMDUgMS4zOCAzLjA1IDMuMS0uMDIgMS42OC0xLjQgMy4wNS0zLjEgMy4wNC0xLjcgMC0zLjA2LTEuMzgtMy4wNi0zLjF6TTAgMTIuMDVDMCAxMC4zNSAxLjQgOSAzLjA4IDljMS43IDAgMy4wNyAxLjM4IDMuMDYgMy4xIDAgMS42OC0xLjM4IDMuMDUtMy4wOCAzLjA0LTEuNyAwLTMuMDYtMS4zOC0zLjA2LTMuMXptMTUuMTQgOWMwLTEuNyAxLjQtMy4wNSAzLjEtMy4wNSAxLjcgMCAzLjA1IDEuMzggMy4wNSAzLjEtLjAyIDEuNjgtMS40IDMuMDUtMy4xIDMuMDQtMS43IDAtMy4wNi0xLjM4LTMuMDYtMy4xeiIvPgo8L3N2Zz4=) center no-repeat;
+  background-size: contain; }
+
+.icon.icon__update {
+  background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMS42NCAxNS43NSI+DQogIDxwYXRoIGZpbGw9IiNGRkYiIGQ9Ik0xMy43MyA5bDEuMDMgMS4wNiAyLjE1LTIuMDN2Ni4yM0g0LjdWMTEuNUgzLjI0djQuMjVIMTguNFY4bDIuMjMgMi4wNyAxLTEuMS00LTMuN00zLjIzIDB2Ny4xM0wuOTggNS4xNyAwIDYuM2wzLjk4IDMuNDggMy45LTMuNS0xLTEuMUw0LjcgNy4xVjEuNWgxMi4ydjIuMjVoMS41VjAiLz4NCjwvc3ZnPg==) center no-repeat;
+  background-size: contain; }
+
+.icon.icon__update--red {
+  background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMS42NCAxNS43NSI+CiAgPHBhdGggZmlsbD0iI0Y4MzgzOCIgZD0iTTEzLjczIDlsMS4wMyAxLjA2IDIuMTUtMi4wM3Y2LjIzSDQuN1YxMS41SDMuMjR2NC4yNUgxOC40VjhsMi4yMyAyLjA3IDEtMS4xLTQtMy43TTMuMjMgMHY3LjEzTC45OCA1LjE3IDAgNi4zbDMuOTggMy40OCAzLjktMy41LTEtMS4xTDQuNyA3LjFWMS41aDEyLjJ2Mi4yNWgxLjVWMCIvPgo8L3N2Zz4=) center no-repeat;
+  background-size: contain; }
+
+.icon.icon__download {
+  background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMS4zNyAxOC41MiI+DQogIDxwYXRoIGZpbGw9IiNGRkYiIGQ9Ik0xMS4yIDE0LjA0aC0uMDNjLS4xMi4xMi0uMjguMi0uNDYuMi0uMiAwLS4zOC0uMDUtLjUzLS4yTDUuOSA5LjA2Yy0uMjgtLjI4LS4yOC0uNzQgMC0xLjAycy43NC0uMjggMS4wMiAwbDMuMDUgMy41NlYuN2MwLS4zOC4zMi0uNy43LS43LjQgMCAuNzMuMzIuNzMuN3YxMC45bDMuMDUtMy41NmMuMjgtLjI4Ljc0LS4yOCAxLjAyIDBzLjI4Ljc0IDAgMS4wMmwtNC4yOCA0Ljk4em05LjQ2IDQuNDhILjdjLS4zOCAwLS43LS4zMi0uNy0uN3YtNS43YzAtLjQuMzItLjcyLjctLjcyLjQgMCAuNzIuMzIuNzIuN3Y1aDE4LjUzdi01YzAtLjM4LjMtLjcuNy0uN3MuNzIuMzIuNzIuN3Y1LjdjMCAuNC0uMzIuNzItLjcuNzJ6Ii8+DQo8L3N2Zz4NCg==) center no-repeat;
+  background-size: contain; }
+
+.icon.icon__download--red {
+  background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMS4zNyAxOC41MiI+CiAgPHBhdGggZmlsbD0iI0Y4MzgzOCIgZD0iTTExLjIgMTQuMDRoLS4wM2MtLjEyLjEyLS4yOC4yLS40Ni4yLS4yIDAtLjM4LS4wNS0uNTMtLjJMNS45IDkuMDZjLS4yOC0uMjgtLjI4LS43NCAwLTEuMDJzLjc0LS4yOCAxLjAyIDBsMy4wNSAzLjU2Vi43YzAtLjM4LjMyLS43LjctLjcuNCAwIC43My4zMi43My43djEwLjlsMy4wNS0zLjU2Yy4yOC0uMjguNzQtLjI4IDEuMDIgMHMuMjguNzQgMCAxLjAybC00LjI4IDQuOTh6bTkuNDYgNC40OEguN2MtLjM4IDAtLjctLjMyLS43LS43di01LjdjMC0uNC4zMi0uNzIuNy0uNzIuNCAwIC43Mi4zMi43Mi43djVoMTguNTN2LTVjMC0uMzguMy0uNy43LS43cy43Mi4zMi43Mi43djUuN2MwIC40LS4zMi43Mi0uNy43MnoiLz4KPC9zdmc+) center no-repeat;
+  background-size: contain; }
+
 .icon.icon__avatar {
   background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyOCAyOSI+CiAgPGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2U9IiNGRkYiIHN0cm9rZS13aWR0aD0iMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMSAxLjE3OCkiPgogICAgPHBhdGggZD0iTTQgMjIuNzdjMi4wNi00LjA4IDUtNi4xMiA4Ljc4LTYuMTIgMy43OCAwIDYuNzQgMS44MiA4Ljg2IDUuNDYiLz4KICAgIDxjaXJjbGUgY3g9IjEzIiBjeT0iMTAiIHI9IjUiLz4KICAgIDxjaXJjbGUgY3g9IjEzIiBjeT0iMTMiIHI9IjEzIi8+CiAgPC9nPgo8L3N2Zz4=) center no-repeat;
   background-size: contain; }
@@ -1419,8 +1582,9 @@ h1, p {
   background-size: contain; }
 
 h2 {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   margin: 0;
+  font-weight: 300;
   color: #4A4A4A; }
   h2.bluetab-subtitle--centered {
     text-align: center; }
@@ -1436,10 +1600,10 @@ html.desktop {
 
 html.mobile {
   -webkit-overflow-scrolling: touch;
-  font-size: 3.125vw; }
+  font-size: 2.5vw; }
   @media screen and (min-aspect-ratio: 2 / 3) {
     html.mobile {
-      font-size: 2.08333vh; } }
+      font-size: 1.66667vh; } }
 
 body {
   font-size: 1.6rem;

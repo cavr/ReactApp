@@ -2,7 +2,8 @@
 
 $metrics-width: 450px;
 $metrics-horizontal-padding: 90px;
-html.desktop .business-metrics {
+
+ .business-metrics {
   .business-element-wrapper {
     padding: get-rem(36px) get-rem($metrics-horizontal-padding) get-rem(72px) get-rem($metrics-horizontal-padding);
     .business-element__selector {

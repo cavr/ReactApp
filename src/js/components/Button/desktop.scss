@@ -1,6 +1,6 @@
 @import '../../../scss/theme/variables';
 
-html.desktop .bluetab-button {
+ .bluetab-button {
   position: relative;
   display: flex;
   justify-content: center;
@@ -19,9 +19,10 @@ html.desktop .bluetab-button {
 
   cursor: pointer;
   .bluetab-button__icon {
-    width: get-rem(23px);
+    width: get-rem(14px);
     height: get-rem(14px);
     background-position: left;
+    margin-right: get-rem(7px);
   }
   &.bluetab-button--selected {
     color: white;
@@ -35,7 +36,7 @@ html.desktop .bluetab-button {
   }
 }
 
-html.desktop .bluetab-button--light {
+ .bluetab-button--light {
   min-width: auto;
   height: get-rem(27px);
   font-size: get-rem(12px);
@@ -43,6 +44,10 @@ html.desktop .bluetab-button--light {
   border: get-rem(2px) solid $bluetab-red;
   border-radius: get-rem(50px);
   color: $bluetab-red;
+  .bluetab-button__icon {
+    width: get-rem(12px);
+    height: get-rem(12px);
+  }
   &:hover {
     background-color: $bluetab-red;
     color: white;

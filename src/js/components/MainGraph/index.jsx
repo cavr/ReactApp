@@ -12,6 +12,7 @@ import Loading from 'components/Loading';
 import MainRadarChart from './MainRadarChart';
 
 import './desktop.scss';
+import './mobile.scss';
 
 export class MainGraph extends PureComponent {
 
@@ -38,47 +39,45 @@ export class MainGraph extends PureComponent {
     const showingEvolution = loadingEvolution || evolutionData !== null;
 
     return (
-      <div className='main-graph'>
-        <Section currentStep={ currentStep } sectionNumber={ 2 } title='Selecciona un índice de una gráfica' loading={ loading } noMargin={ true }>
-          <div className='main-graph__content'>
-            <h2 className='bluetab-subtitle--centered'>Select the index of which you want to see the evolution or the subindices that form it</h2>
-            <div className='main-graph__graph-wrapper'>
-              <div className='main-graph__graph-controls'>
-                <Selector
-                  className='selectors__selector'
-                  title={ 'Select an index' }
-                  values={ indexes }
-                  currentValue={ selected && selected.value }
-                  onChange={ (option) => setSelectedIndex(option.value, option.label) }
-                />
-                <Button title={ 'Subindices' } selected={ currentStep > 2 } onClick={ () => (currentStep === 2 ? setStep(3) : setStep(2)) } />
-                <Button title={ 'Evolucion' } icon={ 'graph' } light={ true } selected={ showingEvolution } onClick={ () => (!evolutionData ? setEvolutionData(selected.value) : clearEvolutionData()) } />
-              </div>
-              <MainRadarChart data={ data } />
+      <Section currentStep={ currentStep } sectionNumber={ 2 } title='Selecciona un índice de una gráfica' loading={ loading }>
+        <div className='main-graph'>
+          <h2 className='bluetab-subtitle--centered'>Select the index of which you want to see the evolution or the subindices that form it</h2>
+          <div className='main-graph__graph-wrapper'>
+            <div className='main-graph__graph-controls'>
+              <Selector
+                className='selectors__selector'
+                title={ 'Select an index' }
+                values={ indexes }
+                currentValue={ selected && selected.value }
+                onChange={ (option) => setSelectedIndex(option.value, option.label) }
+              />
+              <Button title={ 'Subindices' } icon={ 'children' } selected={ currentStep > 2 } onClick={ () => (currentStep === 2 ? setStep(3) : setStep(2)) } />
+              <Button title={ 'Evolucion' } icon={ 'graph' } light={ true } selected={ showingEvolution } onClick={ () => (!evolutionData ? setEvolutionData(selected.value) : clearEvolutionData()) } />
             </div>
-            <hr className='main-graph__separator' />
-            <div className='main-graph__benchmarking'>
-              <h2 className='bluetab-subtitle--centered'>Benchmarking</h2>
-              <Button title={ 'Peers' } onClick={ () => setStep(2) } light={ true } />
-              <Button title={ 'Competition' } onClick={ () => setStep(2) } light={ true } />
-              <Button title={ 'Market' } onClick={ () => setStep(2) } light={ true } />
-            </div>
+            <MainRadarChart data={ data } />
           </div>
-        </Section>
-        <section className='main-graph__details'>
-          <Collapse isOpened={ true }>
-            {
-              showingEvolution &&
-              <div className='main-graph__details-wrapper'>
-                {
-                  loadingEvolution ? <Loading small={ true } /> :
-                  <Evolution label={ evolutionData.label } variation={ evolutionData.variation } points={ evolutionData.points } maxValue={ 10 } />
-                }
-              </div>
-            }
-          </Collapse>
-        </section>
-      </div>
+          <hr className='main-graph__separator' />
+          <div className='main-graph__details'>
+            <Collapse isOpened={ showingEvolution }>
+              {
+                showingEvolution &&
+                <div className='main-graph__details-wrapper'>
+                  {
+                    loadingEvolution ? <Loading small={ true } /> :
+                    <Evolution label={ evolutionData.label } variation={ evolutionData.variation } points={ evolutionData.points } maxValue={ 10 } />
+                  }
+                </div>
+              }
+            </Collapse>
+          </div>
+          <div className='main-graph__benchmarking'>
+            <h2 className='bluetab-subtitle--centered'>Benchmarking</h2>
+            <Button title={ 'Peers' } onClick={ () => setStep(2) } light={ true } />
+            <Button title={ 'Competition' } onClick={ () => setStep(2) } light={ true } icon={ 'comparative' } />
+            <Button title={ 'Market' } onClick={ () => setStep(2) } light={ true } />
+          </div>
+        </div>
+      </Section>
     );
   }
 }

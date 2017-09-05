@@ -5,6 +5,7 @@ import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 import Loading from 'components/Loading';
 
 import './desktop.scss';
+import './mobile.scss';
 
 export default class Section extends PureComponent {
   static propTypes = {
@@ -43,7 +44,14 @@ export default class Section extends PureComponent {
             {
               loading ?
                 <Loading /> :
-                (sectionNumber <= currentStep && <div className={ `section__content ${ noPadding ? 'section__content--no-padding' : '' }` }>{ children }</div>)
+                (
+                  sectionNumber <= currentStep &&
+                  <div
+                    className={ `section__content ${ noPadding ? 'section__content--no-padding' : '' }` }
+                  >
+                    { React.cloneElement(children, { key: `section-${ sectionNumber }` }) }
+                  </div>
+                )
             }
           </CSSTransitionGroup>
         </Collapse>

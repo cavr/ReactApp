@@ -1,6 +1,6 @@
 @import '../../../scss/theme/variables';
 
-html.desktop .bluetab-sns-sidenav {
+ .bluetab-sns-sidenav {
   position: fixed;
   top: 0;
   left: 0;
@@ -44,13 +44,50 @@ html.desktop .bluetab-sns-sidenav {
       margin-left: get-rem(12px);
       margin-right: get-rem(14px);
     }
+    &.bluetab-sns-sidenav__nav-button--secondary {
+      font-size: get-rem(12px);
+      height: get-rem(45px);
+      padding-left: get-rem(20px);
+      .bluetab-sns-sidenav__icon {
+        width: get-rem(20px);
+        height: get-rem(20px);
+      }
+    }
+    transition: all 0.3s $easing;
+    &.bluetab-sns-sidenav__nav-button--MIS {
+      border-color: $bluetab-light-green;
+      &:hover {
+        background-color: $bluetab-green;
+      }
+    }
+    &.bluetab-sns-sidenav__nav-button--RO {
+      border-color: $bluetab-light-orange;
+      &:hover {
+        background-color: $bluetab-orange;
+      }
+    }
+    &.bluetab-sns-sidenav__nav-button--change {
+      border-color: $bluetab-light-purple;
+      &:hover {
+        background-color: $bluetab-purple;
+      }
+    }
+    &.bluetab-sns-sidenav__nav-button--innovation {
+      border-color: $bluetab-light-blue;
+      &:hover {
+        background-color: $bluetab-blue;
+      }
+    }
   }
+
+  
 
   &.bluetab-sns-sidenav--MIS-active,
   &.bluetab-sns-sidenav--RO-active,
   &.bluetab-sns-sidenav--change-active,
   &.bluetab-sns-sidenav--innovation-active {
     &:after {
+      transition: all 0.3s $easing;
       content: " ";
       position: absolute;
       right: 0;
@@ -62,17 +99,14 @@ html.desktop .bluetab-sns-sidenav {
 
   &.bluetab-sns-sidenav--MIS-active {
     &:after {
-      background-color:  $bluetab-light-green;
+      background-color: $bluetab-light-green;
     }
     .bluetab-sns-sidenav__nav-button--MIS {
-      border-bottom: none;
-      border-color: $bluetab-light-green;
       background-color: $bluetab-green;
     }
     .bluetab-sns-sidenav__parametrics {
-      background-color: $bluetab-dark;
-      border-color: $bluetab-dark;
-      font-size: get-rem(12px);
+      border-color: $bluetab-dark-green;
+      background-color: $bluetab-dark-green;
     }
   }
 
@@ -81,8 +115,6 @@ html.desktop .bluetab-sns-sidenav {
       background-color:  $bluetab-light-orange;
     }
     .bluetab-sns-sidenav__nav-button--RO {
-      border-bottom: none;
-      border-color: $bluetab-light-orange;
       background-color: $bluetab-orange;
     }
   }
@@ -92,8 +124,6 @@ html.desktop .bluetab-sns-sidenav {
       background-color:  $bluetab-light-purple;
     }
     .bluetab-sns-sidenav__nav-button--change {
-      border-bottom: none;
-      border-color: $bluetab-light-purple;
       background-color: $bluetab-purple;
     }
   }
@@ -103,7 +133,6 @@ html.desktop .bluetab-sns-sidenav {
       background-color:  $bluetab-light-blue;
     }
     .bluetab-sns-sidenav__nav-button--innovation {
-      border-color: $bluetab-light-blue;
       background-color: $bluetab-blue;
     }
   }

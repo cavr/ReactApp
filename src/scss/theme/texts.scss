@@ -1,6 +1,7 @@
 h2 {
-  font-size: get-rem(14px);
+  font-size: get-rem(13px);
   margin: 0;
+  font-weight: 300;
   color: $bluetab-gray;
   &.bluetab-subtitle--centered {
     text-align: center;

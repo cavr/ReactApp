@@ -6,6 +6,7 @@ import Section from 'components/Section';
 import Subindex from './Subindex';
 
 import './desktop.scss';
+import './mobile.scss';
 
 export class Subindexes extends PureComponent {
 

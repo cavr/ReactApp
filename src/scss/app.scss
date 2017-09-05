@@ -27,9 +27,9 @@ html.desktop {
 html.mobile {
   -webkit-overflow-scrolling: touch;
   
-  font-size: get-mobile-vw(10px);
+  font-size: get-mobile-vw(8px);
   @media screen and (min-aspect-ratio: 2/3) {
-    font-size: get-mobile-vh(10px);
+    font-size: get-mobile-vh(8px);
   }
 }
 

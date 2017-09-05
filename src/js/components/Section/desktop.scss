@@ -1,6 +1,6 @@
 @import '../../../scss/theme/variables';
 
-html.desktop section {
+ section {
   position: relative;
   width: get-rem($section-width);
   background-color: white;
@@ -12,7 +12,9 @@ html.desktop section {
     height: get-rem($section-title-height);
     transition: all 0.6s $easing;
     .section-title__text {
-      @include centerer;
+      @include vertical-center;
+      width: 100%;
+      text-align: center;
       font-weight: 500;
       font-size: get-rem(18px);
       color: white;
@@ -51,7 +53,7 @@ html.desktop section {
   }
 }
 
-html.desktop .section--static {
+ .section--static {
   .section-title {
     border-bottom: get-rem(1px) solid $bluetab-light-gray-2;
     .section-title__text {
@@ -64,7 +66,7 @@ html.desktop .section--static {
   }
 }
 
-html.desktop .section--inactive {
+ .section--inactive {
   .section-title .section-title__background {
     background: $bluetab-light-gray-2;
   }

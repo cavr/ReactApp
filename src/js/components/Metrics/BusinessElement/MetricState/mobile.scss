@@ -1,0 +1,14 @@
+@import '../../../../../scss/theme/variables';
+
+
+html.mobile .business-element-metric {
+  .business-element-metric__content {
+    flex-wrap: wrap;
+    justify-content: center;
+    height: auto;
+    padding: get-rem(20px) 0;
+    .business-element-metric__button-wrapper {
+      margin-top: get-rem(10px);
+    }
+  }
+}

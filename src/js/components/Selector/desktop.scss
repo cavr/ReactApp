@@ -3,7 +3,7 @@
 $selector-font-size: 12px;
 $selector-left-padding: 14px;
 
-html.desktop .bluetab-selector {
+.bluetab-selector {
   margin-bottom: get-rem(20px);
   .bluetab-selector__title-wrapper {
     margin-bottom: get-rem(10px);
@@ -62,7 +62,7 @@ html.desktop .bluetab-selector {
   }
 }
 
-html.desktop .bluetab-selector--inline {
+ .bluetab-selector--inline {
   display: flex;
   align-items: center;
   .bluetab-selector__title-wrapper {

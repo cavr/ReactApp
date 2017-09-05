@@ -4,6 +4,7 @@ import Selector from 'components/Selector';
 import Button from 'components/Button';
 
 import './desktop.scss';
+import './mobile.scss';
 
 export default class SelectorsContent extends PureComponent {
   static propTypes = {

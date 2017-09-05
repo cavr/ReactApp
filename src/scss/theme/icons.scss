@@ -6,6 +6,15 @@
     'bell',
     'bell--red',
     'graph',
+    'graph--red',
+    'comparative',
+    'comparative--red',
+    'children',
+    'children--red',
+    'update',
+    'update--red',
+    'download',
+    'download--red',
     'avatar';
 
   @each $key in $list {

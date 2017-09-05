@@ -9,6 +9,7 @@ import Selector from 'components/Selector';
 import BusinessElement from './BusinessElement';
 
 import './desktop.scss';
+import './mobile.scss';
 
 export class Metrics extends PureComponent {
 
@@ -55,7 +56,7 @@ export class Metrics extends PureComponent {
             currentStep === 4 &&
             <section className='metrics__benchmarking'>
               <h2 className='bluetab-subtitle--centered'>Actions</h2>
-              <Button title={ 'Resume PDF' } onClick={ () => console.log(2) } />
+              <Button title={ 'Resume PDF' } icon={ 'download' } onClick={ () => console.log(2) } />
             </section>
           }
         </Collapse>

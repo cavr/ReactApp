@@ -1,11 +1,14 @@
 @import '../../../../scss/theme/variables';
 
-html.desktop .subindex {
+.subindex {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: get-rem(30px) 0;
   border-bottom: get-rem(1px) solid $bluetab-light-gray;
+  .subindex__chart {
+    width: get-rem(230px);
+  }
   .subindex__variation-wrapper {
     position: relative;
     flex: 0 0 auto;

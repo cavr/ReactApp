@@ -3,7 +3,7 @@
 $semaphore-size: 20px;
 $semaphore-margin: 15px;
 
-html.desktop .business-element-metric {
+.business-element-metric {
   .business-element-metric__content {
     height: get-rem(56px);
     display: flex;
@@ -60,8 +60,6 @@ html.desktop .business-element-metric {
     border-bottom: get-rem(1px) solid $bluetab-light-gray-2;
     flex-wrap: wrap;
     .evolution__label {
-      color: $bluetab-gray;
-      font-size: get-rem(11px);
       width: 100%;
     }
     .evolution__variation {

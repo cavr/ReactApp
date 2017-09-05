@@ -1,0 +1,13 @@
+html.mobile .selectors {
+  .selectors__selector-wrapper {
+    width: 100%;
+    margin: get-rem(38px) 0;
+    display: flex;
+    flex-wrap: wrap;
+    .selectors__selector {
+      flex: 1 1 100%;
+      padding: 0;
+      margin-bottom: get-rem(18px);
+    }
+  }
+}

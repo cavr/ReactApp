@@ -12,11 +12,25 @@ export default class Button extends PureComponent {
     onClick: PropTypes.func,
   };
 
+  constructor() {
+    super();
+
+    this.state = {
+      hover: false,
+    };
+  }
+
   render() {
     const { title, icon, selected, light, onClick } = this.props;
+    const hover = this.state.hover;
     return (
-      <button className={ `bluetab-button ${ light ? 'bluetab-button--light' : '' } ${ selected ? 'bluetab-button--selected' : '' }` } onClick={ onClick }>
-        { icon && <i className={ `bluetab-button__icon icon icon__${ icon }` } /> }
+      <button
+        className={ `bluetab-button ${ light ? 'bluetab-button--light' : '' } ${ selected ? 'bluetab-button--selected' : '' }` }
+        onClick={ onClick }
+        onMouseEnter={ () => this.setState({ hover: true }) }
+        onMouseLeave={ () => this.setState({ hover: false }) }
+      >
+        { icon && <i className={ `bluetab-button__icon icon icon__${ icon }${ !selected && ((!hover && light) || (hover && !light)) ? '--red' : '' }` } /> }
         { title }
       </button>
     );

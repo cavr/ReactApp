@@ -1,0 +1,8 @@
+@import '../../../scss/theme/variables';
+
+html.mobile section { 
+  width: 100%;
+  .section__content {
+    padding: get-rem($section-padding--mobile);
+  }
+}

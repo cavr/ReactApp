@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { setStep } from 'actions/app';
 
 import './desktop.scss';
+import './mobile.scss';
 
 export class StepBar extends PureComponent {
   static propTypes = {

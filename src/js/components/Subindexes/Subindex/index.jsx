@@ -4,6 +4,7 @@ import Button from 'components/Button';
 import Chart from './Chart';
 
 import './desktop.scss';
+import './mobile.scss';
 
 export default class Subindex extends PureComponent {
 

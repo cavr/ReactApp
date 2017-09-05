@@ -1,0 +1,13 @@
+@import '../../../../scss/theme/variables';
+
+html.mobile .subindex {
+  flex-wrap: wrap;
+  padding-top: get-rem(70px);
+  .bluetab-button {
+    order: 2;
+  }
+  .subindex__chart {
+    margin-bottom: get-rem(25px);
+    width: 100%;
+  }
+}

@@ -28,7 +28,7 @@ export default class Chart extends PureComponent {
 
   render() {
     return (
-      <div className='bluetab-sns-subindex__chart'>
+      <div className='subindex__chart'>
         { this.renderChart() }
       </div>
     );

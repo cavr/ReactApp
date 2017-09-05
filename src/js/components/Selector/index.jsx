@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Select from 'react-select';
 
 import './desktop.scss';
+import './mobile.scss';
 
 export default class Selector extends PureComponent {
   static propTypes = {

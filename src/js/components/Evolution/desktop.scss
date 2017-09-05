@@ -1,23 +1,24 @@
 @import '../../../scss/theme/variables';
 
-html.desktop .evolution {
+ .evolution {
   display: flex;
   justify-content: space-between;
   align-items: center;
   .evolution__label {
-    font-size: get-rem(16px);
+    font-size: get-rem(12px);
+    color: $bluetab-gray;
     font-weight: 500;
     position: relative;
-    padding-bottom: get-rem(15px);
+    padding-bottom: get-rem(10px);
     &:after {
       position: absolute;
       bottom: 0;
       left: 0;
       content: '';
       width: get-rem(52px);
-      height: get-rem(4px);
+      height: get-rem(3px);
       border-radius: get-rem(2px);
-      background-color: $bluetab-red;
+      background-color: $bluetab-light-red;
     }
   }
   .evolution__variation {
