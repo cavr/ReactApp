@@ -11,8 +11,10 @@ $subindex-line-color: #50E3C2;
     border-radius: get-rem(2px);
     background-color: $bluetab-light-gray;
     .subindex-line-chart__filled {
+      width: 0;
       height: 100%;
       background-color: $subindex-line-color;
+      transition: all 2s $easing; 
     }
   }
   .subindex-line-chart__droplet {
@@ -20,7 +22,6 @@ $subindex-line-color: #50E3C2;
     bottom: 100%;
     width: get-rem(38px);
     height: get-rem(46px);
-    transform: translateX(-50%);
     path {
       fill: $subindex-line-color;
     }

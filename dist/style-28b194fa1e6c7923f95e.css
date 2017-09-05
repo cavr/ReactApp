@@ -295,18 +295,27 @@ html.mobile .bluetab-sns-app .bluetab-sns-app__wrapper {
 html.mobile .stepbar-navigation {
   width: 100%; }
 .loading {
-  padding: get-rem(30px);
+  padding: 3rem;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: center;
       justify-content: center; }
   .loading .loading__image {
     display: block;
-    width: get-rem(200px);
-    height: get-rem(200px); }
+    width: 12rem;
+    height: 12rem;
+    background: url(/assets/spinner-a795c8737c5d17938460eba6f27dd6cd.png) no-repeat center;
+    background-size: contain;
+    animation: spin 1s infinite; }
     .loading .loading__image.loading__image--small {
-      width: get-rem(60px);
-      height: get-rem(60px); }
+      width: 6rem;
+      height: 6rem; }
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
 section {
   position: relative;
   width: 72rem;
@@ -462,6 +471,10 @@ html.mobile section {
     color: white;
     background-color: #F47063;
     border-color: #F47063; }
+    .bluetab-button.bluetab-button--selected:hover {
+      border-color: #F83838;
+      color: #F83838;
+      background-color: white; }
   .bluetab-button:hover {
     border-color: #F83838;
     color: #F83838;
@@ -759,6 +772,23 @@ html.mobile .main-graph .main-graph__benchmarking {
     -ms-flex: 1 1 100%;
         flex: 1 1 100%;
     margin-bottom: 2rem; }
+.bluetab-value-droplet {
+  -ms-transform-origin: center 100%;
+      transform-origin: center 100%;
+  animation: appear 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  -ms-transform: translateX(-50%);
+      transform: translateX(-50%);
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1); }
+  .bluetab-value-droplet:hover {
+    -ms-transform: translateX(-50%) scale(1.2);
+        transform: translateX(-50%) scale(1.2);
+    z-index: 3; }
+
+@keyframes appear {
+  from {
+    transform: translateX(-50%) scale(0.01); }
+  to {
+    transform: translateX(-50%) scale(1); } }
 .subindex-line-chart {
   position: relative;
   width: 100%; }
@@ -769,15 +799,15 @@ html.mobile .main-graph .main-graph__benchmarking {
     border-radius: 0.2rem;
     background-color: #F1EFEF; }
     .subindex-line-chart .subindex-line-chart__line .subindex-line-chart__filled {
+      width: 0;
       height: 100%;
-      background-color: #50E3C2; }
+      background-color: #50E3C2;
+      transition: all 2s cubic-bezier(0.23, 1, 0.32, 1); }
   .subindex-line-chart .subindex-line-chart__droplet {
     position: absolute;
     bottom: 100%;
     width: 3.8rem;
-    height: 4.6rem;
-    -ms-transform: translateX(-50%);
-        transform: translateX(-50%); }
+    height: 4.6rem; }
     .subindex-line-chart .subindex-line-chart__droplet path {
       fill: #50E3C2; }
   .subindex-line-chart .subindex-line-chart__labels {
@@ -800,9 +830,7 @@ html.mobile .main-graph .main-graph__benchmarking {
     border-radius: 0.2rem; }
   .subindex-heat-chart .subindex-heat-chart__droplet {
     position: absolute;
-    bottom: 100%;
-    -ms-transform: translateX(-50%);
-        transform: translateX(-50%); }
+    bottom: 100%; }
     .subindex-heat-chart .subindex-heat-chart__droplet.subindex-heat-chart__droplet--current {
       width: 3.8rem;
       height: 4.6rem; }
@@ -831,6 +859,7 @@ html.mobile .main-graph .main-graph__benchmarking {
   -ms-flex-pack: justify;
       justify-content: space-between;
   padding: 3rem 0;
+  padding-top: 6.5rem;
   border-bottom: 0.1rem solid #F1EFEF; }
   .subindex .subindex__chart {
     width: 23rem; }
@@ -944,6 +973,17 @@ html.mobile .business-element-metric .business-element-metric__content {
   padding: 2rem 0; }
   html.mobile .business-element-metric .business-element-metric__content .business-element-metric__button-wrapper {
     margin-top: 1rem; }
+
+html.mobile .business-element-metric .evolution .evolution__label {
+  width: auto; }
+
+html.mobile .business-element-metric .evolution .evolution__variation {
+  padding-top: 0;
+  padding-left: 3rem; }
+
+html.mobile .business-element-metric .evolution .evolution-line-chart {
+  width: 100%;
+  margin-top: 1.5rem; }
 .business-metrics .business-element-wrapper {
   padding: 3.6rem 9rem 7.2rem 9rem; }
   .business-metrics .business-element-wrapper .business-element__selector {

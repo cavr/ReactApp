@@ -14,7 +14,6 @@ $subindex-heat-color--target: #7ED321;
   .subindex-heat-chart__droplet {
     position: absolute;
     bottom: 100%;
-    transform: translateX(-50%);
     &.subindex-heat-chart__droplet--current {
       width: get-rem(38px);
       height: get-rem(46px);
