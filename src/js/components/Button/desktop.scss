@@ -28,6 +28,11 @@
     color: white;
     background-color: $bluetab-light-red;
     border-color: $bluetab-light-red;
+    &:hover {
+      border-color: $bluetab-red;
+      color: $bluetab-red;
+      background-color: white;
+    }
   }
   &:hover {
     border-color: $bluetab-red;

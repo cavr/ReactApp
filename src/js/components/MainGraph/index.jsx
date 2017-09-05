@@ -39,7 +39,7 @@ export class MainGraph extends PureComponent {
     const showingEvolution = loadingEvolution || evolutionData !== null;
 
     return (
-      <Section currentStep={ currentStep } sectionNumber={ 2 } title='Selecciona un índice de una gráfica' loading={ loading }>
+      <Section currentStep={ currentStep } sectionNumber={ 2 } title='Selecciona un índice de una gráfica' loading={ loading } hasNestedCollapse={ true }>
         <div className='main-graph'>
           <h2 className='bluetab-subtitle--centered'>Select the index of which you want to see the evolution or the subindices that form it</h2>
           <div className='main-graph__graph-wrapper'>

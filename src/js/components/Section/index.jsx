@@ -19,10 +19,11 @@ export default class Section extends PureComponent {
     title: PropTypes.string,
     noMargin: PropTypes.bool,
     noPadding: PropTypes.bool,
+    hasNestedCollapse: PropTypes.bool,
   };
 
   render() {
-    const { title, sectionNumber, currentStep, loading, noMargin, noPadding, children } = this.props;
+    const { title, sectionNumber, currentStep, loading, noMargin, noPadding, hasNestedCollapse, children } = this.props;
     let cssClass = '';
     if (sectionNumber > currentStep) cssClass = 'section--inactive';
     else if (sectionNumber < currentStep) cssClass = 'section--static';
@@ -35,7 +36,7 @@ export default class Section extends PureComponent {
           <h1 className='section-title__text'>{ `${ sectionNumber }. ${ title }` }</h1>
           <div className='section-title__background' />
         </div>
-        <Collapse isOpened={ sectionNumber <= currentStep }>
+        <Collapse isOpened={ sectionNumber <= currentStep } hasNestedCollapse={ hasNestedCollapse } >
           <CSSTransitionGroup
             transitionName='section-transition'
             transitionEnterTimeout={ 500 }

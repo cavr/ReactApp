@@ -11,4 +11,17 @@ html.mobile .business-element-metric {
       margin-top: get-rem(10px);
     }
   }
+  .evolution {
+    .evolution__label {
+      width: auto;
+    }
+    .evolution__variation {
+      padding-top: 0;
+      padding-left: get-rem(30px);
+    }
+    .evolution-line-chart {
+      width: 100%;
+      margin-top: get-rem(15px);
+    }
+  }
 }

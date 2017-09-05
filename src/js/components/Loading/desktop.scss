@@ -1,4 +1,6 @@
-$big-loading-size: 200px;
+@import '../../../scss/theme/variables';
+
+$big-loading-size: 150px;
 $small-loading-size: 60px;
 
 .loading {
@@ -9,9 +11,16 @@ $small-loading-size: 60px;
     display: block;
     width: get-rem($big-loading-size);
     height: get-rem($big-loading-size);
+    background: url('../../../assets/img/common/spinner.png') no-repeat center;
+    background-size: contain;
+    animation: spin 1s infinite;
     &.loading__image--small {
       width: get-rem($small-loading-size);
       height: get-rem($small-loading-size);
     }
+  }
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
   }
 }
