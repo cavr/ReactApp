@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server",
     "dev": "webpack-dashboard -t 'Marvin' -- webpack-dev-server",
-    "build": "rm -rf ./dist && NODE_ENV=\"production\" webpack",
+    "build": "rm -rf ./dist && mkdir ./dist && cp -rf ./src/assets ./dist/assets/ && cp -rf ./src/data ./dist/data && NODE_ENV=\"production\" webpack",
     "lint-break-on-errors": "eslint ./source/js ./webpack.config.js -f table --ext .js --ext .jsx",
     "lint": "eslint ./source/js ./webpack.config.js -f table --ext .js --ext .jsx || true",
     "preview": "rm -rf ./dist && NODE_ENV=\"production\" webpack-dashboard -t 'Preview Mode - Marvin' -- webpack-dev-server",

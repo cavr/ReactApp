@@ -1,0 +1,34 @@
+ {
+"metric": 
+	{
+    "id": "M5",
+    "label": "Packet Delivery",
+    "units": "%"
+    },
+"selectors": [
+	{
+	"id": 6,
+	"label": "Site Category",
+	"values": [
+		{
+		"value": 2,
+		"label": "Data Centre / Head Office",
+		"state": 0
+		},
+		{
+		"value": 3,
+		"label": "Head Office / Branch",
+		"state": 2
+		},
+		{
+		"value": 4,
+		"label": "Branch",
+		"state": 2
+		},
+		{
+		"value": 5,
+		"label": "Other Sites",
+		"state": 2
+		}]
+	}]  
+}

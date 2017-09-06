@@ -1,0 +1,37 @@
+{
+"subindexes": [
+	{
+	"id": "S6",
+	"label": "Data Traffic Profile",
+	"type": 3,
+	"data": 
+		{
+		"value": 90.00,
+		"target": 75.00,
+		"variation": -5,
+		"sections": 
+			{
+			"low": 0,
+			"mid": 50,
+			"high": 100
+			}
+		}
+	},
+	{
+	"id": "S7",
+	"label": "Data Traffic Categories",
+	"type": 10,
+	"data": 
+		{
+		"value": 10.00,
+		"target": 25.00,
+		"variation": -15,
+		"sections": 
+			{
+			"low": 100,
+			"mid": 30,
+			"high": 0
+			}
+		}
+	}]
+}

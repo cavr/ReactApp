@@ -1,0 +1,19 @@
+{
+"metric": 
+	{
+    "id": "M2",
+    "label": "Charge",
+    "units": "€"
+    },
+"selectors": [
+	{
+	"id": 6,
+	"label": "Site Category",
+	"values": [
+		{
+		"value": 4,
+		"label": "Branch",
+		"state": 2
+		}]
+	}]  
+}

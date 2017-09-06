@@ -1,0 +1,33 @@
+{
+"label": "Packet Delivery",
+"variation": 8,
+"points": [
+    {
+    "value": 80.00,
+    "date": "Julio-2017" 
+    },
+	{
+    "value": 85.00,
+    "date": "Junio-2017" 
+    },
+	{
+    "value": 87.00,
+    "date": "Mayo-2017" 
+    },
+	{
+    "value": 90.00,
+    "date": "Abril-2017" 
+    },
+	{
+    "value": 81.00,
+    "date": "Marzo-2017" 
+    },
+	{
+    "value": 77.00,
+    "date": "Febrero-2017" 
+    },
+	{
+    "value": 76.00,
+    "date": "Enero-2017" 
+    }]
+}

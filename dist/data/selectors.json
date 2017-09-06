@@ -1,0 +1,175 @@
+{
+"selectors": [
+	{
+	"id": 1,
+	"label": "Date",
+	"icon": "/assets/icons/dev/S1.svg",
+	"values": [
+		{
+		"value": 1,
+		"label": "All"
+		},
+		{
+		"value": 2,
+		"label": "Agosto-2017"
+		},
+		{
+		"value": 3,
+		"label": "Julio-2017"
+		},
+		{
+		"value": 4,
+		"label": "Junio-2017"
+		},
+		{
+		"value": 5,
+		"label": "Mayo-2017"
+		},
+		{
+		"value": 6,
+		"label": "Abril-2017"
+		},
+		{
+		"value": 7,
+		"label": "Marzo-2017"
+		},
+		{
+		"value": 8,
+		"label": "Febrero-2017"
+		},
+		{
+		"value": 9,
+		"label": "Enero-2017"
+		}]
+	},
+	{
+	"id": 2,
+	"label": "Service",
+	"icon": "/assets/icons/dev/S2.svg",
+	"values": [
+		{
+		"value": 1,
+		"label": "All"
+		},
+		{
+		"value": 2,
+		"label": "Data Services"
+		},
+		{
+		"value": 3,
+		"label": "Voice Service"
+		},
+		{
+		"value": 4,
+		"label": "Mobile Service"
+		},
+		{
+		"value": 5,
+		"label": "Conferencing Service"
+		}]
+	},
+	{
+	"id": 3,
+	"label": "Business Unit",
+	"icon": "/assets/icons/dev/S3.svg",
+	"values": [
+		{
+		"value": 1,
+		"label": "All"
+		},
+		{
+		"value": 2,
+		"label": "Retail Banking"
+		},
+		{
+		"value": 3,
+		"label": "Consumer Banking"
+		},
+		{
+		"value": 4,
+		"label": "Global Banking"
+		}]
+	},
+	{
+	"id": 4,
+	"label": "Partner",
+	"icon": "/assets/icons/dev/S4.svg",
+	"values": [
+		{
+		"value": 1,
+		"label": "All"
+		},
+		{
+		"value": 2,
+		"label": "BT"
+		},
+		{
+		"value": 3,
+		"label": "Telefónica"
+		},
+		{
+		"value": 4,
+		"label": "Telmex"
+		},
+		{
+		"value": 5,
+		"label": "Orange"
+		}]
+	},
+	{
+	"id": 5,
+	"label": "Country",
+	"icon": "/assets/icons/dev/S5.svg",
+	"values": [
+		{
+		"value": 1,
+		"label": "All"
+		},
+		{
+		"value": 2,
+		"label": "UK"
+		},
+		{
+		"value": 3,
+		"label": "Spain"
+		},
+		{
+		"value": 4,
+		"label": "Brazil"
+		},
+		{
+		"value": 5,
+		"label": "Portugal"
+		},
+		{
+		"value": 6,
+		"label": "USA"
+		}]
+	},
+	{
+	"id": 6,
+	"label": "Site Category",
+	"icon": "/assets/icons/dev/S6.svg",
+	"values": [
+		{
+		"value": 1,
+		"label": "All"
+		},
+		{
+		"value": 2,
+		"label": "Data Centre / Head Office"
+		},
+		{
+		"value": 3,
+		"label": "Head Office / Branch"
+		},
+		{
+		"value": 4,
+		"label": "Branch"
+		},
+		{
+		"value": 5,
+		"label": "Other Sites"
+		}]
+	}]
+}
