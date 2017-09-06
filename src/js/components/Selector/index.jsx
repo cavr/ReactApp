@@ -21,7 +21,7 @@ export default class Selector extends PureComponent {
     return (
       <div className={ `bluetab-selector ${ inline ? 'bluetab-selector--inline' : '' } ${ className ? className : '' }` }>
         <div className='bluetab-selector__title-wrapper'>
-          { icon && <i className={ `bluetab-selector__icon icon ${ icon }` } /> }
+          { icon && <i className={ `bluetab-selector__icon icon icon__${ icon }` } /> }
           <div className='bluetab-selector__title'>{ title }</div>
         </div>
         <Select

@@ -16,7 +16,7 @@ export default class MainRadarChart extends PureComponent {
         stroke: '#C4C7CC',
         strokeWidth: '0.5',
       },
-      axisDensity: 40,
+      axisDensity: 10,
     };
 
     this.renderAxis = this.renderAxis.bind(this);
@@ -28,10 +28,10 @@ export default class MainRadarChart extends PureComponent {
     const horizontalAxisDetails = [];
     for (let i = 1, l = this.config.axisDensity, increment = 100 / this.config.axisDensity; i < l; i++) {
       verticalAxisDetails.push(
-        <line key={ `v-detail-${ i }` } x1='49' x2='51' y1={ increment * i } y2={ increment * i } style={ this.config.axisStyle } />
+        <line key={ `v-detail-${ i }` } x1='48' x2='52' y1={ increment * i } y2={ increment * i } style={ this.config.axisStyle } />
       );
       horizontalAxisDetails.push(
-        <line key={ `h-detail-${ i }` } y1='49' y2='51' x1={ increment * i } x2={ increment * i } style={ this.config.axisStyle } />
+        <line key={ `h-detail-${ i }` } y1='48' y2='52' x1={ increment * i } x2={ increment * i } style={ this.config.axisStyle } />
       );
     }
     return (
@@ -69,7 +69,7 @@ export default class MainRadarChart extends PureComponent {
     const pointsString = `50, ${ normPoints[0] } ${ normPoints[1] },50 50,${ normPoints[2] } ${ normPoints[3] },50`;
     return (
       <g className={ name }>
-        <polygon strokeWidth='1' fillOpacity='0.5' fill={ `url(#${ name }-background)` } points={ '50,50 50,50 50,50 50,50' }>
+        <polygon strokeWidth='0.5' fillOpacity='0.5' fill={ `url(#${ name }-background)` } points={ '50,50 50,50 50,50 50,50' }>
           <animate attributeName='points' fill='freeze' dur='500ms' to={ pointsString } keyTimes='0' keySplines='0.23, 1, 0.32, 1' begin={ `${ delay ? delay : 0 }ms` } />
         </polygon>
         <circle cx='50' cy={ normPoints[0] } r='1.33' />
@@ -110,7 +110,7 @@ export default class MainRadarChart extends PureComponent {
             </div>
             <div className='main-graph-chart__legend'>
               <i className='main-graph-chart__legend-icon main-graph-chart__legend-icon--current' />
-              Current
+              Actual
             </div>
           </div>
           <svg className='main-graph-chart__svg' viewBox='0 0 100 100' style={ { backgroundColor: 'white' } }>

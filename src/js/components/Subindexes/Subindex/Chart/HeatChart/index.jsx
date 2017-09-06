@@ -27,7 +27,7 @@ export default class HeatChart extends PureComponent {
     const targetValue = this.normalizeValue(data.value, maxValue);
     return (
       <div className='subindex-heat-chart'>
-        <div className='subindex-heat-chart__line' style={ { backgroundImage: 'linear-gradient(-90deg, #E14031 0%, #98DA65 100%)' } } />
+        <div className='subindex-heat-chart__line' style={ { backgroundImage: 'linear-gradient(-90deg, #98DA65 0%, #E14031 100%)' } } />
         <ValueDroplet className='subindex-heat-chart__droplet subindex-heat-chart__droplet--current' value={ data.value } position={ currentValue } />
         <ValueDroplet className='subindex-heat-chart__droplet subindex-heat-chart__droplet--target' value={ data.target } position={ targetValue } />
         <div className='subindex-heat-chart__labels'>

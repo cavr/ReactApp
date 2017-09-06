@@ -23,7 +23,7 @@ export default class Evolution extends PureComponent {
         <div className='evolution__label'>{ label } evolution</div>
         <div className='evolution__variation'>
           <div className={ `evolution__variation-number evolution__variation-number--${ variationClass }` }>{ variation } %</div>
-          <div className='evolution__variation-text'>variation</div>
+          <div className='evolution__variation-text'>MoM Variation</div>
         </div>
         <EvolutionLineChart points={ points } maxValue={ maxValue } />
       </div>

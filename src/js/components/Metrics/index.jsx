@@ -37,11 +37,12 @@ export class Metrics extends PureComponent {
     const currentBusinessElement = selectors[selectedBusinessElement];
     return (
       <div className='business-metrics'>
-        <Section currentStep={ currentStep } sectionNumber={ 4 } title='Business elements detail' loading={ loading } noPadding={ true } >
+        <Section currentStep={ currentStep } sectionNumber={ 4 } title='Business Elements Analysis' loading={ loading } noPadding={ true } >
           <div className='business-element-wrapper'>
+            <h2 className='bluetab-subtitle--centered'>Please use the drop down to change the Business Element dimension or else use the buttons right of each element to either check its recent evolution, set an alarm or redraw the spider web based on that selection</h2>
             <Selector
               className='business-element__selector'
-              title={ 'Select a business element' }
+              title={ 'Business Element View' }
               values={ businessElements }
               currentValue={ selectedBusinessElement }
               inline={ true }
@@ -55,8 +56,7 @@ export class Metrics extends PureComponent {
         </Section>
         <UnmountClosed isOpened={ currentStep === 4 }>
           <section className='metrics__benchmarking'>
-            <h2 className='bluetab-subtitle--centered'>Actions</h2>
-            <Button title={ 'Resume PDF' } icon={ 'download' } onClick={ () => generatePDF() } />
+            <Button title={ 'Summary Outlook (PDF)' } icon={ 'download' } onClick={ () => generatePDF() } />
           </section>
         </UnmountClosed>
       </div>

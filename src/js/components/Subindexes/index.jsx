@@ -26,10 +26,10 @@ export class Subindexes extends PureComponent {
       );
     });
     return (
-      <Section currentStep={ currentStep } sectionNumber={ 3 } title='Subindex' loading={ loading }>
+      <Section currentStep={ currentStep } sectionNumber={ 3 } title='Subindex Analysis' loading={ loading }>
         <div className='subindexes'>
           <div className='subindexes__content'>
-            <h2 className='bluetab-subtitle--centered'>Select the subindex that you want to compare</h2>
+            <h2 className='bluetab-subtitle--centered'>Please select one of the building SubIndexes to further drill down into its Business Elements</h2>
             <ul className='subindexes__subindex-list'>
               { subindexes }
             </ul>

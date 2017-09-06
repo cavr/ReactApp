@@ -24,6 +24,7 @@ export default class SelectorsContent extends PureComponent {
           className='selectors__selector'
           key={ `selector-${ index }` }
           id={ selector.id }
+          icon={ 'settings--red' }
           title={ selector.label }
           values={ selector.values }
           currentValue={ selected && selected.get(String(selector.id)).value }
@@ -37,7 +38,7 @@ export default class SelectorsContent extends PureComponent {
           <div className='selectors__selector-wrapper'>
             { selectors }
           </div>
-          <Button title={ 'Draw my chart' } onClick={ () => setStep(2) } />
+          <Button title={ 'Draw Spider Web' } onClick={ () => setStep(2) } />
         </div>
     );
   }

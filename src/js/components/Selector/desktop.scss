@@ -6,7 +6,14 @@ $selector-left-padding: 14px;
 .bluetab-selector {
   margin-bottom: get-rem(20px);
   .bluetab-selector__title-wrapper {
+    display: flex;
+    align-items: center;
     margin-bottom: get-rem(10px);
+    .bluetab-selector__icon {
+      width: get-rem(18px);
+      height: get-rem(18px);
+      margin-right: get-rem(8px);
+    }
     .bluetab-selector__title {
       font-size: get-rem($selector-font-size);
       color: $bluetab-gray;

@@ -13,61 +13,70 @@ export default class Sidenav extends PureComponent {
   static propTypes = {
     currentRoute: PropTypes.string,
   };
+  constructor() {
+    super();
 
+    this.state = {
+      showSubmenu: false,
+    };
+  }
   render() {
     const { currentRoute } = this.props;
-    let activeClass = 'bluetab-sns-sidenav--MIS-active';
+    const { showSubmenu } = this.state;
+    let activeClass = 'sidenav--MIS-active';
     if (currentRoute === routeCodes.RO) {
-      activeClass = 'bluetab-sns-sidenav--RO-active';
+      activeClass = 'sidenav--RO-active';
     } else if (currentRoute === routeCodes.CHANGE) {
-      activeClass = 'bluetab-sns-sidenav--change-active';
+      activeClass = 'sidenav--change-active';
     } else if (currentRoute === routeCodes.INNOVATION) {
-      activeClass = 'bluetab-sns-sidenav--innovation-active';
+      activeClass = 'sidenav--innovation-active';
     }
     return (
-      <div className={ `bluetab-sns-sidenav ${ activeClass }` }>
-        <img className='bluetab-sns-sidenav__logo' src={ logo } alt='logo' />
+      <div className={ `sidenav ${ activeClass }` }>
+        <img className='sidenav__logo' src={ logo } alt='logo' />
         <Avatar />
-        <ul className='bluetab-sns-sidenav__nav'>
+        <ul className='sidenav__nav'>
           <Link
-            className='bluetab-sns-sidenav__nav-button bluetab-sns-sidenav__nav-button--MIS'
+            className='sidenav__nav-button sidenav__nav-button--MIS'
             to={ routeCodes.MIS }
+            onClick={ () => this.setState({ showSubmenu: !showSubmenu }) }
           >
-            <i className='bluetab-sns-sidenav__icon icon icon__MIS' />
+            <i className='sidenav__icon icon icon__MIS' />
             MIS
+            <i className={ `sidenav__menu-icon ${ showSubmenu ? 'sidenav__menu-icon--close' : '' } icon icon__menu-arrow` } />
           </Link>
-          <Collapse isOpened={ true }>
+          <Collapse isOpened={ showSubmenu }>
             {
-              activeClass === 'bluetab-sns-sidenav--MIS-active' &&
-              <div className='bluetab-sns-sidenav__nav-button bluetab-sns-sidenav__nav-button--secondary bluetab-sns-sidenav__parametrics'>
-                <i className='bluetab-sns-sidenav__icon icon icon__change' />
-                Parametrías
+              activeClass === 'sidenav--MIS-active' &&
+              <div className='sidenav__nav-button sidenav__nav-button--secondary sidenav__parametrics'>
+                <i className='sidenav__icon icon icon__settings' />
+                Admin
               </div>
             }
           </Collapse>
           <Link
-            className='bluetab-sns-sidenav__nav-button bluetab-sns-sidenav__nav-button--RO'
+            className='sidenav__nav-button sidenav__nav-button--RO'
             to={ routeCodes.RO }
           >
-            <i className='bluetab-sns-sidenav__icon icon icon__RO' />
-            RO
+            <i className='sidenav__icon icon icon__RO' />
+            R&O
           </Link>
           <Link
-            className='bluetab-sns-sidenav__nav-button bluetab-sns-sidenav__nav-button--change'
+            className='sidenav__nav-button sidenav__nav-button--change'
             to={ routeCodes.CHANGE }
           >
-            <i className='bluetab-sns-sidenav__icon icon icon__change' />
+            <i className='sidenav__icon icon icon__change' />
             Change
           </Link>
           <Link
-            className='bluetab-sns-sidenav__nav-button bluetab-sns-sidenav__nav-button--innovation'
+            className='sidenav__nav-button sidenav__nav-button--innovation'
             to={ routeCodes.INNOVATION }
           >
-            <i className='bluetab-sns-sidenav__icon icon icon__innovation' />
+            <i className='sidenav__icon icon icon__innovation' />
             Innovation
           </Link>
         </ul>
-        <div className='bluetab-sns-sidenav__powered'>Powered by produban</div>
+        <div className='sidenav__powered'><span>Powered by</span> Produban</div>
       </div>
     );
   }

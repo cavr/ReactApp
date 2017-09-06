@@ -7,6 +7,7 @@
   .sidenav-avatar__image {
     width: get-rem(100px);
     height: get-rem(100px);
+    border-radius: get-rem(50px);
     margin-bottom: get-rem(13px);
   }
   .sidenav-avatar__user-info-wrapper {
@@ -14,7 +15,7 @@
     width: 100%;
     color: white;
     text-align: center;
-    padding-bottom: get-rem(20px);
+    margin-bottom: get-rem(20px);
     cursor: pointer;
     .sidenav-avatar__name {
       font-weight: 500;
@@ -26,7 +27,18 @@
     }
     .sidenav-avatar__arrow {
       @include vertical-center;
+      margin-top: get-rem(3px);
+      height: get-rem(6px);
+      background-position: right;
+      width: get-rem(20px);
+      right: get-rem(14px);
+      &.sidenav-avatar__arrow--close {
+        transform: scaleY(-1);
+      }
     }
+  }
+  .ReactCollapse--collapse {
+    width: 100%;
   }
   .sidenav-avatar__menu {
     width: 100%;

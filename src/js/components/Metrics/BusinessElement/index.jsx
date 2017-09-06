@@ -12,7 +12,7 @@ export default class BusinessElement extends PureComponent {
   render() {
     const { data, setSelectorValue } = this.props;
     const metrics = data.values && data.values.map((metric, index) => {
-      return <MetricState key={ `metric-${ index }` } data={ metric } selector={ { id: data.id, label: data.label } } setSelectorValue={ setSelectorValue } />;
+      return <MetricState key={ `metric-${ index }-${ data.id }` } data={ metric } selector={ { id: data.id, label: data.label } } setSelectorValue={ setSelectorValue } />;
     });
     return (
       <ul className='business-element__metrics'>

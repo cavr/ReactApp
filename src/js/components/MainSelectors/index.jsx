@@ -30,7 +30,7 @@ export class MainSelectors extends PureComponent {
     const { currentStep, data, loading, selected, loaded, loadSelectors, setSelectorValue, setStep } = this.props;
 
     return (
-      <Section currentStep={ currentStep } sectionNumber={ 1 } title='Multiple selectors' loading={ loading }>
+      <Section currentStep={ currentStep } sectionNumber={ 1 } title='Multiple selection' loading={ loading }>
         {
           currentStep > 1 ?
             <CurrentSelection data={ data } selected={ selected } setStep={ setStep } /> :

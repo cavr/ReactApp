@@ -1,5 +1,5 @@
 import { Map } from 'immutable';
-import avatar from '../../assets/img/common/avatar.svg';
+import jefe from '../../assets/img/dev/jorge.png';
 
 import {
   LOGIN,
@@ -12,9 +12,9 @@ const initialState = Map({
   loading: false,
   token: null,
   userInfo: {
-    name: 'Jorge Glas',
+    name: 'Jorge Nájera',
     role: 'Managing Director',
-    image: avatar,
+    image: jefe,
   },
   currentStep: 1,
 });

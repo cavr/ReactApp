@@ -39,20 +39,20 @@ export class MainGraph extends PureComponent {
     const showingEvolution = loadingEvolution || evolutionData !== null;
 
     return (
-      <Section currentStep={ currentStep } sectionNumber={ 2 } title='Selecciona un índice de una gráfica' loading={ loading } hasNestedCollapse={ true }>
+      <Section currentStep={ currentStep } sectionNumber={ 2 } title='Index Analysis' loading={ loading } hasNestedCollapse={ true }>
         <div className='main-graph'>
-          <h2 className='bluetab-subtitle--centered'>Select the index of which you want to see the evolution or the subindices that form it</h2>
+          <h2 className='bluetab-subtitle--centered'>Select one of the four Indexes and take a look at either its evolution or its building SubIndexes. Alternatively you could draw an additional web for benchmarking</h2>
           <div className='main-graph__graph-wrapper'>
             <div className='main-graph__graph-controls'>
               <Selector
                 className='selectors__selector'
-                title={ 'Select an index' }
+                title={ 'Select Index' }
                 values={ indexes }
                 currentValue={ selected && selected.value }
                 onChange={ (option) => setSelectedIndex(option.value, option.label) }
               />
-              <Button title={ 'Subindices' } icon={ 'children' } selected={ currentStep > 2 } onClick={ () => (currentStep === 2 ? setStep(3) : setStep(2)) } />
-              <Button title={ 'Evolucion' } icon={ 'graph' } light={ true } selected={ showingEvolution } onClick={ () => (!evolutionData ? setEvolutionData(selected.value) : clearEvolutionData()) } />
+              <Button title={ 'Subindexes' } icon={ 'children' } selected={ currentStep > 2 } onClick={ () => (currentStep === 2 ? setStep(3) : setStep(2)) } />
+              <Button title={ 'Evolution' } icon={ 'graph' } light={ true } selected={ showingEvolution } onClick={ () => (!evolutionData ? setEvolutionData(selected.value) : clearEvolutionData()) } />
             </div>
             <MainRadarChart data={ data } />
           </div>

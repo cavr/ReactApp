@@ -8,13 +8,14 @@
   .sidenav-avatar .sidenav-avatar__image {
     width: 10rem;
     height: 10rem;
+    border-radius: 5rem;
     margin-bottom: 1.3rem; }
   .sidenav-avatar .sidenav-avatar__user-info-wrapper {
     position: relative;
     width: 100%;
     color: white;
     text-align: center;
-    padding-bottom: 2rem;
+    margin-bottom: 2rem;
     cursor: pointer; }
     .sidenav-avatar .sidenav-avatar__user-info-wrapper .sidenav-avatar__name {
       font-weight: 500;
@@ -26,7 +27,17 @@
       position: absolute;
       top: 50%;
       -ms-transform: translateY(-50%);
-          transform: translateY(-50%); }
+          transform: translateY(-50%);
+      margin-top: 0.3rem;
+      height: 0.6rem;
+      background-position: right;
+      width: 2rem;
+      right: 1.4rem; }
+      .sidenav-avatar .sidenav-avatar__user-info-wrapper .sidenav-avatar__arrow.sidenav-avatar__arrow--close {
+        -ms-transform: scaleY(-1);
+            transform: scaleY(-1); }
+  .sidenav-avatar .ReactCollapse--collapse {
+    width: 100%; }
   .sidenav-avatar .sidenav-avatar__menu {
     width: 100%;
     background-color: #B4291C; }
@@ -42,7 +53,7 @@
       height: 4.5rem;
       border-bottom: 0.1rem solid #871B11;
       cursor: pointer; }
-.bluetab-sns-sidenav {
+.sidenav {
   position: fixed;
   top: 0;
   left: 0;
@@ -50,7 +61,7 @@
   height: 100%;
   background-color: #F83838;
   padding-right: 0.7rem; }
-  .bluetab-sns-sidenav .bluetab-sns-sidenav__logo {
+  .sidenav .sidenav__logo {
     display: block;
     width: 12.5rem;
     height: 2.5rem;
@@ -58,7 +69,7 @@
     margin: 0 auto;
     margin-top: 2.2rem;
     margin-bottom: 4.2rem; }
-  .bluetab-sns-sidenav .bluetab-sns-sidenav__powered {
+  .sidenav .sidenav__powered {
     width: 100%;
     padding-right: 0.7rem;
     position: absolute;
@@ -69,7 +80,7 @@
     font-size: 1.2rem;
     text-align: center;
     color: white; }
-  .bluetab-sns-sidenav .bluetab-sns-sidenav__nav-button {
+  .sidenav .sidenav__nav-button {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-align: center;
@@ -82,35 +93,45 @@
     border-left: 1.3rem solid #F83838;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1); }
-    .bluetab-sns-sidenav .bluetab-sns-sidenav__nav-button .bluetab-sns-sidenav__icon {
+    .sidenav .sidenav__nav-button .sidenav__icon {
       width: 2.5rem;
       height: 2.5rem;
       margin-left: 1.2rem;
       margin-right: 1.4rem; }
-    .bluetab-sns-sidenav .bluetab-sns-sidenav__nav-button.bluetab-sns-sidenav__nav-button--secondary {
+    .sidenav .sidenav__nav-button .sidenav__menu-icon {
+      display: none;
+      -ms-flex: 99 0 auto;
+          flex: 99 0 auto;
+      background-position: right;
+      margin-right: 1.4rem;
+      height: 0.6rem; }
+      .sidenav .sidenav__nav-button .sidenav__menu-icon.sidenav__menu-icon--close {
+        -ms-transform: scaleY(-1);
+            transform: scaleY(-1); }
+    .sidenav .sidenav__nav-button.sidenav__nav-button--secondary {
       font-size: 1.2rem;
       height: 4.5rem;
       padding-left: 2rem; }
-      .bluetab-sns-sidenav .bluetab-sns-sidenav__nav-button.bluetab-sns-sidenav__nav-button--secondary .bluetab-sns-sidenav__icon {
+      .sidenav .sidenav__nav-button.sidenav__nav-button--secondary .sidenav__icon {
         width: 2rem;
         height: 2rem; }
-    .bluetab-sns-sidenav .bluetab-sns-sidenav__nav-button.bluetab-sns-sidenav__nav-button--MIS {
+    .sidenav .sidenav__nav-button.sidenav__nav-button--MIS {
       border-color: #98DA65; }
-      .bluetab-sns-sidenav .bluetab-sns-sidenav__nav-button.bluetab-sns-sidenav__nav-button--MIS:hover {
+      .sidenav .sidenav__nav-button.sidenav__nav-button--MIS:hover {
         background-color: #389437; }
-    .bluetab-sns-sidenav .bluetab-sns-sidenav__nav-button.bluetab-sns-sidenav__nav-button--RO {
+    .sidenav .sidenav__nav-button.sidenav__nav-button--RO {
       border-color: #FBA742; }
-      .bluetab-sns-sidenav .bluetab-sns-sidenav__nav-button.bluetab-sns-sidenav__nav-button--RO:hover {
+      .sidenav .sidenav__nav-button.sidenav__nav-button--RO:hover {
         background-color: #D27B32; }
-    .bluetab-sns-sidenav .bluetab-sns-sidenav__nav-button.bluetab-sns-sidenav__nav-button--change {
+    .sidenav .sidenav__nav-button.sidenav__nav-button--change {
       border-color: #C186DB; }
-      .bluetab-sns-sidenav .bluetab-sns-sidenav__nav-button.bluetab-sns-sidenav__nav-button--change:hover {
+      .sidenav .sidenav__nav-button.sidenav__nav-button--change:hover {
         background-color: #8559AE; }
-    .bluetab-sns-sidenav .bluetab-sns-sidenav__nav-button.bluetab-sns-sidenav__nav-button--innovation {
+    .sidenav .sidenav__nav-button.sidenav__nav-button--innovation {
       border-color: #81B6F1; }
-      .bluetab-sns-sidenav .bluetab-sns-sidenav__nav-button.bluetab-sns-sidenav__nav-button--innovation:hover {
+      .sidenav .sidenav__nav-button.sidenav__nav-button--innovation:hover {
         background-color: #3C7CC0; }
-  .bluetab-sns-sidenav.bluetab-sns-sidenav--MIS-active:after, .bluetab-sns-sidenav.bluetab-sns-sidenav--RO-active:after, .bluetab-sns-sidenav.bluetab-sns-sidenav--change-active:after, .bluetab-sns-sidenav.bluetab-sns-sidenav--innovation-active:after {
+  .sidenav.sidenav--MIS-active:after, .sidenav.sidenav--RO-active:after, .sidenav.sidenav--change-active:after, .sidenav.sidenav--innovation-active:after {
     transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
     content: " ";
     position: absolute;
@@ -118,26 +139,28 @@
     top: 0;
     height: 100%;
     width: 0.7rem; }
-  .bluetab-sns-sidenav.bluetab-sns-sidenav--MIS-active:after {
+  .sidenav.sidenav--MIS-active:after {
     background-color: #98DA65; }
-  .bluetab-sns-sidenav.bluetab-sns-sidenav--MIS-active .bluetab-sns-sidenav__nav-button--MIS {
+  .sidenav.sidenav--MIS-active .sidenav__nav-button--MIS {
     background-color: #389437; }
-  .bluetab-sns-sidenav.bluetab-sns-sidenav--MIS-active .bluetab-sns-sidenav__parametrics {
+    .sidenav.sidenav--MIS-active .sidenav__nav-button--MIS .sidenav__menu-icon {
+      display: block; }
+  .sidenav.sidenav--MIS-active .sidenav__parametrics {
     border-color: #2C7A2B;
     background-color: #2C7A2B; }
-  .bluetab-sns-sidenav.bluetab-sns-sidenav--RO-active:after {
+  .sidenav.sidenav--RO-active:after {
     background-color: #FBA742; }
-  .bluetab-sns-sidenav.bluetab-sns-sidenav--RO-active .bluetab-sns-sidenav__nav-button--RO {
+  .sidenav.sidenav--RO-active .sidenav__nav-button--RO {
     background-color: #D27B32; }
-  .bluetab-sns-sidenav.bluetab-sns-sidenav--change-active:after {
+  .sidenav.sidenav--change-active:after {
     background-color: #C186DB; }
-  .bluetab-sns-sidenav.bluetab-sns-sidenav--change-active .bluetab-sns-sidenav__nav-button--change {
+  .sidenav.sidenav--change-active .sidenav__nav-button--change {
     background-color: #8559AE; }
-  .bluetab-sns-sidenav.bluetab-sns-sidenav--innovation-active:after {
+  .sidenav.sidenav--innovation-active:after {
     background-color: #81B6F1; }
-  .bluetab-sns-sidenav.bluetab-sns-sidenav--innovation-active .bluetab-sns-sidenav__nav-button--innovation {
+  .sidenav.sidenav--innovation-active .sidenav__nav-button--innovation {
     background-color: #3C7CC0; }
-html.mobile .bluetab-sns-sidenav {
+html.mobile .sidenav {
   display: none; }
 .bluetab-sns-app {
   min-height: 100vh;
@@ -184,7 +207,7 @@ html.mobile .bluetab-sns-app .bluetab-sns-app__wrapper {
       height: 2.9rem; }
     .login .login__logo-wrapper .login__brand {
       padding-top: 0.5rem;
-      padding-left: 6rem;
+      padding-left: 2.6rem;
       color: white;
       text-align: center;
       font-weight: 300;
@@ -208,6 +231,7 @@ html.mobile .bluetab-sns-app .bluetab-sns-app__wrapper {
       .login .login__wrapper .login__avatar .login__avatar-image {
         height: 13.5rem;
         width: 13.5rem;
+        border-radius: 7rem;
         margin-bottom: 1.2rem; }
       .login .login__wrapper .login__avatar .login__name {
         font-size: 2.2rem;
@@ -238,6 +262,8 @@ html.mobile .bluetab-sns-app .bluetab-sns-app__wrapper {
       line-height: 2.6rem;
       color: white;
       cursor: pointer; }
+html.mobile .login__brand {
+  display: none; }
 .stepbar-navigation {
   position: fixed;
   top: 0;
@@ -373,13 +399,22 @@ section {
 .section--inactive .section-title .section-title__background {
   background: #BFC6CE; }
 html.mobile section {
-  width: 100%; }
+  width: 100%;
+  max-width: 57rem; }
   html.mobile section .section__content {
     padding: 3rem; }
 .bluetab-selector {
   margin-bottom: 2rem; }
   .bluetab-selector .bluetab-selector__title-wrapper {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center;
     margin-bottom: 1rem; }
+    .bluetab-selector .bluetab-selector__title-wrapper .bluetab-selector__icon {
+      width: 1.8rem;
+      height: 1.8rem;
+      margin-right: 0.8rem; }
     .bluetab-selector .bluetab-selector__title-wrapper .bluetab-selector__title {
       font-size: 1.2rem;
       color: #4A4A4A; }
@@ -544,8 +579,9 @@ html.mobile .selectors .selectors__selector-wrapper {
     min-width: 9.2rem;
     margin: 0 1.2rem;
     margin-bottom: 1.2rem;
-    line-height: 2.6rem;
-    padding: 0 1.8rem;
+    line-height: 2.4rem;
+    padding: 0 1.2rem;
+    font-size: 1.4rem;
     border: 0.2rem solid #4A4A4A;
     color: #5A6574;
     background-color: white;
@@ -715,6 +751,9 @@ html.mobile .main-graph-chart {
     top: 0;
     left: 2rem;
     z-index: 2; }
+    .main-graph .main-graph__graph-wrapper .main-graph__graph-controls .bluetab-selector .bluetab-selector__title-wrapper .bluetab-selector__title {
+      font-size: 1.4rem;
+      font-weight: 500; }
     .main-graph .main-graph__graph-wrapper .main-graph__graph-controls .Select-control {
       height: 2.8rem; }
     .main-graph .main-graph__graph-wrapper .main-graph__graph-controls .bluetab-button {
@@ -993,6 +1032,8 @@ html.mobile .business-element-metric .evolution .evolution-line-chart {
   margin-top: 1.5rem; }
 .business-metrics .business-element-wrapper {
   padding: 3.6rem 9rem 7.2rem 9rem; }
+  .business-metrics .business-element-wrapper .bluetab-subtitle--centered {
+    margin-bottom: 3.5rem; }
   .business-metrics .business-element-wrapper .business-element__selector {
     margin-bottom: 4.2rem; }
 
@@ -1608,6 +1649,18 @@ h1, p {
   background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMS4zNyAxOC41MiI+CiAgPHBhdGggZmlsbD0iI0Y4MzgzOCIgZD0iTTExLjIgMTQuMDRoLS4wM2MtLjEyLjEyLS4yOC4yLS40Ni4yLS4yIDAtLjM4LS4wNS0uNTMtLjJMNS45IDkuMDZjLS4yOC0uMjgtLjI4LS43NCAwLTEuMDJzLjc0LS4yOCAxLjAyIDBsMy4wNSAzLjU2Vi43YzAtLjM4LjMyLS43LjctLjcuNCAwIC43My4zMi43My43djEwLjlsMy4wNS0zLjU2Yy4yOC0uMjguNzQtLjI4IDEuMDIgMHMuMjguNzQgMCAxLjAybC00LjI4IDQuOTh6bTkuNDYgNC40OEguN2MtLjM4IDAtLjctLjMyLS43LS43di01LjdjMC0uNC4zMi0uNzIuNy0uNzIuNCAwIC43Mi4zMi43Mi43djVoMTguNTN2LTVjMC0uMzguMy0uNy43LS43cy43Mi4zMi43Mi43djUuN2MwIC40LS4zMi43Mi0uNy43MnoiLz4KPC9zdmc+) center no-repeat;
   background-size: contain; }
 
+.icon.icon__menu-arrow {
+  background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMC4yMDYgNC42ODgiPgogIDxwYXRoIGZpbGw9IiNGRkYiIGQ9Ik0xMC4yMDYgMEw1LjA3MSA0LjY4OCAwIDAiLz4KPC9zdmc+) center no-repeat;
+  background-size: contain; }
+
+.icon.icon__settings {
+  background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxOS42MSAxOS45Ij4NCiAgPHBhdGggZmlsbD0iI0ZGRiIgZD0iTTE3LjE0IDExYzAtLjMuMS0uNi4xLTFzMC0uNy0uMS0xbDIuMS0xLjdjLjItLjIuMi0uNC4xLS42bC0yLTMuNWMtLjEtLjEtLjMtLjItLjYtLjFsLTIuNSAxYy0uNS0uNC0xLjEtLjctMS43LTFsLS40LTIuNmMuMS0uMy0uMi0uNS0uNC0uNWgtNGMtLjIgMC0uNS4yLS41LjRsLS40IDIuN2MtLjYuMi0xLjEuNi0xLjcgMWwtMi40LTFjLS4zLS4xLS41IDAtLjcuMmwtMiAzLjVjLS4xLjEgMCAuNC4yLjZMMi4zNCA5YzAgLjMtLjEuNi0uMSAxczAgLjcuMSAxbC0yLjEgMS43Yy0uMi4yLS4yLjQtLjEuNmwyIDMuNWMuMS4xLjMuMi42LjFsMi41LTFjLjUuNCAxLjEuNyAxLjcgMWwuNCAyLjZjMCAuMi4yLjQuNS40aDRjLjIgMCAuNS0uMi41LS40bC40LTIuNmMuNi0uMyAxLjItLjYgMS43LTFsMi41IDFjLjIuMS41IDAgLjYtLjJsMi0zLjVjLjEtLjIuMS0uNS0uMS0uNmwtMi4zLTEuNnptLTcuNCAzLjYzQzcuMjIgMTQuNjMgNS4xIDEyLjUgNS4xIDEwczIuMTItNC42MyA0LjY0LTQuNjNTMTQuMzcgNy41IDE0LjM3IDEwcy0yLjEyIDQuNjMtNC42MyA0LjYzeiIvPg0KICA8cGF0aCBmaWxsPSIjRkZGIiBkPSJNMTcuMTQgMTFjMC0uMy4xLS42LjEtMXMwLS43LS4xLTFsMi4xLTEuN2MuMi0uMi4yLS40LjEtLjZsLTItMy41Yy0uMS0uMS0uMy0uMi0uNi0uMWwtMi41IDFjLS41LS40LTEuMS0uNy0xLjctMWwtLjQtMi42Yy4xLS4zLS4yLS41LS40LS41aC00Yy0uMiAwLS41LjItLjUuNGwtLjQgMi43Yy0uNi4yLTEuMS42LTEuNyAxbC0yLjQtMWMtLjMtLjEtLjUgMC0uNy4ybC0yIDMuNWMtLjEuMSAwIC40LjIuNkwyLjM0IDljMCAuMy0uMS42LS4xIDFzMCAuNy4xIDFsLTIuMSAxLjdjLS4yLjItLjIuNC0uMS42bDIgMy41Yy4xLjEuMy4yLjYuMWwyLjUtMWMuNS40IDEuMS43IDEuNyAxbC40IDIuNmMwIC4yLjIuNC41LjRoNGMuMiAwIC41LS4yLjUtLjRsLjQtMi42Yy42LS4zIDEuMi0uNiAxLjctMWwyLjUgMWMuMi4xLjUgMCAuNi0uMmwyLTMuNWMuMS0uMi4xLS41LS4xLS42bC0yLjMtMS42em0tNy40IDMuNjNDNy4yMiAxNC42MyA1LjEgMTIuNSA1LjEgMTBzMi4xMi00LjYzIDQuNjQtNC42MyA0LjYzIDIuMSA0LjYzIDQuNjMtMi4xMiA0LjYzLTQuNjMgNC42M3oiLz4NCjwvc3ZnPg0K) center no-repeat;
+  background-size: contain; }
+
+.icon.icon__settings--red {
+  background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxOS42MSAxOS45Ij4KICA8cGF0aCBmaWxsPSIjRjgzODM4IiBkPSJNMTcuMTQgMTFjMC0uMy4xLS42LjEtMXMwLS43LS4xLTFsMi4xLTEuN2MuMi0uMi4yLS40LjEtLjZsLTItMy41Yy0uMS0uMS0uMy0uMi0uNi0uMWwtMi41IDFjLS41LS40LTEuMS0uNy0xLjctMWwtLjQtMi42Yy4xLS4zLS4yLS41LS40LS41aC00Yy0uMiAwLS41LjItLjUuNGwtLjQgMi43Yy0uNi4yLTEuMS42LTEuNyAxbC0yLjQtMWMtLjMtLjEtLjUgMC0uNy4ybC0yIDMuNWMtLjEuMSAwIC40LjIuNkwyLjM0IDljMCAuMy0uMS42LS4xIDFzMCAuNy4xIDFsLTIuMSAxLjdjLS4yLjItLjIuNC0uMS42bDIgMy41Yy4xLjEuMy4yLjYuMWwyLjUtMWMuNS40IDEuMS43IDEuNyAxbC40IDIuNmMwIC4yLjIuNC41LjRoNGMuMiAwIC41LS4yLjUtLjRsLjQtMi42Yy42LS4zIDEuMi0uNiAxLjctMWwyLjUgMWMuMi4xLjUgMCAuNi0uMmwyLTMuNWMuMS0uMi4xLS41LS4xLS42bC0yLjMtMS42em0tNy40IDMuNjNDNy4yMiAxNC42MyA1LjEgMTIuNSA1LjEgMTBzMi4xMi00LjYzIDQuNjQtNC42M1MxNC4zNyA3LjUgMTQuMzcgMTBzLTIuMTIgNC42My00LjYzIDQuNjN6Ii8+CiAgPHBhdGggZmlsbD0iI0Y4MzgzOCIgZD0iTTE3LjE0IDExYzAtLjMuMS0uNi4xLTFzMC0uNy0uMS0xbDIuMS0xLjdjLjItLjIuMi0uNC4xLS42bC0yLTMuNWMtLjEtLjEtLjMtLjItLjYtLjFsLTIuNSAxYy0uNS0uNC0xLjEtLjctMS43LTFsLS40LTIuNmMuMS0uMy0uMi0uNS0uNC0uNWgtNGMtLjIgMC0uNS4yLS41LjRsLS40IDIuN2MtLjYuMi0xLjEuNi0xLjcgMWwtMi40LTFjLS4zLS4xLS41IDAtLjcuMmwtMiAzLjVjLS4xLjEgMCAuNC4yLjZMMi4zNCA5YzAgLjMtLjEuNi0uMSAxczAgLjcuMSAxbC0yLjEgMS43Yy0uMi4yLS4yLjQtLjEuNmwyIDMuNWMuMS4xLjMuMi42LjFsMi41LTFjLjUuNCAxLjEuNyAxLjcgMWwuNCAyLjZjMCAuMi4yLjQuNS40aDRjLjIgMCAuNS0uMi41LS40bC40LTIuNmMuNi0uMyAxLjItLjYgMS43LTFsMi41IDFjLjIuMS41IDAgLjYtLjJsMi0zLjVjLjEtLjIuMS0uNS0uMS0uNmwtMi4zLTEuNnptLTcuNCAzLjYzQzcuMjIgMTQuNjMgNS4xIDEyLjUgNS4xIDEwczIuMTItNC42MyA0LjY0LTQuNjMgNC42MyAyLjEgNC42MyA0LjYzLTIuMTIgNC42My00LjYzIDQuNjN6Ii8+Cjwvc3ZnPg==) center no-repeat;
+  background-size: contain; }
+
 .icon.icon__avatar {
   background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyOCAyOSI+CiAgPGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2U9IiNGRkYiIHN0cm9rZS13aWR0aD0iMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMSAxLjE3OCkiPgogICAgPHBhdGggZD0iTTQgMjIuNzdjMi4wNi00LjA4IDUtNi4xMiA4Ljc4LTYuMTIgMy43OCAwIDYuNzQgMS44MiA4Ljg2IDUuNDYiLz4KICAgIDxjaXJjbGUgY3g9IjEzIiBjeT0iMTAiIHI9IjUiLz4KICAgIDxjaXJjbGUgY3g9IjEzIiBjeT0iMTMiIHI9IjEzIi8+CiAgPC9nPgo8L3N2Zz4=) center no-repeat;
   background-size: contain; }
@@ -1630,6 +1683,7 @@ h1, p {
 
 h2 {
   font-size: 1.3rem;
+  line-height: 1.7rem;
   margin: 0;
   font-weight: 300;
   color: #4A4A4A; }
