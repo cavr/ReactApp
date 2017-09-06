@@ -1,0 +1,33 @@
+{
+"label": "QoS",
+"variation": -1,
+"points": [
+    {
+	"value": 3.00,
+    "date": "Julio-2017" 
+    },
+	{
+    "value": 3.50,
+    "date": "Junio-2017" 
+    },
+	{
+    "value": 4.00,
+    "date": "Mayo-2017" 
+    },
+	{
+    "value": 5.00,
+    "date": "Abril-2017" 
+    },
+	{
+    "value": 6.00,
+    "date": "Marzo-2017" 
+    },
+	{
+    "value": 7.00,
+    "date": "Febrero-2017" 
+    },
+	{
+    "value": 8.00,
+    "date": "Enero-2017" 
+    }]
+}

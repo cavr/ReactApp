@@ -1,0 +1,19 @@
+{
+"metric": 
+	{
+    "id": "M4",
+    "label": "SLA",
+    "units": "%"
+    },
+"selectors": [
+	{
+	"id": 6,
+	"label": "Site Category",
+	"values": [
+		{
+		"value": 2,
+		"label": "Data Centre / Head Office",
+		"state": 0
+		}]
+	}]  
+}

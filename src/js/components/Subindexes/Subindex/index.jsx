@@ -15,9 +15,9 @@ export default class Subindex extends PureComponent {
   };
 
   renderVariation(variation) {
-    if (variation < 0) return <div className='subindex__variation subindex__variation--red'>down { variation }</div>;
+    if (variation < 0) return <div className='subindex__variation subindex__variation--red'>down { Math.abs(variation) }</div>;
     else if (variation === 0) return <div className='subindex__variation subindex__variation--yellow'>no change</div>;
-    return <div className='subindex__variation subindex__variation--green'>up { variation }</div>;
+    return <div className='subindex__variation subindex__variation--green'>up { Math.abs(variation) }</div>;
   }
   render() {
     const { data, selected, onClick } = this.props;

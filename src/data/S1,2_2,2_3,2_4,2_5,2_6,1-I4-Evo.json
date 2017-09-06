@@ -1,0 +1,33 @@
+{
+"label": "Usage",
+"variation": -10,
+"points": [
+    {
+	"value": 8.00,
+    "date": "Julio-2017" 
+    },
+	{
+    "value": 8.50,
+    "date": "Junio-2017" 
+    },
+	{
+    "value": 9.00,
+    "date": "Mayo-2017" 
+    },
+	{
+    "value": 8.20,
+    "date": "Abril-2017" 
+    },
+	{
+    "value": 7.70,
+    "date": "Marzo-2017" 
+    },
+	{
+    "value": 7.00,
+    "date": "Febrero-2017" 
+    },
+	{
+    "value": 6.50,
+    "date": "Enero-2017" 
+    }]
+}

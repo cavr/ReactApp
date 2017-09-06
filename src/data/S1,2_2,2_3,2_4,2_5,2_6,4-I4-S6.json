@@ -1,0 +1,19 @@
+{
+"metric": 
+	{
+    "id": "M6",
+    "label": "Throughput In_Max",
+    "units": "%"
+    },
+"selectors": [
+	{
+	"id": 6,
+	"label": "Site Category",
+	"values": [
+		{
+		"value": 4,
+		"label": "Branch",
+		"state": 0
+		}]
+	}]  
+}

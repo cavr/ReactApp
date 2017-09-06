@@ -14,9 +14,10 @@ export const SHOW_COMPARATIVE_DATA = 'SHOW_COMPARATIVE_DATA';
 export const HIDE_COMPARATIVE_DATA = 'HIDE_COMPARATIVE_DATA';
 
 export function loadMainGraph() {
-  return (dispatch) => {
+  return (dispatch, getState) => {
     dispatch({ type: BEGIN_MAINGRAPH_LOAD });
-    MainGraphServices.getMainGraphData().then((response) => {
+    const selectors = getState().selectors.get('selected').toObject();
+    MainGraphServices.getMainGraphData({ selectors }).then((response) => {
       const data = response.indexes;
       dispatch({ type: SET_MAINGRAPH, data });
       dispatch({ type: SET_SELECTED_INDEX, value: data[0].id, label: data[0].label });
@@ -25,24 +26,29 @@ export function loadMainGraph() {
   };
 }
 
-export function setSelectedIndex(value, label) {
+export function setEvolutionData() {
   return (dispatch, getState) => {
-    const currentStep = getState().app.get('currentStep');
-    dispatch({ type: SET_SELECTED_INDEX, value, label });
-    if (currentStep > 2) dispatch(setStep(3));
-  };
-}
-
-export function setEvolutionData(index) {
-  return (dispatch, getState) => {
-    const loadingEvolution = getState().mainGraph.get('loadingEvolution');
+    const state = getState();
+    const loadingEvolution = state.mainGraph.get('loadingEvolution');
     if (loadingEvolution) return;
     dispatch({ type: BEGIN_EVOLUTION_DATA_LOAD });
-    MainGraphServices.getIndexEvolution(index).then((response) => {
+    const selectors = state.selectors.get('selected').toObject();
+    const index = state.mainGraph.get('selected').value;
+    MainGraphServices.getIndexEvolution({ selectors, index, evolution: true }).then((response) => {
       const data = response;
       dispatch({ type: SET_EVOLUTION_DATA, data });
       dispatch({ type: END_EVOLUTION_DATA_LOAD });
     });
+  };
+}
+
+export function setSelectedIndex(value, label) {
+  return (dispatch, getState) => {
+    const state = getState();
+    const currentStep = state.app.get('currentStep');
+    dispatch({ type: SET_SELECTED_INDEX, value, label });
+    if (state.mainGraph.get('evolutionData')) dispatch(setEvolutionData());
+    if (currentStep > 2) dispatch(setStep(3));
   };
 }
 

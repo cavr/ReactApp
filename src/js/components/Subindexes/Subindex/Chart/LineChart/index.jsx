@@ -12,7 +12,7 @@ export default class LineChart extends PureComponent {
 
   render() {
     const { data } = this.props;
-    const maxValue = data.sections.high;
+    const maxValue = 100;
     /* Linear map
     To map
     [A, B] --> [a, b]
@@ -21,6 +21,7 @@ export default class LineChart extends PureComponent {
     (val - 0) * (100 - 0) / (maxValue - 0) + 0
     */
     const value = (data.value * 100) / maxValue;
+    console.log(value);
     return (
       <div className='subindex-line-chart'>
         <div className='subindex-line-chart__line'>

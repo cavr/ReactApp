@@ -8,9 +8,12 @@ export const SET_SUBINDEX_VALUE = 'SET_SUBINDEX_VALUE';
 export const CLEAR_SUBINDEX_VALUE = 'CLEAR_SUBINDEX_VALUE';
 
 export function loadSubindexes() {
-  return (dispatch) => {
+  return (dispatch, getState) => {
+    const state = getState();
     dispatch({ type: BEGIN_SUBINDICES_LOAD });
-    SubindexesServices.getSubindexes().then((response) => {
+    const selectors = state.selectors.get('selected').toObject();
+    const index = state.mainGraph.get('selected').value;
+    SubindexesServices.getSubindexes({ selectors, index }).then((response) => {
       const data = response.subindexes;
       dispatch({ type: SET_SUBINDICES, data });
       dispatch({ type: CLEAR_SUBINDEX_VALUE });

@@ -27,9 +27,18 @@ export class MainGraph extends PureComponent {
     setEvolutionData: PropTypes.func,
     setStep: PropTypes.func,
   };
+  constructor() {
+    super();
 
+    this.state = {
+      comparative: false,
+      peers: false,
+      market: false,
+    };
+  }
   render() {
     const { data, selected, evolutionData, loadingEvolution, loading, currentStep, setStep, setSelectedIndex, setEvolutionData, clearEvolutionData } = this.props;
+    const { comparative, peers, market } = this.state;
     const indexes = data && data.map((index) => {
       return {
         value: index.id,
@@ -54,7 +63,7 @@ export class MainGraph extends PureComponent {
               <Button title={ 'Subindexes' } icon={ 'children' } selected={ currentStep > 2 } onClick={ () => (currentStep === 2 ? setStep(3) : setStep(2)) } />
               <Button title={ 'Evolution' } icon={ 'graph' } light={ true } selected={ showingEvolution } onClick={ () => (!evolutionData ? setEvolutionData(selected.value) : clearEvolutionData()) } />
             </div>
-            <MainRadarChart data={ data } />
+            <MainRadarChart data={ data } comparative={ comparative } peers={ peers } market={ market } />
           </div>
           <hr className='main-graph__separator' />
           <div className='main-graph__details'>
@@ -72,9 +81,9 @@ export class MainGraph extends PureComponent {
           </div>
           <div className='main-graph__benchmarking'>
             <h2 className='bluetab-subtitle--centered'>Benchmarking</h2>
-            <Button title={ 'Peers' } onClick={ () => setStep(2) } light={ true } />
-            <Button title={ 'Competition' } onClick={ () => setStep(2) } light={ true } icon={ 'comparative' } />
-            <Button title={ 'Market' } onClick={ () => setStep(2) } light={ true } />
+            <Button title={ 'Peers' } onClick={ () => this.setState({ peers: !peers, comparative: false, market: false }) } light={ true } icon={ 'peers' } selected={ peers } />
+            <Button title={ 'Competition' } onClick={ () => this.setState({ comparative: !comparative, peers: false, market: false }) } light={ true } icon={ 'comparative' } selected={ comparative } />
+            <Button title={ 'Market' } onClick={ () => this.setState({ market: !market, comparative: false, peers: false }) } light={ true } icon={ 'market' } selected={ market } />
           </div>
         </div>
       </Section>

@@ -5,6 +5,9 @@
     padding: 0 get-rem(20px);
     .subindexes__subindex-list {
       margin-top: get-rem(30px);
+      .subindex:last-child {
+        border: none;
+      }
     }
   }
 }

@@ -1,0 +1,19 @@
+{
+"metric": 
+	{
+    "id": "M3",
+    "label": "User NPS Survey",
+    "units": "Pts"
+    },
+"selectors": [
+	{
+	"id": 6,
+	"label": "Site Category",
+	"values": [
+		{
+		"value": 4,
+		"label": "Branch",
+		"state": 1
+		}]
+	}]  
+}

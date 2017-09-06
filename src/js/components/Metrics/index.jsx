@@ -19,6 +19,9 @@ export class Metrics extends PureComponent {
     data: PropTypes.object,
     loading: PropTypes.bool,
     currentStep: PropTypes.number,
+    selectedSelectors: PropTypes.object,
+    selectedIndex: PropTypes.string,
+    selectedSubindex: PropTypes.string,
     setSelectorValue: PropTypes.func,
   };
   constructor(props) {
@@ -29,7 +32,7 @@ export class Metrics extends PureComponent {
     };
   }
   render() {
-    const { data, loading, currentStep, setSelectorValue } = this.props;
+    const { data, selectedSelectors, selectedIndex, selectedSubindex, loading, currentStep, setSelectorValue } = this.props;
     const selectedBusinessElement = this.state.selectedBusinessElement;
 
     const selectors = data.selectors ? data.selectors : [];
@@ -50,6 +53,9 @@ export class Metrics extends PureComponent {
             />
             <BusinessElement
               data={ currentBusinessElement }
+              selectedSelectors={ selectedSelectors }
+              selectedIndex={ selectedIndex }
+              selectedSubindex={ selectedSubindex }
               setSelectorValue={ setSelectorValue }
             />
           </div>
@@ -66,6 +72,9 @@ export class Metrics extends PureComponent {
 
 const mapStateToProps = (state) => ({
   data: state.metrics.get('data'),
+  selectedSelectors: state.selectors.get('selected'),
+  selectedIndex: state.mainGraph.get('selected'),
+  selectedSubindex: state.subindexes.get('selected'),
   loading: state.metrics.get('loading'),
 });
 

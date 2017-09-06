@@ -1,19 +1,26 @@
 import endpoint from 'services/api/config';
 import devData from 'data/mainGraph.json';
 import devDataEvolution from 'data/evolutionData.json';
+import { buildJsonName } from 'services/jsonNameBuilder';
 
 export default class MainGraphServices {
-  /* static getData() {
-    return fetch('http://date.jsontest.com/')
-      .then(response => response.json());
-  } */
   static getMainGraphData(request) {
-    const delay = 200;
-    return new Promise((resolve) => setTimeout(() => resolve(devData), delay)).then(response => response);
+    return fetch(`/data/${ buildJsonName(request) }`)
+      .then((response) => {
+        if (response.status !== 200) {
+          return devData;
+        }
+        return response.json();
+      });
   }
 
-  static getIndexEvolution(index, selectors) {
-    const delay = 500;
-    return new Promise((resolve) => setTimeout(() => resolve(devDataEvolution), delay)).then(response => response);
+  static getIndexEvolution(request) {
+    return fetch(`/data/${ buildJsonName(request) }`)
+      .then((response) => {
+        if (response.status !== 200) {
+          return devDataEvolution;
+        }
+        return response.json();
+      });
   }
 }

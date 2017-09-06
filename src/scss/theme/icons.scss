@@ -18,6 +18,12 @@
     'menu-arrow',
     'settings',
     'settings--red',
+    'peers',
+    'peers--red',
+    'market',
+    'market--red',
+    'competition',
+    'competition--red',
     'avatar';
 
   @each $key in $list {
@@ -39,4 +45,24 @@
       background-size: contain;
     }
   }
+
+  $list:
+  'I1',
+  'I2',
+  'I3',
+  'I4',
+  'S1',
+  'S2',
+  'S3',
+  'S4',
+  'S5',
+  'S6';
+
+  @each $key in $list {
+    &.icon__#{$key} {
+      background: url('../assets/icons/dev/#{$key}.svg') center no-repeat;
+      background-size: contain;
+    }
+  }
+
 }

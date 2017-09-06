@@ -24,7 +24,7 @@ export default class SelectorsContent extends PureComponent {
           className='selectors__selector'
           key={ `selector-${ index }` }
           id={ selector.id }
-          icon={ 'settings--red' }
+          icon={ `S${ selector.id }` }
           title={ selector.label }
           values={ selector.values }
           currentValue={ selected && selected.get(String(selector.id)).value }

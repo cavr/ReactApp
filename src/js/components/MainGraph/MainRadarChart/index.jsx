@@ -7,6 +7,9 @@ import './mobile.scss';
 export default class MainRadarChart extends PureComponent {
   static propTypes = {
     data: PropTypes.array,
+    comparative: PropTypes.bool,
+    peers: PropTypes.bool,
+    market: PropTypes.bool,
   };
 
   constructor() {
@@ -38,12 +41,16 @@ export default class MainRadarChart extends PureComponent {
       <g className='axis'>
         <g className='vertical-axis'>
           <line x1='50' y1='0' x2='50' y2='100' style={ this.config.axisStyle } />
+          <polygon points={ '50,0 48,2 52,2' } fill={ this.config.axisStyle.stroke } />
+          <polygon points={ '50,100 48,98 52,98' } fill={ this.config.axisStyle.stroke } />
           <g className='vertical-axis__details'>
             { verticalAxisDetails }
           </g>
         </g>
         <g className='horizontal-axis'>
           <line x1='0' y1='50' x2='100' y2='50' style={ this.config.axisStyle } />
+          <polygon points={ '0,50 2,48 2,52' } fill={ this.config.axisStyle.stroke } />
+          <polygon points={ '100,50 98,48 98,52' } fill={ this.config.axisStyle.stroke } />
           <g className='horizontal-axis__details'>
             { horizontalAxisDetails }
           </g>
@@ -69,8 +76,8 @@ export default class MainRadarChart extends PureComponent {
     const pointsString = `50, ${ normPoints[0] } ${ normPoints[1] },50 50,${ normPoints[2] } ${ normPoints[3] },50`;
     return (
       <g className={ name }>
-        <polygon strokeWidth='0.5' fillOpacity='0.5' fill={ `url(#${ name }-background)` } points={ '50,50 50,50 50,50 50,50' }>
-          <animate attributeName='points' fill='freeze' dur='500ms' to={ pointsString } keyTimes='0' keySplines='0.23, 1, 0.32, 1' begin={ `${ delay ? delay : 0 }ms` } />
+        <polygon strokeWidth='0.5' fillOpacity='0.3' points={ pointsString }>
+          { /* <animate attributeName='points' fill='freeze' dur='500ms' from={ '50,50 50,50 50,50 50,50' } to={ pointsString } keyTimes='0' keySplines='0.23, 1, 0.32, 1' begin={ `${ delay ? delay : 0 }ms` } /> */ }
         </polygon>
         <circle cx='50' cy={ normPoints[0] } r='1.33' />
         <circle cx={ normPoints[1] } cy='50' r='1.33' />
@@ -82,23 +89,41 @@ export default class MainRadarChart extends PureComponent {
   renderLabels(indexNames) {
     return (
       <div className='main-graph-chart__labels'>
-        <div className='main-graph-chart__label main-graph-chart__label--top'>{ indexNames[0] }</div>
-        <div className='main-graph-chart__label main-graph-chart__label--right'>{ indexNames[1] }</div>
-        <div className='main-graph-chart__label main-graph-chart__label--bottom'>{ indexNames[2] }</div>
-        <div className='main-graph-chart__label main-graph-chart__label--left'>{ indexNames[3] }</div>
+        <div className='main-graph-chart__label main-graph-chart__label--top'>
+          <i className={ `main-graph-chart__label__icon icon icon__${ indexNames[0].id }` } />
+          { indexNames[0].label }
+        </div>
+        <div className='main-graph-chart__label main-graph-chart__label--right'>
+          <i className={ `main-graph-chart__label__icon icon icon__${ indexNames[1].id }` } />
+          { indexNames[1].label }
+        </div>
+        <div className='main-graph-chart__label main-graph-chart__label--bottom'>
+          <i className={ `main-graph-chart__label__icon icon icon__${ indexNames[2].id }` } />
+          { indexNames[2].label }
+        </div>
+        <div className='main-graph-chart__label main-graph-chart__label--left'>
+          <i className={ `main-graph-chart__label__icon icon icon__${ indexNames[3].id }` } />
+          { indexNames[3].label }
+        </div>
       </div>
     );
   }
   render() {
-    const { data } = this.props;
+    const { data, comparative, peers, market } = this.props;
     const currentPoints = [];
     const targetPoints = [];
     const indexNames = [];
     for (let i = 0, l = data ? data.length : 0; i < l; i++) {
-      currentPoints.push({ value: data[i].value, max: 15 });
-      targetPoints.push({ value: data[i].target, max: 15 });
-      indexNames.push(data[i].label);
+      currentPoints.push({ value: data[i].value, max: 11 });
+      targetPoints.push({ value: data[i].target, max: 11 });
+      indexNames.push({ id: data[i].id, label: data[i].label });
     }
+
+    let extraPoints = null;
+    if (comparative) extraPoints = [{ value: 3, max: 11 }, { value: 6, max: 11 }, { value: 6, max: 11 }, { value: 4, max: 11 }];
+    if (peers) extraPoints = [{ value: 10, max: 11 }, { value: 5, max: 11 }, { value: 7, max: 11 }, { value: 4, max: 11 }];
+    if (market) extraPoints = [{ value: 6, max: 11 }, { value: 6, max: 11 }, { value: 6, max: 11 }, { value: 6, max: 11 }];
+
     return (
       <div className='main-graph-chart'>
         <div className='main-graph-chart__svg-wrapper'>
@@ -110,23 +135,23 @@ export default class MainRadarChart extends PureComponent {
             </div>
             <div className='main-graph-chart__legend'>
               <i className='main-graph-chart__legend-icon main-graph-chart__legend-icon--current' />
-              Actual
+              Actuals
             </div>
+            {
+              extraPoints &&
+              <div className='main-graph-chart__legend'>
+                <i className='main-graph-chart__legend-icon main-graph-chart__legend-icon--extra' />
+                { peers && 'Peers' }
+                { market && 'Market' }
+                { comparative && 'Comparative' }
+              </div>
+            }
           </div>
           <svg className='main-graph-chart__svg' viewBox='0 0 100 100' style={ { backgroundColor: 'white' } }>
-            <defs>
-              <linearGradient x1='50%' y1='0%' x2='50%' y2='100%' id='current-background'>
-                <stop stopColor='#EF3535' offset='0%' />
-                <stop stopColor='#F27A7A' offset='100%' />
-              </linearGradient>
-              <linearGradient x1='50%' y1='0%' x2='50%' y2='100%' id='target-background'>
-                <stop stopColor='#FAD961' offset='0%' />
-                <stop stopColor='#F76B1C' offset='100%' />
-              </linearGradient>
-            </defs>
             { this.renderAxis() }
             { this.renderPolygon(targetPoints, 'target') }
             { this.renderPolygon(currentPoints, 'current', 300) }
+            { extraPoints && this.renderPolygon(extraPoints, 'extra') }
           </svg>
         </div>
       </div>

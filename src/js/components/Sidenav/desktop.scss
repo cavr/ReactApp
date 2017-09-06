@@ -26,6 +26,9 @@
     font-size: get-rem(12px);
     text-align: center;
     color: white;
+    span {
+      font-weight: 300;
+    }
   }
 
   .sidenav__nav-button {

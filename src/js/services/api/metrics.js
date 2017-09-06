@@ -1,20 +1,28 @@
 import endpoint from 'services/api/config';
+
 import devData from 'data/metrics.json';
 import devDataEvolution from 'data/businessElementEvolution.json';
+import { buildJsonName } from 'services/jsonNameBuilder';
 
 export default class MetricsServices {
-  /* static getData() {
-    return fetch('http://date.jsontest.com/')
-      .then(response => response.json());
-  } */
 
   static getMetrics(request) {
-    const delay = 200;
-    return new Promise((resolve) => setTimeout(() => resolve(devData), delay)).then(response => response);
+    return fetch(`/data/${ buildJsonName(request) }`)
+      .then((response) => {
+        if (response.status !== 200) {
+          return devData;
+        }
+        return response.json();
+      });
   }
 
-  static getBusinessElementEvolution(index, selectors) {
-    const delay = 500;
-    return new Promise((resolve) => setTimeout(() => resolve(devDataEvolution), delay)).then(response => response);
+  static getBusinessElementEvolution(request) {
+    return fetch(`/data/${ buildJsonName(request) }`)
+      .then((response) => {
+        if (response.status !== 200) {
+          return devDataEvolution;
+        }
+        return response.json();
+      });
   }
 }

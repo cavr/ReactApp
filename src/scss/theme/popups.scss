@@ -1,0 +1,88 @@
+@import './layout';
+
+$popup-header-height: 43px;
+$popup-padding: 42px;
+
+.bluetab-sns-popup {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: calc(100% - #{get-rem($sidenav-width)});
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 99;
+  display: none;
+  &.bluetab-sns-popup--visible {
+    display: block;
+  }
+  .bluetab-sns-popup__box {
+    @include centerer;
+    width: get-rem($section-width);
+    padding: get-rem($popup-padding);
+    padding-top: get-rem(27px + $popup-header-height);
+    background-color: white;
+    .bluetab-sns-popup__close {
+      position: absolute;
+      top: get-rem(15px);
+      right: get-rem(23px);
+      width: get-rem(15px);
+      height: get-rem(15px);
+      border: none;
+      background: url('../assets/icons/common/close.svg') no-repeat center;
+      background-size: contain;
+      cursor: pointer;
+      z-index: 2;
+    }
+    .bluetab-sns-popup__box__header {
+      position: absolute;
+      width: 100%;
+      height: get-rem($popup-header-height);
+      top: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      background: $section-background;
+      .bluetab-sns-popup__box__header__title {
+        font-size: get-rem(14px);
+        font-weight: 500;
+      }
+    }
+    .bluetab-sns-popup__box__footer {
+      display: flex;
+      justify-content: center;
+      margin-top: get-rem(40px);
+      .mm-popup__btn {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: get-rem(173px);
+        height: get-rem(37px);
+        padding: 0 get-rem(19px);
+
+        font-size: get-rem(12px);
+        color: white;
+        
+        background-color: $bluetab-red;
+        border: get-rem(2px) solid $bluetab-red;
+        border-radius: get-rem(3px);
+        outline: none;
+
+        cursor: pointer;
+        .bluetab-button__icon {
+          width: get-rem(14px);
+          height: get-rem(14px);
+          background-position: left;
+          margin-right: get-rem(7px);
+        }
+        &:hover {
+          border-color: $bluetab-red;
+          color: $bluetab-red;
+          background-color: white;
+        }
+      }
+    }
+  }
+}

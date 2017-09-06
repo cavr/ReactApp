@@ -5,6 +5,7 @@ $subindex-heat-color--target: #7ED321;
 .subindex-heat-chart {
   position: relative;
   width: 100%;
+  height: get-rem(35px);
   .subindex-heat-chart__line {
     width: 100%;
     height: get-rem(14px);
@@ -33,10 +34,35 @@ $subindex-heat-color--target: #7ED321;
   .subindex-heat-chart__labels {
     position: absolute;
     width: 100%;
-    top: 100%;
+    top: get-rem(16px);
     display: flex;
     justify-content: space-between;
     font-size: get-rem(10px);
     color: $bluetab-light-gray-2;
+  }
+
+  .subindex-heat-chart__legend-wrapper {
+    @include horizontal-center;
+    bottom: get-rem(-25px);
+    display: flex;
+    .subindex-heat-chart__legend {
+      display: inline-flex;
+      align-items: center;
+      color: $bluetab-gray-2;
+      font-size: get-rem(11px);
+      margin: 0 get-rem(15px);
+      .subindex-heat-chart__legend-icon {
+        width: get-rem(10px);
+        height: get-rem(10px);
+        border-radius: get-rem(7px);
+        margin-right: get-rem(6px);
+        &.subindex-heat-chart__legend-icon--target {
+          background-color: $subindex-heat-color--target;
+        }
+        &.subindex-heat-chart__legend-icon--current {
+          background-color: $bluetab-gray-2;
+        }
+      }
+    }
   }
 }

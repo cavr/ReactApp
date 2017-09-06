@@ -24,7 +24,7 @@ export default class HeatChart extends PureComponent {
     const maxValue = data.sections.high;
     
     const currentValue = this.normalizeValue(data.value, maxValue);
-    const targetValue = this.normalizeValue(data.value, maxValue);
+    const targetValue = this.normalizeValue(data.target, maxValue);
     return (
       <div className='subindex-heat-chart'>
         <div className='subindex-heat-chart__line' style={ { backgroundImage: 'linear-gradient(-90deg, #98DA65 0%, #E14031 100%)' } } />
@@ -34,6 +34,16 @@ export default class HeatChart extends PureComponent {
           <div className='subindex-heat-chart__label'>low</div>
           <div className='subindex-heat-chart__label'>mid</div>
           <div className='subindex-heat-chart__label'>high</div>
+        </div>
+        <div className='subindex-heat-chart__legend-wrapper'>
+          <div className='subindex-heat-chart__legend'>
+            <i className='subindex-heat-chart__legend-icon subindex-heat-chart__legend-icon--target' />
+            Target
+          </div>
+          <div className='subindex-heat-chart__legend'>
+            <i className='subindex-heat-chart__legend-icon subindex-heat-chart__legend-icon--current' />
+            Actual
+          </div>
         </div>
       </div>
     );

@@ -9,9 +9,13 @@ export const BEGIN_METRICS_LOAD = 'BEGIN_METRICS_LOAD';
 export const END_METRICS_LOAD = 'END_METRICS_LOAD';
 
 export function loadMetrics() {
-  return (dispatch) => {
+  return (dispatch, getState) => {
+    const state = getState();
     dispatch({ type: BEGIN_METRICS_LOAD });
-    MetricsServices.getMetrics().then((response) => {
+    const selectors = state.selectors.get('selected').toObject();
+    const index = state.mainGraph.get('selected').value;
+    const subindex = state.subindexes.get('selected').value;
+    MetricsServices.getMetrics({ selectors, index, subindex }).then((response) => {
       dispatch({ type: SET_METRICS, data: response });
       dispatch({ type: END_METRICS_LOAD });
     });

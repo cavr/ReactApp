@@ -7,7 +7,7 @@
   width: calc(100% - #{get-rem($sidenav-width)});
   height: get-rem($stepbar-height);
   background-color: $bluetab-light-gray;
-  z-index: 99;
+  z-index: 95;
   .stepbar-wrapper {
     @include centerer;
     display: flex;
