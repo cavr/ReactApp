@@ -73,7 +73,7 @@ export class MainGraph extends PureComponent {
                 <div className='main-graph__details-wrapper'>
                   {
                     loadingEvolution ? <Loading small={ true } /> :
-                    <Evolution label={ evolutionData.label } variation={ evolutionData.variation } points={ evolutionData.points } maxValue={ 10 } />
+                    <Evolution label={ evolutionData.label } variation={ evolutionData.variation } points={ evolutionData.points } maxValue={ 100 } />
                   }
                 </div>
               }
