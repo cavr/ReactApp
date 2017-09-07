@@ -6,14 +6,14 @@
 	"type": 1,
 	"data": 
 		{
-		"value": 15.00,
-		"target": 10.00,
+		"value": 85.00,
+		"target": 90.00,
 		"variation": 5,
 		"sections": 
 			{
-			"low": 100,
+			"low": 0,
 			"mid": 50,
-			"high": 0
+			"high": 100
 			}
 		}
 	},

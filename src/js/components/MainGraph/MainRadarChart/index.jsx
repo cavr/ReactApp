@@ -135,7 +135,7 @@ export default class MainRadarChart extends PureComponent {
             </div>
             <div className='main-graph-chart__legend'>
               <i className='main-graph-chart__legend-icon main-graph-chart__legend-icon--current' />
-              Actuals
+              Actual
             </div>
             {
               extraPoints &&

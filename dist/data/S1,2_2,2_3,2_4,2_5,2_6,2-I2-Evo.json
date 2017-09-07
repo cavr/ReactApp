@@ -3,31 +3,31 @@
 "variation": -2,
 "points": [
     {
-	"value": 6.00,
-    "date": "Julio-2017" 
+	"value": 90.00,
+    "date": "Enero-2017"
     },
 	{
-    "value": 6.50,
-    "date": "Junio-2017" 
+    "value": 80.00,
+    "date": "Febrero-2017"
     },
 	{
-    "value": 6.70,
-    "date": "Mayo-2017" 
+    "value": 70.50,
+    "date": "Marzo-2017"
     },
 	{
-    "value": 7.00,
-    "date": "Abril-2017" 
+    "value": 70.00,
+    "date": "Abril-2017"
     },
 	{
-    "value": 7.50,
-    "date": "Marzo-2017" 
+    "value": 60.70,
+    "date": "Mayo-2017"
     },
 	{
-    "value": 8.00,
-    "date": "Febrero-2017" 
+    "value": 60.50,
+    "date": "Junio-2017"
     },
 	{
-    "value": 9.00,
-    "date": "Enero-2017" 
+    "value": 60.00,
+    "date": "Julio-2017"
     }]
 }

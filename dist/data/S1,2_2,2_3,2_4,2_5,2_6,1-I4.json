@@ -23,14 +23,14 @@
 	"type": 2,
 	"data": 
 		{
-		"value": 35.00,
-		"target": 25.00,
+		"value": 65.00,
+		"target": 75.00,
 		"variation": -15,
 		"sections": 
 			{
-			"low": 100,
+			"low": 0,
 			"mid": 30,
-			"high": 0
+			"high": 100
 			}
 		}
 	}]
