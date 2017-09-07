@@ -1,0 +1,14 @@
+@import '../../../../../scss/theme/variables';
+
+.evolution-line-chart {
+  width: get-rem(290px);
+  height: get-rem(65px);
+  .evolution-line-chart__svg {
+    width: 100%;
+    height: 100%;
+  }
+  path {
+    stroke: $bluetab-red;
+    stroke-width: 2;
+  }
+}

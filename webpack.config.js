@@ -108,7 +108,11 @@ if (isProduction) {
       test: /\.scss$/,
       loader: ExtractTextPlugin.extract({
         fallback: 'style-loader',
-        use: 'css-loader!postcss-loader!sass-loader',
+        use: [
+          'css-loader',
+          'postcss-loader',
+          'sass-loader',
+        ],
       }),
     }
   );

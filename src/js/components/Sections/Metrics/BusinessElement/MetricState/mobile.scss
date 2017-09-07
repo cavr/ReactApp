@@ -1,0 +1,29 @@
+@import '../../../../../../scss/theme/variables';
+
+
+html.mobile .business-element-metric {
+  .business-element-metric__content {
+    flex-wrap: wrap;
+    justify-content: center;
+    height: auto;
+    padding: get-rem(20px) 0;
+    .business-element-metric__button-wrapper {
+      margin-top: get-rem(10px);
+      flex: 1 1 100%;
+      justify-content: center;
+    }
+  }
+  .evolution {
+    .evolution__label {
+      width: auto;
+    }
+    .evolution__variation {
+      padding-top: 0;
+      padding-left: get-rem(30px);
+    }
+    .evolution-line-chart {
+      width: 100%;
+      margin-top: get-rem(15px);
+    }
+  }
+}

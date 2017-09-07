@@ -1,0 +1,70 @@
+@import '../../../../../../scss/theme/variables';
+
+$semaphore-size: 20px;
+$semaphore-margin: 15px;
+
+.business-element-metric {
+  .business-element-metric__content {
+    height: get-rem(56px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: get-rem(1px) solid $bluetab-light-gray-2;
+    &.business-element-metric__content--evolution {
+      transition: 0.5s all $easing;
+    }
+    .business-element-metric__title {
+      width: get-rem(120px);
+      font-size: get-rem(12px);
+    }
+    .business-element-metric__semaphores {
+      width: get-rem(2 * $semaphore-margin + 3 * $semaphore-size);
+      display: flex;
+      justify-content: space-between;
+      .business-element-metric__semaphore {
+        width: get-rem($semaphore-size);
+        height: get-rem($semaphore-size);
+        border-radius: get-rem(10px);
+        opacity: 0.2;
+        &.business-element-metric__semaphore--active {
+          opacity: 1;
+        }
+        &.business-element-metric__semaphore--red {
+          background-color: $bluetab-red;
+        }
+        &.business-element-metric__semaphore--yellow {
+          background-color: $bluetab-light-orange;
+        }
+        &.business-element-metric__semaphore--green {
+          background-color: $bluetab-light-green;
+        }
+      }
+    }
+    .business-element-metric__button-wrapper {
+      display: flex;
+      align-items: center;
+      .bluetab-button {
+        height: get-rem(27px);
+        margin-right: get-rem(10px);
+      }
+      .business-element-metric__alert {
+        margin-left: get-rem(9px);
+        width: get-rem(15px);
+        height: get-rem(18px);
+        cursor: pointer;
+      }
+    }
+  }
+  .evolution {
+    padding: get-rem(13px) 0;
+    border-bottom: get-rem(1px) solid $bluetab-light-gray-2;
+    flex-wrap: wrap;
+    .evolution__label {
+      width: 100%;
+    }
+    .evolution__variation {
+      padding-top: get-rem(25px);
+      padding-left: get-rem(30px);
+    }
+  }
+}

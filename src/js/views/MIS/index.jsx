@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import StepBar from 'components/StepBar';
-import MainSelectors from 'components/MainSelectors';
-import MainGraph from 'components/MainGraph';
-import Subindexes from 'components/Subindexes';
-import Metrics from 'components/Metrics';
+import MainSelectors from 'components/Sections/MainSelectors';
+import MainGraph from 'components/Sections/MainGraph';
+import Subindexes from 'components/Sections/Subindexes';
+import Metrics from 'components/Sections/Metrics';
 
 export class MIS extends PureComponent {
   static propTypes = {

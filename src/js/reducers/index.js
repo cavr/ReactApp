@@ -5,6 +5,7 @@ import selectors from 'reducers/mis/selectors';
 import mainGraph from 'reducers/mis/mainGraph';
 import subindexes from 'reducers/mis/subindexes';
 import metrics from 'reducers/mis/metrics';
+import businessElementsEvolution from 'reducers/mis/businessElementsEvolution';
 import media from 'reducers/media';
 
 export default combineReducers({
@@ -13,6 +14,7 @@ export default combineReducers({
   mainGraph,
   subindexes,
   metrics,
+  businessElementsEvolution,
   media,
   routing,
 });

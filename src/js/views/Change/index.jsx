@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import SectionPlaceholder from 'components/SectionPlaceholder';
+import SectionPlaceholder from 'components/Sections/SectionPlaceholder';
 
 export default class Change extends PureComponent {
   render() {

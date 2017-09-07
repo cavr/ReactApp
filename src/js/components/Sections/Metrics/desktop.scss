@@ -1,0 +1,28 @@
+@import '../../../../scss/theme/variables';
+
+$metrics-width: 450px;
+$metrics-horizontal-padding: 90px;
+
+ .business-metrics {
+  .business-element-wrapper {
+    padding: get-rem(36px) get-rem($metrics-horizontal-padding) get-rem(72px) get-rem($metrics-horizontal-padding);
+    .bluetab-subtitle--centered {
+      margin-bottom: get-rem(35px);
+    }
+    .business-element__selector {
+      margin-bottom: get-rem(42px);
+    }
+  }
+  .metrics__benchmarking {
+    padding: get-rem(16px) 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .bluetab-subtitle--centered {
+      margin-right: get-rem(10px);
+    }
+    .bluetab-button {
+      margin: 0 get-rem(5px);
+    }
+  }
+}

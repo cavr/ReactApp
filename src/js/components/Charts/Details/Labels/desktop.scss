@@ -1,0 +1,20 @@
+  @import '../../../../../scss/theme/variables';
+
+  .subindex-chart__labels {
+    position: relative;
+    width: 100%;
+    height: get-rem(14px);
+    padding: 0 get-rem(10px);
+    .subindex-chart__labels-inner-wrapper {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      .subindex-chart__label {
+        position: absolute;
+        top: 50%;
+        font-size: get-rem(10px);
+        color: $bluetab-light-gray-2;
+        transform: translate(-50%,-50%);
+      }
+    }
+  }

@@ -1,0 +1,90 @@
+@import '../../../../scss/theme/variables';
+
+$selector-font-size: 12px;
+$selector-left-padding: 14px;
+
+.bluetab-selector {
+  margin-bottom: get-rem(20px);
+  .bluetab-selector__title-wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: get-rem(10px);
+    .bluetab-selector__icon {
+      width: get-rem(18px);
+      height: get-rem(18px);
+      margin-right: get-rem(8px);
+    }
+    .bluetab-selector__title {
+      font-size: get-rem($selector-font-size);
+      color: $bluetab-gray;
+    }
+  }
+  .bluetab-selector__select {
+    font-size: get-rem($selector-font-size);
+    .Select-control {
+      position: relative;
+      height: get-rem(45px);
+      border-color: $bluetab-light-gray;
+      cursor: pointer;
+      .Select-multi-value-wrapper {
+        display: block;
+        height: 100%;
+        .Select-value,
+        .Select-input {
+          padding-left: get-rem($selector-left-padding);
+        }
+        .Select-value .Select-value-label,
+        .Select-input {
+          height: 100%;
+          display: flex !important;
+          align-items: center;
+        }
+      }
+      .Select-arrow-zone {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: get-rem(45px);
+        height: 100%;
+        padding: 0 !important;
+        background: rgba(218,224,228,0.30);
+        border-left: get-rem(1px) solid $bluetab-light-gray;
+        
+      }
+    }
+    .Select-menu-outer {
+      border: get-rem(1px) solid $bluetab-light-gray-2;
+      .Select-option.is-selected {
+        background-color: white;
+      }
+      .Select-option.is-focused {
+        background-color: $bluetab-red;
+        color: white;
+        z-index: 99;
+      }
+    }
+  }
+}
+
+ .bluetab-selector--inline {
+  display: flex;
+  align-items: center;
+  .bluetab-selector__title-wrapper {
+    margin-bottom: 0;
+    margin-right: get-rem(10px);
+    .bluetab-selector__title {
+      font-size: get-rem(13px);
+      font-weight: 500;
+    }
+  }
+  .bluetab-selector__select {
+    flex: 1 1 auto;
+    .Select-control {
+      position: relative;
+      height: get-rem(35px);
+    }
+  }
+}

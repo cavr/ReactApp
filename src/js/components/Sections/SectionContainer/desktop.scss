@@ -1,0 +1,73 @@
+@import '../../../../scss/theme/variables';
+
+ section {
+  position: relative;
+  width: get-rem($section-width);
+  background-color: white;
+  box-shadow: 0 0 get-rem(2px) 0 rgba(0,0,0,0.12), 0 get-rem(2px) get-rem(2px) 0 rgba(0,0,0,0.24);
+  margin: get-rem($section-margin) auto;
+  .section-title {
+    position: relative;
+    width: 100%;
+    height: get-rem($section-title-height);
+    transition: all 0.6s $easing;
+    .section-title__text {
+      @include vertical-center;
+      width: 100%;
+      text-align: center;
+      font-weight: 500;
+      font-size: get-rem(18px);
+      color: white;
+      z-index: 2;
+      transition: inherit;
+    }
+    .section-title__background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: $section-background;
+      transition: inherit;
+    }
+  }
+  .section__content {
+    padding: get-rem($section-padding);
+    &.section__content--no-padding {
+      padding: 0;
+    }
+  }
+  .section-transition-enter {
+    opacity: 0;
+    &.section-transition-enter-active {
+      opacity: 1;
+      transition: opacity 500ms ease-in;
+    }
+  }
+  .section-transition-leave {
+    opacity: 1;
+    &.section-transition-leave-active {
+      opacity: 0;
+      transition: opacity 300ms ease-in;
+    }
+  }
+}
+
+ .section--static {
+  .section-title {
+    border-bottom: get-rem(1px) solid $bluetab-light-gray-2;
+    .section-title__text {
+      color: $bluetab-gray-2;
+      margin-top: get-rem(5px);
+    }
+    .section-title__background {
+      height: get-rem(10px);
+    }
+  }
+}
+
+ .section--inactive {
+  .section-title .section-title__background {
+    background: $bluetab-light-gray-2;
+  }
+}

@@ -1,0 +1,120 @@
+@import '../../../../scss/theme/variables';
+
+$target-stroke-color: #F5A623;
+$target-fill-color: #F5A623;
+$current-stroke-color: $bluetab-red;
+$current-fill-color: $bluetab-red;
+$extra-stroke-color: #41A040;
+$extra-fill-color: #41A040;
+
+.main-graph-chart {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  padding: get-rem(27px) get-rem(88px) get-rem(75px) get-rem(88px);
+  .main-graph-chart__svg-wrapper {
+    position: relative;
+    width: get-rem(224px);
+    height: get-rem(224px);
+    .main-graph-chart__label {
+      font-size: get-rem(12px);
+      color: $bluetab-gray-2;
+      text-align: center;
+      text-transform: capitalize;
+      .main-graph-chart__label__icon {
+        @include horizontal-center;
+        bottom: calc(100% + #{get-rem(5px)});
+        &.icon__I1 {
+          width: get-rem(24px);
+          height: get-rem(18px);
+        }
+        &.icon__I2 {
+          width: get-rem(17px);
+          height: get-rem(17px);
+        }
+        &.icon__I3 {
+          width: get-rem(19px);
+          height: get-rem(16px);
+        }
+        &.icon__I4 {
+          width: get-rem(24px);
+          height: get-rem(17px);
+        }
+      }
+      &.main-graph-chart__label--top {
+        @include horizontal-center;
+        bottom: calc(100% + #{ get-rem(10px) });
+      }
+      &.main-graph-chart__label--right {
+        @include vertical-center;
+        left: calc(100% + #{ get-rem(10px) });
+      }
+      &.main-graph-chart__label--left {
+        @include vertical-center;
+        right: calc(100% + #{ get-rem(10px) });
+      }
+      &.main-graph-chart__label--bottom {
+        @include horizontal-center;
+        top: calc(100% + #{ get-rem(30px) });
+      }
+    }
+    .main-graph-chart__svg {
+      width: 100%;
+      height: 100%;
+      .current {
+        circle {
+          fill: $current-stroke-color;
+        }
+        polygon {
+          fill: $current-fill-color;
+          stroke: $current-stroke-color;
+        }
+      }
+      .target {
+        circle {
+          fill: $target-stroke-color;
+        }
+        polygon {
+          fill: $target-fill-color;
+          stroke: $target-stroke-color;
+        }
+      }
+      .extra {
+        circle {
+          fill: $extra-stroke-color;
+        }
+        polygon {
+          fill: $extra-fill-color;
+          stroke: $extra-stroke-color;
+        }
+      }
+    }
+  }
+  .main-graph-chart__legend-wrapper {
+    @include horizontal-center;
+    bottom: get-rem(-80px);
+    display: flex;
+    .main-graph-chart__legend {
+      display: inline-flex;
+      align-items: center;
+      color: $bluetab-gray-2;
+      font-size: get-rem(11px);
+      margin: 0 get-rem(15px);
+      .main-graph-chart__legend-icon {
+        width: get-rem(10px);
+        height: get-rem(10px);
+        border-radius: get-rem(7px);
+        margin-right: get-rem(6px);
+        &.main-graph-chart__legend-icon--target {
+          background-color: $target-stroke-color;
+        }
+        &.main-graph-chart__legend-icon--current {
+          background-color: $current-stroke-color;
+        }
+        &.main-graph-chart__legend-icon--extra {
+          background-color: $extra-stroke-color;
+        }
+      }
+    }
+  }
+}
