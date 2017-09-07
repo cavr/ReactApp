@@ -8,6 +8,6 @@ export default class LoginServices {
   }*/
   static login() {
     const delay = 500;
-    return new Promise((resolve) => setTimeout(() => resolve({ name: 'Jorge Najerá', role: 'Managing Director', image: jefe }), delay)).then(response => response);
+    return new Promise((resolve) => setTimeout(() => resolve({ name: 'Jorge Nájera', role: 'Managing Director', image: jefe }), delay)).then(response => response);
   }
 }

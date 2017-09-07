@@ -21,7 +21,6 @@ export default class LineChart extends PureComponent {
     (val - 0) * (100 - 0) / (maxValue - 0) + 0
     */
     const value = (data.value * 100) / maxValue;
-    console.log(value);
     return (
       <div className='subindex-line-chart'>
         <div className='subindex-line-chart__line'>
