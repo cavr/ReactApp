@@ -7,7 +7,10 @@ export default class MainGraphServices {
   static getMainGraphData(request) {
     return fetch(`/data/${ buildJsonName(request) }`)
       .then((response) => {
+        console.log(response);
         if (response.status !== 200) {
+          console.log('loading default');
+          console.log(devData);
           return devData;
         }
         return response.json();
