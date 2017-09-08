@@ -28,7 +28,13 @@ export default class Selector extends PureComponent {
           <div className='bluetab-selector__title'>{ title }</div>
         </div>
         <div className='bluetab-selector__selector-wrapper'>
-          <select className='bluetab-selector__mobile' onChange={ (event) => onChange(event.target.value, id) }>
+          <select
+            className='bluetab-selector__mobile'
+            onChange={ (event) => {
+              const selectedIndex = event.target.options.selectedIndex;
+              onChange({ value: Number(event.target.value), label: event.target.options[selectedIndex].innerText }, id);
+            } }
+          >
             { options }
           </select>
           <Select
