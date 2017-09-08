@@ -439,7 +439,9 @@ html.mobile section {
       font-size: 1.2rem;
       color: #4A4A4A; }
   .bluetab-selector .bluetab-selector__selector-wrapper {
-    position: relative; }
+    position: relative;
+    -ms-flex: 1 1 auto;
+        flex: 1 1 auto; }
   .bluetab-selector .bluetab-selector__mobile {
     display: none; }
   .bluetab-selector .bluetab-selector__select {
@@ -1271,6 +1273,8 @@ html.mobile .business-metrics {
     html.mobile .business-metrics .bluetab-selector.bluetab-selector--inline.business-element__selector .bluetab-selector__title-wrapper {
       margin-bottom: 2rem;
       margin-right: 0; }
+    html.mobile .business-metrics .bluetab-selector.bluetab-selector--inline.business-element__selector .bluetab-selector__selector-wrapper {
+      width: 100%; }
     html.mobile .business-metrics .bluetab-selector.bluetab-selector--inline.business-element__selector .bluetab-selector__select {
       width: 100%; }
 .section-placeholder {

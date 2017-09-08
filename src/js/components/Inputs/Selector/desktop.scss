@@ -21,6 +21,7 @@ $selector-left-padding: 14px;
   }
   .bluetab-selector__selector-wrapper {
     position: relative;
+    flex: 1 1 auto;
   }
   .bluetab-selector__mobile {
     display: none;
