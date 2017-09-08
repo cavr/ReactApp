@@ -431,6 +431,10 @@ html.mobile section {
     .bluetab-selector .bluetab-selector__title-wrapper .bluetab-selector__title {
       font-size: 1.2rem;
       color: #4A4A4A; }
+  .bluetab-selector .bluetab-selector__selector-wrapper {
+    position: relative; }
+  .bluetab-selector .bluetab-selector__mobile {
+    display: none; }
   .bluetab-selector .bluetab-selector__select {
     font-size: 1.2rem; }
     .bluetab-selector .bluetab-selector__select .Select-control {
@@ -499,6 +503,15 @@ html.mobile section {
     .bluetab-selector--inline .bluetab-selector__select .Select-control {
       position: relative;
       height: 3.5rem; }
+html.mobile .bluetab-selector .bluetab-selector__mobile {
+  display: block;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99; }
 .bluetab-button {
   position: relative;
   display: -ms-flexbox;

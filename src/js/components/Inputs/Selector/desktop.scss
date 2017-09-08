@@ -19,6 +19,12 @@ $selector-left-padding: 14px;
       color: $bluetab-gray;
     }
   }
+  .bluetab-selector__selector-wrapper {
+    position: relative;
+  }
+  .bluetab-selector__mobile {
+    display: none;
+  }
   .bluetab-selector__select {
     font-size: get-rem($selector-font-size);
     .Select-control {

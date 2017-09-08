@@ -18,19 +18,27 @@ export default class Selector extends PureComponent {
 
   render() {
     const { className, icon, id, title, values, inline, currentValue, onChange } = this.props;
+    const options = values.map((option) => {
+      return <option value={ option.value }>{ option.label }</option>;
+    });
     return (
       <div className={ `bluetab-selector ${ inline ? 'bluetab-selector--inline' : '' } ${ className ? className : '' }` }>
         <div className='bluetab-selector__title-wrapper'>
           { icon && <i className={ `bluetab-selector__icon icon icon__${ icon }` } /> }
           <div className='bluetab-selector__title'>{ title }</div>
         </div>
-        <Select
-          className='bluetab-selector__select'
-          options={ values }
-          value={ currentValue }
-          clearable={ false }
-          onChange={ (option) => onChange(option, id) }
-        />
+        <div className='bluetab-selector__selector-wrapper'>
+          <select className='bluetab-selector__mobile'>
+            { options }
+          </select>
+          <Select
+            className='bluetab-selector__select'
+            options={ values }
+            value={ currentValue }
+            clearable={ false }
+            onChange={ (option) => onChange(option, id) }
+          />
+        </div>
       </div>
     );
   }

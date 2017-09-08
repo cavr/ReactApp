@@ -25,6 +25,7 @@ export default class Collapse extends PureComponent {
     if (prevProps.id === id && prevProps.isOpened === isOpened) return;
     
     if (this.animation) this.animation.pause();
+    element.style.overflow = 'hidden';
     this.animation = anime({
       targets: element,
       height: isOpened ? element.scrollHeight : 0,
@@ -32,6 +33,7 @@ export default class Collapse extends PureComponent {
       easing: 'easeInOutQuart',
     });
     this.animation.finished.then(() => {
+      element.style.overflow = 'visible';
       element.style.height = isOpened ? 'auto' : 0;
     });
   }
