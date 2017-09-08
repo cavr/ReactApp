@@ -5,7 +5,7 @@
   width: get-rem($section-width);
   background-color: white;
   box-shadow: 0 0 get-rem(2px) 0 rgba(0,0,0,0.12), 0 get-rem(2px) get-rem(2px) 0 rgba(0,0,0,0.24);
-  margin: get-rem($section-margin) auto;
+  margin: get-rem($section-margin) 0;
   .section-title {
     position: relative;
     width: 100%;

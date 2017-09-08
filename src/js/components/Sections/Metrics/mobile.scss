@@ -1,6 +1,10 @@
 @import '../../../../scss/theme/variables';
 
  html.mobile .business-metrics {
+   width: calc(100% - #{get-rem(30px)});
+   section {
+     width: 100%;
+   }
   .business-element-wrapper {
     padding: get-rem(36px) 0 get-rem(72px) 0;
   }

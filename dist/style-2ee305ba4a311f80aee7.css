@@ -186,7 +186,13 @@ html.mobile .sidenav {
     background-color: #F1EFEF;
     overflow: hidden; }
     .bluetab-sns-app .bluetab-sns-app__wrapper .bluetab-sns-mis {
-      padding-top: 8rem; }
+      padding-top: 8rem;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-direction: column;
+          flex-direction: column;
+      -ms-flex-align: center;
+          align-items: center; }
     .bluetab-sns-app .bluetab-sns-app__wrapper.bluetab-sns-app__wrapper--login {
       padding-left: 0; }
   .bluetab-sns-app .page-transition-enter {
@@ -360,7 +366,7 @@ section {
   width: 72rem;
   background-color: white;
   box-shadow: 0 0 0.2rem 0 rgba(0, 0, 0, 0.12), 0 0.2rem 0.2rem 0 rgba(0, 0, 0, 0.24);
-  margin: 3rem auto; }
+  margin: 3rem 0; }
   section .section-title {
     position: relative;
     width: 100%;
@@ -412,7 +418,8 @@ section {
 .section--inactive .section-title .section-title__background {
   background: #BFC6CE; }
 html.mobile section {
-  width: 100%;
+  width: calc(100% - 3rem);
+  margin: 1rem 0;
   max-width: 57rem; }
   html.mobile section .section__content {
     padding: 3rem; }
@@ -1251,18 +1258,21 @@ html.mobile .business-element-metric .evolution .evolution-line-chart {
     margin-right: 1rem; }
   .business-metrics .metrics__benchmarking .bluetab-button {
     margin: 0 0.5rem; }
-html.mobile .business-metrics .business-element-wrapper {
-  padding: 3.6rem 0 7.2rem 0; }
-
-html.mobile .business-metrics .bluetab-selector.bluetab-selector--inline.business-element__selector {
-  margin-bottom: 3rem;
-  -ms-flex-direction: column;
-      flex-direction: column; }
-  html.mobile .business-metrics .bluetab-selector.bluetab-selector--inline.business-element__selector .bluetab-selector__title-wrapper {
-    margin-bottom: 2rem;
-    margin-right: 0; }
-  html.mobile .business-metrics .bluetab-selector.bluetab-selector--inline.business-element__selector .bluetab-selector__select {
+html.mobile .business-metrics {
+  width: calc(100% - 3rem); }
+  html.mobile .business-metrics section {
     width: 100%; }
+  html.mobile .business-metrics .business-element-wrapper {
+    padding: 3.6rem 0 7.2rem 0; }
+  html.mobile .business-metrics .bluetab-selector.bluetab-selector--inline.business-element__selector {
+    margin-bottom: 3rem;
+    -ms-flex-direction: column;
+        flex-direction: column; }
+    html.mobile .business-metrics .bluetab-selector.bluetab-selector--inline.business-element__selector .bluetab-selector__title-wrapper {
+      margin-bottom: 2rem;
+      margin-right: 0; }
+    html.mobile .business-metrics .bluetab-selector.bluetab-selector--inline.business-element__selector .bluetab-selector__select {
+      width: 100%; }
 .section-placeholder {
   padding: 7rem 3rem; }
   .section-placeholder .section-placeholder__title {
