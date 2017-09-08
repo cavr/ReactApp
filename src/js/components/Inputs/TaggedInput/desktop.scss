@@ -1,0 +1,54 @@
+@import '../../../../scss/theme/variables';
+
+$input-font-size: 12px;
+
+.bluetab-tagged-input {
+  position: relative;
+  margin-bottom: get-rem(20px);
+  font-size: get-rem(12px);
+  .bluetab-tagged-input__title-wrapper {
+    margin-bottom: get-rem(10px);
+    .bluetab-tagged-input__icon {
+      width: get-rem(18px);
+      height: get-rem(18px);
+      margin-right: get-rem(8px);
+    }
+    .bluetab-tagged-input__title {
+      font-size: get-rem($input-font-size);
+      color: $bluetab-gray;
+    }
+  }
+  .react-tagsinput {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: get-rem(45px);
+    padding: 0 get-rem(9px);
+    background-color: white;
+    border: get-rem(1px) solid $bluetab-light-gray;
+    border-radius: get-rem(3px);
+    color: $bluetab-gray;
+    .react-tagsinput-tag {
+      display: inline-flex;
+      align-items: center;
+      padding: get-rem(7px) get-rem(5px);
+      background-color: $bluetab-light-gray;
+      margin: 0 get-rem(5px);
+      .react-tagsinput-remove {
+        margin-left: get-rem(10px);
+        margin-top: get-rem(3px);
+        display: inline-block;
+        width: get-rem(10px);
+        height: get-rem(10px);
+        background: url('../../../../assets/icons/common/close--dark.svg') no-repeat center;
+        background-size: contain;
+        cursor: pointer;
+      }
+    }
+    .react-tagsinput-input {
+      border: none;
+      background: none;
+      outline: none;
+    }
+  }
+}

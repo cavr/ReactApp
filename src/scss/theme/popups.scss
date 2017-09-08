@@ -6,17 +6,19 @@ $popup-padding: 42px;
 .bluetab-sns-popup {
   position: fixed;
   top: 0;
-  right: 0;
-  width: calc(100% - #{get-rem($sidenav-width)});
+  margin-left: get-rem($sidenav-width);
+  width: calc(100vw - #{get-rem($sidenav-width)});
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
   z-index: 99;
   display: none;
   &.bluetab-sns-popup--visible {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .bluetab-sns-popup__box {
-    @include centerer;
+    position: relative;
     width: get-rem($section-width);
     padding: get-rem($popup-padding);
     padding-top: get-rem(27px + $popup-header-height);

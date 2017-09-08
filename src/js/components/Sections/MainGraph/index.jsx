@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { setSelectedIndex, setEvolutionData, clearEvolutionData } from 'actions/mis/mainGraph';
 import { setStep } from 'actions/app';
-import { Collapse } from 'react-collapse';
+import Collapse from 'components/Sections/Collapse';
 import Section from 'components/Sections/SectionContainer';
 import Button from 'components/Inputs/Button';
 import Selector from 'components/Inputs/Selector';
@@ -67,16 +67,13 @@ export class MainGraph extends PureComponent {
           </div>
           <hr className='main-graph__separator' />
           <div className='main-graph__details'>
-            <Collapse isOpened={ showingEvolution }>
-              {
-                showingEvolution &&
-                <div className='main-graph__details-wrapper'>
-                  {
-                    loadingEvolution ? <Loading small={ true } /> :
-                    <Evolution label={ evolutionData.label } variation={ evolutionData.variation } points={ evolutionData.points } maxValue={ 100 } />
-                  }
-                </div>
-              }
+            <Collapse isOpened={ showingEvolution } id={ `${ loadingEvolution }` }>
+              <div className='main-graph__details-wrapper'>
+                {
+                  loadingEvolution === false && evolutionData !== null ? <Evolution label={ evolutionData.label } variation={ evolutionData.variation } points={ evolutionData.points } maxValue={ 100 } /> :
+                  <Loading small={ true } />
+                }
+              </div>
             </Collapse>
           </div>
           <div className='main-graph__benchmarking'>

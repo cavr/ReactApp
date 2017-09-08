@@ -1,1 +1,27 @@
 @import '../../../../scss/theme/variables';
+.alert-popup {
+  .alert-popup__title {
+    font-size: get-rem(14px);
+    margin-bottom: get-rem(35px);
+  }
+  .alert-popup__inputs_wrapper {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: get-rem(20px);
+    .bluetab-tagged-input {
+      flex: 99 0 auto;
+    }
+    .bluetab-button {
+      min-width: auto;
+      width: get-rem(112px);
+      margin-bottom: get-rem(20px);
+      height: get-rem(45px);
+    }
+    .bluetab-selector {
+      width: get-rem(150px);
+      margin-left: get-rem(15px);
+      margin-right: get-rem(20px);
+    }
+  }
+}

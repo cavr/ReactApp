@@ -26,6 +26,12 @@ $selector-left-padding: 14px;
       height: get-rem(45px);
       border-color: $bluetab-light-gray;
       cursor: pointer;
+      .Select-placeholder {
+        display: flex;
+        align-items: center;
+        font-size: get-rem($selector-font-size);
+        font-weight: normal;
+      }
       .Select-multi-value-wrapper {
         display: block;
         height: 100%;

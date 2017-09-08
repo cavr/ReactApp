@@ -42,7 +42,7 @@ const actionsMap = {
     return state.set('loadingEvolution', true);
   },
   [END_EVOLUTION_DATA_LOAD]: (state) => {
-    return state.set('loadingEvolution', null);
+    return state.set('loadingEvolution', false);
   },
   [CLEAR_EVOLUTION_DATA]: (state) => {
     return state.set('evolutionData', null);

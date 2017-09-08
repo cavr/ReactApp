@@ -22,7 +22,7 @@ export default class CurrentSelection extends PureComponent {
       <div className='selection'>
         <div className='selection__wrapper'>
           { selectors }
-          <button className='selection__change-selection icon icon__change-selectors' onClick={ () => setStep(1) } />
+          <button className='selection__change-selection icon icon__edit' onClick={ () => setStep(1) } />
         </div>
       </div>
     );

@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { setSelectorValue, loadEvolution } from 'actions/mis/metrics';
-import { UnmountClosed } from 'react-collapse';
+import Collapse from 'components/Sections/Collapse';
 import { generatePDF } from 'services/pdfGenerator';
 import Section from 'components/Sections/SectionContainer';
 import Button from 'components/Inputs/Button';
@@ -39,7 +39,7 @@ export class Metrics extends PureComponent {
     const currentBusinessElement = selectors[selectedBusinessElement];
     return (
       <div className='business-metrics'>
-        <Section currentStep={ currentStep } sectionNumber={ 4 } title='Business Elements Analysis' loading={ loading } noPadding={ true } hasNestedCollapse={ true }>
+        <Section currentStep={ currentStep } sectionNumber={ 4 } title='Business Elements Analysis' loading={ loading } noPadding={ true }>
           <div className='business-element-wrapper'>
             <h2 className='bluetab-subtitle--centered'>Please use the drop down to change the Business Element dimension or else use the buttons right of each element to either check its recent evolution, set an alarm or redraw the spider web based on that selection</h2>
             <Selector
@@ -58,11 +58,11 @@ export class Metrics extends PureComponent {
             />
           </div>
         </Section>
-        <UnmountClosed isOpened={ currentStep === 4 }>
+        <Collapse isOpened={ currentStep === 4 }>
           <section className='metrics__benchmarking'>
             <Button title={ 'Summary Outlook (PDF)' } icon={ 'download' } onClick={ () => generatePDF() } />
           </section>
-        </UnmountClosed>
+        </Collapse>
       </div>
     );
   }

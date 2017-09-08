@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router';
 import { routeCodes } from 'routes';
-import { Collapse } from 'react-collapse';
+import Collapse from 'components/Sections/Collapse';
 import Avatar from './Avatar';
 
 import logo from '../../../assets/img/common/logo.png';

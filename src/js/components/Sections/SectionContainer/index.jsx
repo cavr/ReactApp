@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { Collapse } from 'react-collapse';
-import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
+import Collapse from 'components/Sections/Collapse';
 import Loading from 'components/Loading';
 
 import './desktop.scss';
@@ -19,11 +18,10 @@ export default class Section extends PureComponent {
     title: PropTypes.string,
     noMargin: PropTypes.bool,
     noPadding: PropTypes.bool,
-    hasNestedCollapse: PropTypes.bool,
   };
 
   render() {
-    const { title, sectionNumber, currentStep, loading, noMargin, noPadding, hasNestedCollapse, children } = this.props;
+    const { title, sectionNumber, currentStep, loading, noMargin, noPadding, children } = this.props;
     let cssClass = '';
     if (sectionNumber > currentStep) cssClass = 'section--inactive';
     else if (sectionNumber < currentStep) cssClass = 'section--static';
@@ -36,25 +34,13 @@ export default class Section extends PureComponent {
           <h1 className='section-title__text'>{ `${ sectionNumber }. ${ title }` }</h1>
           <div className='section-title__background' />
         </div>
-        <Collapse isOpened={ sectionNumber <= currentStep } hasNestedCollapse={ hasNestedCollapse } >
-          <CSSTransitionGroup
-            transitionName='section-transition'
-            transitionEnterTimeout={ 500 }
-            transitionLeaveTimeout={ 300 }
-          >
-            {
-              loading ?
-                <Loading /> :
-                (
-                  sectionNumber <= currentStep &&
-                  <div
-                    className={ `section__content ${ noPadding ? 'section__content--no-padding' : '' }` }
-                  >
-                    { React.cloneElement(children, { key: `section-${ sectionNumber }` }) }
-                  </div>
-                )
-            }
-          </CSSTransitionGroup>
+        <Collapse isOpened={ sectionNumber <= currentStep } id={ `${ loading }` } >
+          {
+            loading ? <Loading /> :
+            <div className={ `section__content ${ noPadding ? 'section__content--no-padding' : '' }` }>
+              { React.cloneElement(children, { key: `section-${ sectionNumber }` }) }
+            </div>
+          }
         </Collapse>
       </section>
     );

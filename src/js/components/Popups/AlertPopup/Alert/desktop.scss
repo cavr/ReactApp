@@ -1,0 +1,51 @@
+@import '../../../../../scss/theme/variables';
+
+$semaphore-size: 20px;
+$semaphore-margin: 15px;
+
+.bluetab-alert {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: get-rem(60px);
+  padding: 0 get-rem(15px);
+  color: $bluetab-gray;
+  border-bottom: get-rem(1px) solid $bluetab-light-gray;
+  .bluetab-alert__email {
+    font-size: get-rem(12px);
+  }
+  .bluetab-alert__semaphores {
+    width: get-rem(2 * $semaphore-margin + 3 * $semaphore-size);
+    display: flex;
+    justify-content: space-between;
+    .bluetab-alert__semaphore {
+      width: get-rem($semaphore-size);
+      height: get-rem($semaphore-size);
+      border-radius: get-rem(10px);
+      opacity: 0.2;
+      &.bluetab-alert__semaphore--active {
+        opacity: 1;
+      }
+      &.bluetab-alert__semaphore--red {
+        background-color: $bluetab-red;
+      }
+      &.bluetab-alert__semaphore--yellow {
+        background-color: $bluetab-light-orange;
+      }
+      &.bluetab-alert__semaphore--green {
+        background-color: $bluetab-light-green;
+      }
+    }
+  }
+  .bluetab-alert__button {
+    flex: 0 0 auto;
+    width: get-rem(32px);
+    height: get-rem(20px);
+    margin-left: get-rem(23px);
+    outline: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+}

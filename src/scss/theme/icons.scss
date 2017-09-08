@@ -2,7 +2,7 @@
   $list:
     'santander',
     'network-logo',
-    'change-selectors',
+    'edit',
     'bell',
     'bell--red',
     'graph',
@@ -24,7 +24,8 @@
     'market--red',
     'competition',
     'competition--red',
-    'avatar';
+    'avatar',
+    'trash';
 
   @each $key in $list {
     &.icon__#{$key} {

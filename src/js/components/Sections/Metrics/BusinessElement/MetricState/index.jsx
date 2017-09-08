@@ -65,15 +65,12 @@ export default class MetricState extends PureComponent {
           </div>
         </div>
         <Collapse isOpened={ showingEvolution }>
-          {
-            showingEvolution &&
-            <div className='main-graph__details-wrapper'>
-              {
-                loading ? <Loading small={ true } /> :
-                <Evolution label={ evolutionData.label } variation={ evolutionData.variation } points={ evolutionData.points } maxValue={ 100 } />
-              }
-            </div>
-          }
+          <div className='main-graph__details-wrapper'>
+            {
+              loading === false ? <Evolution label={ evolutionData.label } variation={ evolutionData.variation } points={ evolutionData.points } maxValue={ 100 } /> :
+              <Loading small={ true } />
+            }
+          </div>
         </Collapse>
       </li>
     );
