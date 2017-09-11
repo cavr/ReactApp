@@ -1,0 +1,16 @@
+{
+  "alerts": [
+    {
+      "email": "rebecaperez@gmail.com",
+      "state": 0
+    },
+    {
+      "email": "ricardodominguez@gmail.com",
+      "state": 2
+    },
+    {
+      "email": "alvaropoyales@gmail.com",
+      "state": 1
+    }
+  ]
+}
