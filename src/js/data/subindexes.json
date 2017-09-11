@@ -1,7 +1,7 @@
 {
   "subindexes": [{
       "id": "S1",
-      "label": "COST REFERENCE",
+      "label": "Cost reference",
       "type": 1,
       "data": {
         "value": 60.35,
@@ -16,7 +16,7 @@
     },
     {
       "id": "S2",
-      "label": "FLEXIBILITY",
+      "label": "Flexibility",
       "type": 2,
       "data": {
         "value": 73.87,

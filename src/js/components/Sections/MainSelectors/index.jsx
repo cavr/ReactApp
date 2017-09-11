@@ -33,7 +33,7 @@ export class MainSelectors extends PureComponent {
       <Section currentStep={ currentStep } sectionNumber={ 1 } title='Multiple selection' loading={ loading }>
         {
           currentStep > 1 ?
-            <CurrentSelection data={ data } selected={ selected } setStep={ setStep } /> :
+            <CurrentSelection data={ data } selected={ selected } setStep={ setStep } key='current' /> :
             <SelectorsContent
               data={ data }
               selected={ selected }
@@ -41,6 +41,7 @@ export class MainSelectors extends PureComponent {
               loadSelectors={ loadSelectors }
               setSelectorValue={ setSelectorValue }
               setStep={ setStep }
+              key='other'
             />
         }
       </Section>

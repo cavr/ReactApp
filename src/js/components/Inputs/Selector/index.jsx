@@ -19,7 +19,7 @@ export default class Selector extends PureComponent {
   render() {
     const { className, icon, id, title, values, inline, currentValue, onChange } = this.props;
     const options = values.map((option) => {
-      return <option value={ option.value }>{ option.label }</option>;
+      return <option key={ `${ id }-option-${ option.value }` } value={ option.value }>{ option.label }</option>;
     });
     return (
       <div className={ `bluetab-selector ${ inline ? 'bluetab-selector--inline' : '' } ${ className ? className : '' }` }>
@@ -32,7 +32,7 @@ export default class Selector extends PureComponent {
             className='bluetab-selector__mobile'
             onChange={ (event) => {
               const selectedIndex = event.target.options.selectedIndex;
-              onChange({ value: Number(event.target.value), label: event.target.options[selectedIndex].innerText }, id);
+              onChange({ value: isNaN(Number(event.target.value)) ? event.target.value : Number(event.target.value), label: event.target.options[selectedIndex].innerText }, id);
             } }
           >
             { options }

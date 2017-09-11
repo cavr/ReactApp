@@ -1,7 +1,7 @@
 {
   "metric": {
     "id": "M1",
-    "label": "COST IN €",
+    "label": "Cost in €",
     "units": "€"
   },
   "selectors": [

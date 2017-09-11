@@ -1,25 +1,25 @@
 {
   "indexes": [{
       "id": "I1",
-      "label": "COST EFFICIENCY",
+      "label": "Cost efficiency",
       "value": 7.23,
       "target": 8.75
     },
     {
       "id": "I2",
-      "label": "QUALITY OF SERVICE",
+      "label": "Satisfaction",
       "value": 8.36,
       "target": 9.00
     },
     {
       "id": "I3",
-      "label": "USAGE",
+      "label": "QoS",
       "value": 9.25,
       "target": 8.5
     },
     {
       "id": "I4",
-      "label": "SATISFACTION",
+      "label": "Usage",
       "value": 9.00,
       "target": 9.00
     }

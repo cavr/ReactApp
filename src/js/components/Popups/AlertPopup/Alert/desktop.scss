@@ -13,10 +13,16 @@ $semaphore-margin: 15px;
   color: $bluetab-gray;
   border-bottom: get-rem(1px) solid $bluetab-light-gray;
   .bluetab-alert__email {
+    width: get-rem(330px);
+    flex: 99 0 auto;
     font-size: get-rem(12px);
   }
   .bluetab-alert__semaphores {
-    width: get-rem(2 * $semaphore-margin + 3 * $semaphore-size);
+    //width: get-rem(2 * $semaphore-margin + 3 * $semaphore-size);
+    flex: 0 1 auto;
+    width: get-rem(110px);
+    margin-left: get-rem(35px);
+    margin-right: get-rem(35px);
     display: flex;
     justify-content: space-between;
     .bluetab-alert__semaphore {
@@ -38,8 +44,11 @@ $semaphore-margin: 15px;
       }
     }
   }
+  .bluetab-alert__button-wrapper {
+    display: flex;
+  }
   .bluetab-alert__button {
-    flex: 0 0 auto;
+    flex: 1 0 auto;
     width: get-rem(32px);
     height: get-rem(20px);
     margin-left: get-rem(23px);
