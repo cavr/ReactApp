@@ -268,7 +268,7 @@ html.mobile .bluetab-sns-app .bluetab-sns-app__wrapper {
       outline: none; }
     .login .login__wrapper .login__submit {
       width: 100%;
-      height: 6rem;
+      height: 4.5rem;
       background-color: white;
       border-radius: 0.5rem;
       border: none;
@@ -1107,9 +1107,16 @@ html.mobile .subindex {
   color: #4A4A4A;
   border-bottom: 0.1rem solid #F1EFEF; }
   .bluetab-alert .bluetab-alert__email {
+    width: 33rem;
+    -ms-flex: 99 0 auto;
+        flex: 99 0 auto;
     font-size: 1.2rem; }
   .bluetab-alert .bluetab-alert__semaphores {
-    width: 9rem;
+    -ms-flex: 0 1 auto;
+        flex: 0 1 auto;
+    width: 11rem;
+    margin-left: 3.5rem;
+    margin-right: 3.5rem;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-pack: justify;
@@ -1127,9 +1134,12 @@ html.mobile .subindex {
         background-color: #FBA742; }
       .bluetab-alert .bluetab-alert__semaphores .bluetab-alert__semaphore.bluetab-alert__semaphore--green {
         background-color: #98DA65; }
+  .bluetab-alert .bluetab-alert__button-wrapper {
+    display: -ms-flexbox;
+    display: flex; }
   .bluetab-alert .bluetab-alert__button {
-    -ms-flex: 0 0 auto;
-        flex: 0 0 auto;
+    -ms-flex: 1 0 auto;
+        flex: 1 0 auto;
     width: 3.2rem;
     height: 2rem;
     margin-left: 2.3rem;
@@ -1159,7 +1169,7 @@ html.mobile .subindex {
   .alert-popup .alert-popup__inputs_wrapper .bluetab-selector {
     width: 15rem;
     margin-left: 1.5rem;
-    margin-right: 2rem; }
+    margin-right: 1.5rem; }
 .business-element-metric .business-element-metric__content {
   height: 5.6rem;
   display: -ms-flexbox;
@@ -1263,7 +1273,9 @@ html.mobile .business-element-metric .evolution .evolution-line-chart {
 html.mobile .business-metrics {
   width: calc(100% - 3rem); }
   html.mobile .business-metrics section {
-    width: 100%; }
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto; }
   html.mobile .business-metrics .business-element-wrapper {
     padding: 3.6rem 0 7.2rem 0; }
   html.mobile .business-metrics .bluetab-selector.bluetab-selector--inline.business-element__selector {
@@ -1922,7 +1934,7 @@ h1, p {
   background-size: contain; }
 
 .icon.icon__innovation {
-  background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMiAyMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPgogIDx0aXRsZT4KICAgIGljb24vTUlTCiAgPC90aXRsZT4KICA8ZGVmcz4KICAgIDxwYXRoIGlkPSJhIiBkPSJNNi41IDIyLjFMOCAyMy42bDEuOC0xLjgtMS40LTEuNC0xLjkgMS43ek0xNCAyNmgydi0yLjloLTJWMjZ6bTItMTYuOXY1aC0ydi01aC0ydi0yaDZ2MmgtMnptLTkgNXYySDR2LTJoM3ptMTEtNC4yVjUuMWgtNnY0LjhjLTEuOCAxLTMgMy0zIDUuMiAwIDMuMyAyLjcgNiA2IDZzNi0yLjcgNi02YzAtMi4yLTEuMi00LjItMy01LjJ6bTUgNC4ydjJoM3YtMmgtM3ptLTIuOCA3LjdsMS44IDEuOCAxLjQtMS40LTEuOC0xLjgtMS40IDEuNHoiLz4KICA8L2RlZnM+CiAgPGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtNCAtNSkiPgogICAgPG1hc2sgaWQ9ImIiIGZpbGw9IiNmZmYiPgogICAgICA8dXNlIHhsaW5rOmhyZWY9IiNhIi8+CiAgICA8L21hc2s+CiAgICA8cGF0aCBmaWxsPSIjRkZGIiBkPSJNMCAwaDI4djI4LjE3SDB6IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxIDEpIiBtYXNrPSJ1cmwoI2IpIi8+CiAgPC9nPgo8L3N2Zz4=) center no-repeat;
+  background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjI4MC43MSAyLjY1IDgwNC41NyA3NjQuMzQiPg0KICA8cGF0aCBmaWxsPSIjRkZGIiBkPSJNMzcyLjE0IDE0NS4yOGw2OS41IDYyLjE3IDUxLjItNTEuMkw0MjcgOTAuNDJsLTU0Ljg2IDU0Ljg2em0yNzQuMy0zNi41N2g3My4xM1YyLjY2aC03My4xNFYxMDguN3ptMTQ2LjI3IDUxMnY3My4xNUg1NzMuM1Y2MjAuN2g3My4xM1Y0MzcuODZoNzMuMTRWNjIwLjdoNzMuMTR6bS01MTItMTgyLjg1VjM2NC43aDEwOS43M3Y3My4xNUgyODAuN3ptNTEyIDE1My42YzY1Ljg0LTM2LjU3IDEwOS43My0xMDkuNzIgMTA5LjczLTE5MC4xNyAwLTEyMC43LTk4Ljc0LTIxOS40My0yMTkuNDMtMjE5LjQzUzQ2My41NyAyODAuNiA0NjMuNTcgNDAxLjI4YzAgODAuNDYgNDMuOSAxNTMuNiAxMDkuNyAxOTAuMTdWNzY3aDIxOS40NFY1OTEuNDR6bTI5Mi42LTE1My42VjM2NC43SDk3NS41NnY3My4xNWgxMDkuNzJ6bS0xNjAuOTMtMjMwLjRsNjUuODMtNjUuODMtNTEuMi01MS4yLTY1LjgzIDY1LjgzIDUxLjIgNTEuMnoiLz4NCjwvc3ZnPg0K) center no-repeat;
   background-size: contain; }
 
 .icon.icon__I1 {
