@@ -12,7 +12,7 @@ export default class EvolutionLineChart extends PureComponent {
   constructor() {
     super();
 
-    this.width = 290;
+    this.width = 230;
     this.height = 65;
 
     this.animate = this.animate.bind(this);
@@ -57,9 +57,11 @@ export default class EvolutionLineChart extends PureComponent {
   render() {
     const { points } = this.props;
     let pointsString = '';
+    const lines = [];
 
     for (let i = 0, l = points.length, incr = this.width / (l - 1); i < l; i++) {
       pointsString += ` L${ i * incr }, ${ this.height }`;
+      lines.push(<line x1={ i * incr } x2={ i * incr } y1='0' y2={ this.height } />);
     }
 
     return (
@@ -72,6 +74,9 @@ export default class EvolutionLineChart extends PureComponent {
             </linearGradient>
           </defs>
           <path ref={ (path) => this.path = path } fill='url(#evolution-gradient)' fillOpacity='0.4' d={ `M0,${ this.height } ${ pointsString } L${ this.width },${ this.height } Z` } />
+          <g>
+            { lines }
+          </g>
         </svg>
       </div>
     );

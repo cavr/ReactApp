@@ -650,11 +650,15 @@ html.mobile .selectors .selectors__selector-wrapper {
         transform: translateX(100%);
     transition: transform 300ms ease-in; }
 .evolution-line-chart {
-  width: 29rem;
+  width: 23rem;
   height: 6.5rem; }
   .evolution-line-chart .evolution-line-chart__svg {
     width: 100%;
     height: 100%; }
+  .evolution-line-chart line {
+    stroke: #F83838;
+    stroke-width: 1px;
+    stroke-opacity: 0.3; }
   .evolution-line-chart path {
     stroke: #F83838;
     stroke-width: 2; }

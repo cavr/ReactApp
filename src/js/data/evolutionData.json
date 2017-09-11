@@ -1,33 +1,33 @@
 {
-  "label": "Cost efficiency",
-  "variation": 15,
-  "points": [{
-      "value": 6.23,
-      "date": "Julio-2017"
-    },
+"label": "Cost Efficiency",
+"variation": 5,
+"points": [
     {
-      "value": 6.69,
-      "date": "Junio-2017"
+	"value": 30.50,
+    "date": "Enero-2017"
     },
-    {
-      "value": 7.51,
-      "date": "Mayo-2017"
+	{
+    "value": 40.00,
+    "date": "Febrero-2017"
     },
-    {
-      "value": 7.72,
-      "date": "Abril-2017"
+	{
+    "value": 80.00,
+    "date": "Marzo-2017"
     },
-    {
-      "value": 8.65,
-      "date": "Marzo-2017"
+	{
+    "value": 70.50,
+    "date": "Abril-2017"
     },
-    {
-      "value": 9.36,
-      "date": "Febrero-2017"
+	{
+    "value": 80.00,
+    "date": "Mayo-2017"
     },
-    {
-      "value": 8.54,
-      "date": "Enero-2017"
-    }
-  ]
+	{
+    "value": 80.50,
+    "date": "Junio-2017"
+    },
+	{
+    "value": 20.50,
+    "date": "Julio-2017"
+    }]
 }
