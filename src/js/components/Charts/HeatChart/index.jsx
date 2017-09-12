@@ -5,6 +5,7 @@ import Labels from 'components/Charts/Details/Labels';
 import Waypoint from 'react-waypoint';
 
 import './desktop.scss';
+import './mobile.scss';
 
 export default class HeatChart extends PureComponent {
 
@@ -20,7 +21,6 @@ export default class HeatChart extends PureComponent {
   }
 
   handleWaypoint() {
-    const { inScreen } = this.state;
     this.setState({ inScreen: true });
   }
 

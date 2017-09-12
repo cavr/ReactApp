@@ -1,6 +1,7 @@
 @import '../../../../../scss/theme/variables';
 
 .bluetab-value-droplet {
+  position: relative;
   transform-origin: center 100%;
   animation: appear 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   transform: translateX(-50%);
@@ -9,9 +10,17 @@
     transform: translateX(-50%) scale(1.2);
     z-index: 3;
   }
-}
 
-@keyframes appear {
-  from { transform: translateX(-50%) scale(0.01); }
-  to { transform: translateX(-50%) scale(1); }
+  .bluetab-value-droplet__text {
+    @include horizontal-center;
+    top: get-rem(10px);
+    font-size: get-rem(14px);
+    color: white;
+    font-weight: 300;
+  }
+
+  @keyframes appear {
+    from { transform: translateX(-50%) scale(0.01); }
+    to { transform: translateX(-50%) scale(1); }
+  }
 }

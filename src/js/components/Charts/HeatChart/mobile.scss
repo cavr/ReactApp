@@ -1,0 +1,14 @@
+@import '../../../../scss/theme/variables';
+
+html.mobile .subindex-heat-chart {
+  margin-bottom: get-rem(30px);
+  .subindex-heat-chart__legend-wrapper {
+    left: 0;
+    bottom: get-rem(-40px);
+    transform: none;
+    .subindex-heat-chart__legend {
+      margin: 0;
+      margin-right: get-rem(20px);
+    }
+  }
+}

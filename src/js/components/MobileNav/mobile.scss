@@ -12,7 +12,17 @@
   align-items: center;
   padding: 0 get-rem(18px);
   z-index: 99;
+  .mobile-nav__menu {
+    width: get-rem(25px);
+    height: get-rem(20px);
+    cursor: pointer;
+  }
   .mobile-nav__logo {
     width: get-rem(126px);
+  }
+  .mobile-nav__summary {
+    width: get-rem(20px);
+    height: get-rem(30px);
+    cursor: pointer;
   }
 }

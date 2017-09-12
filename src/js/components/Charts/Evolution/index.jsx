@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import EvolutionLineChart from './EvolutionLineChart';
 
 import './desktop.scss';
+import './mobile.scss';
 
 export default class Evolution extends PureComponent {
   static propTypes = {

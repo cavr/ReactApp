@@ -12,6 +12,8 @@ export const LOGIN = 'LOGIN';
 export const LOGIN_LOAD = 'LOGIN_LOAD';
 export const LOGOUT = 'LOGOUT';
 export const SET_STEP = 'SET_STEP';
+export const SHOW_MOBILE_MENU = 'SHOW_MOBILE_MENU';
+export const HIDE_MOBILE_MENU = 'HIDE_MOBILE_MENU';
 
 export function login(user, password) {
   return (dispatch) => {

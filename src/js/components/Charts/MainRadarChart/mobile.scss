@@ -3,10 +3,21 @@
 $main-graph-padding--mobile: 85px - $section-padding--mobile;
 html.mobile .main-graph-chart {
   justify-content: center;
-  padding: get-rem(40px) get-rem($main-graph-padding--mobile);
+  padding: get-rem(45px) get-rem($main-graph-padding--mobile);
   .main-graph-chart__svg-wrapper {
     position: relative;
     width: get-rem(224px);
     height: auto;
+  }
+  .main-graph-chart__legend-wrapper {
+    top: get-rem(-45px);
+    bottom: auto;
+    left: get-rem(-$main-graph-padding--mobile);
+    flex-direction: column;
+    transform: none;
+    .main-graph-chart__legend {
+      margin: 0;
+      margin-bottom: get-rem(10px);
+    }
   }
 }

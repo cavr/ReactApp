@@ -10,21 +10,33 @@ html.mobile .main-graph {
       width: 100%;
       position: relative;
       left: 0;
-      margin-top: get-rem(40px);
+      margin-top: get-rem(50px);
       margin-bottom: 0;
     }
   }
   .main-graph__separator {
-    margin: get-rem(25px) 0;
+    margin-top: get-rem(30px);
+  }
+  .main-graph__details {
+    .main-graph__details-wrapper {
+      padding: get-rem(25px) 0;
+    }
   }
   .main-graph__benchmarking {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    margin-top: get-rem(30px);
     .bluetab-subtitle--centered {
       flex: 1 1 100%;
-      margin-bottom: get-rem(20px);
+      margin: 0;
+      margin-bottom: get-rem(12px);
+    }
+    .bluetab-button {
+      margin: 0 get-rem(2px);
+      flex: 1 1 auto;
+      padding: 0;
     }
   }
 }

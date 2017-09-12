@@ -11,9 +11,9 @@ export default class Sidenav extends PureComponent {
   render() {
     return (
       <div className='mobile-nav'>
-        <button className='mobile-nav__menu' />
+        <div className='mobile-nav__menu icon icon__nav-menu--mobile' />
         <img className='mobile-nav__logo' src={ logo } alt='logo' />
-        <button className='mobile-nav__resume' />
+        <div className='mobile-nav__summary icon icon__summary' />
       </div>
     );
   }
