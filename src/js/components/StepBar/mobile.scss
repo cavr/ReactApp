@@ -1,3 +1,18 @@
+@import '../../../scss/theme/variables';
+
 html.mobile .stepbar-navigation {
   width: 100%;
+  height: get-rem($stepbar-height--mobile);
+  top: get-rem($mobile-nav-height);
+  .stepbar-wrapper {
+    width: get-rem(170px);
+    .stepbar {
+      font-size: get-rem(14px);
+      width: get-rem(24px);
+      height: get-rem(24px);
+    }
+    .stepbar__background-bar {
+      height: get-rem(2px);
+    }
+  }
 }

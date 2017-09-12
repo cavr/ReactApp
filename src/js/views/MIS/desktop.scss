@@ -1,0 +1,13 @@
+@import '../../../scss/theme/variables';
+
+.bluetab-sns-app__wrapper { 
+  .bluetab-sns-mis {
+    padding-top: get-rem($stepbar-height);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &.bluetab-sns-app__wrapper--login {
+    padding-left: 0;
+  }
+}

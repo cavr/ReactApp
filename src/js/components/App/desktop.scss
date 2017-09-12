@@ -10,15 +10,6 @@
     padding-left: get-rem($sidenav-width);
     background-color: $bluetab-light-gray;
     overflow: hidden;
-    .bluetab-sns-mis {
-      padding-top: get-rem($stepbar-height);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    &.bluetab-sns-app__wrapper--login {
-      padding-left: 0;
-    }
   }
   .page-transition-enter {
     opacity: 0;

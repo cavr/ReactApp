@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { checkDevice } from 'actions/media';
 import Sidenav from 'components/Sidenav';
+import MobileNav from 'components/MobileNav';
 import Popup from 'react-popup';
 
 import './desktop.scss';
@@ -13,6 +14,7 @@ export class App extends PureComponent {
   static propTypes = {
     children: PropTypes.object.isRequired,
     location: PropTypes.object,
+    isMobile: PropTypes.bool,
     checkDevice: PropTypes.func,
   };
 
@@ -35,7 +37,7 @@ export class App extends PureComponent {
   }
 
   render() {
-    const { location } = this.props;
+    const { location, isMobile } = this.props;
     const path = location.pathname;
     const loginScreen = (path === '/login');
     return (
@@ -47,6 +49,7 @@ export class App extends PureComponent {
           closeOnOutsideClick={ true }
         />
         <div className={ `bluetab-sns-app__wrapper ${ loginScreen ? 'bluetab-sns-app__wrapper--login' : '' }` }>
+          { !loginScreen && isMobile && <MobileNav /> }
           { !loginScreen && <Sidenav currentRoute={ path } /> }
           { React.cloneElement(this.props.children, { key: path }) }
         </div>
@@ -54,6 +57,10 @@ export class App extends PureComponent {
     );
   }
 }
+
+const mapStateToProps = (state) => ({
+  isMobile: state.media.get('isMobile'),
+});
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -63,7 +70,7 @@ const mapDispatchToProps = (dispatch) => {
 
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(App);
 

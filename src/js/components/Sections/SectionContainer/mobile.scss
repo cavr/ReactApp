@@ -2,7 +2,7 @@
 
 html.mobile section { 
   width: calc(100% - #{get-rem(30px)});
-  margin: get-rem(10px) 0;
+  margin: get-rem($section-margin) 0;
   max-width: get-rem(570px);
   .section__content {
     padding: get-rem($section-padding--mobile);

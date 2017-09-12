@@ -8,6 +8,9 @@ import MainGraph from 'components/Sections/MainGraph';
 import Subindexes from 'components/Sections/Subindexes';
 import Metrics from 'components/Sections/Metrics';
 
+import './desktop.scss';
+import './mobile.scss';
+
 export class MIS extends PureComponent {
   static propTypes = {
     currentStep: PropTypes.number,

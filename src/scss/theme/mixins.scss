@@ -14,7 +14,7 @@ $desktop-design-height: 1024;
 }
 
 @function get-mobile-vw($target) {
-  $design-width: 320;
+  $design-width: 375;
   $vw-context: ($design-width * .01) * 1px;
   @return ($target / $vw-context) * 1vw;
 }
