@@ -14,7 +14,7 @@
       flex: 99 0 auto;
     }
     .bluetab-button {
-      min-width: auto;
+      min-width: initial!important;
       width: get-rem(112px);
       margin-bottom: get-rem(20px);
       height: get-rem(45px);

@@ -28,7 +28,7 @@ export default class Button extends PureComponent {
     if (selected && hover) iconColor = '--red';
     else if (!selected && ((!hover && light) || (hover && !light))) iconColor = '--red';
     return (
-      <button
+      <div
         className={ `bluetab-button ${ light ? 'bluetab-button--light' : '' } ${ selected ? 'bluetab-button--selected' : '' }` }
         onClick={ onClick }
         onMouseEnter={ () => this.setState({ hover: true }) }
@@ -36,7 +36,7 @@ export default class Button extends PureComponent {
       >
         { icon && <i className={ `bluetab-button__icon icon icon__${ icon }${ iconColor }` } /> }
         { title }
-      </button>
+      </div>
     );
   }
 }

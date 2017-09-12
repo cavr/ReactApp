@@ -5,7 +5,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-width: get-rem(173px);
+  width: get-rem(173px);
   height: get-rem(37px);
   padding: 0 get-rem(19px);
 
@@ -42,7 +42,7 @@
 }
 
  .bluetab-button--light {
-  min-width: auto;
+  width: auto;
   height: get-rem(27px);
   font-size: get-rem(12px);
   background-color: white;

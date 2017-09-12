@@ -1,5 +1,5 @@
-$desktop-design-width: 1440;
-$desktop-design-height: 1024;
+$desktop-design-width: 1282;
+$desktop-design-height: 980;
 
 @function get-desktop-vw($target) {
   $design-width: $desktop-design-width;

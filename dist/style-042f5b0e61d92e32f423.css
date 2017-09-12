@@ -616,7 +616,7 @@ html.mobile .bluetab-selector .bluetab-selector__mobile {
     background-color: white; }
 
 .bluetab-button--light {
-  min-width: auto;
+  min-width: initial!important;
   height: 2.7rem;
   font-size: 1.2rem;
   background-color: white;
@@ -1318,7 +1318,7 @@ html.mobile .bluetab-alert {
     -ms-flex: 99 0 auto;
         flex: 99 0 auto; }
   .alert-popup .alert-popup__inputs_wrapper .bluetab-button {
-    min-width: auto;
+    min-width: initial!important;
     width: 11.2rem;
     margin-bottom: 2rem;
     height: 4.5rem; }

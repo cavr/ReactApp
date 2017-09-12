@@ -44,6 +44,7 @@ const plugins = [
         autoprefixer({
           browsers: [
             'last 3 version',
+            'safari >= 8',
             'ie >= 10',
           ],
         }),

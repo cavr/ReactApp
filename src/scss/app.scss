@@ -21,9 +21,9 @@ html {
 }
 
 html.desktop {
-  font-size: 10px;
-  @media (min-width: #{$desktop-design-width}px)  {
-    font-size: get-desktop-vw(10px);
+  font-size: get-desktop-vw(10px);
+  @media screen and (min-aspect-ratio: 1282/980) {
+    font-size: get-desktop-vh(12px);
   }
 }
 
