@@ -55,7 +55,7 @@ export default class HeatChart extends PureComponent {
           </div>
           <div className='subindex-heat-chart__legend'>
             <i className='subindex-heat-chart__legend-icon subindex-heat-chart__legend-icon--current' />
-            Actual
+            Actuals
           </div>
         </div>
       </div>

@@ -1,11 +1,11 @@
 @import '../../../../scss/theme/variables';
 
-$target-stroke-color: #F5A623;
-$target-fill-color: #F5A623;
-$current-stroke-color: $bluetab-red;
-$current-fill-color: $bluetab-red;
-$extra-stroke-color: #41A040;
-$extra-fill-color: #41A040;
+$target-stroke-color: $bluetab-red;
+$target-fill-color: $bluetab-red;
+$current-stroke-color: #41A040 ;
+$current-fill-color: #41A040;
+$extra-stroke-color: #F5A623;
+$extra-fill-color: #F5A623;
 
 .main-graph-chart {
   position: relative;

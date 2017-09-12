@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Button from 'components/Inputs/Button';
 
 import './desktop.scss';
+import './mobile.scss';
 
 export default class CurrentSelection extends PureComponent {
   static propTypes = {
