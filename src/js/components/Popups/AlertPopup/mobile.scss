@@ -1,0 +1,19 @@
+@import '../../../../scss/theme/variables';
+
+html.mobile .alert-popup {
+  .alert-popup__inputs_wrapper {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .bluetab-selector {
+      width: 100%;
+      margin: 0;
+      margin-bottom: get-rem(20px);
+    }
+    .bluetab-button {
+      width: 100%;
+    }
+  }
+}

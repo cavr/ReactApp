@@ -1,0 +1,8 @@
+@import '../../../../scss/theme/variables';
+
+html.mobile .bluetab-button {
+  border-width: get-rem(1px);
+}
+html.mobile .bluetab-button--light {
+  border-width: get-rem(1px);
+}

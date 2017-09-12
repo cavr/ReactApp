@@ -1,156 +1,165 @@
 @import '../../../scss/theme/variables';
 
- .sidenav {
+.sidenav-wrapper {
   position: fixed;
   top: 0;
   left: 0;
   width: get-rem($sidenav-width);
   height: 100%;
-  background-color: $bluetab-red;
-  padding-right: get-rem($sidenav-detail-bar);
-  .sidenav__logo {
-    display: block;
-    width: get-rem(125px);
-    height: get-rem(25px);
-    object-fit: contain;
-    margin: 0 auto;
-    margin-top: get-rem(22px);
-    margin-bottom: get-rem(42px);
+  z-index: 99;
+  .sidenav-close-handler {
+    display: none;
   }
-
-  .sidenav__powered {
+  .sidenav {
+    position: relative;
     width: 100%;
-    padding-right: get-rem($sidenav-detail-bar); 
-    @include horizontal-center;
-    bottom: get-rem(27px);
-    font-size: get-rem(12px);
-    text-align: center;
-    color: white;
-    span {
-      font-weight: 300;
-    }
-  }
-
-  .sidenav__nav-button {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: get-rem(60px);
-    text-decoration: none;
-    color: white;
-    font-size: get-rem(16px);
-    border-left: get-rem(13px) solid $bluetab-red;
-    cursor: pointer;
-    .sidenav__icon {
-      width: get-rem(25px);
+    height: 100%;
+    background-color: $bluetab-red;
+    padding-right: get-rem($sidenav-detail-bar);
+    padding-top: get-rem(22px);
+    .sidenav__logo {
+      display: block;
+      width: get-rem(125px);
       height: get-rem(25px);
-      margin-left: get-rem(12px);
-      margin-right: get-rem(14px);
+      object-fit: contain;
+      margin: 0 auto;
+      margin-bottom: get-rem(42px);
     }
-    .sidenav__menu-icon {
-      display: none;
-      flex: 99 0 auto;
-      background-position: right;
-      margin-right: get-rem(14px);
-      height: get-rem(6px);
-      &.sidenav__menu-icon--close {
-        transform: scaleY(-1);
-      }
-    }
-    &.sidenav__nav-button--secondary {
+
+    .sidenav__powered {
+      width: 100%;
+      padding-right: get-rem($sidenav-detail-bar); 
+      @include horizontal-center;
+      bottom: get-rem(27px);
       font-size: get-rem(12px);
-      height: get-rem(45px);
-      padding-left: get-rem(20px);
+      text-align: center;
+      color: white;
+      span {
+        font-weight: 300;
+      }
+    }
+
+    .sidenav__nav-button {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: get-rem(60px);
+      text-decoration: none;
+      color: white;
+      font-size: get-rem(16px);
+      border-left: get-rem(13px) solid $bluetab-red;
+      cursor: pointer;
       .sidenav__icon {
-        width: get-rem(20px);
-        height: get-rem(20px);
+        width: get-rem(25px);
+        height: get-rem(25px);
+        margin-left: get-rem(12px);
+        margin-right: get-rem(14px);
+      }
+      .sidenav__menu-icon {
+        display: none;
+        flex: 99 0 auto;
+        background-position: right;
+        margin-right: get-rem(14px);
+        height: get-rem(6px);
+        &.sidenav__menu-icon--close {
+          transform: scaleY(-1);
+        }
+      }
+      &.sidenav__nav-button--secondary {
+        font-size: get-rem(12px);
+        height: get-rem(45px);
+        padding-left: get-rem(20px);
+        .sidenav__icon {
+          width: get-rem(20px);
+          height: get-rem(20px);
+        }
+      }
+      transition: all 0.3s $easing;
+      &.sidenav__nav-button--MIS {
+        border-color: $bluetab-light-green;
+        &:hover {
+          background-color: $bluetab-green;
+        }
+      }
+      &.sidenav__nav-button--RO {
+        border-color: $bluetab-light-orange;
+        &:hover {
+          background-color: $bluetab-orange;
+        }
+      }
+      &.sidenav__nav-button--change {
+        border-color: $bluetab-light-purple;
+        &:hover {
+          background-color: $bluetab-purple;
+        }
+      }
+      &.sidenav__nav-button--innovation {
+        border-color: $bluetab-light-blue;
+        &:hover {
+          background-color: $bluetab-blue;
+        }
       }
     }
-    transition: all 0.3s $easing;
-    &.sidenav__nav-button--MIS {
-      border-color: $bluetab-light-green;
-      &:hover {
+
+    
+
+    &.sidenav--MIS-active,
+    &.sidenav--RO-active,
+    &.sidenav--change-active,
+    &.sidenav--innovation-active {
+      &:after {
+        transition: all 0.3s $easing;
+        content: " ";
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        width: get-rem(7px);
+      }
+    }
+
+    &.sidenav--MIS-active {
+      &:after {
+        background-color: $bluetab-light-green;
+      }
+      .sidenav__nav-button--MIS {
         background-color: $bluetab-green;
+        .sidenav__menu-icon {
+          display: block;
+        }
+      }
+      .sidenav__parametrics {
+        border-color: $bluetab-dark-green;
+        background-color: $bluetab-dark-green;
       }
     }
-    &.sidenav__nav-button--RO {
-      border-color: $bluetab-light-orange;
-      &:hover {
+
+    &.sidenav--RO-active {
+      &:after {
+        background-color:  $bluetab-light-orange;
+      }
+      .sidenav__nav-button--RO {
         background-color: $bluetab-orange;
       }
     }
-    &.sidenav__nav-button--change {
-      border-color: $bluetab-light-purple;
-      &:hover {
+
+    &.sidenav--change-active {
+      &:after {
+        background-color:  $bluetab-light-purple;
+      }
+      .sidenav__nav-button--change {
         background-color: $bluetab-purple;
       }
     }
-    &.sidenav__nav-button--innovation {
-      border-color: $bluetab-light-blue;
-      &:hover {
+
+    &.sidenav--innovation-active {
+      &:after {
+        background-color:  $bluetab-light-blue;
+      }
+      .sidenav__nav-button--innovation {
         background-color: $bluetab-blue;
       }
     }
+    
   }
-
-  
-
-  &.sidenav--MIS-active,
-  &.sidenav--RO-active,
-  &.sidenav--change-active,
-  &.sidenav--innovation-active {
-    &:after {
-      transition: all 0.3s $easing;
-      content: " ";
-      position: absolute;
-      right: 0;
-      top: 0;
-      height: 100%;
-      width: get-rem(7px);
-    }
-  }
-
-  &.sidenav--MIS-active {
-    &:after {
-      background-color: $bluetab-light-green;
-    }
-    .sidenav__nav-button--MIS {
-      background-color: $bluetab-green;
-      .sidenav__menu-icon {
-        display: block;
-      }
-    }
-    .sidenav__parametrics {
-      border-color: $bluetab-dark-green;
-      background-color: $bluetab-dark-green;
-    }
-  }
-
-  &.sidenav--RO-active {
-    &:after {
-      background-color:  $bluetab-light-orange;
-    }
-    .sidenav__nav-button--RO {
-      background-color: $bluetab-orange;
-    }
-  }
-
-  &.sidenav--change-active {
-    &:after {
-      background-color:  $bluetab-light-purple;
-    }
-    .sidenav__nav-button--change {
-      background-color: $bluetab-purple;
-    }
-  }
-
-  &.sidenav--innovation-active {
-    &:after {
-      background-color:  $bluetab-light-blue;
-    }
-    .sidenav__nav-button--innovation {
-      background-color: $bluetab-blue;
-    }
-  }
-   
 }

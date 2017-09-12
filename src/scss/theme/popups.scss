@@ -88,3 +88,16 @@ $popup-padding: 42px;
     }
   }
 }
+
+html.mobile .bluetab-sns-popup {
+  position: fixed;
+  width: 100%;
+  margin-left: 0;
+  .bluetab-sns-popup__box {
+    position: relative;
+    width: 100%;
+    min-height: 100%;
+    padding: get-rem($section-padding--mobile);
+    padding-top: get-rem(27px + $popup-header-height);
+  }
+}

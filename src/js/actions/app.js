@@ -53,3 +53,11 @@ export function setStep(step) {
     }, 350);
   };
 }
+
+export function showMobileMenu() {
+  return { type: SHOW_MOBILE_MENU };
+}
+
+export function hideMobileMenu() {
+  return { type: HIDE_MOBILE_MENU };
+}

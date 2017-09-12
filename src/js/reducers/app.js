@@ -6,6 +6,8 @@ import {
   LOGIN_LOAD,
   LOGOUT,
   SET_STEP,
+  SHOW_MOBILE_MENU,
+  HIDE_MOBILE_MENU,
 } from '../actions/app';
 
 const initialState = Map({
@@ -16,6 +18,7 @@ const initialState = Map({
     role: 'Managing Director',
     image: jefe,
   },
+  mobileMenu: false,
   currentStep: 1,
 });
 
@@ -31,6 +34,12 @@ const actionsMap = {
   },
   [SET_STEP]: (state, action) => {
     return state.set('currentStep', action.step);
+  },
+  [SHOW_MOBILE_MENU]: (state) => {
+    return state.set('mobileMenu', true);
+  },
+  [HIDE_MOBILE_MENU]: (state) => {
+    return state.set('mobileMenu', false);
   },
 };
 

@@ -10,6 +10,7 @@ import Alert from './Alert';
 
 
 import './desktop.scss';
+import './mobile.scss';
 
 export class AlertPopup extends PureComponent {
   static propTypes = {

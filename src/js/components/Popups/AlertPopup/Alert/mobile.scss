@@ -1,0 +1,24 @@
+@import '../../../../../scss/theme/variables';
+
+$semaphore-size: 20px;
+$semaphore-margin: 15px;
+
+html.mobile .bluetab-alert {
+  position: relative;
+  flex-wrap: wrap;
+  height: auto;
+  padding-top: get-rem(13px);
+  padding-bottom: get-rem(17px);
+  .bluetab-alert__email {
+    margin-bottom: get-rem(7px);
+  }
+  .bluetab-alert__semaphores {
+    margin: 0;
+  }
+  .bluetab-alert__button-wrapper {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin-bottom: get-rem(17px);
+  }
+}
