@@ -21,7 +21,7 @@ export class App extends PureComponent {
   constructor(props) {
     super(props);
 
-    this.mediaListener = matchMedia('screen and (max-width: 1024px)');
+    this.mediaListener = matchMedia('screen and (max-width: 768px)');
   }
 
   componentDidMount() {
