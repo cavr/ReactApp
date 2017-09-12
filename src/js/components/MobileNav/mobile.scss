@@ -1,6 +1,6 @@
 @import '../../../scss/theme/variables';
 
-.mobile-nav {
+html.mobile .mobile-nav {
   position: fixed;
   top: 0;
   left: 0;
@@ -10,19 +10,20 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 get-rem(18px);
   z-index: 90;
   .mobile-nav__menu {
-    width: get-rem(25px);
-    height: get-rem(20px);
+    width: get-rem(51px);
+    height: 100%;
+    background-size: get-rem(25px);
     cursor: pointer;
   }
   .mobile-nav__logo {
     width: get-rem(126px);
   }
   .mobile-nav__summary {
-    width: get-rem(20px);
-    height: get-rem(30px);
+    width: get-rem(56px);
+    height: 100%;
+    background-size: get-rem(20px);
     cursor: pointer;
   }
 }

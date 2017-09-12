@@ -1,9 +1,10 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import Hammer from 'hammerjs';
 import { Link } from 'react-router';
 import { routeCodes } from 'routes';
 import { connect } from 'react-redux';
-import { hideMobileMenu } from 'actions/app';
+import { showMobileMenu, hideMobileMenu } from 'actions/app';
 import Collapse from 'components/Sections/Collapse';
 import Avatar from './Avatar';
 
@@ -15,6 +16,7 @@ export class Sidenav extends PureComponent {
   static propTypes = {
     currentRoute: PropTypes.string,
     mobileMenu: PropTypes.bool,
+    showMenu: PropTypes.func,
     hideMenu: PropTypes.func,
   };
   constructor() {
@@ -24,6 +26,14 @@ export class Sidenav extends PureComponent {
       showSubmenu: false,
     };
   }
+
+  componentDidMount() {
+    const { showMenu, hideMenu } = this.props;
+    this.mobileHandlers = new Hammer(document.documentElement);
+    this.mobileHandlers.on('swipeleft', hideMenu);
+    this.mobileHandlers.on('swiperight', showMenu);
+  }
+
   render() {
     const { currentRoute, mobileMenu, hideMenu } = this.props;
     const { showSubmenu } = this.state;
@@ -36,7 +46,7 @@ export class Sidenav extends PureComponent {
       activeClass = 'sidenav--innovation-active';
     }
     return (
-      <div className={ `sidenav-wrapper ${ mobileMenu ? 'sidenav-wrapper--open' : 'sidenav-wrapper--hidden' }` } >
+      <div className={ `sidenav-wrapper ${ mobileMenu ? 'sidenav-wrapper--open' : 'sidenav-wrapper--hidden' }` }>
         <div className={ `sidenav ${ activeClass }` }>
           <img className='sidenav__logo' src={ logo } alt='logo' />
           <Avatar />
@@ -92,6 +102,7 @@ export class Sidenav extends PureComponent {
 const mapDispatchToProps = (dispatch) => {
   return {
     hideMenu: () => dispatch(hideMobileMenu()),
+    showMenu: () => dispatch(showMobileMenu()),
   };
 };
 
