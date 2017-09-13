@@ -22,7 +22,7 @@ export class Selector extends PureComponent {
   render() {
     const { className, icon, id, title, values, inline, currentValue, onChange, isMobile, isTablet } = this.props;
     const options = values.map((option) => {
-      return <option key={ `${ id }-option-${ option.value }` } value={ option.value }>{ option.label }</option>;
+      return <option key={ `${ id }-option-${ option.value }` } value={ option.value } disabled={ option.disabled }>{ option.label }</option>;
     });
     return (
       <div className={ `bluetab-selector ${ inline ? 'bluetab-selector--inline' : '' } ${ className ? className : '' }` }>

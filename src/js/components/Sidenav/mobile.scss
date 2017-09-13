@@ -10,14 +10,13 @@ html.tablet-v .sidenav-wrapper {
     background-color: rgba(0, 0, 0, 0);
     pointer-events: none;
     .sidenav {
-      transition: inherit;
       transform: translateX(#{get-rem(-$sidenav-width - 40px)});
     }
   }
   .sidenav {
-    transition: inherit;
+    transition: all 0.6s $easing;
     width: get-rem($sidenav-width);
-    transform: translateX(0);
+    transform: translateX(0px);
     will-change: transform; 
     z-index: 2;
   }

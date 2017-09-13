@@ -32,7 +32,12 @@ export class AlertPopup extends PureComponent {
   }
 
   componentDidMount() {
+    document.documentElement.classList.add('fullscreen');
     this.props.loadCurrentAlerts();
+  }
+
+  componentWillUnmount() {
+    document.documentElement.classList.remove('fullscreen');
   }
 
   handleChange(tags) {

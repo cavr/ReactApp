@@ -28,20 +28,20 @@
     color: white;
     background-color: $bluetab-light-red;
     border-color: $bluetab-light-red;
-    &:hover {
+    &.bluetab-button--hoverable:hover {
       border-color: $bluetab-red;
       color: $bluetab-red;
       background-color: white;
     }
   }
-  &:hover {
+  &.bluetab-button--hoverable:hover {
     border-color: $bluetab-red;
     color: $bluetab-red;
     background-color: white;
   }
 }
 
- .bluetab-button--light {
+.bluetab-button--light {
   width: auto;
   height: get-rem(27px);
   font-size: get-rem(12px);
@@ -53,8 +53,9 @@
     width: get-rem(12px);
     height: get-rem(12px);
   }
-  &:hover {
+  &.bluetab-button--hoverable:hover {
     background-color: $bluetab-red;
     color: white;
   }
 }
+

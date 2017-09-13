@@ -207,17 +207,16 @@ html.tablet-v .sidenav-wrapper {
     pointer-events: none; }
     html.mobile .sidenav-wrapper.sidenav-wrapper--hidden .sidenav,
     html.tablet-v .sidenav-wrapper.sidenav-wrapper--hidden .sidenav {
-      transition: inherit;
       -webkit-transform: translateX(-25.2rem);
           -ms-transform: translateX(-25.2rem);
               transform: translateX(-25.2rem); }
   html.mobile .sidenav-wrapper .sidenav,
   html.tablet-v .sidenav-wrapper .sidenav {
-    transition: inherit;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
     width: 21.2rem;
-    -webkit-transform: translateX(0);
-        -ms-transform: translateX(0);
-            transform: translateX(0);
+    -webkit-transform: translateX(0px);
+        -ms-transform: translateX(0px);
+            transform: translateX(0px);
     will-change: transform;
     z-index: 2; }
   html.mobile .sidenav-wrapper .sidenav-close-handler,
@@ -689,11 +688,11 @@ html.tablet-h .bluetab-selector .bluetab-selector__mobile {
     color: white;
     background-color: #F47063;
     border-color: #F47063; }
-    .bluetab-button.bluetab-button--selected:hover {
+    .bluetab-button.bluetab-button--selected.bluetab-button--hoverable:hover {
       border-color: #F83838;
       color: #F83838;
       background-color: white; }
-  .bluetab-button:hover {
+  .bluetab-button.bluetab-button--hoverable:hover {
     border-color: #F83838;
     color: #F83838;
     background-color: white; }
@@ -709,7 +708,7 @@ html.tablet-h .bluetab-selector .bluetab-selector__mobile {
   .bluetab-button--light .bluetab-button__icon {
     width: 1.2rem;
     height: 1.2rem; }
-  .bluetab-button--light:hover {
+  .bluetab-button--light.bluetab-button--hoverable:hover {
     background-color: #F83838;
     color: white; }
 html.mobile .bluetab-button {

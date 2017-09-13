@@ -47,8 +47,17 @@ export function setStep(step) {
       dispatch(loadMetrics(request));
     }
     dispatch({ type: SET_STEP, step });
+    let offset;
+    const className = document.documentElement.className;
+    if (className === 'mobile') {
+      offset = 140;
+    } else if (className === 'tablet-v') {
+      offset = 170;
+    } else {
+      offset = 100;
+    }
     setTimeout(() => {
-      const top = document.getElementById(`section-${ step }`).getBoundingClientRect().top - 100;
+      const top = document.getElementById(`section-${ step }`).getBoundingClientRect().top - offset;
       window.scrollBy({ top, behavior: 'smooth' });
     }, 350);
   };
