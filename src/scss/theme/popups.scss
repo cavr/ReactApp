@@ -94,6 +94,9 @@ html.tablet-v .bluetab-sns-popup {
   position: fixed;
   width: 100%;
   margin-left: 0;
+  &.bluetab-sns-popup--visible {
+    align-items: flex-start;
+  }
   .bluetab-sns-popup__box {
     position: relative;
     width: 100%;

@@ -2487,6 +2487,11 @@ html.tablet-v .bluetab-sns-popup {
   position: fixed;
   width: 100%;
   margin-left: 0; }
+  html.mobile .bluetab-sns-popup.bluetab-sns-popup--visible,
+  html.tablet-v .bluetab-sns-popup.bluetab-sns-popup--visible {
+    -webkit-align-items: flex-start;
+        -ms-flex-align: start;
+            align-items: flex-start; }
   html.mobile .bluetab-sns-popup .bluetab-sns-popup__box,
   html.tablet-v .bluetab-sns-popup .bluetab-sns-popup__box {
     position: relative;
