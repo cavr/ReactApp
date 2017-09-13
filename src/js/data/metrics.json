@@ -4,49 +4,55 @@
     "label": "Cost in €",
     "units": "€"
   },
-  "selectors": [
-    {
-      "id": 2,
+  "selectors": [{
+      "id": 3,
       "label": "Business Unit",
+      "icon": "/assets/icons/dev/S3.svg",
       "values": [{
-          "value": 1,
-          "label": "Retail Banking",
-          "state": 0
-        },
-        {
           "value": 2,
-          "label": "Consumer Banking",
-          "state": 1
+          "label": "Retail Banking",
+          "disabled": false
         },
         {
           "value": 3,
+          "label": "Consumer Banking",
+          "disabled": false
+        },
+        {
+          "value": 4,
           "label": "Global Banking",
-          "state": 2
+          "disabled": false
         }
       ]
     },
     {
-      "id": 3,
+      "id": 6,
       "label": "Site Category",
+      "icon": "/assets/icons/dev/S6.svg",
       "values": [{
           "value": 1,
-          "label": "Data Centre / Head Office",
-          "state": 2
+          "label": "All",
+          "disabled": false
         },
         {
           "value": 2,
-          "label": "Head Office / Branch",
-          "state": 1
+          "label": "Data Centre",
+          "disabled": false
         },
         {
           "value": 3,
-          "label": "Branch",
-          "state": 2
+          "label": "Head Office",
+          "disabled": false
         },
         {
           "value": 4,
+          "label": "Branch",
+          "disabled": false
+        },
+        {
+          "value": 5,
           "label": "Other Sites",
-          "state": 0
+          "disabled": false
         }
       ]
     }

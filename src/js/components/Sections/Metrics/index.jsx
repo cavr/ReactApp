@@ -16,7 +16,10 @@ import './mobile.scss';
 export class Metrics extends PureComponent {
 
   static propTypes = {
-    data: PropTypes.array,
+    data: PropTypes.oneOfType([
+      PropTypes.object,
+      PropTypes.array,
+    ]),
     evolutionData: PropTypes.object,
     loading: PropTypes.bool,
     currentStep: PropTypes.number,

@@ -62,7 +62,7 @@ export default class EvolutionLineChart extends PureComponent {
 
     for (let i = 0, l = points.length, incr = this.width / (l - 1); i < l; i++) {
       pointsString += ` L${ i * incr }, ${ this.height }`;
-      lines.push(<line x1={ i * incr } x2={ i * incr } y1='0' y2={ this.height } />);
+      lines.push(<line key={ `line-${ i * incr }` } x1={ i * incr } x2={ i * incr } y1='0' y2={ this.height } />);
     }
 
     return (

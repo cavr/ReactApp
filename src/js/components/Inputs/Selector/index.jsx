@@ -48,7 +48,7 @@ export class Selector extends PureComponent {
             options={ values }
             value={ currentValue }
             clearable={ false }
-            onChange={ (option) => onChange(option, id) }
+            onChange={ (option) => onChange({ value: option.value, label: option.label }, id) }
           />
         </div>
       </div>

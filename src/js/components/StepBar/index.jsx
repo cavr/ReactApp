@@ -19,8 +19,8 @@ export class StepBar extends PureComponent {
     const { currentStep, setStep } = this.props;
     for (let i = 0; i < 4; i++) {
       steps.push(
-        <Hammer onTap={ () => { if (currentStep > i + 1) setStep(i + 1); } }>
-          <div key={ `stepBar${ i }` } className={ `stepbar ${ currentStep > i ? 'stepbar--active' : '' }` }>
+        <Hammer key={ `stepBar${ i }` } onTap={ () => { if (currentStep > i + 1) setStep(i + 1); } }>
+          <div className={ `stepbar ${ currentStep > i ? 'stepbar--active' : '' }` }>
             { i + 1 }
           </div>
         </Hammer>
