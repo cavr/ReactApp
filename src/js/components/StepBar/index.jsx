@@ -5,6 +5,7 @@ import { setStep } from 'actions/app';
 
 import './desktop.scss';
 import './mobile.scss';
+import './tablet.scss';
 
 export class StepBar extends PureComponent {
   static propTypes = {

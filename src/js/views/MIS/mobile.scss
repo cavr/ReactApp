@@ -1,7 +1,6 @@
 @import '../../../scss/theme/variables';
 
-html.mobile .bluetab-sns-app__wrapper,
-html.tablet-v .bluetab-sns-app__wrapper { 
+html.mobile .bluetab-sns-app__wrapper { 
   .bluetab-sns-mis {
     padding-top: get-rem($stepbar-height--mobile + $mobile-nav-height - $section-margin);
   }

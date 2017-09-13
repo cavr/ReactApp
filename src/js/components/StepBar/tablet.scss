@@ -1,0 +1,6 @@
+@import '../../../scss/theme/variables';
+
+html.tablet-v .stepbar-navigation {
+  width: 100%;
+  top: get-rem($mobile-nav-height);
+}

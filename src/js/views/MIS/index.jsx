@@ -10,6 +10,7 @@ import Metrics from 'components/Sections/Metrics';
 
 import './desktop.scss';
 import './mobile.scss';
+import './tablet.scss';
 
 export class MIS extends PureComponent {
   static propTypes = {
