@@ -46,6 +46,13 @@ export class Metrics extends PureComponent {
           <div className='business-element-wrapper'>
             <h2 className='bluetab-subtitle--centered'>Please use the drop down to change the Business Element dimension or else use the buttons right of each element to either check its recent evolution, set an alarm or redraw the spider web based on that selection</h2>
             <Selector
+              className='business-element__selector business-element__selector--placeholder'
+              title={ 'Select the desired metric' }
+              values={ [{ value: 'one', label: 'Under construction' }] }
+              inline={ true }
+              onChange={ () => console.log('changed') }
+            />
+            <Selector
               className='business-element__selector'
               title={ 'Business Element View' }
               values={ businessElements }

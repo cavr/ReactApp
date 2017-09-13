@@ -1621,6 +1621,10 @@ html.mobile .business-element-metric .evolution {
     margin-bottom: 3.5rem; }
   .business-metrics .business-element-wrapper .business-element__selector {
     margin-bottom: 4.2rem; }
+    .business-metrics .business-element-wrapper .business-element__selector .bluetab-selector__title {
+      width: 19.2rem; }
+    .business-metrics .business-element-wrapper .business-element__selector.business-element__selector--placeholder {
+      margin-bottom: 2rem; }
 
 .business-metrics .metrics__benchmarking {
   padding: 1.6rem 0;

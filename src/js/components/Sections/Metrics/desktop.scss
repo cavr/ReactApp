@@ -11,6 +11,12 @@ $metrics-horizontal-padding: 90px;
     }
     .business-element__selector {
       margin-bottom: get-rem(42px);
+      .bluetab-selector__title {
+        width: get-rem(192px);
+      }
+      &.business-element__selector--placeholder {
+        margin-bottom: get-rem(20px);
+      }
     }
   }
   .metrics__benchmarking {
