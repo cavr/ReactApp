@@ -28,9 +28,11 @@
 
     .sidenav__powered {
       width: 100%;
-      padding-right: get-rem($sidenav-detail-bar); 
       @include horizontal-center;
-      bottom: get-rem(27px);
+      bottom: 0;
+      padding: get-rem(27px) 0;
+      padding-right: get-rem($sidenav-detail-bar);
+      background-color: $bluetab-red;
       font-size: get-rem(12px);
       text-align: center;
       color: white;

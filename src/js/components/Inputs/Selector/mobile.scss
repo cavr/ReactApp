@@ -1,4 +1,6 @@
-html.mobile .bluetab-selector {
+html.mobile .bluetab-selector,
+html.tablet-v .bluetab-selector,
+html.tablet-h .bluetab-selector {
   .bluetab-selector__mobile {
     display: block;
     opacity: 0;

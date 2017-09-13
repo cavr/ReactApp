@@ -1,6 +1,7 @@
 @import '../../../scss/theme/variables';
 
-html.mobile .mobile-nav {
+html.mobile .mobile-nav,
+html.tablet-v .mobile-nav {
   position: fixed;
   top: 0;
   left: 0;
@@ -26,4 +27,9 @@ html.mobile .mobile-nav {
     background-size: get-rem(20px);
     cursor: pointer;
   }
+}
+
+html.tablet-h .mobile-nav,
+html.desktop .mobile-nav {
+  display: none;
 }

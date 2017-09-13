@@ -2,22 +2,25 @@ import { Map } from 'immutable';
 
 import {
   IS_MOBILE,
+  IS_TABLET,
   IS_DESKTOP,
 } from '../actions/media';
 
 const initialState = Map({
   isMobile: false,
+  isTablet: false,
+  isTabletHorizontal: false,
 });
 
 const actionsMap = {
   [IS_MOBILE]: (state) => {
-    document.documentElement.className = 'mobile';
-    return state.set('isMobile', true);
+    return state.set('isMobile', true).set('isTablet', false);
   },
-
+  [IS_TABLET]: (state) => {
+    return state.set('isTablet', true).set('isMobile', false);
+  },
   [IS_DESKTOP]: (state) => {
-    document.documentElement.className = 'desktop';
-    return state.set('isMobile', false);
+    return state.set('isMobile', false).set('isTablet', false);
   },
 };
 

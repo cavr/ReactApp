@@ -97,13 +97,15 @@
       margin-bottom: 4.2rem; }
     .sidenav-wrapper .sidenav .sidenav__powered {
       width: 100%;
-      padding-right: 0.7rem;
       position: absolute;
       left: 50%;
       -webkit-transform: translateX(-50%);
           -ms-transform: translateX(-50%);
               transform: translateX(-50%);
-      bottom: 2.7rem;
+      bottom: 0;
+      padding: 2.7rem 0;
+      padding-right: 0.7rem;
+      background-color: #F83838;
       font-size: 1.2rem;
       text-align: center;
       color: white; }
@@ -193,20 +195,24 @@
       background-color: #81B6F1; }
     .sidenav-wrapper .sidenav.sidenav--innovation-active .sidenav__nav-button--innovation {
       background-color: #3C7CC0; }
-html.mobile .sidenav-wrapper {
+html.mobile .sidenav-wrapper,
+html.tablet-v .sidenav-wrapper {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.3);
   transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1); }
-  html.mobile .sidenav-wrapper.sidenav-wrapper--hidden {
+  html.mobile .sidenav-wrapper.sidenav-wrapper--hidden,
+  html.tablet-v .sidenav-wrapper.sidenav-wrapper--hidden {
     background-color: transparent;
     pointer-events: none; }
-    html.mobile .sidenav-wrapper.sidenav-wrapper--hidden .sidenav {
+    html.mobile .sidenav-wrapper.sidenav-wrapper--hidden .sidenav,
+    html.tablet-v .sidenav-wrapper.sidenav-wrapper--hidden .sidenav {
       transition: inherit;
-      -webkit-transform: translateX(-21.2rem);
-          -ms-transform: translateX(-21.2rem);
-              transform: translateX(-21.2rem); }
-  html.mobile .sidenav-wrapper .sidenav {
+      -webkit-transform: translateX(-25.2rem);
+          -ms-transform: translateX(-25.2rem);
+              transform: translateX(-25.2rem); }
+  html.mobile .sidenav-wrapper .sidenav,
+  html.tablet-v .sidenav-wrapper .sidenav {
     transition: inherit;
     width: 21.2rem;
     -webkit-transform: translateX(0);
@@ -214,7 +220,8 @@ html.mobile .sidenav-wrapper {
             transform: translateX(0);
     will-change: transform;
     z-index: 2; }
-  html.mobile .sidenav-wrapper .sidenav-close-handler {
+  html.mobile .sidenav-wrapper .sidenav-close-handler,
+  html.tablet-v .sidenav-wrapper .sidenav-close-handler {
     display: block;
     position: absolute;
     width: 100%;
@@ -222,7 +229,8 @@ html.mobile .sidenav-wrapper {
     top: 0;
     left: 0;
     z-index: 1; }
-html.mobile .mobile-nav {
+html.mobile .mobile-nav,
+html.tablet-v .mobile-nav {
   position: fixed;
   top: 0;
   left: 0;
@@ -239,18 +247,25 @@ html.mobile .mobile-nav {
       -ms-flex-align: center;
           align-items: center;
   z-index: 90; }
-  html.mobile .mobile-nav .mobile-nav__menu {
+  html.mobile .mobile-nav .mobile-nav__menu,
+  html.tablet-v .mobile-nav .mobile-nav__menu {
     width: 5.1rem;
     height: 100%;
     background-size: 2.5rem;
     cursor: pointer; }
-  html.mobile .mobile-nav .mobile-nav__logo {
+  html.mobile .mobile-nav .mobile-nav__logo,
+  html.tablet-v .mobile-nav .mobile-nav__logo {
     width: 12.6rem; }
-  html.mobile .mobile-nav .mobile-nav__summary {
+  html.mobile .mobile-nav .mobile-nav__summary,
+  html.tablet-v .mobile-nav .mobile-nav__summary {
     width: 5.6rem;
     height: 100%;
     background-size: 2rem;
     cursor: pointer; }
+
+html.tablet-h .mobile-nav,
+html.desktop .mobile-nav {
+  display: none; }
 .bluetab-sns-app {
   min-height: 100vh;
   background-color: #F83838; }
@@ -271,7 +286,8 @@ html.mobile .mobile-nav {
     .bluetab-sns-app .page-transition-leave.page-transition-leave-active {
       opacity: 0;
       transition: opacity 300ms cubic-bezier(0.23, 1, 0.32, 1); }
-html.mobile .bluetab-sns-app .bluetab-sns-app__wrapper {
+html.mobile .bluetab-sns-app .bluetab-sns-app__wrapper,
+html.tablet-v .bluetab-sns-app .bluetab-sns-app__wrapper {
   padding-left: 0; }
 .login {
   position: relative;
@@ -417,17 +433,21 @@ html.mobile .login__brand {
         opacity: 1;
         z-index: 1;
         transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1); }
-html.mobile .stepbar-navigation {
+html.mobile .stepbar-navigation,
+html.tablet-v .stepbar-navigation {
   width: 100%;
   height: 5.5rem;
   top: 6rem; }
-  html.mobile .stepbar-navigation .stepbar-wrapper {
+  html.mobile .stepbar-navigation .stepbar-wrapper,
+  html.tablet-v .stepbar-navigation .stepbar-wrapper {
     width: 17rem; }
-    html.mobile .stepbar-navigation .stepbar-wrapper .stepbar {
+    html.mobile .stepbar-navigation .stepbar-wrapper .stepbar,
+    html.tablet-v .stepbar-navigation .stepbar-wrapper .stepbar {
       font-size: 1.4rem;
       width: 2.4rem;
       height: 2.4rem; }
-    html.mobile .stepbar-navigation .stepbar-wrapper .stepbar__background-bar {
+    html.mobile .stepbar-navigation .stepbar-wrapper .stepbar__background-bar,
+    html.tablet-v .stepbar-navigation .stepbar-wrapper .stepbar__background-bar {
       height: 0.2rem; }
 .loading {
   padding: 3rem;
@@ -629,7 +649,9 @@ html.mobile section {
     .bluetab-selector--inline .bluetab-selector__select .Select-control {
       position: relative;
       height: 3.5rem; }
-html.mobile .bluetab-selector .bluetab-selector__mobile {
+html.mobile .bluetab-selector .bluetab-selector__mobile,
+html.tablet-v .bluetab-selector .bluetab-selector__mobile,
+html.tablet-h .bluetab-selector .bluetab-selector__mobile {
   display: block;
   opacity: 0;
   position: absolute;
@@ -807,7 +829,7 @@ html.mobile .selection .selection__wrapper .selection__change-selection {
   .evolution-line-chart path {
     stroke: #F83838;
     stroke-width: 2; }
-.evolution-line-chart {
+html.mobile .evolution-line-chart {
   width: 100%;
   margin-top: 2rem; }
 .evolution {
@@ -864,7 +886,7 @@ html.mobile .selection .selection__wrapper .selection__change-selection {
     .evolution .evolution__variation .evolution__variation-text {
       text-align: center;
       font-size: 1rem; }
-.evolution {
+html.mobile .evolution {
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap; }
@@ -1570,11 +1592,6 @@ html.mobile .alert-popup .alert-popup__inputs_wrapper {
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap; }
-  .business-element-metric .evolution .evolution__label {
-    width: 100%; }
-  .business-element-metric .evolution .evolution__variation {
-    padding-top: 2.5rem;
-    padding-left: 3rem; }
 html.mobile .business-element-metric .business-element-metric__content {
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
@@ -1657,7 +1674,8 @@ html.mobile .business-metrics {
 
 .bluetab-sns-app__wrapper.bluetab-sns-app__wrapper--login {
   padding-left: 0; }
-html.mobile .bluetab-sns-app__wrapper .bluetab-sns-mis {
+html.mobile .bluetab-sns-app__wrapper .bluetab-sns-mis,
+html.tablet-v .bluetab-sns-app__wrapper .bluetab-sns-mis {
   padding-top: 9.4rem; }
 .section-placeholder {
   padding: 7rem 3rem; }
@@ -2464,11 +2482,13 @@ h2 {
           color: #F83838;
           background-color: white; }
 
-html.mobile .bluetab-sns-popup {
+html.mobile .bluetab-sns-popup,
+html.tablet-v .bluetab-sns-popup {
   position: fixed;
   width: 100%;
   margin-left: 0; }
-  html.mobile .bluetab-sns-popup .bluetab-sns-popup__box {
+  html.mobile .bluetab-sns-popup .bluetab-sns-popup__box,
+  html.tablet-v .bluetab-sns-popup .bluetab-sns-popup__box {
     position: relative;
     width: 100%;
     min-height: 100%;
@@ -2486,6 +2506,12 @@ html.desktop {
   @media screen and (min-aspect-ratio: 1282 / 980) {
     html.desktop {
       font-size: 1.22449vh; } }
+
+html.tablet-h {
+  font-size: 0.78003vw; }
+
+html.tablet-v {
+  font-size: 1.24844vw; }
 
 html.mobile {
   -webkit-overflow-scrolling: touch;

@@ -59,12 +59,5 @@ $semaphore-margin: 15px;
     padding: get-rem(13px) 0;
     border-bottom: get-rem(1px) solid $bluetab-light-gray-2;
     flex-wrap: wrap;
-    .evolution__label {
-      width: 100%;
-    }
-    .evolution__variation {
-      padding-top: get-rem(25px);
-      padding-left: get-rem(30px);
-    }
   }
 }

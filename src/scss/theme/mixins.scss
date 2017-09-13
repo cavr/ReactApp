@@ -25,6 +25,12 @@ $desktop-design-height: 980;
   @return ($target / $vw-context) * 1vh;
 }
 
+@function get-tablet-vw($target) {
+  $design-width: 801;
+  $vw-context: ($design-width * .01) * 1px;
+  @return ($target / $vw-context) * 1vw;
+}
+
 @function get-desktop-pct($target) {
   $design-width: 1440px;
   @return ($target / $design-width) * 100%;

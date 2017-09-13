@@ -1,11 +1,12 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import Select from 'react-select';
 
 import './desktop.scss';
 import './mobile.scss';
 
-export default class Selector extends PureComponent {
+export class Selector extends PureComponent {
   static propTypes = {
     className: PropTypes.string,
     icon: PropTypes.string,
@@ -13,11 +14,13 @@ export default class Selector extends PureComponent {
     title: PropTypes.string,
     values: PropTypes.array,
     inline: PropTypes.bool,
+    isMobile: PropTypes.bool,
+    isTablet: PropTypes.bool,
     onChange: PropTypes.func,
   };
 
   render() {
-    const { className, icon, id, title, values, inline, currentValue, onChange } = this.props;
+    const { className, icon, id, title, values, inline, currentValue, onChange, isMobile, isTablet } = this.props;
     const options = values.map((option) => {
       return <option key={ `${ id }-option-${ option.value }` } value={ option.value }>{ option.label }</option>;
     });
@@ -28,15 +31,18 @@ export default class Selector extends PureComponent {
           <div className='bluetab-selector__title'>{ title }</div>
         </div>
         <div className='bluetab-selector__selector-wrapper'>
-          <select
-            className='bluetab-selector__mobile'
-            onChange={ (event) => {
-              const selectedIndex = event.target.options.selectedIndex;
-              onChange({ value: isNaN(Number(event.target.value)) ? event.target.value : Number(event.target.value), label: event.target.options[selectedIndex].innerText }, id);
-            } }
-          >
-            { options }
-          </select>
+          {
+            (isMobile || isTablet) &&
+            <select
+              className='bluetab-selector__mobile'
+              onChange={ (event) => {
+                const selectedIndex = event.target.options.selectedIndex;
+                onChange({ value: isNaN(Number(event.target.value)) ? event.target.value : Number(event.target.value), label: event.target.options[selectedIndex].innerText }, id);
+              } }
+            >
+              { options }
+            </select>
+          }
           <Select
             className='bluetab-selector__select'
             options={ values }
@@ -49,3 +55,13 @@ export default class Selector extends PureComponent {
     );
   }
 }
+
+const mapStateToProps = (state) => ({
+  isTablet: state.media.get('isTablet'),
+  isMobile: state.media.get('isMobile'),
+});
+
+export default connect(
+  mapStateToProps,
+  null
+)(Selector);

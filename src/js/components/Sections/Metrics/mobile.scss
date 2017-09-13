@@ -1,6 +1,6 @@
 @import '../../../../scss/theme/variables';
 
- html.mobile .business-metrics {
+html.mobile .business-metrics {
    width: calc(100% - #{get-rem(30px)});
   section {
     width: 100%;

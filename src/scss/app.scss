@@ -27,6 +27,14 @@ html.desktop {
   }
 }
 
+html.tablet-h {
+  font-size: get-desktop-vw(10px);
+}
+
+html.tablet-v {
+  font-size: get-tablet-vw(10px);
+}
+
 html.mobile {
   -webkit-overflow-scrolling: touch;
   font-size: get-mobile-vw(10px);

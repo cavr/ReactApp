@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { showMobileMenu } from 'actions/app';
 
 import logo from '../../../assets/img/common/logo.png';
-import './mobile.scss';
+import './common.scss';
 
 export class MobileNav extends PureComponent {
   static propTypes = {

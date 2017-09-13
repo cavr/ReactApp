@@ -1,6 +1,7 @@
 @import '../../../scss/theme/variables';
 
-html.mobile .sidenav-wrapper {
+html.mobile .sidenav-wrapper,
+html.tablet-v .sidenav-wrapper {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.3);
@@ -10,7 +11,7 @@ html.mobile .sidenav-wrapper {
     pointer-events: none;
     .sidenav {
       transition: inherit;
-      transform: translateX(#{get-rem(-$sidenav-width)});
+      transform: translateX(#{get-rem(-$sidenav-width - 40px)});
     }
   }
   .sidenav {

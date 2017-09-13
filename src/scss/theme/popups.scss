@@ -89,7 +89,8 @@ $popup-padding: 42px;
   }
 }
 
-html.mobile .bluetab-sns-popup {
+html.mobile .bluetab-sns-popup,
+html.tablet-v .bluetab-sns-popup {
   position: fixed;
   width: 100%;
   margin-left: 0;
