@@ -22,5 +22,5 @@ export function generatePDF() {
   doc.text(20, 60, 'This is courier bolditalic.');
 
   const blob = doc.output('blob');*/
-  window.open('assets/data/pdfTest.pdf');
+  window.open('/data/pdfTest.pdf');
 }
