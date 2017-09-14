@@ -1,0 +1,33 @@
+{
+"label": "Jitter",
+"variation": -18,
+"points": [
+    {
+    "value": 70.00,
+    "date": "Enero-2017"
+    },
+	{
+    "value": 57.00,
+    "date": "Febrero-2017"
+    },
+	{
+    "value": 45.00,
+    "date": "Marzo-2017"
+    },
+	{
+    "value": 37.00,
+    "date": "Abril-2017"
+    },
+	{
+    "value": 32.00,
+    "date": "Mayo-2017"
+    },
+	{
+    "value": 20.00,
+    "date": "Junio-2017"
+    },
+	{
+    "value": 20.00,
+    "date": "Julio-2017"
+    }]
+}

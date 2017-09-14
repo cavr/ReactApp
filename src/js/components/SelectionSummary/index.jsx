@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Hammer from 'hammerjs';
+import HammerDOM from 'react-hammerjs';
 import { connect } from 'react-redux';
 import { showSummaryMenu, hideSummaryMenu } from 'actions/app';
 import SectionSummary from './SectionSummary';
@@ -57,6 +58,9 @@ export class SelectionSummary extends PureComponent {
     return (
       <div className={ `sidenav-summary-wrapper ${ summaryMenu ? 'sidenav-summary-wrapper--open' : 'sidenav-summary-wrapper--hidden' }` }>
         <div className='sidenav-summary'>
+          <HammerDOM onTap={ hideMenu }>
+            <div className='sidenav-summary__close icon icon__close--dark' />
+          </HammerDOM>
           <div className='sidenav-summary__title'>Resumen</div>
           <div className='sidenav-summary__sections-wrapper' ref={ (summary) => this.summary = summary }>
             <div className='sidenav-summary__sections-bar' />
@@ -69,7 +73,9 @@ export class SelectionSummary extends PureComponent {
             </ul>
           </div>
         </div>
-        <div className='sidenav-summary-close-handler' onClick={ hideMenu } />
+        <HammerDOM onTap={ hideMenu }>
+          <div className='sidenav-summary-close-handler' />
+        </HammerDOM>
       </div>
     );
   }

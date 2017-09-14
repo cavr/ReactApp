@@ -1,0 +1,29 @@
+{
+"metric": 
+	{
+    "id": "M2",
+    "label": "Cancelation Fees",
+    "units": "€"
+    },
+"selectors": [
+	{
+	"id": 3,
+	"label": "Business Unit",
+	"values": [
+		{
+		"value": 2,
+		"label": "Retail Banking",
+		"state": 2
+		}]
+	},
+	{
+	"id": 6,
+	"label": "Site Category",
+	"values": [
+		{
+		"value": 2,
+		"label": "Data Centre Sites",
+		"state": 2
+		}]
+	}]  
+}

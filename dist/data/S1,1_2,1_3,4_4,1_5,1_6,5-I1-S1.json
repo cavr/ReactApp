@@ -1,0 +1,29 @@
+{
+"metric": 
+	{
+    "id": "M1",
+    "label": "Cost in €",
+    "units": "€"
+    },
+"selectors": [
+	{
+	"id": 3,
+	"label": "Business Unit",
+	"values": [
+		{
+		"value": 4,
+		"label": "Global Banking",
+		"state": 0
+		}]
+	},
+	{
+	"id": 6,
+	"label": "Site Category",
+	"values": [
+		{
+		"value": 5,
+		"label": "Other Sites",
+		"state": 0
+		}]
+	}]  
+}

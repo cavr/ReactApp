@@ -1,0 +1,37 @@
+{
+"subindexes": [
+	{
+	"id": "S4",
+	"label": "Service Assurance",
+	"type": 1,
+	"data": 
+		{
+		"value": 95.00,
+		"target": 95.00,
+		"variation": 10,
+		"sections": 
+			{
+			"low": 0,
+			"mid": 50,
+			"high": 100
+			}
+		}
+	},
+	{
+	"id": "S5",
+	"label": "Data Packet Profile",
+	"type": 2,
+	"data": 
+		{
+		"value": 90.00,
+		"target": 90.00,
+		"variation": 8,
+		"sections": 
+			{
+			"low": 0,
+			"mid": 50,
+			"high": 100
+			}
+		}
+	}]
+}

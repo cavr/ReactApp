@@ -1,0 +1,39 @@
+{
+"indexes": [
+	{
+	"id": "I1",
+	"label": "Cost Efficiency",
+    "icon": "/assets/icons/dev/I1.svg",
+    "value": 7.50,
+	"target": 8.00,
+    "minValue": 0.00,
+    "maxValue": 10.00
+    },
+    {
+	"id": "I2",
+	"label": "Satisfaction",
+	"icon": "/assets/icons/dev/I2.svg",
+	"value": 7.00,
+	"target": 8.00,
+	"minValue": 0.00,
+    "maxValue": 10.00
+    },
+	{
+	"id": "I3",
+	"label": "QoS",
+	"icon": "/assets/icons/dev/I3.svg",
+	"value": 7.00,
+	"target": 9.00,
+	"minValue": 0.00,
+    "maxValue": 10.00
+    },
+	{
+	"id": "I4",
+	"label": "Usage",
+	"icon": "/assets/icons/dev/I4.svg",
+	"value": 7.00,
+	"target": 9.00,
+	"minValue": 0.00,
+    "maxValue": 10.00
+    }]
+}

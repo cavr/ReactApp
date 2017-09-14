@@ -1,0 +1,29 @@
+{
+"metric": 
+	{
+    "id": "M6",
+    "label": "Capacity",
+    "units": "%"
+    },
+"selectors": [
+	{
+	"id": 3,
+	"label": "Business Unit",
+	"values": [
+		{
+		"value": 4,
+		"label": "Global Banking",
+		"state": 2
+		}]
+	},
+	{
+	"id": 6,
+	"label": "Site Category",
+	"values": [
+		{
+		"value": 5,
+		"label": "Other Sites",
+		"state": 2
+		}]
+	}] 
+}

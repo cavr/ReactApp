@@ -1,0 +1,29 @@
+ {
+"metric": 
+	{
+    "id": "M5",
+    "label": "Jitter",
+    "units": "ms"
+    },
+"selectors": [
+	{
+	"id": 3,
+	"label": "Business Unit",
+	"values": [
+		{
+		"value": 2,
+		"label": "Retail Banking",
+		"state": 0
+		},
+		{
+		"value": 3,
+		"label": "Consumer Banking",
+		"state": 2
+		},
+		{
+		"value": 4,
+		"label": "Global Banking",
+		"state": 2
+		}]
+	}]  
+}

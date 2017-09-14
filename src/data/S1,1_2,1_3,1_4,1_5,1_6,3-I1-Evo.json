@@ -1,0 +1,33 @@
+{
+"label": "Cost Efficiency",
+"variation": 10,
+"points": [
+    {
+	"value": 60.00,
+    "date": "Enero-2017"
+    },
+	{
+    "value": 30.50,
+    "date": "Febrero-2017"
+    },
+	{
+    "value": 40.00,
+    "date": "Marzo-2017"
+    },
+	{
+    "value": 80.00,
+    "date": "Abril-2017"
+    },
+	{
+    "value": 70.50,
+    "date": "Mayo-2017"
+    },
+	{
+    "value": 60.80,
+    "date": "Junio-2017"
+    },
+	{
+    "value": 90.20,
+    "date": "Julio-2017"
+    }]
+}

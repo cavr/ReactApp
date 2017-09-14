@@ -1,0 +1,54 @@
+{
+"metric": 
+	{
+    "id": "M7",
+    "label": "Suspicious Traffic",
+    "units": "Mb"
+    },
+"selectors": [
+	{
+	"id": 3,
+	"label": "Business Unit",
+	"values": [
+		{
+		"value": 2,
+		"label": "Retail Banking",
+		"state": 1
+		},
+		{
+		"value": 3,
+		"label": "Consumer Banking",
+		"state": 0
+		},
+		{
+		"value": 4,
+		"label": "Global Banking",
+		"state": 2
+		}]
+	},
+	{
+	"id": 6,
+	"label": "Site Category",
+	"values": [
+		{
+		"value": 2,
+		"label": "Data Centre Sites",
+		"state": 1
+		},
+		{
+		"value": 3,
+		"label": "Head Office Sites",
+		"state": 0
+		},
+		{
+		"value": 4,
+		"label": "Retail Branch Sites",
+		"state": 2
+		},
+		{
+		"value": 5,
+		"label": "Other Sites",
+		"state": 2
+		}]
+	}]  
+}

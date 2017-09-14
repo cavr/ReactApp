@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Hammer from 'hammerjs';
+import HammerDOM from 'react-hammerjs';
 import { Link } from 'react-router';
 import { routeCodes } from 'routes';
 import { connect } from 'react-redux';
@@ -93,7 +94,9 @@ export class Sidenav extends PureComponent {
           </ul>
           <div className='sidenav__powered'><span>Powered by</span> Produban</div>
         </div>
-        <div className='sidenav-close-handler' onClick={ hideMenu } />
+        <HammerDOM onTap={ hideMenu }>
+          <div className='sidenav-close-handler' />
+        </HammerDOM>
       </div>
     );
   }
