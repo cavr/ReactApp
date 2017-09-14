@@ -1,35 +1,54 @@
 @import '../../../scss/theme/variables';
 
+$summary-border-width: 7px;
+
 .sidenav-summary-wrapper {
   position: fixed;
   top: 0;
   left: 0;
   z-index: 99;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
-  transition: all 0.6s $easing;
   &.sidenav-summary-wrapper--hidden {
-    background-color: rgba(0, 0, 0, 0);
-    pointer-events: none;
     .sidenav-summary {
-      transform: translateX(#{get-rem($sidenav-summary-width + 40px)});
+      transform: translateX(#{get-rem($sidenav-summary-width)});
     }
   }
   .sidenav-summary {
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     width: get-rem($sidenav-summary-width);
     height: 100%;
     padding-top: get-rem(33px);
     padding-left: get-rem(61px);
-    border-left: get-rem(7px) solid $bluetab-light-green;
+    border-left: get-rem($summary-border-width) solid $bluetab-light-green;
     background-color: white;
     transform: translateX(0px);
     transition: transform 0.6s $easing;
     will-change: transform; 
     z-index: 2;
+    .summary-button {
+      @include vertical-center;
+      left: get-rem(-(60px + $summary-border-width));
+      width: get-rem(60px);
+      height: get-rem(120px);
+      cursor: pointer;
+      z-index: 5;
+      .summary-button__icon {
+        @include horizontal-center;
+        top: get-rem(38px);
+        width: get-rem(26px);
+        height: get-rem(38px);
+      }
+      .summary-button__background {
+        fill: $bluetab-green;
+        transition: fill 0.3s $easing;
+      }
+      &:hover {
+        .summary-button__background {
+          fill: $bluetab-dark-green;
+        }
+      }
+    }
     .sidenav-summary__close {
       position: absolute;
       top: get-rem(33px);
@@ -61,13 +80,31 @@
       }
     }
   }
+  .sidenav-summary-animation-enter {
+    opacity: 0;
+    &.sidenav-summary-animation-enter-active {
+      opacity: 1;
+      transition: opacity 300ms $easing;
+    }
+  }
+
+  .sidenav-summary-animation-leave {
+    opacity: 1;
+    &.sidenav-summary-animation-leave-active {
+      opacity: 0;
+      transition: opacity 300ms $easing;
+    }
+  }
+
   .sidenav-summary-close-handler {
     display: block;
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
     z-index: 1;
+    background-color: rgba(0, 0, 0, 0.3);
+    
   }
 }

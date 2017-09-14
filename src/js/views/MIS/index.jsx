@@ -2,7 +2,6 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import SummaryButton from 'components/SummaryButton';
 import SelectionSummary from 'components/SelectionSummary';
 import StepBar from 'components/StepBar';
 import MainSelectors from 'components/Sections/MainSelectors';
@@ -23,7 +22,6 @@ export class MIS extends PureComponent {
     const currentStep = this.props.currentStep;
     return (
       <div className='bluetab-sns-mis'>
-        <SummaryButton />
         <SelectionSummary currentStep={ currentStep } />
         <StepBar currentStep={ currentStep } />
         <MainSelectors currentStep={ currentStep } />

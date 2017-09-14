@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 import Hammer from 'hammerjs';
 import HammerDOM from 'react-hammerjs';
 import { connect } from 'react-redux';
@@ -32,7 +33,7 @@ export class SelectionSummary extends PureComponent {
 
   componentDidUpdate() {
     const { currentStep } = this.props;
-    if (currentStep === 1) return;
+    if (currentStep <= 2) return;
     else if (currentStep > 3) {
       this.redBar.style.height = '100%';
       return;
@@ -40,13 +41,13 @@ export class SelectionSummary extends PureComponent {
     const totalHeight = this.summary.getBoundingClientRect().height;
     const sections = this.summary.getElementsByClassName('section-summary');
     let barHeight = 0;
-    for (let i = 0; i < currentStep - 1; i++) {
+    for (let i = 0; i < currentStep - 2; i++) {
       barHeight += sections[i].getBoundingClientRect().height;
     }
     this.redBar.style.height = `${ (barHeight / totalHeight) * 100 }%`;
   }
   render() {
-    const { summaryMenu, selectorsData, selectedSelectors, selectedIndex, selectedSubindex, metricsData, selectedBusinessElement, currentStep, hideMenu } = this.props;
+    const { summaryMenu, selectorsData, selectedSelectors, selectedIndex, selectedSubindex, metricsData, selectedBusinessElement, currentStep, hideMenu, showMenu } = this.props;
     const selectors = [];
     if (selectorsData && selectedSelectors) {
       for (let i = 0, l = selectorsData.length; i < l; i++) {
@@ -58,6 +59,14 @@ export class SelectionSummary extends PureComponent {
     return (
       <div className={ `sidenav-summary-wrapper ${ summaryMenu ? 'sidenav-summary-wrapper--open' : 'sidenav-summary-wrapper--hidden' }` }>
         <div className='sidenav-summary'>
+          <HammerDOM onTap={ summaryMenu ? hideMenu : showMenu }>
+            <div className='summary-button'>
+              <i className='summary-button__icon icon icon__summary' />
+              <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 59 115.08'>
+                <path className='summary-button__background' d='M8.52 7.55L59 0v115.08l-50.67-8.56c-4.8-.8-8.33-4.98-8.33-9.86V17.44c0-4.95 3.62-9.16 8.52-9.9z' />
+              </svg>
+            </div>
+          </HammerDOM>
           <HammerDOM onTap={ hideMenu }>
             <div className='sidenav-summary__close icon icon__close--dark' />
           </HammerDOM>
@@ -73,9 +82,18 @@ export class SelectionSummary extends PureComponent {
             </ul>
           </div>
         </div>
-        <HammerDOM onTap={ hideMenu }>
-          <div className='sidenav-summary-close-handler' />
-        </HammerDOM>
+        <CSSTransitionGroup
+          transitionName='sidenav-summary-animation'
+          transitionEnterTimeout={ 300 }
+          transitionLeaveTimeout={ 300 }
+        >
+          {
+            summaryMenu &&
+            <HammerDOM onTap={ hideMenu }>
+              <div className='sidenav-summary-close-handler' />
+            </HammerDOM>
+          }
+        </CSSTransitionGroup>
       </div>
     );
   }

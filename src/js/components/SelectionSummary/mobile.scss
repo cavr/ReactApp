@@ -1,6 +1,7 @@
 @import '../../../scss/theme/variables';
 
-html.mobile .sidenav-summary-wrapper {
+html.mobile .sidenav-summary-wrapper,
+html.tablet-v .sidenav-summary-wrapper {
    &.sidenav-summary-wrapper--hidden.sidenav-summary {
       transform: translateX(#{get-rem($sidenav-summary-width--mobile + 40px)});
     }
@@ -8,6 +9,9 @@ html.mobile .sidenav-summary-wrapper {
     width: get-rem($sidenav-summary-width--mobile);
     padding-top: get-rem(20px);
     padding-left: get-rem(27px);
+    .summary-button {
+      display: none;
+    }
     .sidenav-summary__close {
       top: get-rem(20px);
       right: get-rem(20px);

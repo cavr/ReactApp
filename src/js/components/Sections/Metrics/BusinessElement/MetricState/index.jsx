@@ -4,12 +4,13 @@ import { Collapse } from 'react-collapse';
 import Popup from 'react-popup';
 
 import MetricsServices from 'services/api/metrics';
-import { informationPopup } from 'services/popups.js';
+import { informationPopup, warningAndChoicePopup } from 'services/popups.js';
 
 import Button from 'components/Inputs/Button';
 import Evolution from 'components/Charts/Evolution';
 import Loading from 'components/Loading';
 import AlertPopup from 'components/Popups/AlertPopup';
+import WarningPopup from 'components/Popups/WarningPopup';
 
 
 import './desktop.scss';
@@ -48,6 +49,7 @@ export default class MetricState extends PureComponent {
     const state = data.state;
     const { showEvolution, alert } = this.state;
     const showingEvolution = showEvolution && (loading || evolutionData !== null);
+    const warningDescription = 'You are about to clear and rewrite your current search with the following business element. Do you wish to continue?';
     return (
       <li className='business-element-metric'>
         <div className={ `business-element-metric__content ${ showingEvolution ? 'business-element-metric__content--evolution' : '' }` }>
@@ -59,7 +61,12 @@ export default class MetricState extends PureComponent {
           </ul>
           <div className='business-element-metric__button-wrapper'>
             <Button title={ 'Evolution' } icon={ 'graph' } selected={ showingEvolution } onClick={ this.handleEvolution } light={ true } />
-            <Button title={ 'Rewrite' } icon={ 'update' } onClick={ () => setSelectorValue({ value: data.value, label: data.label }, selector.id) } light={ true } />
+            <Button
+              title={ 'Rewrite' }
+              icon={ 'update' }
+              onClick={ () => Popup.queue(warningAndChoicePopup('Warning', <WarningPopup description={ warningDescription } />, () => setSelectorValue({ value: data.value, label: data.label }, selector.id))) }
+              light={ true }
+            />
             { /* <div className={ `business-element-metric__alert icon ${ alert ? 'icon__bell--red' : 'icon__bell' }` } onClick={ () => this.setState({ alert: !alert }) } /> */ }
             <div className={ `business-element-metric__alert icon ${ alert ? 'icon__bell--red' : 'icon__bell' }` } onClick={ () => Popup.queue(informationPopup('Create alarm', <AlertPopup />)) } />
           </div>

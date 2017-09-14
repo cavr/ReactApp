@@ -15,3 +15,27 @@ export function informationPopup(title, content) {
     },
   });
 }
+
+export function warningAndChoicePopup(title, content, callback) {
+  return Popup.register({
+    title,
+    content,
+    buttons: {
+      left: [{
+        text: 'Accept',
+        className: 'bluetab-button',
+        action: (popup) => {
+          popup.close();
+          callback();
+        },
+      }],
+      right: [{
+        text: 'Decline',
+        className: 'bluetab-button',
+        action: (popup) => {
+          popup.close();
+        },
+      }],
+    },
+  });
+}

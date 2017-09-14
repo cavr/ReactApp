@@ -1,0 +1,9 @@
+@import '../../../../scss/theme/variables';
+
+.warning-popup {
+  .warning-popup__icon {
+    display: block;
+    height: get-rem(95px);
+    margin-bottom: get-rem(20px);
+  }
+}

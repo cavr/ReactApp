@@ -8,7 +8,6 @@ import Selector from 'components/Inputs/Selector';
 import Button from 'components/Inputs/Button';
 import Alert from './Alert';
 
-
 import './desktop.scss';
 import './mobile.scss';
 
@@ -25,8 +24,8 @@ export class AlertPopup extends PureComponent {
     super();
     this.state = { tags: [] };
     this.options = [
-      { value: 'one', label: 'One' },
-      { value: 'two', label: 'Two' },
+      { value: 'one', label: 'Better performance' },
+      { value: 'two', label: 'Worse performance' },
     ];
     this.handleChange = this.handleChange.bind(this);
   }
@@ -51,7 +50,7 @@ export class AlertPopup extends PureComponent {
     });
     return (
       <div className='alert-popup'>
-        <h2 className='bluetab-subtitle--centered'>Texto de ayuda </h2>
+        <h2 className='bluetab-subtitle--centered'>This section is under construction</h2>
         <div className='alert-popup__title'>{ businessElement }</div>
         <div className='alert-popup__inputs_wrapper'>
           <TaggedInput title='Write destination' placeholder={ 'Write destination' } values={ this.state.tags } onChange={ this.handleChange } />

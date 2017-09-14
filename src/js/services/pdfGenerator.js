@@ -1,7 +1,7 @@
 import jsPDF from 'jspdf';
 
 export function generatePDF() {
-  const doc = new jsPDF();
+  /*const doc = new jsPDF();
 
   doc.text(20, 20, 'This is the default font.');
 
@@ -21,6 +21,6 @@ export function generatePDF() {
   doc.setFontType('bolditalic');
   doc.text(20, 60, 'This is courier bolditalic.');
 
-  const blob = doc.output('blob');
-  window.open(URL.createObjectURL(blob));
+  const blob = doc.output('blob');*/
+  window.open('assets/data/pdfTest.pdf');
 }

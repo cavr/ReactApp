@@ -142,8 +142,8 @@ export default class MainRadarChart extends PureComponent {
           <svg className='main-graph-chart__svg' viewBox='0 0 100 100' style={ { backgroundColor: 'white' } }>
             { this.renderAxis() }
             { this.renderPolygon(targetPoints, 'target') }
-            { this.renderPolygon(currentPoints, 'current', 300) }
             { extraPoints && this.renderPolygon(extraPoints, 'extra') }
+            { this.renderPolygon(currentPoints, 'current', 300) }
           </svg>
         </div>
       </div>
