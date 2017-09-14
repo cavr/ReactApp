@@ -4,10 +4,12 @@ import {
   SET_METRICS,
   BEGIN_METRICS_LOAD,
   END_METRICS_LOAD,
+  SET_SELECTED_BUSINESS_ELEMENT,
 } from 'actions/mis/metrics';
 
 const initialState = Map({
-  data: [],
+  data: null,
+  selected: 0,
   loading: false,
 });
 
@@ -20,6 +22,9 @@ const actionsMap = {
   },
   [END_METRICS_LOAD]: (state) => {
     return state.set('loading', false);
+  },
+  [SET_SELECTED_BUSINESS_ELEMENT]: (state, action) => {
+    return state.set('selected', action.businessElement);
   },
 };
 

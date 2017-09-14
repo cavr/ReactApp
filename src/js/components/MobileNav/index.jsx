@@ -1,22 +1,28 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { showMobileMenu } from 'actions/app';
+import { showMobileMenu, showSummaryMenu } from 'actions/app';
+import Hammer from 'react-hammerjs';
 
 import logo from '../../../assets/img/common/logo.png';
 import './common.scss';
 
 export class MobileNav extends PureComponent {
   static propTypes = {
-    showMenu: PropTypes.func,
+    showMobileMenu: PropTypes.func,
+    showSummaryMenu: PropTypes.func,
   };
   render() {
-    const { showMenu } = this.props;
+    const { showMobileMenu, showSummaryMenu } = this.props;
     return (
       <div className='mobile-nav'>
-        <div className='mobile-nav__menu icon icon__nav-menu--mobile' onClick={ showMenu } />
+        <Hammer onTap={ showMobileMenu }>
+          <div className='mobile-nav__menu icon icon__nav-menu--mobile' />
+        </Hammer>
         <img className='mobile-nav__logo' src={ logo } alt='logo' />
-        <div className='mobile-nav__summary icon icon__summary' />
+        <Hammer onTap={ showSummaryMenu }>
+          <div className='mobile-nav__summary icon icon__summary' />
+        </Hammer>
       </div>
     );
   }
@@ -24,7 +30,8 @@ export class MobileNav extends PureComponent {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    showMenu: () => dispatch(showMobileMenu()),
+    showMobileMenu: () => dispatch(showMobileMenu()),
+    showSummaryMenu: () => dispatch(showSummaryMenu()),
   };
 };
 

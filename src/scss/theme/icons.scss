@@ -26,7 +26,9 @@
     'competition--red',
     'nav-menu--mobile',
     'summary',
+    'summary--desktop',
     'avatar',
+    'selector',
     'trash';
 
   @each $key in $list {

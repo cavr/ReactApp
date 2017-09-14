@@ -8,6 +8,8 @@ import {
   SET_STEP,
   SHOW_MOBILE_MENU,
   HIDE_MOBILE_MENU,
+  SHOW_SUMMARY_MENU,
+  HIDE_SUMMARY_MENU,
 } from '../actions/app';
 
 const initialState = Map({
@@ -19,6 +21,7 @@ const initialState = Map({
     image: jefe,
   },
   mobileMenu: false,
+  summaryMenu: false,
   currentStep: 1,
 });
 
@@ -40,6 +43,12 @@ const actionsMap = {
   },
   [HIDE_MOBILE_MENU]: (state) => {
     return state.set('mobileMenu', false);
+  },
+  [SHOW_SUMMARY_MENU]: (state) => {
+    return state.set('summaryMenu', true);
+  },
+  [HIDE_SUMMARY_MENU]: (state) => {
+    return state.set('summaryMenu', false);
   },
 };
 

@@ -1,0 +1,25 @@
+@import '../../../scss/theme/variables';
+
+.summary-button {
+  @include vertical-center;
+  right: 0;
+  position: fixed;
+  width: get-rem(60px);
+  height: get-rem(120px);
+  cursor: pointer;
+  .summary-button__icon {
+    @include horizontal-center;
+    top: get-rem(38px);
+    width: get-rem(26px);
+    height: get-rem(38px);
+  }
+  .summary-button__background {
+    fill: $bluetab-green;
+    transition: fill 0.3s $easing;
+  }
+  &:hover {
+    .summary-button__background {
+      fill: $bluetab-dark-green;
+    }
+  }
+}

@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { setSelectorValue, loadEvolution } from 'actions/mis/metrics';
+import { setSelectorValue, loadEvolution, setSelectedBusinessElement } from 'actions/mis/metrics';
 import Collapse from 'components/Sections/Collapse';
 import { generatePDF } from 'services/pdfGenerator';
 import Section from 'components/Sections/SectionContainer';
@@ -22,24 +22,18 @@ export class Metrics extends PureComponent {
     ]),
     evolutionData: PropTypes.object,
     loading: PropTypes.bool,
+    selected: PropTypes.number,
     currentStep: PropTypes.number,
     setSelectorValue: PropTypes.func,
     loadEvolution: PropTypes.func,
   };
-  constructor(props) {
-    super(props);
 
-    this.state = {
-      selectedBusinessElement: 0,
-    };
-  }
   render() {
-    const { data, evolutionData, loading, currentStep, setSelectorValue, loadEvolution } = this.props;
-    const selectedBusinessElement = this.state.selectedBusinessElement;
+    const { data, evolutionData, loading, selected, currentStep, setSelectorValue, loadEvolution, setSelectedBusinessElement } = this.props;
 
-    const selectors = data.selectors ? data.selectors : [];
+    const selectors = data && data.selectors ? data.selectors : [];
     const businessElements = selectors.map((element, index) => { return { value: index, label: element.label }; });
-    const currentBusinessElement = selectors[selectedBusinessElement];
+    const currentBusinessElement = selectors[selected];
     return (
       <div className='business-metrics'>
         <Section currentStep={ currentStep } sectionNumber={ 4 } title='Business Elements Analysis' loading={ loading } noPadding={ true }>
@@ -48,7 +42,8 @@ export class Metrics extends PureComponent {
             <Selector
               className='business-element__selector business-element__selector--placeholder'
               title={ 'Select the desired metric' }
-              values={ [{ value: 'one', label: 'Under construction' }] }
+              values={ [] }
+              placeholder='Under construction'
               inline={ true }
               onChange={ () => console.log('changed') }
             />
@@ -56,9 +51,9 @@ export class Metrics extends PureComponent {
               className='business-element__selector'
               title={ 'Business Element View' }
               values={ businessElements }
-              currentValue={ selectedBusinessElement }
+              currentValue={ selected }
               inline={ true }
-              onChange={ (option) => this.setState({ selectedBusinessElement: option.value }) }
+              onChange={ (option) => setSelectedBusinessElement(option.value) }
             />
             <BusinessElement
               data={ currentBusinessElement }
@@ -81,6 +76,7 @@ export class Metrics extends PureComponent {
 const mapStateToProps = (state) => ({
   data: state.metrics.get('data'),
   loading: state.metrics.get('loading'),
+  selected: state.metrics.get('selected'),
   evolutionData: state.businessElementsEvolution,
 });
 
@@ -88,6 +84,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     setSelectorValue: (value, selector) => dispatch(setSelectorValue(value, selector)),
     loadEvolution: (selector, value) => dispatch(loadEvolution(selector, value)),
+    setSelectedBusinessElement: (businessElement) => dispatch(setSelectedBusinessElement(businessElement)),
   };
 };
 

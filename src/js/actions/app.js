@@ -14,6 +14,8 @@ export const LOGOUT = 'LOGOUT';
 export const SET_STEP = 'SET_STEP';
 export const SHOW_MOBILE_MENU = 'SHOW_MOBILE_MENU';
 export const HIDE_MOBILE_MENU = 'HIDE_MOBILE_MENU';
+export const SHOW_SUMMARY_MENU = 'SHOW_SUMMARY_MENU';
+export const HIDE_SUMMARY_MENU = 'HIDE_SUMMARY_MENU';
 
 export function login(user, password) {
   return (dispatch) => {
@@ -69,4 +71,12 @@ export function showMobileMenu() {
 
 export function hideMobileMenu() {
   return { type: HIDE_MOBILE_MENU };
+}
+
+export function showSummaryMenu() {
+  return { type: SHOW_SUMMARY_MENU };
+}
+
+export function hideSummaryMenu() {
+  return { type: HIDE_SUMMARY_MENU };
 }
