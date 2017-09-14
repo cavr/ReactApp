@@ -24,13 +24,6 @@ export class SelectionSummary extends PureComponent {
     hideMenu: PropTypes.func,
   };
 
-  componentDidMount() {
-    const { showMenu, hideMenu } = this.props;
-    this.mobileHandlers = new Hammer(document.documentElement);
-    //this.mobileHandlers.on('swipeleft', hideMenu);
-    //this.mobileHandlers.on('swiperight', showMenu);
-  }
-
   componentDidUpdate() {
     const { currentStep } = this.props;
     if (currentStep <= 2) return;

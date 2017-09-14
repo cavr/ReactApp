@@ -28,13 +28,6 @@ export class Sidenav extends PureComponent {
     };
   }
 
-  componentDidMount() {
-    const { showMenu, hideMenu } = this.props;
-    this.mobileHandlers = new Hammer(document.documentElement);
-    this.mobileHandlers.on('swipeleft', hideMenu);
-    this.mobileHandlers.on('swiperight', showMenu);
-  }
-
   render() {
     const { currentRoute, mobileMenu, hideMenu } = this.props;
     const { showSubmenu } = this.state;
