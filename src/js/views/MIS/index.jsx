@@ -9,6 +9,7 @@ import MainSelectors from 'components/Sections/MainSelectors';
 import MainGraph from 'components/Sections/MainGraph';
 import Subindexes from 'components/Sections/Subindexes';
 import Metrics from 'components/Sections/Metrics';
+import AddSubindex from 'components/Admin/AddSubindex';
 
 import './desktop.scss';
 import './mobile.scss';
@@ -30,6 +31,7 @@ export class MIS extends PureComponent {
         <MainGraph currentStep={ currentStep } />
         <Subindexes currentStep={ currentStep } />
         <Metrics currentStep={ currentStep } />
+        <AddSubindex />
       </div>
     );
   }

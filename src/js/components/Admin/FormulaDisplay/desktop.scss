@@ -1,0 +1,13 @@
+@import '../../../../scss/theme/variables';
+
+.formula-display {
+  padding: get-rem(10px);
+  height: get-rem(50px);
+  font-size: get-rem(20px);
+  border: 1px solid $bluetab-light-gray-2;
+  background-color: $bluetab-light-gray;
+  margin-bottom: get-rem(20px);
+  .incomplete-bracket {
+    color: $bluetab-light-gray-2;
+  }
+}
