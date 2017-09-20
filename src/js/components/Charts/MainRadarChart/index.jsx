@@ -59,7 +59,7 @@ export default class MainRadarChart extends PureComponent {
       </g>
     );
   }
-  renderPolygon(points, name) {
+  renderPolygon(points, name, delay) {
     if (points.length < 0) return <polygon />;
 
     const normPoints = points.map((originalPoint, index) => {
@@ -75,7 +75,7 @@ export default class MainRadarChart extends PureComponent {
       return point + 50;
     });
     return (
-      <ChartPolygon name={ name } points={ normPoints } />
+      <ChartPolygon name={ name } points={ normPoints } delay={ delay } />
     );
   }
   renderLabels(indexNames) {
@@ -141,9 +141,9 @@ export default class MainRadarChart extends PureComponent {
           </div>
           <svg className='main-graph-chart__svg' viewBox='0 0 100 100' style={ { backgroundColor: 'white' } }>
             { this.renderAxis() }
-            { this.renderPolygon(targetPoints, 'target') }
+            { this.renderPolygon(targetPoints, 'target', 300) }
             { extraPoints && this.renderPolygon(extraPoints, 'extra') }
-            { this.renderPolygon(currentPoints, 'current', 300) }
+            { this.renderPolygon(currentPoints, 'current', 500) }
           </svg>
         </div>
       </div>

@@ -33,8 +33,8 @@ export class FormulaDisplay extends PureComponent {
 }
 
 const mapStateToProps = (state) => ({
-  operations: state.admin.get('operations'),
-  openBrackets: state.admin.get('openBrackets'),
+  operations: state.adminCreate.get('operations'),
+  openBrackets: state.adminCreate.get('openBrackets'),
 });
 
 const mapDispatchToProps = (dispatch) => {

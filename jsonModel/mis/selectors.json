@@ -1,0 +1,189 @@
+{
+"selectors": [
+	{
+	"id": 1,
+	"label": "Date",
+	"icon": "/assets/icons/dev/S1.svg",
+	"values": [
+		{
+		"value": 1,
+		"label": "Agosto-2017",
+		"disabled": false
+		},
+		{
+		"value": 2,
+		"label": "Julio-2017",
+		"disabled": true
+		},
+		{
+		"value": 3,
+		"label": "Junio-2017",
+		"disabled": true
+		},
+		{
+		"value": 4,
+		"label": "Mayo-2017",
+		"disabled": true
+		},
+		{
+		"value": 5,
+		"label": "Abril-2017",
+		"disabled": true
+		},
+		{
+		"value": 6,
+		"label": "Marzo-2017",
+		"disabled": true
+		},
+		{
+		"value": 7,
+		"label": "Febrero-2017",
+		"disabled": true
+		},
+		{
+		"value": 8,
+		"label": "Enero-2017",
+		"disabled": true
+		}]
+	},
+	{
+	"id": 2,
+	"label": "Service",
+	"icon": "/assets/icons/dev/S2.svg",
+	"values": [
+		{
+		"value": 1,
+		"label": "Data Services",
+		"disabled": false
+		},
+		{
+		"value": 2,
+		"label": "Voice Service",
+		"disabled": true
+		},
+		{
+		"value": 3,
+		"label": "Mobile Service",
+		"disabled": true
+		},
+		{
+		"value": 4,
+		"label": "Conferencing Service",
+		"disabled": true
+		}]
+	},
+	{
+	"id": 3,
+	"label": "Business Unit",
+	"icon": "/assets/icons/dev/S3.svg",
+	"values": [
+		{
+		"value": 1,
+		"label": "All",
+		"disabled": false
+		},
+		{
+		"value": 2,
+		"label": "Retail Banking",
+		"disabled": false
+		},
+		{
+		"value": 3,
+		"label": "Consumer Banking",
+		"disabled": false
+		},
+		{
+		"value": 4,
+		"label": "Global Banking",
+		"disabled": false
+		}]
+	},
+	{
+	"id": 4,
+	"label": "Partner",
+	"icon": "/assets/icons/dev/S4.svg",
+	"values": [
+		{
+		"value": 1,
+		"label": "BT",
+		"disabled": false
+		},
+		{
+		"value": 2,
+		"label": "Telefónica",
+		"disabled": true
+		},
+		{
+		"value": 3,
+		"label": "Telmex",
+		"disabled": true
+		},
+		{
+		"value": 4,
+		"label": "Orange",
+		"disabled": true
+		}]
+	},
+	{
+	"id": 5,
+	"label": "Country",
+	"icon": "/assets/icons/dev/S5.svg",
+	"values": [
+		{
+		"value": 1,
+		"label": "UK",
+		"disabled": false
+		},
+		{
+		"value": 2,
+		"label": "Spain",
+		"disabled": true
+		},
+		{
+		"value": 3,
+		"label": "Brazil",
+		"disabled": true
+		},
+		{
+		"value": 4,
+		"label": "Portugal",
+		"disabled": true
+		},
+		{
+		"value": 5,
+		"label": "USA",
+		"disabled": true
+		}]
+	},
+	{
+	"id": 6,
+	"label": "Site Category",
+	"icon": "/assets/icons/dev/S6.svg",
+	"values": [
+		{
+		"value": 1,
+		"label": "All",
+		"disabled": false
+		},
+		{
+		"value": 2,
+		"label": "Data Centre",
+		"disabled": false
+		},
+		{
+		"value": 3,
+		"label": "Head Office",
+		"disabled": false
+		},
+		{
+		"value": 4,
+		"label": "Branch",
+		"disabled": false
+		},
+		{
+		"value": 5,
+		"label": "Other Sites",
+		"disabled": false
+		}]
+	}]
+}

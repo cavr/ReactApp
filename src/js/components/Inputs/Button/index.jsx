@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import Hammer from 'react-hammerjs';
 
 import './desktop.scss';
 import './mobile.scss';
@@ -37,16 +36,15 @@ export class Button extends PureComponent {
       iconColor = '--red';
     }
     return (
-      <Hammer onTap={ onClick }>
-        <div
-          className={ `bluetab-button ${ (isMobile || isTablet) ? '' : 'bluetab-button--hoverable' } ${ light ? 'bluetab-button--light' : '' } ${ selected ? 'bluetab-button--selected' : '' }` }
-          onMouseEnter={ () => this.setState({ hover: true }) }
-          onMouseLeave={ () => this.setState({ hover: false }) }
-        >
-          { icon && <i className={ `bluetab-button__icon icon icon__${ icon }${ iconColor }` } /> }
-          { title }
-        </div>
-      </Hammer>
+      <div
+        className={ `bluetab-button ${ (isMobile || isTablet) ? '' : 'bluetab-button--hoverable' } ${ light ? 'bluetab-button--light' : '' } ${ selected ? 'bluetab-button--selected' : '' }` }
+        onMouseEnter={ () => this.setState({ hover: true }) }
+        onMouseLeave={ () => this.setState({ hover: false }) }
+        onClick={ onClick }
+      >
+        { icon && <i className={ `bluetab-button__icon icon icon__${ icon }${ iconColor }` } /> }
+        { title }
+      </div>
     );
   }
 }

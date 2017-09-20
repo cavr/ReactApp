@@ -1,10 +1,10 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import Hammer from 'hammerjs';
-import HammerDOM from 'react-hammerjs';
+
 import { Link } from 'react-router';
 import { routeCodes } from 'routes';
 import { connect } from 'react-redux';
+import { browserHistory } from 'react-router';
 import { showMobileMenu, hideMobileMenu } from 'actions/app';
 import Collapse from 'components/Sections/Collapse';
 import Avatar from './Avatar';
@@ -26,6 +26,13 @@ export class Sidenav extends PureComponent {
     this.state = {
       showSubmenu: false,
     };
+    this.handleNavLink = this.handleNavLink.bind(this);
+  }
+
+  handleNavLink(route) {
+    const { currentRoute } = this.props;
+    if(currentRoute !== route) browserHistory.push(route);
+    else this.setState({ showSubmenu: !this.state.showSubmenu });
   }
 
   render() {
@@ -45,38 +52,28 @@ export class Sidenav extends PureComponent {
           <img className='sidenav__logo' src={ logo } alt='logo' />
           <Avatar />
           <ul className='sidenav__nav'>
-            <Link
-              className='sidenav__nav-button sidenav__nav-button--MIS'
-              to={ routeCodes.MIS }
-              onClick={ () => this.setState({ showSubmenu: activeClass === 'sidenav--MIS-active' && !showSubmenu }) }
-            >
+            <div className='sidenav__nav-button sidenav__nav-button--MIS' onClick={ () => this.handleNavLink(routeCodes.MIS) }>
               <i className='sidenav__icon icon icon__MIS' />
               MIS
               <i className={ `sidenav__menu-icon ${ showSubmenu ? 'sidenav__menu-icon--close' : '' } icon icon__menu-arrow` } />
-            </Link>
-            <Collapse isOpened={ showSubmenu }>
-              {
-                activeClass === 'sidenav--MIS-active' &&
-                <div className='sidenav__nav-button sidenav__nav-button--secondary sidenav__parametrics'>
-                  <i className='sidenav__icon icon icon__settings' />
-                  Admin
-                </div>
-              }
+            </div>
+            <Collapse isOpened={ activeClass === 'sidenav--MIS-active' && showSubmenu }>
+              <div
+                className='sidenav__nav-button sidenav__nav-button--secondary sidenav__parametrics'
+                onClick={ () => this.handleNavLink(routeCodes.MIS_ADMIN) }
+              >
+                <i className='sidenav__icon icon icon__settings' />
+                Admin
+              </div>
             </Collapse>
-            <Link
-              className='sidenav__nav-button sidenav__nav-button--RO'
-              to={ routeCodes.RO }
-            >
+            <div className='sidenav__nav-button sidenav__nav-button--RO' onClick={ () => this.handleNavLink(routeCodes.RO) }>
               <i className='sidenav__icon icon icon__RO' />
               R&O
-            </Link>
-            <Link
-              className='sidenav__nav-button sidenav__nav-button--change'
-              to={ routeCodes.CHANGE }
-            >
+            </div>
+            <div className='sidenav__nav-button sidenav__nav-button--change' onClick={ () => this.handleNavLink(routeCodes.CHANGE) }>
               <i className='sidenav__icon icon icon__change' />
               Change
-            </Link>
+            </div>
             <Link
               className='sidenav__nav-button sidenav__nav-button--innovation'
               to={ routeCodes.INNOVATION }
@@ -87,9 +84,7 @@ export class Sidenav extends PureComponent {
           </ul>
           <div className='sidenav__powered'><span>Powered by</span> Produban</div>
         </div>
-        <HammerDOM onTap={ hideMenu }>
-          <div className='sidenav-close-handler' />
-        </HammerDOM>
+        <div className='sidenav-close-handler' onClick={ hideMenu } />
       </div>
     );
   }

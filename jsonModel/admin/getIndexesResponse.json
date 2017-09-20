@@ -1,0 +1,20 @@
+{
+  "indexes": [{
+      "value": "I1",
+      "label": "Cost Efficiency"
+    },
+    {
+      "value": "I2",
+      "label": "Satisfaction"
+    },
+    {
+      "value": "I3",
+      "label": "QoS"
+
+    },
+    {
+      "value": "I4",
+      "label": "Usage"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+/*
+Formato:
+{
+  selectors: {
+    //ID del selector
+    //Valor del selector
+    id: valor,
+    ...
+  },
+  //ID del indice
+  index: id,
+  //ID del subindice
+  subindex: id,
+}
+*/
+
+{
+  "selectors": {
+    "1": "1",
+    "2": "3",
+    "3": "1",
+    "4": "2",
+    "5": "1",
+    "6": "3"
+  },
+  "index": "I1",
+  "subindex": "S7"
+}

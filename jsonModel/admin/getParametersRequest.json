@@ -1,0 +1,11 @@
+/*
+Formato:
+{
+  //ID del indice
+  index: id
+}
+*/
+
+{
+  "index": "I1"
+}

@@ -52,6 +52,11 @@
       height: get-rem(45px);
       border-bottom: get-rem(1px) solid $bluetab-darker-red;
       cursor: pointer;
+      .sidenav-avatar__option-icon {
+        width: get-rem(15px);
+        height: get-rem(15px);
+        margin-right: get-rem(14px);
+      }
     }
   }
 }

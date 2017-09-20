@@ -1,0 +1,17 @@
+/*
+Formato:
+{
+  //ID del indice
+  index: id
+  //ID de la metrica
+  metric: id,
+  //Nuevo valor de target
+  target: number
+}
+*/
+
+{
+  "index": "I1",
+  "metric": "M2",
+  "target": 90
+}

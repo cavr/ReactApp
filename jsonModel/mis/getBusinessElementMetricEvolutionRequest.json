@@ -1,0 +1,34 @@
+/*
+Formato:
+{
+  selectors: {
+    //ID del selector
+    //Valor del selector
+    id: valor,
+    ...
+  },
+  //ID del indice
+  index: id,
+  //ID del subindice
+  subindex: id,
+  //ID de la metrica
+  metric: id,
+  //ID y valor del business element seleccionado
+  businessElement: { id: valor }
+}
+*/
+
+{
+  "selectors": {
+    "1": "1",
+    "2": "3",
+    "3": "1",
+    "4": "2",
+    "5": "1",
+    "6": "3"
+  },
+  "index": "I1",
+  "subindex": "S7",
+  "metric": "M1",
+  "businessElement": { "1": "1" }
+}

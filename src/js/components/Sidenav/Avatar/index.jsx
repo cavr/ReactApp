@@ -31,8 +31,8 @@ export class Avatar extends PureComponent {
         </div>
         <Collapse isOpened={ showMenu }>
           <ul className='sidenav-avatar__menu'>
-            <li className='sidenav-avatar__option'>Settings</li>
-            <li className='sidenav-avatar__option' onClick={ logout }>Logout</li>
+            <li className='sidenav-avatar__option'><i className='sidenav-avatar__option-icon icon icon__settings' /> Settings</li>
+            <li className='sidenav-avatar__option' onClick={ logout }><i className='sidenav-avatar__option-icon icon icon__off' /> Logout</li>
           </ul>
         </Collapse>
       </div>

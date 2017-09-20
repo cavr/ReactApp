@@ -1,0 +1,14 @@
+{
+  "parameters": [{
+    "id": "P7",
+    "label": "ST"
+  },
+  {
+    "id": "P1",
+    "label": "CRP"
+  },
+  {
+    "id": "P3",
+    "label": "MTA"
+  }]
+}
