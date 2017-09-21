@@ -9,12 +9,12 @@ const initialState = Map({});
 
 const actionsMap = {
   [BEGIN_BUSINESS_ELEMENT_EVOLUTION_LOAD]: (state, action) => {
-    const { selector, value } = action;
-    return state.set(`S${ selector }V${ value }`, { loading: true });
+    const { metric, selector, value } = action;
+    return state.set(`${ metric }S${ selector }V${ value }`, { loading: true });
   },
   [SET_BUSINESS_ELEMENT_EVOLUTION_DATA]: (state, action) => {
-    const { selector, value, data } = action;
-    return state.set(`S${ selector }V${ value }`, { loading: false, data });
+    const { metric, selector, value, data } = action;
+    return state.set(`${ metric }S${ selector }V${ value }`, { loading: false, data });
   },
 };
 

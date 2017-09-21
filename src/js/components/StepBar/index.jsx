@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import Hammer from 'react-hammerjs';
 import { connect } from 'react-redux';
 import { setStep } from 'actions/app';
 
@@ -19,11 +18,13 @@ export class StepBar extends PureComponent {
     const { currentStep, setStep } = this.props;
     for (let i = 0; i < 4; i++) {
       steps.push(
-        <Hammer key={ `stepBar${ i }` } onTap={ () => { if (currentStep > i + 1) setStep(i + 1); } }>
-          <div className={ `stepbar ${ currentStep > i ? 'stepbar--active' : '' }` }>
-            { i + 1 }
-          </div>
-        </Hammer>
+        <div
+          key={ `stepBar${ i }` }
+          className={ `stepbar ${ currentStep > i ? 'stepbar--active' : '' }` }
+          onClick={ () => { if (currentStep > i + 1) setStep(i + 1); } }
+        >
+          { i + 1 }
+        </div>
       );
     }
     return (

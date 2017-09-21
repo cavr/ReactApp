@@ -10,10 +10,11 @@ export default class SectionSummary extends PureComponent {
     data: PropTypes.array,
     active: PropTypes.bool,
     last: PropTypes.bool,
+    setStep: PropTypes.func,
   };
 
   render() {
-    const { step, title, data, active, last } = this.props;
+    const { step, title, data, active, last, setStep } = this.props;
     const selection = data && data.map((element, index) => {
       return (
         <li key={ `section-summary-${ index }` } className={ `section-summary-option icon ${ element.icon ? `icon__${ element.icon }` : 'icon__selector' }` }>
@@ -24,7 +25,7 @@ export default class SectionSummary extends PureComponent {
     });
     return (
       <li className={ `section-summary ${ active ? 'section-summary--active' : '' } ${ last ? 'section-summary--last' : '' }` }>
-        <div className='section-summary__step-wrapper'>{ step }</div>
+        <div className='section-summary__step-wrapper' onClick={ () => active && setStep(step) }>{ step }</div>
         <div className='section-summary__title'>{ title }</div>
         {
           active &&

@@ -1,0 +1,36 @@
+{
+"label": "Latency",
+"variation": 8,
+"target": 70,
+"maxValue": 100,
+"minValue": 0,
+"points": [
+    {
+    "value": 70.00,
+    "date": "Enero-2017"
+    },
+	{
+    "value": 73.00,
+    "date": "Febrero-2017"
+    },
+	{
+    "value": 83.00,
+    "date": "Marzo-2017"
+    },
+	{
+    "value": 81.00,
+    "date": "Abril-2017"
+    },
+	{
+    "value": 70.00,
+    "date": "Mayo-2017"
+    },
+	{
+    "value": 75.00,
+    "date": "Junio-2017"
+    },
+	{
+    "value": 78.00,
+    "date": "Julio-2017"
+    }]
+}

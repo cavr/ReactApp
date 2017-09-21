@@ -1,6 +1,9 @@
 {
 "label": "QoS",
 "variation": 2,
+"target": 90.00,
+"maxValue": 100,
+"minValue": 0,
 "points": [
     {
 	"value": 50.80,

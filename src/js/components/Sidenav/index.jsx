@@ -32,7 +32,6 @@ export class Sidenav extends PureComponent {
   handleNavLink(route) {
     const { currentRoute } = this.props;
     if(currentRoute !== route) browserHistory.push(route);
-    else this.setState({ showSubmenu: !this.state.showSubmenu });
   }
 
   render() {
@@ -53,6 +52,7 @@ export class Sidenav extends PureComponent {
           <Avatar />
           <ul className='sidenav__nav'>
             <div className='sidenav__nav-button sidenav__nav-button--MIS' onClick={ () => this.handleNavLink(routeCodes.MIS) }>
+              <div className='sidenav__submenu-button' onClick={ () => this.setState({ showSubmenu: !showSubmenu }) }/>
               <i className='sidenav__icon icon icon__MIS' />
               MIS
               <i className={ `sidenav__menu-icon ${ showSubmenu ? 'sidenav__menu-icon--close' : '' } icon icon__menu-arrow` } />

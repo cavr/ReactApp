@@ -1,6 +1,9 @@
 {
 "label": "Satisfaction",
 "variation": 14,
+"target": 80.00,
+"maxValue": 100,
+"minValue": 0,
 "points": [
     {
 	"value": 60.00,

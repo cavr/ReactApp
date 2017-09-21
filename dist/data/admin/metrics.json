@@ -1,0 +1,18 @@
+{
+  "metrics": [{
+      "id": "M2",
+      "label": "Cancelation Fees",
+      "units": "€"
+    },
+    {
+      "id": "M1",
+      "label": "Cost in €",
+      "units": "€"
+    },
+    {
+      "id": "M4",
+      "label": "Availability",
+      "units": "%"
+    }
+  ]
+}

@@ -20,17 +20,22 @@ export class MIS extends PureComponent {
   };
 
   render() {
-    const currentStep = this.props.currentStep;
+    const { currentStep, children } = this.props;
     return (
       <div className='bluetab-sns-mis'>
         <MobileHandlers />
-        <SelectionSummary currentStep={ currentStep } />
-        <StepBar currentStep={ currentStep } />
-        <MainSelectors currentStep={ currentStep } />
-        <MainGraph currentStep={ currentStep } />
-        <Subindexes currentStep={ currentStep } />
-        <Metrics currentStep={ currentStep } />
-        { this.props.children }
+        {
+          children ?
+          children :
+          <div className='bluetab-sns-mis__wrapper'>
+            <SelectionSummary currentStep={ currentStep } />
+            <StepBar currentStep={ currentStep } />
+            <MainSelectors currentStep={ currentStep } />
+            <MainGraph currentStep={ currentStep } />
+            <Subindexes currentStep={ currentStep } />
+            <Metrics currentStep={ currentStep } />
+          </div>
+        }
       </div>
     );
   }

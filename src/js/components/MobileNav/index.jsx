@@ -16,13 +16,9 @@ export class MobileNav extends PureComponent {
     const { showMobileMenu, showSummaryMenu } = this.props;
     return (
       <div className='mobile-nav'>
-        <Hammer onTap={ showMobileMenu }>
-          <div className='mobile-nav__menu icon icon__nav-menu--mobile' />
-        </Hammer>
+        <div className='mobile-nav__menu icon icon__nav-menu--mobile' onClick={ showMobileMenu }/>
         <img className='mobile-nav__logo' src={ logo } alt='logo' />
-        <Hammer onTap={ showSummaryMenu }>
-          <div className='mobile-nav__summary icon icon__summary' />
-        </Hammer>
+        <div className='mobile-nav__summary icon icon__summary' onClick={ showSummaryMenu }/>
       </div>
     );
   }

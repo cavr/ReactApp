@@ -42,6 +42,7 @@
     }
 
     .sidenav__nav-button {
+      position: relative;
       display: flex;
       align-items: center;
       width: 100%;
@@ -51,6 +52,14 @@
       font-size: get-rem(16px);
       border-left: get-rem(13px) solid $bluetab-red;
       cursor: pointer;
+      .sidenav__submenu-button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: get-rem(70px);
+        z-index: 2;
+      }
       .sidenav__icon {
         width: get-rem(25px);
         height: get-rem(25px);

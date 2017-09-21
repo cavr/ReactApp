@@ -1,66 +1,154 @@
 {
-  "metric": {
-    "id": "M1",
-    "label": "Cost in €",
-    "units": "€"
-  },
-  "selectors": [{
-      "id": 3,
-      "label": "Business Unit",
-      "icon": "/assets/icons/dev/S3.svg",
-      "values": [{
-          "value": 2,
-          "label": "Retail Banking",
-          "state": 2,
-          "disabled": false
+  "metrics": [{
+      "id": "M6",
+      "label": "SLA",
+      "units": "%",
+      "selectors": [{
+          "id": 3,
+          "label": "Business Unit",
+          "values": [{
+              "value": 2,
+              "label": "Retail Banking",
+              "state": 0
+            },
+            {
+              "value": 3,
+              "label": "Consumer Banking",
+              "state": 2
+            },
+            {
+              "value": 4,
+              "label": "Global Banking",
+              "state": 2
+            }
+          ]
         },
         {
-          "value": 3,
-          "label": "Consumer Banking",
-          "state": 1,
-          "disabled": false
-        },
-        {
-          "value": 4,
-          "label": "Global Banking",
-          "state": 0,
-          "disabled": false
+          "id": 6,
+          "label": "Site Category",
+          "values": [{
+              "value": 2,
+              "label": "Data Centre Sites",
+              "state": 0
+            },
+            {
+              "value": 3,
+              "label": "Head Office Sites",
+              "state": 2
+            },
+            {
+              "value": 4,
+              "label": "Retail Branch Sites",
+              "state": 2
+            },
+            {
+              "value": 5,
+              "label": "Other Sites",
+              "state": 1
+            }
+          ]
         }
       ]
     },
     {
-      "id": 6,
-      "label": "Site Category",
-      "icon": "/assets/icons/dev/S6.svg",
-      "values": [{
-          "value": 1,
-          "label": "All",
-          "state": 1,
-          "disabled": false
+      "id": "M7",
+      "label": "TTR",
+      "units": "ms",
+      "selectors": [{
+          "id": 3,
+          "label": "Business Unit",
+          "values": [{
+              "value": 2,
+              "label": "Retail Banking",
+              "state": 1
+            },
+            {
+              "value": 3,
+              "label": "Consumer Banking",
+              "state": 2
+            },
+            {
+              "value": 4,
+              "label": "Global Banking",
+              "state": 0
+            }
+          ]
         },
         {
-          "value": 2,
-          "label": "Data Centre",
-          "state": 1,
-          "disabled": false
+          "id": 6,
+          "label": "Site Category",
+          "values": [{
+              "value": 2,
+              "label": "Data Centre Sites",
+              "state": 0
+            },
+            {
+              "value": 3,
+              "label": "Head Office Sites",
+              "state": 2
+            },
+            {
+              "value": 4,
+              "label": "Retail Branch Sites",
+              "state": 1
+            },
+            {
+              "value": 5,
+              "label": "Other Sites",
+              "state": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "M8",
+      "label": "Mayor Incident",
+      "units": "minutes",
+      "selectors": [{
+          "id": 3,
+          "label": "Business Unit",
+          "values": [{
+              "value": 2,
+              "label": "Retail Banking",
+              "state": 1
+            },
+            {
+              "value": 3,
+              "label": "Consumer Banking",
+              "state": 1
+            },
+            {
+              "value": 4,
+              "label": "Global Banking",
+              "state": 1
+            }
+          ]
         },
         {
-          "value": 3,
-          "label": "Head Office",
-          "state": 2,
-          "disabled": false
-        },
-        {
-          "value": 4,
-          "label": "Branch",
-          "state": 0,
-          "disabled": false
-        },
-        {
-          "value": 5,
-          "label": "Other Sites",
-          "state": 0,
-          "disabled": false
+          "id": 6,
+          "label": "Site Category",
+          "values": [{
+              "value": 2,
+              "label": "Data Centre Sites",
+              "state": 1
+            },
+            {
+              "value": 3,
+              "label": "Head Office Sites",
+              "state": 2
+            },
+            {
+              "value": 4,
+              "label": "Retail Branch Sites",
+              "state": 1
+            },
+            {
+              "value": 5,
+              "label": "Other Sites",
+              "state": 1
+            }
+          ]
         }
       ]
     }

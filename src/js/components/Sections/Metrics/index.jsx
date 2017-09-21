@@ -1,13 +1,13 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { setSelectorValue, loadEvolution, setSelectedBusinessElement } from 'actions/mis/metrics';
+import { setSelectorValue, loadEvolution, setSelectedBusinessElement, setSelectedMetric } from 'actions/mis/metrics';
 import Collapse from 'components/Sections/Collapse';
 import { generatePDF } from 'services/pdfGenerator';
 import Section from 'components/Sections/SectionContainer';
 import Button from 'components/Inputs/Button';
 import Selector from 'components/Inputs/Selector';
-import BusinessElement from './BusinessElement';
+import BusinessElements from './BusinessElements';
 
 
 import './desktop.scss';
@@ -22,18 +22,28 @@ export class Metrics extends PureComponent {
     ]),
     evolutionData: PropTypes.object,
     loading: PropTypes.bool,
-    selected: PropTypes.number,
+    selectedMetric: PropTypes.number,
+    selectedBusinessElement: PropTypes.number,
     currentStep: PropTypes.number,
     setSelectorValue: PropTypes.func,
     loadEvolution: PropTypes.func,
   };
 
   render() {
-    const { data, evolutionData, loading, selected, currentStep, setSelectorValue, loadEvolution, setSelectedBusinessElement } = this.props;
-
-    const selectors = data && data.selectors ? data.selectors : [];
-    const businessElements = selectors.map((element, index) => { return { value: index, label: element.label }; });
-    const currentBusinessElement = selectors[selected];
+    const { data, evolutionData, loading, selectedMetric, selectedBusinessElement, currentStep, setSelectorValue, loadEvolution, setSelectedMetric, setSelectedBusinessElement } = this.props;
+    let metrics = [];
+    let businessElements = [];
+    let currentBusinessElement = null;
+    let metricId = null;
+    if (data) {
+      //All metrics have the same businessElements
+      const businessElementData = data[0].selectors;
+      metrics = data.map((element, index) => { return { value: index, label: element.label }; });
+      businessElements = businessElementData.map((element, index) => { return { value: index, label: element.label }; });
+      currentBusinessElement = data[selectedMetric].selectors[selectedBusinessElement];
+      metricId = data[selectedMetric].id;
+    }
+    
     return (
       <div className='business-metrics'>
         <Section currentStep={ currentStep } sectionNumber={ 4 } title='Business Elements Analysis' loading={ loading } noPadding={ true }>
@@ -42,21 +52,22 @@ export class Metrics extends PureComponent {
             <Selector
               className='business-element__selector business-element__selector--placeholder'
               title={ 'Select the desired metric' }
-              values={ [] }
-              placeholder='Under construction'
+              values={ metrics }
+              currentValue={ selectedMetric }
               inline={ true }
-              onChange={ () => console.log('changed') }
+              onChange={ (option) => setSelectedMetric(option.value) }
             />
             <Selector
               className='business-element__selector'
               title={ 'Business Element View' }
               values={ businessElements }
-              currentValue={ selected }
+              currentValue={ selectedBusinessElement }
               inline={ true }
               onChange={ (option) => setSelectedBusinessElement(option.value) }
             />
-            <BusinessElement
+            <BusinessElements
               data={ currentBusinessElement }
+              metric={ metricId }
               evolutionData={ evolutionData }
               setSelectorValue={ setSelectorValue }
               loadEvolution={ loadEvolution }
@@ -76,15 +87,17 @@ export class Metrics extends PureComponent {
 const mapStateToProps = (state) => ({
   data: state.metrics.get('data'),
   loading: state.metrics.get('loading'),
-  selected: state.metrics.get('selected'),
+  selectedMetric: state.metrics.get('selectedMetric'),
+  selectedBusinessElement: state.metrics.get('selectedBusinessElement'),
   evolutionData: state.businessElementsEvolution,
 });
 
 const mapDispatchToProps = (dispatch) => {
   return {
     setSelectorValue: (value, selector) => dispatch(setSelectorValue(value, selector)),
-    loadEvolution: (selector, value) => dispatch(loadEvolution(selector, value)),
+    loadEvolution: (metric, selector, value) => dispatch(loadEvolution(metric, selector, value)),
     setSelectedBusinessElement: (businessElement) => dispatch(setSelectedBusinessElement(businessElement)),
+    setSelectedMetric: (metric) => dispatch(setSelectedMetric(metric)),
   };
 };
 

@@ -1,6 +1,9 @@
 {
 "label": "Usage",
 "variation": -10,
+"target": 90.00,
+"maxValue": 100,
+"minValue": 0,
 "points": [
     {
 	"value": 60.50,

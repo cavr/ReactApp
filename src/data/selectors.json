@@ -167,17 +167,17 @@
 		},
 		{
 		"value": 2,
-		"label": "Data Centre",
+		"label": "Data Centre Sites",
 		"disabled": false
 		},
 		{
 		"value": 3,
-		"label": "Head Office",
+		"label": "Head Office Sites",
 		"disabled": false
 		},
 		{
 		"value": 4,
-		"label": "Branch",
+		"label": "Retail Branch Sites",
 		"disabled": false
 		},
 		{
