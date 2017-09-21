@@ -1849,16 +1849,17 @@ html.mobile .business-metrics {
     html.mobile .business-metrics .bluetab-selector.bluetab-selector--inline.business-element__selector .bluetab-selector__select {
       width: 100%; }
 .bluetab-sns-app__wrapper .bluetab-sns-mis {
-  padding-top: 8rem;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center; }
+  padding-top: 8rem; }
+  .bluetab-sns-app__wrapper .bluetab-sns-mis .bluetab-sns-mis__wrapper {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center; }
 
 .bluetab-sns-app__wrapper.bluetab-sns-app__wrapper--login {
   padding-left: 0; }

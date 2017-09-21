@@ -52,7 +52,7 @@ export function setStep(step) {
     let offset;
     const className = document.documentElement.className;
     if (className === 'mobile') {
-      offset = 140;
+      offset = 130;
     } else if (className === 'tablet-v') {
       offset = 170;
     } else {
