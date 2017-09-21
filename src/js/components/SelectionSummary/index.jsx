@@ -62,22 +62,24 @@ export class SelectionSummary extends PureComponent {
           </div>
           <div className='sidenav-summary__close icon icon__close--dark' onClick={ hideMenu } />
           <div className='sidenav-summary__title'>Resumen</div>
-          <div className='sidenav-summary__sections-wrapper' ref={ (summary) => this.summary = summary }>
-            <div className='sidenav-summary__sections-bar' />
-            <div className='sidenav-summary__sections-bar sidenav-summary__sections-bar--red' ref={ (redBar) => this.redBar = redBar } />
-            <ul className='sidenav-summary__sections'>
-              <SectionSummary step={ 1 } title={ 'Selectors' } active={ currentStep > 1 } data={ selectors } setStep={ setStep } />
-              <SectionSummary step={ 2 } title={ 'Index' } active={ currentStep > 2 } data={ [{ selector: 'Index', value: selectedIndex.label }] } setStep={ setStep }/>
-              <SectionSummary step={ 3 } title={ 'Subindex' } active={ currentStep > 3 } data={ [{ selector: 'Subindex', value: selectedSubindex.label }] } setStep={ setStep } />
-              <SectionSummary
-                step={ 4 }
-                title={ 'Business Elements' }
-                active={ currentStep > 3 }
-                data={ [{ selector: 'Metric', value: metricTitle },{ selector: 'Business Element', value: businessElement }] }
-                last={ true }
-                setStep={ setStep }
-              />
-            </ul>
+          <div className='sidenav-summary__sections-wrapper'>
+            <div className='sidenav-summary__inner-wrapper' ref={ (summary) => this.summary = summary}>
+              <div className='sidenav-summary__sections-bar' />
+              <div className='sidenav-summary__sections-bar sidenav-summary__sections-bar--red' ref={ (redBar) => this.redBar = redBar } />
+              <ul className='sidenav-summary__sections'>
+                <SectionSummary step={ 1 } title={ 'Selectors' } active={ currentStep > 1 } data={ selectors } setStep={ setStep } />
+                <SectionSummary step={ 2 } title={ 'Index' } active={ currentStep > 2 } data={ [{ selector: 'Index', value: selectedIndex.label }] } setStep={ setStep }/>
+                <SectionSummary step={ 3 } title={ 'Subindex' } active={ currentStep > 3 } data={ [{ selector: 'Subindex', value: selectedSubindex.label }] } setStep={ setStep } />
+                <SectionSummary
+                  step={ 4 }
+                  title={ 'Business Elements' }
+                  active={ currentStep > 3 }
+                  data={ [{ selector: 'Metric', value: metricTitle },{ selector: 'Business Element', value: businessElement }] }
+                  last={ true }
+                  setStep={ setStep }
+                />
+              </ul>
+            </div>
           </div>
         </div>
         <CSSTransitionGroup

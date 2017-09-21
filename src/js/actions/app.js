@@ -66,17 +66,21 @@ export function setStep(step) {
 }
 
 export function showMobileMenu() {
+  document.documentElement.classList.add('fullscreen-menu');
   return { type: SHOW_MOBILE_MENU };
 }
 
 export function hideMobileMenu() {
+  document.documentElement.classList.remove('fullscreen-menu');
   return { type: HIDE_MOBILE_MENU };
 }
 
 export function showSummaryMenu() {
+  document.documentElement.classList.add('fullscreen-menu');
   return { type: SHOW_SUMMARY_MENU };
 }
 
 export function hideSummaryMenu() {
+  document.documentElement.classList.remove('fullscreen-menu');
   return { type: HIDE_SUMMARY_MENU };
 }

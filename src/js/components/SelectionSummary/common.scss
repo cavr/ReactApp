@@ -17,8 +17,8 @@ $summary-border-width: 7px;
     top: 0;
     right: 0;
     width: get-rem($sidenav-summary-width);
-    height: 100%;
-    padding-top: get-rem(33px);
+    height: 100vh;
+    padding: get-rem(33px) 0;
     padding-left: get-rem(61px);
     border-left: get-rem($summary-border-width) solid $bluetab-light-green;
     background-color: white;
@@ -62,8 +62,14 @@ $summary-border-width: 7px;
       font-weight: 500;
       margin-bottom: get-rem(24px);
     }
+    .sidenav-summary__inner-wrapper {
+      position: relative;
+      margin-bottom: get-rem(100px);
+    }
     .sidenav-summary__sections-wrapper {
       position: relative;
+      height: calc(100% - #{get-rem(60px)});
+      overflow: auto;
       .sidenav-summary__sections-bar {
         position: absolute;
         top: 0;
@@ -100,7 +106,7 @@ $summary-border-width: 7px;
     display: block;
     position: fixed;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     top: 0;
     left: 0;
     z-index: 1;

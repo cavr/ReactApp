@@ -8,7 +8,9 @@ import './mobile.scss';
 export default class EvolutionLineChart extends PureComponent {
   static propTypes = {
     points: PropTypes.array,
+    target: PropTypes.number,
     maxValue: PropTypes.number,
+    minValue: PropTypes.number,
   };
   constructor() {
     super();
@@ -41,10 +43,11 @@ export default class EvolutionLineChart extends PureComponent {
         [A, B] --> [a, b]
         (val - A)*(b-a)/(B-A) + a
         In this case
-        (val - 0) * (this.height - 0) / (maxValue - 0) + 0
+        (val - minValue) * (this.height - minValue) / (maxValue - minValue) + minValue
     */
-    const maxValue = this.props.maxValue;
-    return this.height - ((point * this.height) / maxValue);
+    const { minValue, maxValue } = this.props;
+    const normalized = (point - minValue) * ((this.height - minValue) / (maxValue - minValue)) + minValue;
+    return this.height - normalized;
   }
 
   renderPoints(points) {

@@ -75,7 +75,7 @@ export default class BusinessElementTarget extends PureComponent {
         <Collapse isOpened={ showingEvolution }>
           <div className='main-graph__details-wrapper'>
             {
-              loading === false ? <Evolution label={ evolutionData.label } variation={ evolutionData.variation } points={ evolutionData.points } maxValue={ 100 } /> :
+              loading === false ? <Evolution label={ evolutionData.label } variation={ evolutionData.variation } points={ evolutionData.points } maxValue={ evolutionData.maxValue } minValue={ evolutionData.minValue } /> :
               <Loading small={ true } />
             }
           </div>

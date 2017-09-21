@@ -39,6 +39,9 @@ html.mobile {
   -webkit-overflow-scrolling: touch;
   font-size: get-mobile-vw(10px);
   @media (min-width:641px)  { font-size: get-mobile-vw(7px); }
+  &.fullscreen-menu {
+    overflow: hidden;
+  }
 }
 
 body {

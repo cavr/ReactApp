@@ -33,6 +33,9 @@
   }
   &.section-summary--last {
     padding-bottom: 0;
+    .section-summary__title {
+      margin-bottom: get-rem(5px);
+    }
     .section-summary__options-list {
       position: absolute;
       top: get-rem(36px);

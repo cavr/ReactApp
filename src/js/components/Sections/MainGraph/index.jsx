@@ -70,7 +70,7 @@ export class MainGraph extends PureComponent {
             <Collapse isOpened={ showingEvolution } id={ `${ loadingEvolution }` }>
               <div className='main-graph__details-wrapper'>
                 {
-                  loadingEvolution === false && evolutionData !== null ? <Evolution label={ evolutionData.label } variation={ evolutionData.variation } points={ evolutionData.points } maxValue={ 100 } /> :
+                  loadingEvolution === false && evolutionData !== null ? <Evolution label={ evolutionData.label } variation={ evolutionData.variation } points={ evolutionData.points } maxValue={ evolutionData.maxValue } minValue={ evolutionData.minValue } /> :
                   <Loading small={ true } />
                 }
               </div>
