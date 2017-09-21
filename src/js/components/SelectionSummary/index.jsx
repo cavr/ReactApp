@@ -22,7 +22,11 @@ export class SelectionSummary extends PureComponent {
     showMenu: PropTypes.func,
     hideMenu: PropTypes.func,
   };
-
+  constructor() {
+    super();
+    
+    this.handleStep = this.handleStep.bind(this);
+  }
   componentDidUpdate() {
     const { currentStep } = this.props;
     if (currentStep <= 2) {
@@ -41,8 +45,15 @@ export class SelectionSummary extends PureComponent {
     }
     this.redBar.style.height = `${ (barHeight / totalHeight) * 100 }%`;
   }
+
+  handleStep(step) {
+    const { setStep, hideMenu } = this.props;
+    setStep(step);
+    hideMenu();
+  }
+
   render() {
-    const { summaryMenu, selectorsData, selectedSelectors, selectedIndex, selectedSubindex, metricsData, selectedMetric, selectedBusinessElement, currentStep, hideMenu, showMenu, setStep } = this.props;
+    const { summaryMenu, selectorsData, selectedSelectors, selectedIndex, selectedSubindex, metricsData, selectedMetric, selectedBusinessElement, currentStep, hideMenu, showMenu } = this.props;
     const selectors = [];
     if (selectorsData && selectedSelectors) {
       for (let i = 0, l = selectorsData.length; i < l; i++) {
@@ -67,16 +78,16 @@ export class SelectionSummary extends PureComponent {
               <div className='sidenav-summary__sections-bar' />
               <div className='sidenav-summary__sections-bar sidenav-summary__sections-bar--red' ref={ (redBar) => this.redBar = redBar } />
               <ul className='sidenav-summary__sections'>
-                <SectionSummary step={ 1 } title={ 'Selectors' } active={ currentStep > 1 } data={ selectors } setStep={ setStep } />
-                <SectionSummary step={ 2 } title={ 'Index' } active={ currentStep > 2 } data={ [{ selector: 'Index', value: selectedIndex.label }] } setStep={ setStep }/>
-                <SectionSummary step={ 3 } title={ 'Subindex' } active={ currentStep > 3 } data={ [{ selector: 'Subindex', value: selectedSubindex.label }] } setStep={ setStep } />
+                <SectionSummary step={ 1 } title={ 'Selectors' } active={ currentStep > 1 } data={ selectors } setStep={ this.handleStep } />
+                <SectionSummary step={ 2 } title={ 'Index' } active={ currentStep > 2 } data={ [{ selector: 'Index', value: selectedIndex.label }] } setStep={ this.handleStep }/>
+                <SectionSummary step={ 3 } title={ 'Subindex' } active={ currentStep > 3 } data={ [{ selector: 'Subindex', value: selectedSubindex.label }] } setStep={ this.handleStep } />
                 <SectionSummary
                   step={ 4 }
                   title={ 'Business Elements' }
                   active={ currentStep > 3 }
                   data={ [{ selector: 'Metric', value: metricTitle },{ selector: 'Business Element', value: businessElement }] }
                   last={ true }
-                  setStep={ setStep }
+                  setStep={ this.handleStep }
                 />
               </ul>
             </div>

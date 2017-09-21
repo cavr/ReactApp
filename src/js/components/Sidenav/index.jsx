@@ -30,8 +30,11 @@ export class Sidenav extends PureComponent {
   }
 
   handleNavLink(route) {
-    const { currentRoute } = this.props;
-    if(currentRoute !== route) browserHistory.push(route);
+    const { currentRoute, mobileMenu, hideMenu } = this.props;
+    if(currentRoute !== route) {
+      if (mobileMenu) hideMenu();
+      browserHistory.push(route);
+    }
   }
 
   render() {
