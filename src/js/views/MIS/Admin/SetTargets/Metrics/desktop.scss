@@ -1,0 +1,23 @@
+@import '../../../../../../scss/theme/variables';
+
+.bluetab-admin-assign-metric {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: get-rem(55px);
+  border-bottom: get-rem(1px) solid $bluetab-light-gray;
+  .bluetab-admin-assign-metric__target-wrapper {
+    display: flex;
+    align-items: center;
+    .bluetab-admin-assign-metric__icon {
+      display: inline-block;
+      margin-left: get-rem(10px);
+      width: get-rem(30px);
+      height: get-rem(20px);
+      cursor: pointer;
+      &.bluetab-admin-assign-metric__icon--disabled {
+        opacity: 0.3;
+      }
+    }
+  }
+}

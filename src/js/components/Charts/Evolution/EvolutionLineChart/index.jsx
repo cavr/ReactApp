@@ -43,10 +43,10 @@ export default class EvolutionLineChart extends PureComponent {
         [A, B] --> [a, b]
         (val - A)*(b-a)/(B-A) + a
         In this case
-        (val - minValue) * (this.height - minValue) / (maxValue - minValue) + minValue
+        (val - minValue) * (this.height - 0) / (maxValue - minValue) + 0
     */
     const { minValue, maxValue } = this.props;
-    const normalized = (point - minValue) * ((this.height - minValue) / (maxValue - minValue)) + minValue;
+    const normalized = (point - minValue) * ((this.height - 0) / (maxValue - minValue));
     return this.height - normalized;
   }
 

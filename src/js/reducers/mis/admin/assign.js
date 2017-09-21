@@ -17,7 +17,7 @@ const actionsMap = {
     return state.set('indexes', action.indexes);
   },
   [SELECT_ASSIGN_INDEX]: (state, action) => {
-    return state.set('selectedIndex', action.selectedIndex);
+    return state.set('selectedIndex', action.index);
   },
   [LOAD_ASSIGN_METRICS]: (state, action) => {
     return state.set('metrics', action.metrics);

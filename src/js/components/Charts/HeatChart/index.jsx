@@ -24,23 +24,24 @@ export default class HeatChart extends PureComponent {
     this.setState({ inScreen: true });
   }
 
-  normalizeValue(value, maxValue) {
+  normalizeValue(value, minValue, maxValue) {
     /*  Linear map
         To map
         [A, B] --> [a, b]
         (val - A)*(b-a)/(B-A) + a
         In this case
-        (val - 0) * (100 - 0) / (maxValue - 0) + 0
+        (val - minValue) * (100 - 0) / (maxValue - minValue) + 0
     */
-    return (value * 100) / maxValue;
+    return ((value - minValue) * (100 - 0) / (maxValue - minValue));
   }
   render() {
     const { data } = this.props;
     const { inScreen } = this.state;
+    const minValue = data.sections.low;
     const maxValue = data.sections.high;
     
-    const currentValue = this.normalizeValue(data.value, maxValue);
-    const targetValue = this.normalizeValue(data.target, maxValue);
+    const currentValue = this.normalizeValue(data.value, minValue, maxValue);
+    const targetValue = this.normalizeValue(data.target, minValue, maxValue);
     return (
       <div className='subindex-heat-chart'>
         <Waypoint onEnter={ this.handleWaypoint } />

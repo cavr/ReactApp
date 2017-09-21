@@ -28,36 +28,39 @@ export default class LineChart extends PureComponent {
     this.setState({ inScreen: true });
   }
 
+  normalizeValue(value, minValue, maxValue) {
+    /*  Linear map
+        To map
+        [A, B] --> [a, b]
+        (val - A)*(b-a)/(B-A) + a
+        In this case
+        (val - minValue) * (100 - 0) / (maxValue - minValue) + 0
+    */
+    return ((value - minValue) * (100 - 0) / (maxValue - minValue));
+  }
+
   animate() {
     const { data } = this.props;
-    const maxValue = 100;
-    /* Linear map
-    To map
-    [A, B] --> [a, b]
-    (val - A)*(b-a)/(B-A) + a
-    In this case
-    (val - 0) * (100 - 0) / (maxValue - 0) + 0
-    */
+
+    const minValue = data.sections.low;
+    const maxValue = data.sections.high;
+    
     const value = (data.value * 100) / maxValue;
     anime({
       duration: '350ms',
       targets: this.line,
-      width: `${ value }%`,
+      width: `${ this.normalizeValue(data.value, minValue, maxValue) }%`,
     });
   }
 
   render() {
     const { data } = this.props;
     const { inScreen } = this.state;
-    const maxValue = 100;
-    /* Linear map
-    To map
-    [A, B] --> [a, b]
-    (val - A)*(b-a)/(B-A) + a
-    In this case
-    (val - 0) * (100 - 0) / (maxValue - 0) + 0
-    */
-    const value = (data.value * 100) / maxValue;
+
+    const minValue = data.sections.low;
+    const maxValue = data.sections.high;
+
+    const value = this.normalizeValue(data.value, minValue, maxValue);
     return (
       <div className='subindex-line-chart'>
         <Waypoint onEnter={ this.handleWaypoint } />

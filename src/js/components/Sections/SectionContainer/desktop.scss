@@ -53,7 +53,7 @@
   }
 }
 
- .section--static {
+.section--static {
   .section-title {
     border-bottom: get-rem(1px) solid $bluetab-light-gray-2;
     .section-title__text {
@@ -66,7 +66,8 @@
   }
 }
 
- .section--inactive {
+.section--inactive,
+.section--unnumbered {
   .section-title .section-title__background {
     background: $bluetab-light-gray-2;
   }

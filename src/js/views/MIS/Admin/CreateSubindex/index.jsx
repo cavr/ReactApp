@@ -26,15 +26,17 @@ export class CreateSubindex extends PureComponent {
     const { title, description, selectIndex, updateTitle, updateDescription, indexes, selectedIndex, clearData, createMetric } = this.props;
     return (
       <Section currentStep={ 5 } sectionNumber={ 5 } title='Admin screen: Create metric' loading={ false }>
-        <div >
+        <div className='bluetab-admin__create'>
+          <h2 className='bluetab-subtitle--centered'>Select one of the four Indexes and take a look at either its evolution or its building SubIndexes.</h2>
           {
             indexes &&
             <Selector
-              className='business-element__selector business-element__selector--placeholder'
+              className='bluetab-admin__selector'
               title={ 'Select the desired index' }
               values={ indexes }
               currentValue={ selectedIndex }
               placeholder='Index'
+              inline={ true }
               onChange={ (option) => selectIndex(option.value, 'metrics') }
             />
           }

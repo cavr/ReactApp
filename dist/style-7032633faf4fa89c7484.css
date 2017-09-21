@@ -726,7 +726,8 @@ section {
   .section--static .section-title .section-title__background {
     height: 1rem; }
 
-.section--inactive .section-title .section-title__background {
+.section--inactive .section-title .section-title__background,
+.section--unnumbered .section-title .section-title__background {
   background: #BFC6CE; }
 html.mobile section {
   width: calc(100% - 3rem);
@@ -849,9 +850,9 @@ html.tablet-h .bluetab-selector .bluetab-selector__mobile {
   z-index: 3; }
 .bluetab-button {
   position: relative;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -1873,6 +1874,35 @@ html.mobile .bluetab-sns-app__wrapper .bluetab-sns-mis {
   padding-top: 9.4rem; }
 html.tablet-v .bluetab-sns-app__wrapper .bluetab-sns-mis {
   padding-top: 11.9rem; }
+.bluetab-admin-assign-metric {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 5.5rem;
+  border-bottom: 0.1rem solid #F1EFEF; }
+  .bluetab-admin-assign-metric .bluetab-admin-assign-metric__target-wrapper {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    .bluetab-admin-assign-metric .bluetab-admin-assign-metric__target-wrapper .bluetab-admin-assign-metric__icon {
+      display: inline-block;
+      margin-left: 1rem;
+      width: 3rem;
+      height: 2rem;
+      cursor: pointer; }
+      .bluetab-admin-assign-metric .bluetab-admin-assign-metric__target-wrapper .bluetab-admin-assign-metric__icon.bluetab-admin-assign-metric__icon--disabled {
+        opacity: 0.3; }
+.bluetab-admin__assign .bluetab-subtitle--centered {
+  margin-bottom: 3.5rem; }
 .formula-display {
   padding: 1rem;
   height: 5rem;
@@ -1882,6 +1912,8 @@ html.tablet-v .bluetab-sns-app__wrapper .bluetab-sns-mis {
   margin-bottom: 2rem; }
   .formula-display .incomplete-bracket {
     color: #BFC6CE; }
+.bluetab-admin__create .bluetab-subtitle--centered {
+  margin-bottom: 3.5rem; }
 .section-placeholder {
   padding: 7rem 3rem; }
   .section-placeholder .section-placeholder__title {
@@ -2537,6 +2569,14 @@ h1, p {
 
 .icon.icon__close--dark {
   background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNiAxNiI+CiAgPHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNEE0QTRBIiBzdHJva2Utd2lkdGg9IjIiIGQ9Ik0xNSAxTDEuNSAxNC41TTEgMWwxMy41IDEzLjUiLz4KPC9zdmc+) center no-repeat;
+  background-size: contain; }
+
+.icon.icon__close--red {
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkNhcGFfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHdpZHRoPSI5LjkxN3B4IiBoZWlnaHQ9IjEwLjVweCIgdmlld0JveD0iMCAwIDkuOTE3IDEwLjUiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDkuOTE3IDEwLjUiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHRpdGxlPmljL2Nsb3NlL2dyZXk2MDA8L3RpdGxlPg0KPGRlc2M+Q3JlYXRlZCB3aXRoIFNrZXRjaC48L2Rlc2M+DQo8cG9seWdvbiBpZD0iU2hhcGUiIGZpbGw9IiNGODM4MzgiIHBvaW50cz0iOS45MTcsMS4wNTcgOC45MTgsMCA0Ljk1OCw0LjE5MyAwLjk5OSwwIDAsMS4wNTcgMy45Niw1LjI1IDAsOS40NDMgMC45OTksMTAuNSANCgk0Ljk1OCw2LjMwNyA4LjkxOCwxMC41IDkuOTE3LDkuNDQzIDUuOTU3LDUuMjUgIi8+DQo8L3N2Zz4NCg==) center no-repeat;
+  background-size: contain; }
+
+.icon.icon__tick {
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkNhcGFfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHdpZHRoPSIxMi40NnB4IiBoZWlnaHQ9IjEwLjA1N3B4IiB2aWV3Qm94PSIwIDAgMTIuNDYgMTAuMDU3IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxMi40NiAxMC4wNTciIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHRpdGxlPmljL2NoZWNrL2dyZXk2MDA8L3RpdGxlPg0KPGRlc2M+Q3JlYXRlZCB3aXRoIFNrZXRjaC48L2Rlc2M+DQo8cG9seWdvbiBpZD0iU2hhcGVfMV8iIGZpbGw9IiM5OERBNjUiIHBvaW50cz0iMy45Niw3LjkzNSAxLjAwNiw0LjgwNyAwLDUuODY1IDMuOTYsMTAuMDU3IDEyLjQ2LDEuMDU3IDExLjQ2MSwwICIvPg0KPC9zdmc+DQo=) center no-repeat;
   background-size: contain; }
 
 .icon.icon__warning {
