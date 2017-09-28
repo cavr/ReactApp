@@ -1,0 +1,21 @@
+{
+  "index": "I1",
+  "subindex": "S2",
+  "data": {
+    "title": "Titulo del subindice",
+    "description": "Description del subindice.",
+    "type": 1,
+    "formula": [
+      {
+        "id": "M1",
+        "label": "Nombre metrica",
+        "value": 50
+      },
+      {
+        "id": "M2",
+        "label": "Nombre metrica",
+        "value": 50
+      }
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+input,
+textarea {
+  padding: 0 get-rem(14px);
+  font-size: get-rem(12px);
+  color: $bluetab-gray;
+  background: white;
+  border: 1px solid $bluetab-light-gray-2;
+  &.bluetab-input--disabled {
+    background-color: $bluetab-light-gray;
+  }
+}
+
+textarea {
+  padding: get-rem(18px) get-rem(13px);
+}

@@ -1,0 +1,15 @@
+{
+  "description": "Description del subindice.",
+  "formula": [
+    {
+      "id": "S1",
+      "label": "Nombre subindice",
+      "value": 50
+    },
+    {
+      "id": "S2",
+      "label": "Nombre subindice",
+      "value": 50
+    }
+  ]
+}

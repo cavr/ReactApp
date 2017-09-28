@@ -1,0 +1,25 @@
+@import '../../../../scss/theme/variables';
+
+.weighted-parameters {
+  margin-bottom: get-rem(30px);
+  .weighted-parameters__title {
+    font-size: get-rem(14px);
+    font-weight: 500;
+    color: $bluetab-gray-2;
+  }
+  .weighted-parameters__list {
+    border-top: get-rem(1px) solid $bluetab-light-gray;
+    margin-top: get-rem(12px);
+  }
+  .weighted-parameters__create {
+    display: inline-block;
+    font-size: get-rem(12px);
+    font-weight: 500;
+    color: $bluetab-red;
+    line-height: 1em;
+    padding-left: get-rem(23px);
+    background-position: left !important;
+    margin-top: get-rem(25px);
+    cursor: pointer;
+  }
+}

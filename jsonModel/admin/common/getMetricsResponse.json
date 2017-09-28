@@ -1,0 +1,12 @@
+{
+  "metrics": [
+    {
+      "value": "M7",
+      "label": "Suspicious Traffic"
+    },
+    {
+      "value": "M1",
+      "label": "Cost in €"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+@import '../../../../scss/theme/variables';
+
+.success-popup {
+  .success-popup__icon {
+    display: block;
+    height: get-rem(95px);
+    margin-bottom: get-rem(20px);
+  }
+}

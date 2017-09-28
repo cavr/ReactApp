@@ -34,7 +34,12 @@
     'close--red',
     'tick',
     'warning',
-    'trash';
+    'trash',
+    'data-management',
+    'users',
+    'load-data',
+    'add--red',
+    'success';
 
   @each $key in $list {
     &.icon__#{$key} {

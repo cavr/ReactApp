@@ -1,0 +1,23 @@
+//Mismo endpoint que update, si no se envia id de subindex se entiende que se tiene que crear
+
+{
+  "index": "I1",
+  "subindex": "",
+  "data": {
+    "title": "Titulo del subindice",
+    "description": "Description del subindice.",
+    "type": 1,
+    "formula": [
+      {
+        "id": "M1",
+        "label": "Nombre metrica",
+        "value": 50
+      },
+      {
+        "id": "M2",
+        "label": "Nombre metrica",
+        "value": 50
+      }
+    ]
+  }
+}

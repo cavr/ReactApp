@@ -1,3 +1,36 @@
+@import '../../../../scss/theme/variables';
+
 .bluetab-textinput {
-  
+  position: relative;
+  margin-bottom: get-rem(27px);
+  .bluetab-textinput__title {
+    font-size: get-rem(14px);
+    font-weight: 500;
+    color: $bluetab-gray-2;
+  }
+  .bluetab-textinput__icon {
+    position: absolute;
+    right: 0;
+    top: get-rem(2px);
+    display: inline-block;
+    width: get-rem(27px);
+    height: get-rem(14px);
+    cursor: pointer;
+    &.bluetab-textinput__icon--disabled {
+      opacity: 0.3;
+    }
+  }
+  .bluetab-textinput__input {
+    outline: none;
+    margin-top: get-rem(9px);
+    width: 100%;
+    &.bluetab-textinput__input--textarea {
+      min-height: get-rem(84px);
+    }
+  }
+  &.bluetab-textinput--disabled {
+    .bluetab-textinput__input {
+      background-color: $bluetab-light-gray;
+    }
+  }
 }

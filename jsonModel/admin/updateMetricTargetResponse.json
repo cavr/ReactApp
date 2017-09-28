@@ -1,7 +1,0 @@
-/*
-  Simplemente enviar un codigo de error en caso necesario e indicar en el back que la peticion ha fallado (mediante codigos)
-*/
-
-{
-  "error": "Un error"
-}

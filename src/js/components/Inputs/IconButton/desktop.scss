@@ -1,0 +1,29 @@
+@import '../../../../scss/theme/variables';
+
+.bluetab-icon-button {
+  width: get-rem(162px);
+  height: get-rem(146px);
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  .bluetab-button-icon__icon {
+    display: block;
+    height: get-rem(40px);
+    margin-top: get-rem(35px);
+    margin-bottom: get-rem(15px);
+    opacity: 0.3;
+  }
+  .bluetab-button-icon__title {
+    text-align: center;
+    font-size: get-rem(14px);
+    color: $bluetab-gray;
+  }
+  &:hover,
+  &.bluetab-icon-button--selected {
+    box-shadow: 0 0 get-rem(2px) 0 rgba(0,0,0,0.12), get-rem(2px) get-rem(3px) get-rem(5px) 0 rgba(132,129,129,0.24);
+    .bluetab-button-icon__icon {
+      opacity: 1;
+    }
+  }
+}

@@ -10,6 +10,18 @@ export default class AdminServices {
         return response.json();
       });
   }
+  static getIndexData(request) {
+    return fetch('/data/admin/indexData.json')
+      .then((response) => {
+        if (response.status !== 200) {
+          return {};
+        }
+        return response.json();
+      })
+  }
+  static updateIndexData(request) {
+    
+  }
   static getParameters(request) {
     return fetch('/data/admin/indexes.json')
       .then((response) => {

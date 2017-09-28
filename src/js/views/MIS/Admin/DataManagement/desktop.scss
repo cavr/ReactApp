@@ -1,0 +1,10 @@
+@import '../../../../../scss/theme/variables';
+
+.data-management {
+  .data-management__options {
+    display: flex;
+    justify-content: space-between;
+    margin-top: get-rem(45px);
+    padding: 0 get-rem(45px);
+  }
+}

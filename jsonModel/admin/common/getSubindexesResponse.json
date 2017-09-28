@@ -1,0 +1,12 @@
+{
+  "subindexes": [
+    {
+      "value": "S6",
+      "label": "Data Traffic Profile"
+    },
+    {
+      "value": "S7",
+	    "label": "Data Traffic Categories"
+    }
+  ]
+}
