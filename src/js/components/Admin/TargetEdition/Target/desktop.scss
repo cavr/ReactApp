@@ -5,7 +5,7 @@
   justify-content: space-between;
   align-items: center;
   height: get-rem(55px);
-  border-bottom: get-rem(1px) solid $bluetab-light-gray;
+  border-bottom: get-rem(1px) solid $bluetab-light-gray-2;
   .target__title {
     background-position: left !important;
     padding-left: get-rem(23px);
@@ -15,9 +15,28 @@
   .target__target-wrapper {
     display: flex;
     align-items: center;
-    .target__input {
-      width: get-rem(74px);
-      height: get-rem(37px);      
+    .target__input-wrapper {
+      display: flex;
+      align-items: center;
+      .target__semaphore {
+        display: inline-block;
+        width: get-rem(15px);
+        height: get-rem(15px);
+        margin-left: get-rem(5px);
+        margin-right: get-rem(8px);
+        border-radius: 50%;
+        &.target__semaphore--red {
+          background-color: $bluetab-red;
+        }
+        &.target__semaphore--green {
+          background-color: $bluetab-light-green;
+        }
+      }
+      .target__input {
+        width: get-rem(54px);
+        height: get-rem(37px);
+        margin-right: get-rem(20px);
+      }
     }
     .target__icon {
       display: inline-block;

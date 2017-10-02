@@ -50,7 +50,7 @@ export default class AdminServices {
       });
   }
   static getMetricData(request) {
-    return fetch('/data/admin/subindexData.json')
+    return fetch('/data/admin/metricData.json')
       .then((response) => {
         if (response.status !== 200) {
           return {};

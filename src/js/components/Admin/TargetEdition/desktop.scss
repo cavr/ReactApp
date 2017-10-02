@@ -8,7 +8,8 @@
     color: $bluetab-gray;
   }
   .target-edition__list {
-    border-top: get-rem(1px) solid $bluetab-light-gray;
+    padding-bottom: 1px;
+    border-top: get-rem(1px) solid $bluetab-light-gray-2;
     margin-top: get-rem(12px);
   }
 }

@@ -11,6 +11,7 @@ export const LOAD_ADMIN_SUBINDEX_DATA = 'LOAD_ADMIN_SUBINDEX_DATA';
 export const UPDATE_SUBINDEX_TITLE = 'UPDATE_SUBINDEX_TITLE';
 export const UPDATE_SUBINDEX_DESCRIPTION = 'UPDATE_SUBINDEX_DESCRIPTION';
 export const UPDATE_SUBINDEX_FORMULA = 'UPDATE_SUBINDEX_FORMULA';
+export const CHANGE_GRAPH_TYPE_IN_ADMIN_SUBINDEX = 'CHANGE_GRAPH_TYPE_IN_ADMIN_SUBINDEX';
 export const SET_ADMIN_SUBINDEX_NEW_DATA = 'SET_ADMIN_SUBINDEX_NEW_DATA';
 
 
@@ -69,6 +70,10 @@ export function updateMetric(index, metric) {
 
 export function addMetric(metric) {
   return { type: UPDATE_SUBINDEX_FORMULA, action: 'add', metric };
+}
+
+export function changeGraphType(graph) {
+  return { type: CHANGE_GRAPH_TYPE_IN_ADMIN_SUBINDEX, graph };
 }
 
 export function updateIndexData() {

@@ -1,0 +1,12 @@
+{
+  "parameters": [
+    {
+      "value": "MTA",
+      "label": "Nombre de este parametro"
+    },
+    {
+      "value": "POC",
+      "label": "Nombre de este otro parametro"
+    }
+  ]
+}

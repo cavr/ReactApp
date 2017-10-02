@@ -1,3 +1,4 @@
+//Se puede enviar sin subindex y se enviarian todos las metricas asociadas (Utilizado en a la hora de crear un subindice)
 {
   "index": "I1",
   "subindex": "S1"

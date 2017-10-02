@@ -1,3 +1,22 @@
+//En este response se incluye la deficion de los targets entera
+/*
+  Existen 8 tipos de operaciones,
+  + number -> Numero entero normal
+  + parameter -> Parametro
+  + bracket -> Abrir parentesis
+  + operator -> Operacion matematica
+  + function -> Funcion (AVG, MIN, MAX) es necesario indicarla para que dentro se puedan separar valores con comas
+  + comma -> separa valores para las funciones de avg, min y max
+  + endBracket -> cierra un parentesis
+  + endFunction -> cierra una función
+*/
+/*
+  Tipos de grafica
+  1 -> Linear
+  2 -> Exponencial
+  3 -> Inversa
+  4 -> Logaritmica
+*/
 {
   "title": "Titulo metrica",
   "description": "Description del metrica.",
@@ -10,7 +29,7 @@
       "data": 9
     },
     {
-      "type": "operation",
+      "type": "operator",
       "data": "+"
     },
     {
@@ -21,7 +40,7 @@
       "type": "endBracket"
     },
     {
-      "type": "operation",
+      "type": "operator",
       "data": "-"
     },
     {
@@ -31,6 +50,9 @@
     {
       "type": "number",
       "data": 45
+    },
+    {
+      "type": "comma"
     },
     {
       "type": "parameter",

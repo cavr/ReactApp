@@ -10,26 +10,33 @@ export default class Target extends PureComponent {
     onChange: PropTypes.func,
   };
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     
     this.state = {
       editable: false,
+      low: props.data.values.low,
+      high: props.data.values.high,
     };
 
-    this.handleChange = this.handleChange.bind(this);
     this.openEdit = this.openEdit.bind(this);
-    this.resetValue = this.resetValue.bind(this);
+    this.saveValue = this.saveValue.bind(this);
   }
 
-  handleChange(event) {
+
+  saveValue() {
     const { index, data, onChange } = this.props;
+    const { low, high } = this.state;
     const newData = {
       id: data.id,
       label: data.label,
-      value: Number(event.target.value),
+      values: {
+        low,
+        high,
+      },
     };
     onChange(index, newData);
+    this.setState({ editable: false });
   }
 
   openEdit() {
@@ -39,30 +46,36 @@ export default class Target extends PureComponent {
     this.setState({ editable: true });
   }
 
-  resetValue() {
-    const { index, data, onChange } = this.props;
-    const newData = {
-      id: data.id,
-      label: data.label,
-      value: Number(this.savedValue),
-    };
-    onChange(index, newData);
-    this.setState({ editable: false });
-  }
-
   render() {
-    const { data, onChange } = this.props;
-    const { editable } = this.state;
+    const { data } = this.props;
+    const { editable, low, high } = this.state;
     return (
       <li className='target'>
         <div className='target__title icon icon__selector'>{ data.label }</div>
         <div className='target__target-wrapper'>
-          <input className='target__input' readOnly={ !editable } value={ data.value } onChange={ this.handleChange } />
+          <div className='target__input-wrapper'>
+            <i className='target__semaphore target__semaphore--green' />
+            <input
+              className='target__input'
+              readOnly={ !editable }
+              value={ high }
+              onChange={ (event) => this.setState({ high: event.target.value }) }
+            />
+          </div>
+          <div className='target__input-wrapper'>
+            <i className='target__semaphore target__semaphore--red' />
+            <input
+              className='target__input'
+              readOnly={ !editable }
+              value={ low }
+              onChange={ (event) => this.setState({ low: event.target.value }) }
+            />
+          </div>
           {
             editable &&
             <div className='target__controls-wrapper'>
-              <div className='target__icon icon icon__close--red' onClick={ this.resetValue } />
-              <div className='target__icon icon icon__tick' onClick={ () => this.setState({ editable: false }) } />
+              <div className='target__icon icon icon__close--red' onClick={ () => this.setState({ editable: false }) } />
+              <div className='target__icon icon icon__tick' onClick={ this.saveValue } />
             </div>
           }
           <div

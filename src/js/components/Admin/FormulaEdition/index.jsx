@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import FormulaDisplay from './FormulaDisplay';
 import FormulaInput from './FormulaInput';
 
+import './desktop.scss';
+
 export default class FormulaEdition extends PureComponent {
   static propTypes = {
     operations: PropTypes.object,

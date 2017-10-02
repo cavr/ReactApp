@@ -1994,7 +1994,7 @@ html.tablet-v .bluetab-sns-app__wrapper .bluetab-sns-mis {
       -ms-flex-align: center;
           align-items: center;
   height: 5.5rem;
-  border-bottom: 0.1rem solid #F1EFEF; }
+  border-bottom: 0.1rem solid #BFC6CE; }
   .weighted-parameter .weighted-parameter__title {
     background-position: left !important;
     padding-left: 2.3rem;
@@ -2063,7 +2063,8 @@ html.tablet-v .bluetab-sns-app__wrapper .bluetab-sns-mis {
     font-weight: 500;
     color: #4A4A4A; }
   .weighted-parameters .weighted-parameters__list {
-    border-top: 0.1rem solid #F1EFEF;
+    padding-bottom: 1px;
+    border-top: 0.1rem solid #BFC6CE;
     margin-top: 1.2rem; }
   .weighted-parameters .weighted-parameters__create {
     display: inline-block;
@@ -2075,6 +2076,8 @@ html.tablet-v .bluetab-sns-app__wrapper .bluetab-sns-mis {
     background-position: left !important;
     margin-top: 2.5rem;
     cursor: pointer; }
+    .weighted-parameters .weighted-parameters__create.weighted-parameters__create--gray {
+      color: #BFC6CE; }
 .index-manager {
   padding: 0 4.5rem; }
   .index-manager .index-manager__selector {
@@ -2088,6 +2091,7 @@ html.tablet-v .bluetab-sns-app__wrapper .bluetab-sns-mis {
         -ms-flex-direction: column;
             flex-direction: column; }
     .index-manager .index-manager__form .bluetab-button {
+      margin-top: 4rem;
       -webkit-align-self: center;
           -ms-flex-item-align: center;
                   -ms-grid-row-align: center;
@@ -2138,6 +2142,7 @@ html.tablet-v .bluetab-sns-app__wrapper .bluetab-sns-mis {
         -ms-flex-direction: column;
             flex-direction: column; }
     .subindex-manager .subindex-manager__form .bluetab-button {
+      margin-top: 4rem;
       -webkit-align-self: center;
           -ms-flex-item-align: center;
                   -ms-grid-row-align: center;
@@ -2215,6 +2220,8 @@ html.tablet-v .bluetab-sns-app__wrapper .bluetab-sns-mis {
           color: #4A90E2; }
         .formula-input .formula-input__buttons .formula-input__button-wrapper .formula-input__button.formula-input__button--red {
           color: #F83838; }
+.formula-edition {
+  margin-bottom: 9rem; }
 .target {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2226,7 +2233,7 @@ html.tablet-v .bluetab-sns-app__wrapper .bluetab-sns-mis {
       -ms-flex-align: center;
           align-items: center;
   height: 5.5rem;
-  border-bottom: 0.1rem solid #F1EFEF; }
+  border-bottom: 0.1rem solid #BFC6CE; }
   .target .target__title {
     background-position: left !important;
     padding-left: 2.3rem;
@@ -2239,9 +2246,28 @@ html.tablet-v .bluetab-sns-app__wrapper .bluetab-sns-mis {
     -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center; }
-    .target .target__target-wrapper .target__input {
-      width: 7.4rem;
-      height: 3.7rem; }
+    .target .target__target-wrapper .target__input-wrapper {
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center; }
+      .target .target__target-wrapper .target__input-wrapper .target__semaphore {
+        display: inline-block;
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-left: 0.5rem;
+        margin-right: 0.8rem;
+        border-radius: 50%; }
+        .target .target__target-wrapper .target__input-wrapper .target__semaphore.target__semaphore--red {
+          background-color: #F83838; }
+        .target .target__target-wrapper .target__input-wrapper .target__semaphore.target__semaphore--green {
+          background-color: #98DA65; }
+      .target .target__target-wrapper .target__input-wrapper .target__input {
+        width: 5.4rem;
+        height: 3.7rem;
+        margin-right: 2rem; }
     .target .target__target-wrapper .target__icon {
       display: inline-block;
       margin-left: 1rem;
@@ -2257,8 +2283,27 @@ html.tablet-v .bluetab-sns-app__wrapper .bluetab-sns-mis {
     font-weight: 500;
     color: #4A4A4A; }
   .target-edition .target-edition__list {
-    border-top: 0.1rem solid #F1EFEF;
+    padding-bottom: 1px;
+    border-top: 0.1rem solid #BFC6CE;
     margin-top: 1.2rem; }
+.metric-manager {
+  padding: 0 4.5rem; }
+  .metric-manager .metric-manager__selector {
+    margin-top: 3.5rem;
+    margin-bottom: 2.4rem; }
+  .metric-manager .metric-manager__form {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+    .metric-manager .metric-manager__form .bluetab-button {
+      margin-top: 4rem;
+      -webkit-align-self: center;
+          -ms-flex-item-align: center;
+                  -ms-grid-row-align: center;
+              align-self: center; }
 .section-placeholder {
   padding: 7rem 3rem; }
   .section-placeholder .section-placeholder__title {
@@ -2946,6 +2991,10 @@ h1, p {
 
 .icon.icon__add--red {
   background: url(data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjRjgzODM4IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+CiAgPHBhdGggZD0iTTE5IDEzaC02djZoLTJ2LTZINXYtMmg2VjVoMnY2aDZ2MnoiLz4KICA8cGF0aCBmaWxsPSJub25lIiBkPSJNMCAwaDI0djI0SDB6Ii8+Cjwvc3ZnPg==) center no-repeat;
+  background-size: contain; }
+
+.icon.icon__add--gray {
+  background: url(data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjQkZDNkNFIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+DQogIDxwYXRoIGQ9Ik0xOSAxM2gtNnY2aC0ydi02SDV2LTJoNlY1aDJ2Nmg2djJ6Ii8+DQogIDxwYXRoIGZpbGw9Im5vbmUiIGQ9Ik0wIDBoMjR2MjRIMHoiLz4NCjwvc3ZnPg==) center no-repeat;
   background-size: contain; }
 
 .icon.icon__success {

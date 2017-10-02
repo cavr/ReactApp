@@ -1,0 +1,17 @@
+@import '../../../../../../scss/theme/variables';
+
+.metric-manager {
+  padding: 0 get-rem(45px);
+  .metric-manager__selector {
+    margin-top: get-rem(35px);
+    margin-bottom: get-rem(24px);
+  }
+  .metric-manager__form {
+    display: flex;
+    flex-direction: column;
+    .bluetab-button {
+      margin-top: get-rem(40px);
+      align-self: center;
+    }
+  }
+}

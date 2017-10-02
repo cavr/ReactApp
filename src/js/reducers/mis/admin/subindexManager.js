@@ -11,6 +11,7 @@ import {
   UPDATE_SUBINDEX_TITLE,
   UPDATE_SUBINDEX_DESCRIPTION,
   UPDATE_SUBINDEX_FORMULA,
+  CHANGE_GRAPH_TYPE_IN_ADMIN_SUBINDEX,
   SET_ADMIN_SUBINDEX_NEW_DATA,
 } from 'actions/mis/admin/subindexManager';
 
@@ -88,6 +89,9 @@ const actionsMap = {
       default:
         return state;
     }
+  },
+  [CHANGE_GRAPH_TYPE_IN_ADMIN_SUBINDEX]: (state, action) => {
+    return state.set('graphType', action.graph);
   },
   [SET_ADMIN_SUBINDEX_NEW_DATA]: (state, action) => {
     return state.set('newData', action.metrics);

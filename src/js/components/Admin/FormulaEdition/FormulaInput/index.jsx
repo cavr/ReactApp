@@ -44,25 +44,25 @@ export class FormulaInput extends PureComponent {
             <button className='formula-input__button formula-input__button--blue' onClick={ () => addOperator('/') }>/</button>
             <button className='formula-input__button formula-input__button--blue' onClick={ () => addOperator('*') }>x</button>
 
-            <button className='formula-input__button' onClick={ () => addNumber('7') }>7</button>
-            <button className='formula-input__button' onClick={ () => addNumber('8') }>8</button>
-            <button className='formula-input__button' onClick={ () => addNumber('9') }>9</button>
+            <button className='formula-input__button' onClick={ () => addNumber(7) }>7</button>
+            <button className='formula-input__button' onClick={ () => addNumber(8) }>8</button>
+            <button className='formula-input__button' onClick={ () => addNumber(9) }>9</button>
             <button className='formula-input__button formula-input__button--blue' onClick={ () => openBracket() }>(</button>
 
-            <button className='formula-input__button' onClick={ () => addNumber('4') }>4</button>
-            <button className='formula-input__button' onClick={ () => addNumber('5') }>5</button>
-            <button className='formula-input__button' onClick={ () => addNumber('6') }>6</button>
+            <button className='formula-input__button' onClick={ () => addNumber(4) }>4</button>
+            <button className='formula-input__button' onClick={ () => addNumber(5) }>5</button>
+            <button className='formula-input__button' onClick={ () => addNumber(6) }>6</button>
             <button className='formula-input__button formula-input__button--blue' onClick={ () => closeBracket() }>)</button>
 
-            <button className='formula-input__button' onClick={ () => addNumber('1') }>1</button>
-            <button className='formula-input__button' onClick={ () => addNumber('2') }>2</button>
-            <button className='formula-input__button' onClick={ () => addNumber('3') }>3</button>
-            <button className='formula-input__button formula-input__button--blue' onClick={ () => addFunction('AVG(') }>avg</button>
+            <button className='formula-input__button' onClick={ () => addNumber(1) }>1</button>
+            <button className='formula-input__button' onClick={ () => addNumber(2) }>2</button>
+            <button className='formula-input__button' onClick={ () => addNumber(3) }>3</button>
+            <button className='formula-input__button formula-input__button--blue' onClick={ () => addFunction('AVG') }>avg</button>
 
             <button className='formula-input__button formula-input__button--red' onClick={ () => deleteOperation() }>CE</button>
-            <button className='formula-input__button' onClick={ () => addNumber('0') }>0</button>
-            <button className='formula-input__button formula-input__button--blue' onClick={ () => addFunction('MIN(') }>min</button>
-            <button className='formula-input__button formula-input__button--blue' onClick={ () => addFunction('MIN(') }>max</button>
+            <button className='formula-input__button' onClick={ () => addNumber(0) }>0</button>
+            <button className='formula-input__button formula-input__button--blue' onClick={ () => addFunction('MIN') }>min</button>
+            <button className='formula-input__button formula-input__button--blue' onClick={ () => addFunction('MAX') }>max</button>
           </div>
         </div>
       </div>

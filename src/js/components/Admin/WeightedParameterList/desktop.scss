@@ -8,7 +8,8 @@
     color: $bluetab-gray;
   }
   .weighted-parameters__list {
-    border-top: get-rem(1px) solid $bluetab-light-gray;
+    padding-bottom: 1px;
+    border-top: get-rem(1px) solid $bluetab-light-gray-2;
     margin-top: get-rem(12px);
   }
   .weighted-parameters__create {
@@ -21,5 +22,8 @@
     background-position: left !important;
     margin-top: get-rem(25px);
     cursor: pointer;
+    &.weighted-parameters__create--gray {
+      color: $bluetab-light-gray-2;
+    }
   }
 }

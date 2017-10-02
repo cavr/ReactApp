@@ -12,7 +12,7 @@ import FormulaEdition from 'components/Admin/FormulaEdition';
 import TargetEdition from 'components/Admin/TargetEdition';
 
 import { loadIndexes } from 'actions/mis/admin/common';
-import { changeMode, selectIndex, selectSubindex, selectMetric, updateTitle, updateDescription } from 'actions/mis/admin/metricManager';
+import { changeMode, selectIndex, selectSubindex, selectMetric, updateTitle, updateDescription, updateTarget } from 'actions/mis/admin/metricManager';
 
 import './desktop.scss';
 
@@ -29,7 +29,7 @@ export class MetricManager extends PureComponent {
     title: PropTypes.string,
     description: PropTypes.string,
     operations: PropTypes.object,
-    openBrackets: PropTypes.array,
+    openBrackets: PropTypes.object,
     targets: PropTypes.object,
     changeMode: PropTypes.func,
     selectIndex: PropTypes.func,
@@ -43,21 +43,21 @@ export class MetricManager extends PureComponent {
 
   render() {
     const { currentStep, mode, indexes, subindexes, metrics, selectedIndex, selectedSubindex, selectedMetric, title, description, operations, openBrackets, targets } = this.props;
-    const { changeMode, selectIndex, selectSubindex, selectMetric, updateTitle, updateDescription } = this.props;
+    const { changeMode, selectIndex, selectSubindex, selectMetric, updateTitle, updateDescription, updateTarget } = this.props;
     return (
       <Section currentStep={ currentStep } sectionNumber={ 3 } title='Metrics' loading={ false } unNumbered={ true }>
-        <div className='subindex-manager'>
-          <h2 className='subindex-manager__title bluetab-subtitle--centered'>Select the subindex of which you want to see the evolution or the subindices that form it</h2>
+        <div className='metric-manager'>
+          <h2 className='metric-manager__title bluetab-subtitle--centered'>Select the subindex of which you want to see the evolution or the subindices that form it</h2>
           <ModeSelection
             selected={ mode }
-            create={ 'Create subindex' }
-            edition={ 'Edit subindex' }
+            create={ 'Create metric' }
+            edition={ 'Edit metric' }
             onChange={ changeMode }
           />
           {
             indexes &&
             <Selector
-              className='subindex-manager__selector'
+              className='metric-manager__selector'
               title={ 'Select the desired index' }
               values={ indexes }
               currentValue={ selectedIndex }
@@ -69,7 +69,7 @@ export class MetricManager extends PureComponent {
           {
             selectedIndex && subindexes &&
             <Selector
-              className='subindex-manager__selector'
+              className='metric-manager__selector'
               title={ 'Select the desired subindex' }
               values={ subindexes }
               currentValue={ selectedSubindex }
@@ -81,7 +81,7 @@ export class MetricManager extends PureComponent {
           {
             selectedSubindex && metrics && mode === 'edition' &&
             <Selector
-              className='subindex-manager__selector'
+              className='metric-manager__selector'
               title={ 'Select the desired metric' }
               values={ metrics }
               currentValue={ selectedMetric }
@@ -91,11 +91,11 @@ export class MetricManager extends PureComponent {
             />
           }
           <Collapse isOpened={ description !== null } id={ `${ selectedSubindex ? selectedSubindex : 'subindex-collapse' }` }>
-            <div className='subindex-manager__form'>
+            <div className='metric-manager__form'>
               <TextInput editEnabled={ mode === 'edition' } title='Title' value={ title } onChange={ updateTitle } />
               <TextInput editEnabled={ mode === 'edition' } title='Description' textarea value={ description } onChange={ updateDescription } />
               <FormulaEdition operations={ operations } openBrackets={ openBrackets } parameters={ [{ value: 'MTA', label: 'MTA' }, { value: 'POC', label: 'POC' }] } />
-              <TargetEdition title={ 'Define and edit targets' } data={ targets } />
+              <TargetEdition title={ 'Define and edit targets' } data={ targets } onChange={ updateTarget } />
               <Button title={ 'Save subindex' } onClick={ () => console.log('save') } />
             </div>
           </Collapse>
@@ -129,6 +129,7 @@ const mapDispatchToProps = (dispatch) => {
     selectMetric: (option) => dispatch(selectMetric(option.value)),
     updateTitle: (event) => dispatch(updateTitle(event.target.value)),
     updateDescription: (event) => dispatch(updateDescription(event.target.value)),
+    updateTarget: (target, data) => dispatch(updateTarget(target, data)),
   };
 };
 

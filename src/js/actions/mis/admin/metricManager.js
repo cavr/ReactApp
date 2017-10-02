@@ -63,7 +63,8 @@ export function selectMetric(metric) {
       const description = response.description;
       const graphType = response.type;
       const formula = response.formula;
-      dispatch({ type: LOAD_ADMIN_METRIC_DATA, title, description, graphType, formula });
+      const targets = response.targets;
+      dispatch({ type: LOAD_ADMIN_METRIC_DATA, title, description, graphType, formula, targets });
     });
   };
 }
@@ -74,6 +75,10 @@ export function updateTitle(title) {
 
 export function updateDescription(description) {
   return { type: UPDATE_METRIC_DESCRIPTION, description };
+}
+
+export function updateTarget(index, target) {
+  return { type: UPDATE_ADMIN_METRIC_TARGET, index, target };
 }
 
 export function updateIndexData() {
@@ -111,11 +116,11 @@ export function endFunction() {
 }
 
 export function openBracket() {
-  return { type: ADD_OPERATION, operation: { type: 'openBracket' } };
+  return { type: ADD_OPERATION, operation: { type: 'bracket' } };
 }
 
 export function closeBracket() {
-  return { type: ADD_OPERATION, operation: { type: 'closeBracket' } };
+  return { type: ADD_OPERATION, operation: { type: 'endBracket' } };
 }
 
 export function deleteOperation() {

@@ -15,19 +15,25 @@ export default class FormulaDisplay extends PureComponent {
     let displayString = '';
     operations.forEach((operation) => {
       let formattedString = operation.data;
-      if (formattedString === '*') formattedString = 'x';
-      if (formattedString === '/') formattedString = '÷';
+      if (operation.type === 'bracket') formattedString = '(';
+      else if (operation.type === 'endBracket' || operation.type === 'endFunction') formattedString = ')';
+      else if (operation.type === 'comma') formattedString = ',';
+      else if (operation.type === 'function') formattedString = `${ operation.data }(`;
+      else if (formattedString === '*') formattedString = 'x';
+      else if (formattedString === '/') formattedString = '÷';
       displayString += `${ formattedString } `;
     });
     let additionalBrackets = '';
-    for (let i = 0, l = openBrackets.length; i < l; i++) {
-      additionalBrackets += ' )';
-    }
+    openBrackets.forEach((brackets) => {
+      for (let i = 0; i < brackets; i++) {
+        additionalBrackets += ' )';
+      }
+    });
     additionalBrackets = additionalBrackets.trim();
     return (
       <div className='formula-display'>
         <div className='formula-display__title'>Create formula to calculate your metric</div>
-        <i className='formula-display__icon icon icon__trash' onClick={ console.log('delete') } />
+        { /* <i className='formula-display__icon icon icon__trash' onClick={ console.log('delete') } /> */ }
         <div className='formula-display__input'>
           <div className='formula-display__inner-wrapper'>{ displayString }<span className='incomplete-bracket'>{ additionalBrackets }</span></div>
         </div>

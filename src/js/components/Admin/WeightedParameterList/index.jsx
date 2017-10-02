@@ -41,7 +41,12 @@ export default class WeightedParameterList extends PureComponent {
         <ul className='weighted-parameters__list'>
           { weightedElements }
         </ul>
-        <div className='weighted-parameters__create icon icon__add--red' onClick={ () => this.setState({ newParameter: !newParameter }) }>{ create.title }</div>
+        <div
+          className={ `weighted-parameters__create icon ${ !newParameter ? 'icon__add--red' : 'icon__add--gray weighted-parameters__create--gray' }` }
+          onClick={ () => this.setState({ newParameter: !newParameter }) }
+        >
+          { create.title }
+        </div>
         <Collapse isOpened={ newParameter }>
           <NewParameter title={ create.selector } placeholder={ create.placeholder } data={ newData } onAdd={ onAdd } />
         </Collapse>

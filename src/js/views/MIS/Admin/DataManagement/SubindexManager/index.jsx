@@ -11,7 +11,7 @@ import WeightedParameterList from 'components/Admin/WeightedParameterList';
 import ModeSelection from 'components/Admin/ModeSelection';
 
 import { loadIndexes } from 'actions/mis/admin/common';
-import { changeMode, selectIndex, selectSubindex, updateTitle, updateDescription, updateMetric, addMetric, deleteMetric } from 'actions/mis/admin/subindexManager';
+import { changeMode, selectIndex, selectSubindex, updateTitle, updateDescription, updateMetric, addMetric, deleteMetric, changeGraphType } from 'actions/mis/admin/subindexManager';
 
 import './desktop.scss';
 
@@ -26,7 +26,9 @@ export class SubindexManager extends PureComponent {
     title: PropTypes.string,
     description: PropTypes.string,
     formula: PropTypes.object,
+    graphType: PropTypes.number,
     newData: PropTypes.array,
+
     changeMode: PropTypes.func,
     selectIndex: PropTypes.func,
     selectSubindex: PropTypes.func,
@@ -41,8 +43,8 @@ export class SubindexManager extends PureComponent {
   }
 
   render() {
-    const { currentStep, mode, indexes, subindexes, selectedIndex, selectedSubindex, title, description, formula, newData } = this.props;
-    const { changeMode, selectIndex, selectSubindex, updateTitle, updateDescription, updateMetric, addMetric, deleteMetric } = this.props;
+    const { currentStep, mode, indexes, subindexes, selectedIndex, selectedSubindex, title, description, formula, graphType, newData } = this.props;
+    const { changeMode, selectIndex, selectSubindex, updateTitle, updateDescription, updateMetric, addMetric, deleteMetric, changeGraphType } = this.props;
     return (
       <Section currentStep={ currentStep } sectionNumber={ 3 } title='Subindex' loading={ false } unNumbered={ true }>
         <div className='subindex-manager'>
@@ -85,10 +87,10 @@ export class SubindexManager extends PureComponent {
               <Selector
                 className='subindex-manager__selector'
                 title={ 'Graph type' }
-                values={ indexes }
-                currentValue={ selectedIndex }
+                values={ [{ value: 1, label: 'Bullet' }, { value: 2, label: 'Semaphore' }] }
+                currentValue={ graphType }
                 inline={ true }
-                onChange={ selectIndex }
+                onChange={ changeGraphType }
               />
               <Button title={ 'Save subindex' } onClick={ () => console.log('save') } />
             </div>
@@ -108,6 +110,7 @@ const mapStateToProps = (state) => ({
   title: state.subindexManager.get('title'),
   description: state.subindexManager.get('description'),
   formula: state.subindexManager.get('formula'),
+  graphType: state.subindexManager.get('graphType'),
   newData: state.subindexManager.get('newData'),
 });
 
@@ -122,6 +125,7 @@ const mapDispatchToProps = (dispatch) => {
     updateMetric: (index, subindex) => dispatch(updateMetric(index, subindex)),
     addMetric: (subindex) => dispatch(addMetric(subindex)),
     deleteMetric: (index) => dispatch(deleteMetric(index)),
+    changeGraphType: (option) => dispatch(changeGraphType(option.value)),
   };
 };
 
