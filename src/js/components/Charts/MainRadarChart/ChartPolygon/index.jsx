@@ -56,7 +56,7 @@ export default class ChartPolygon extends PureComponent {
     const { name } = this.props;
     return (
       <g className={ name }>
-        <polygon ref={ (chart) => this.chart = chart } strokeWidth='0.5' fillOpacity='0.3' points={ '50,50 50,50 50,50 50,50' } />
+        <polygon ref={ (chart) => this.chart = chart } points={ '50,50 50,50 50,50 50,50' } />
         <circle ref={ (dot1) => this.dot1 = dot1 } cx='50' cy='50' r='1.33' />
         <circle ref={ (dot2) => this.dot2 = dot2 } cx='50' cy='50' r='1.33' />
         <circle ref={ (dot3) => this.dot3 = dot3 } cx='50' cy='50' r='1.33' />

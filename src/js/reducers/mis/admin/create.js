@@ -51,7 +51,7 @@ const actionsMap = {
       return state;
     }
     if (newOperation.type === 'openBracket') {
-      if(lastOperation && (lastOperation.type === 'parameter' || lastOperation.type === 'closeBracket')) return state;
+      if (lastOperation && (lastOperation.type === 'parameter' || lastOperation.type === 'closeBracket')) return state;
       return state.set('operations', operations.push(newOperation)).set('openBrackets', openBrackets + 1);
     }
     if (newOperation.type === 'closeBracket') {
@@ -88,8 +88,8 @@ const actionsMap = {
     return state.set('operations', List()).set('openBrackets', 0);
   },
   [CLEAR_CREATE_DATA]: (state) => {
-    return state.set('operations', List()).set('openBrackets', 0).set('title', '').set('description','');
-  }
+    return state.set('operations', List()).set('openBrackets', 0).set('title', '').set('description', '');
+  },
 };
 
 export default function reducer(state = initialState, action = {}) {

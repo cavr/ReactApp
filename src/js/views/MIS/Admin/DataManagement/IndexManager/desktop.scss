@@ -7,6 +7,10 @@
     margin-bottom: get-rem(24px);
   }
   .index-manager__form {
-    
+    display: flex;
+    flex-direction: column;
+    .bluetab-button {
+      align-self: center;
+    }
   }
 }

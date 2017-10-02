@@ -7,7 +7,7 @@
     .main-graph__graph-controls {
       position: absolute;
       top: 0;
-      left: get-rem(20px);
+      right: get-rem(20px);
       width: get-rem(160px);
       z-index: 2;
       .bluetab-selector .bluetab-selector__title-wrapper .bluetab-selector__title {
@@ -20,7 +20,7 @@
       .bluetab-button {
         width: 100%;
         height: get-rem(37px);
-        margin-bottom: get-rem(9px);
+        margin-bottom: get-rem(10px);
       }
     }
   }

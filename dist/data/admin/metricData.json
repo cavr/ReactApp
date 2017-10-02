@@ -1,0 +1,62 @@
+{
+  "title": "Titulo metrica",
+  "description": "Description del metrica.",
+  "formula": [
+    {
+      "type": "bracket"
+    },
+    {
+      "type": "number",
+      "data": 9
+    },
+    {
+      "type": "operation",
+      "data": "+"
+    },
+    {
+      "type": "parameter",
+      "data": "MTA"
+    },
+    {
+      "type": "endBracket"
+    },
+    {
+      "type": "operation",
+      "data": "-"
+    },
+    {
+      "type": "function",
+      "data": "MIN"
+    },
+    {
+      "type": "number",
+      "data": 45
+    },
+    {
+      "type": "parameter",
+      "data": "MTA"
+    },
+    {
+      "type": "endFunction"
+    }
+  ],
+  "type": 1,
+  "targets": [
+    {
+      "id": "S1",
+      "label": "Other sites",
+      "values": {
+        "low": 20,
+        "high": 50
+      }
+    },
+    {
+      "id": "S2",
+      "label": "Data center",
+      "values": {
+        "low": 20,
+        "high": 50
+      }
+    }
+  ]
+}

@@ -30,8 +30,9 @@ $selector-left-padding: 14px;
     font-size: get-rem($selector-font-size);
     .Select-control {
       position: relative;
+      border-radius: get-rem(2px);
       height: get-rem(45px);
-      border-color: $bluetab-light-gray;
+      border-color: $bluetab-light-gray-3;
       cursor: pointer;
       .Select-placeholder {
         display: flex;
@@ -60,16 +61,23 @@ $selector-left-padding: 14px;
         position: absolute;
         right: 0;
         top: 0;
-        width: get-rem(45px);
+        width: get-rem(40px);
         height: 100%;
         padding: 0 !important;
-        background: rgba(218,224,228,0.30);
-        border-left: get-rem(1px) solid $bluetab-light-gray;
-        
+        background: none;
+        .Select-arrow {
+          border-color: $bluetab-gray-2 transparent transparent;
+        }
+      }
+    }
+    &.is-open .Select-control {
+      .Select-arrow-zone .Select-arrow {
+        border-color: transparent transparent  $bluetab-gray-2;
       }
     }
     .Select-menu-outer {
-      border: get-rem(1px) solid $bluetab-light-gray-2;
+      width: calc(100% - 1px);
+      border: 1px solid $bluetab-light-gray-2;
       .Select-option.is-selected {
         background-color: white;
       }

@@ -6,16 +6,18 @@ import {
   SET_SELECTED_INDEX_IN_ADMIN_INDEX,
   UPDATE_INDEX_DESCRIPTION,
   UPDATE_INDEX_FORMULA,
+  SET_ADMIN_INDEX_NEW_DATA,
 } from 'actions/mis/admin/indexManager';
 
 const initialState = Map({
   selectedIndex: null,
   description: null,
   formula: null,
+  newData: null,
 });
 
 const actionsMap = {
-  [CLEAR_ADMIN_INDEX_DATA]: (state, action) => {
+  [CLEAR_ADMIN_INDEX_DATA]: (state) => {
     return state.set('description', null).set('formula', null);
   },
   [SET_ADMIN_INDEX_DATA]: (state, action) => {
@@ -29,7 +31,7 @@ const actionsMap = {
   },
   [UPDATE_INDEX_FORMULA]: (state, action) => {
     const formula = state.get('formula');
-    switch(action.action) {
+    switch (action.action) {
       case 'add':
         return state.set('formula', formula.push(action.subindex));
       case 'update':
@@ -39,7 +41,10 @@ const actionsMap = {
       default:
         return state;
     }
-  }
+  },
+  [SET_ADMIN_INDEX_NEW_DATA]: (state, action) => {
+    return state.set('newData', action.subindexes);
+  },
 };
 
 export default function reducer(state = initialState, action = {}) {

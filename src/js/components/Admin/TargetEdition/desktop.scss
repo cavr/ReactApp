@@ -1,0 +1,14 @@
+@import '../../../../scss/theme/variables';
+
+.target-edition {
+  margin-bottom: get-rem(30px);
+  .target-edition__title {
+    font-size: get-rem(13px);
+    font-weight: 500;
+    color: $bluetab-gray;
+  }
+  .target-edition__list {
+    border-top: get-rem(1px) solid $bluetab-light-gray;
+    margin-top: get-rem(12px);
+  }
+}

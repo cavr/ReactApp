@@ -4,6 +4,8 @@ $button-size: 92px;
 $selection-margin: 12px;
 
 .selection {
+  padding: get-rem(25px) get-rem(45px);
+  padding-bottom: 0;
   .selection__wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -11,20 +13,35 @@ $selection-margin: 12px;
     justify-content: center;
     margin-right: get-rem(-$selection-margin);
     margin-left: get-rem(-$selection-margin);
-    .selection__option {
-      flex: 0 0 auto;
-      min-width: get-rem($button-size);
-      margin: 0 get-rem($selection-margin);
-      margin-bottom: get-rem($selection-margin);
-      line-height: get-rem(24px);
-      padding: 0 get-rem(12px);
+    .selection-option-wrapper {
+      width: 33.3%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .selection-option {
+      width: get-rem(150px);
+      padding-left: get-rem(35px);
+      display: inline-flex;
+      flex-direction: column;
       font-size: get-rem(14px);
-      border: get-rem(2px) solid $bluetab-gray; 
-      color: $bluetab-gray-2;
-      background-color: white;
-      text-align: center;
+      color: $bluetab-gray;
+      margin-bottom: get-rem(28px);
+      line-height: get-rem(22px);
+      background-size: get-rem(22px);
+      background-position: left;
+      .selection-option__selector {
+        font-weight: 500;
+        margin-right: get-rem(5px);
+      }
+      .selection-option__value {
+        font-weight: 300;
+      }
     }
     .selection__change-selection {
+      position: absolute;
+      top: get-rem(27px);
+      right: 0;
       width: get-rem(32px);
       height: get-rem(20px);
       border: none;
@@ -32,6 +49,7 @@ $selection-margin: 12px;
       margin-bottom: get-rem($selection-margin);
       outline: none;
       cursor: pointer;
+      z-index: 2;
     }
   }
   

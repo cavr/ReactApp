@@ -1,0 +1,33 @@
+@import '../../../../../scss/theme/variables';
+
+.target {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: get-rem(55px);
+  border-bottom: get-rem(1px) solid $bluetab-light-gray;
+  .target__title {
+    background-position: left !important;
+    padding-left: get-rem(23px);
+    font-size: get-rem(12px);
+    font-weight: 500;
+  }
+  .target__target-wrapper {
+    display: flex;
+    align-items: center;
+    .target__input {
+      width: get-rem(74px);
+      height: get-rem(37px);      
+    }
+    .target__icon {
+      display: inline-block;
+      margin-left: get-rem(10px);
+      width: get-rem(30px);
+      height: get-rem(20px);
+      cursor: pointer;
+      &.target__icon--disabled {
+        opacity: 0.3;
+      }
+    }
+  }
+}

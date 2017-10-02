@@ -5,6 +5,7 @@ export const SET_ADMIN_INDEX_DATA = 'SET_ADMIN_INDEX_DATA';
 export const SET_SELECTED_INDEX_IN_ADMIN_INDEX = 'SET_SELECTED_INDEX_IN_ADMIN_INDEX';
 export const UPDATE_INDEX_DESCRIPTION = 'UPDATE_INDEX_DESCRIPTION';
 export const UPDATE_INDEX_FORMULA = 'UPDATE_INDEX_FORMULA';
+export const SET_ADMIN_INDEX_NEW_DATA = 'SET_ADMIN_INDEX_NEW_DATA';
 
 export function selectIndex(index) {
   return (dispatch) => {
@@ -14,6 +15,9 @@ export function selectIndex(index) {
       const description = response.description;
       const formula = response.formula;
       dispatch({ type: SET_ADMIN_INDEX_DATA, description, formula });
+    });
+    AdminServices.getSubindexes({ index }).then((response) => {
+      dispatch({ type: SET_ADMIN_INDEX_NEW_DATA, subindexes: response.subindexes });
     });
   };
 }
@@ -37,14 +41,13 @@ export function addSubindex(subindex) {
 export function updateIndexData() {
   return (dispatch, getState) => {
     const state = getState();
-    const index = state.get('index');
+    const index = state.indexManager.get('index');
     const indexData = {
       description: state.get('description'),
       formula: state.get('formula').toArray(),
-    }
+    };
     AdminServices.updateIndexData({ index, indexData }).then((response) => {
       const indexes = response.indexes;
-      dispatch({ type: SET_ADMIN_INDEX_DATA, indexes });
     });
   };
 }

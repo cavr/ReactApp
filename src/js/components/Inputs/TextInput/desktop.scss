@@ -4,9 +4,9 @@
   position: relative;
   margin-bottom: get-rem(27px);
   .bluetab-textinput__title {
-    font-size: get-rem(14px);
+    font-size: get-rem(13px);
     font-weight: 500;
-    color: $bluetab-gray-2;
+    color: $bluetab-gray;
   }
   .bluetab-textinput__icon {
     position: absolute;
@@ -22,9 +22,11 @@
   }
   .bluetab-textinput__input {
     outline: none;
-    margin-top: get-rem(9px);
+    margin-top: get-rem(10px);
     width: 100%;
+    height: get-rem(45px);
     &.bluetab-textinput__input--textarea {
+      height: auto;
       min-height: get-rem(84px);
     }
   }

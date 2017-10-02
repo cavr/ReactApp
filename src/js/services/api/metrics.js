@@ -25,4 +25,14 @@ export default class MetricsServices {
         return response.json();
       });
   }
+
+  static generateXLS(request) {
+    return fetch('/data/xlsTest.json')
+      .then((response) => {
+        if (response.status !== 200) {
+          return devDataEvolution;
+        }
+        return response.json();
+      });
+  }
 }

@@ -1,16 +1,17 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
 
 import MainAdminMenu from './MainAdminMenu';
 import DataManagement from './DataManagement';
 import IndexManager from './DataManagement/IndexManager';
+import SubindexManager from './DataManagement/SubindexManager';
+import MetricManager from './DataManagement/MetricManager';
 
 import './desktop.scss';
 
 export default class MISAdmin extends PureComponent {
   static propTypes = {
-    path: PropTypes.string,
+    params: PropTypes.object,
   };
 
   render() {
@@ -36,11 +37,11 @@ export default class MISAdmin extends PureComponent {
         }
         {
           params.subsection === 'subindexes' &&
-          <DataManagement currentStep={ currentStep } subsection={ params.subsection } />
+          <SubindexManager currentStep={ currentStep } />
         }
         {
           params.subsection === 'metrics' &&
-          <DataManagement currentStep={ currentStep } subsection={ params.subsection } />
+          <MetricManager currentStep={ currentStep } />
         }
       </div>
     );

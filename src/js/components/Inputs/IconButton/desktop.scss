@@ -7,12 +7,14 @@
   display: flex;
   flex-direction: column;
   cursor: pointer;
+  transition: box-shadow 0.3s $easing;
   .bluetab-button-icon__icon {
     display: block;
     height: get-rem(40px);
     margin-top: get-rem(35px);
     margin-bottom: get-rem(15px);
     opacity: 0.3;
+    transition: opacity 0.3s $easing;
   }
   .bluetab-button-icon__title {
     text-align: center;

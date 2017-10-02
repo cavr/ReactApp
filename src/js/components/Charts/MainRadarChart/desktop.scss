@@ -1,16 +1,16 @@
 @import '../../../../scss/theme/variables';
 
-$target-stroke-color: $bluetab-red;
-$target-fill-color: $bluetab-red;
-$current-stroke-color: #41A040 ;
-$current-fill-color: #41A040;
+$current-stroke-color: $bluetab-red;
+$current-fill-color: #F05050;
+$target-stroke-color: #389437;
+$target-fill-color: #B4EC51;
 $extra-stroke-color: #F5A623;
-$extra-fill-color: #F5A623;
+$extra-fill-color: #FAD961;
 
 .main-graph-chart {
   position: relative;
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   padding: get-rem(27px) get-rem(88px) get-rem(75px) get-rem(88px);
   .main-graph-chart__svg-wrapper {
     position: relative;
@@ -61,6 +61,10 @@ $extra-fill-color: #F5A623;
     .main-graph-chart__svg {
       width: 100%;
       height: 100%;
+      polygon {
+        fill-opacity: 0.6;
+        stroke-width: 0.5;
+      }
       .current {
         circle {
           fill: $current-stroke-color;

@@ -1,0 +1,31 @@
+@import '../../../../../scss/theme/variables';
+
+.formula-display {
+  position: relative;
+  margin-bottom: get-rem(27px);
+  .formula-display__title {
+    font-size: get-rem(13px);
+    font-weight: 500;
+    color: $bluetab-gray;
+  }
+  .formula-display__icon {
+    position: absolute;
+    right: 0;
+    top: get-rem(2px);
+    display: inline-block;
+    width: get-rem(27px);
+    height: get-rem(14px);
+    cursor: pointer;
+  }
+  .formula-display__input {
+    outline: none;
+    margin-top: get-rem(10px);
+    width: 100%;
+    height: get-rem(84px);
+    border: 1px solid $bluetab-light-gray-2;
+    padding: get-rem(17px) get-rem(14px);
+    font-size: get-rem(12px);
+    color: $bluetab-gray-2;
+    background: white;
+  }
+}

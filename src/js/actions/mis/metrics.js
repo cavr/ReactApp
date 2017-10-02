@@ -58,3 +58,9 @@ export function setSelectedMetric(metric) {
 export function setSelectedBusinessElement(businessElement) {
   return ({ type: SET_SELECTED_BUSINESS_ELEMENT, businessElement });
 }
+
+export function generateXLS() {
+  MetricsServices.generateXLS().then((response) => {
+    window.open(response.url);
+  });
+}

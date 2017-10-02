@@ -5,6 +5,7 @@ import './desktop.scss';
 
 export default class TextInput extends PureComponent {
   static propTypes = {
+    editEnabled: PropTypes.bool,
     placeholder: PropTypes.string,
     title: PropTypes.string,
     value: PropTypes.string,
@@ -20,15 +21,16 @@ export default class TextInput extends PureComponent {
   }
 
   render() {
-    const { placeholder, title, value, textarea, onChange } = this.props;
+    const { editEnabled, placeholder, title, value, textarea, onChange } = this.props;
     const { editable } = this.state;
+    const editUnactive = !editable && editEnabled;
     return (
-      <div className={ `bluetab-textinput ${ !editable ? 'bluetab-textinput--disabled' : '' }` }>
+      <div className={ `bluetab-textinput ${ editUnactive ? 'bluetab-textinput--disabled' : '' }` }>
         <div className='bluetab-textinput__title'>{ title }</div>
-        <i className={ `bluetab-textinput__icon ${ editable ? 'bluetab-textinput__icon--disabled' : '' } icon icon__edit ` } onClick={ () => this.setState({ editable: !editable })} />
+        { editEnabled && <i className={ `bluetab-textinput__icon ${ editable ? 'bluetab-textinput__icon--disabled' : '' } icon icon__edit ` } onClick={ () => this.setState({ editable: !editable }) } /> }
         {
-          textarea ? <textarea className='bluetab-textinput__input bluetab-textinput__input--textarea'  readOnly={ !editable } placeholder={ placeholder } value={ value } onChange={ onChange } /> :
-          <input className='bluetab-textinput__input' readOnly={ !editable } placeholder={ placeholder } value={ value } onChange={ onChange } />
+          textarea ? <textarea className='bluetab-textinput__input bluetab-textinput__input--textarea' readOnly={ editUnactive } placeholder={ placeholder } value={ value } onChange={ onChange } /> :
+          <input className='bluetab-textinput__input' readOnly={ editUnactive } placeholder={ placeholder } value={ value } onChange={ onChange } />
         }
       </div>
     );

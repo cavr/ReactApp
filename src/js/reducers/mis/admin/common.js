@@ -16,24 +16,24 @@ const initialState = Map({
 });
 
 const actionsMap = {
-  [CLEAR_ADMIN_INDEXES]: (state, action) => {
-    return state.set('indexes', [])
+  [CLEAR_ADMIN_INDEXES]: (state) => {
+    return state.set('indexes', []);
   },
   [SET_ADMIN_INDEXES]: (state, action) => {
     return state.set('indexes', action.indexes);
   },
-  [CLEAR_ADMIN_SUBINDEXES]: (state, action) => {
-    return state.set('subindexes', [])
+  [CLEAR_ADMIN_SUBINDEXES]: (state) => {
+    return state.set('subindexes', []);
   },
   [SET_ADMIN_SUBINDEXES]: (state, action) => {
     return state.set('subindexes', action.subindexes);
   },
-  [CLEAR_ADMIN_METRICS]: (state, action) => {
-    return state.set('metrics', [])
+  [CLEAR_ADMIN_METRICS]: (state) => {
+    return state.set('metrics', []);
   },
-  [SET_ADMIN_METRICS]: (state, actions) => {
+  [SET_ADMIN_METRICS]: (state, action) => {
     return state.set('metrics', action.metrics);
-  }
+  },
 };
 
 export default function reducer(state = initialState, action = {}) {

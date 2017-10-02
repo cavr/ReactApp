@@ -17,13 +17,22 @@ export default class AdminServices {
           return {};
         }
         return response.json();
-      })
+      });
   }
   static updateIndexData(request) {
     
   }
-  static getParameters(request) {
-    return fetch('/data/admin/indexes.json')
+  static getSubindexes(request) {
+    return fetch('/data/admin/subindexes.json')
+      .then((response) => {
+        if (response.status !== 200) {
+          return {};
+        }
+        return response.json();
+      });
+  }
+  static getSubindexData(request) {
+    return fetch('/data/admin/subindexData.json')
       .then((response) => {
         if (response.status !== 200) {
           return {};
@@ -40,6 +49,26 @@ export default class AdminServices {
         return response.json();
       });
   }
+  static getMetricData(request) {
+    return fetch('/data/admin/subindexData.json')
+      .then((response) => {
+        if (response.status !== 200) {
+          return {};
+        }
+        return response.json();
+      });
+  }
+  
+  static getDefaultTargets(request) {
+    return fetch('/data/admin/defaultTargets.json')
+      .then((response) => {
+        if (response.status !== 200) {
+          return {};
+        }
+        return response.json();
+      });
+  }
+
   static createMetric(request) {
 
   }

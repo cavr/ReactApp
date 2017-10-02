@@ -13,7 +13,7 @@ import WeightedParameterList from 'components/Admin/WeightedParameterList';
 
 
 import { loadIndexes } from 'actions/mis/admin/common';
-import { selectIndex, updateDescription, updateSubindex, addSubindex, deleteSubindex } from 'actions/mis/admin/indexManager';
+import { selectIndex, updateDescription, updateSubindex, addSubindex, deleteSubindex, updateIndexData } from 'actions/mis/admin/indexManager';
 
 import './desktop.scss';
 
@@ -23,12 +23,13 @@ export class IndexManager extends PureComponent {
     indexes: PropTypes.array,
     selectedIndex: PropTypes.string,
     description: PropTypes.string,
-    formula: PropTypes.array,
+    formula: PropTypes.object,
+    newData: PropTypes.array,
     selectIndex: PropTypes.func,
     loadIndexes: PropTypes.func,
     updateSubindex: PropTypes.func,
     addSubindex: PropTypes.func,
-    deleteSubindex: PropTypes.func
+    deleteSubindex: PropTypes.func,
   };
 
   componentDidMount() {
@@ -36,7 +37,8 @@ export class IndexManager extends PureComponent {
   }
 
   render() {
-    const { currentStep, indexes, selectedIndex, description, formula, selectIndex, updateDescription, updateSubindex, addSubindex, deleteSubindex } = this.props;
+    const { currentStep, indexes, selectedIndex, description, formula, newData } = this.props;
+    const { selectIndex, updateDescription, updateSubindex, addSubindex, deleteSubindex, updateIndexData } = this.props;
     return (
       <Section currentStep={ currentStep } sectionNumber={ 3 } title='Index' loading={ false } unNumbered={ true }>
         <div className='index-manager'>
@@ -50,16 +52,16 @@ export class IndexManager extends PureComponent {
               currentValue={ selectedIndex }
               placeholder='Index'
               inline={ true }
-              onChange={ (option) => selectIndex(option.value) }
+              onChange={ selectIndex }
             />
           }
           {
             selectedIndex &&
-            <Collapse isOpened={ description !== null && formula !== null } id={ `${ selectedIndex }` }>
+            <Collapse isOpened={ description !== null } id={ `${ selectedIndex }` }>
               <div className='index-manager__form'>
-                <TextInput title='Description' textarea value={ description } onChange={ updateDescription }/>
-                <WeightedParameterList title={ 'List of subindexes' } create={ 'Create new subindex' } data={ formula } onChange={ updateSubindex } onDelete={ deleteSubindex } onAdd={ addSubindex } />
-                <Button title={ 'Save index' } onClick={ () => browserHistory.push(routeCodes.MIS_ADMIN_INDEX) } />
+                <TextInput editEnabled={ true } title='Description' textarea value={ description } onChange={ updateDescription } />
+                <WeightedParameterList title={ 'List of subindexes' } create={ { title: 'Create new subindex', selector: 'Select a subindex', placeholder: 'Subindex' } } data={ formula } newData={ newData } onChange={ updateSubindex } onDelete={ deleteSubindex } onAdd={ addSubindex } />
+                <Button title={ 'Save index' } onClick={ updateIndexData } />
               </div>
             </Collapse>
           }
@@ -74,16 +76,18 @@ const mapStateToProps = (state) => ({
   selectedIndex: state.indexManager.get('selectedIndex'),
   description: state.indexManager.get('description'),
   formula: state.indexManager.get('formula'),
+  newData: state.indexManager.get('newData'),
 });
 
 const mapDispatchToProps = (dispatch) => {
   return {
     loadIndexes: () => dispatch(loadIndexes()),
-    selectIndex: (value) => dispatch(selectIndex(value)),
+    selectIndex: (option) => dispatch(selectIndex(option.value)),
     updateDescription: (event) => dispatch(updateDescription(event.target.value)),
     updateSubindex: (index, subindex) => dispatch(updateSubindex(index, subindex)),
     addSubindex: (subindex) => dispatch(addSubindex(subindex)),
-    deleteSubindex: (index) => dispatch(deleteSubindex(index))
+    deleteSubindex: (index) => dispatch(deleteSubindex(index)),
+    updateIndexData: () => dispatch(updateIndexData()),
   };
 };
 

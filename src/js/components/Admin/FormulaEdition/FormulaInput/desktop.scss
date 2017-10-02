@@ -1,0 +1,47 @@
+@import '../../../../../scss/theme/variables';
+
+.formula-input {
+  display: flex;
+  .formula-input__parameters {
+    flex: 1 1 50%;
+    padding-right: get-rem(40px);
+    .bluetab-selector .bluetab-selector__title-wrapper .bluetab-selector__title {
+      font-size: get-rem(13px);
+      font-weight: 500;
+    }
+  }
+  .formula-input__buttons {
+    flex: 1 1 50%;
+    .formula-input__title {
+      font-size: get-rem(13px);
+      font-weight: 500;
+      color: $bluetab-gray;
+    }
+    .formula-input__button-wrapper {
+      margin-top: get-rem(5px);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-right: get-rem(-4px);
+      margin-left: get-rem(-4px);
+      .formula-input__button {
+        margin: get-rem(4px);
+        width: get-rem(58px);
+        height: get-rem(48px);
+        border: 1px solid $bluetab-light-gray-2;
+        background-color: $bluetab-light-gray;
+        border-radius: get-rem(3px);
+        font-size: get-rem(14px);
+        font-weight: 500;
+        color: $bluetab-gray;
+        cursor: pointer;
+        &.formula-input__button--blue {
+          color: $bluetab-input-blue;
+        }
+        &.formula-input__button--red {
+          color: $bluetab-red;
+        }
+      }
+    }
+  }
+}

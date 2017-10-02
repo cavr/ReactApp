@@ -1,0 +1,20 @@
+{
+  "targets": [
+    {
+      "id": "S1",
+      "label": "Other sites",
+      "values": {
+        "low": 20,
+        "high": 50
+      }
+    },
+    {
+      "id": "S2",
+      "label": "Data center",
+      "values": {
+        "low": 20,
+        "high": 50
+      }
+    }
+  ]
+}

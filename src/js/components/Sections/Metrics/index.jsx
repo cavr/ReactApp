@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { setSelectorValue, loadEvolution, setSelectedBusinessElement, setSelectedMetric } from 'actions/mis/metrics';
+import { setSelectorValue, loadEvolution, setSelectedBusinessElement, setSelectedMetric, generateXLS } from 'actions/mis/metrics';
 import Collapse from 'components/Sections/Collapse';
 import { generatePDF } from 'services/pdfGenerator';
 import Section from 'components/Sections/SectionContainer';
@@ -77,6 +77,7 @@ export class Metrics extends PureComponent {
         <Collapse isOpened={ currentStep === 4 }>
           <section className='metrics__benchmarking'>
             <Button title={ 'Summary Outlook (PDF)' } icon={ 'download' } onClick={ () => generatePDF() } />
+            <Button title={ 'Raw Data (XLS)' } icon={ 'download' } onClick={ () => generateXLS() } />
           </section>
         </Collapse>
       </div>

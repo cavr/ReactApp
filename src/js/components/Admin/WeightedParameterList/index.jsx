@@ -3,19 +3,19 @@ import PropTypes from 'prop-types';
 
 import Collapse from 'components/Sections/Collapse';
 import WeightedParameter from './WeightedParameter';
+import NewParameter from './NewParameter';
 
 import './desktop.scss';
 
 export default class WeightedParameterList extends PureComponent {
   static propTypes = {
     title: PropTypes.string,
-    create: PropTypes.string,
-    data: PropTypes.array,
+    create: PropTypes.object,
+    data: PropTypes.object,
     newData: PropTypes.array,
     onAdd: PropTypes.func,
     onDelete: PropTypes.func,
     onChange: PropTypes.func,
-    loadNewData: PropTypes.func,
   };
   constructor() {
     super();
@@ -24,18 +24,16 @@ export default class WeightedParameterList extends PureComponent {
     };
   }
   handleCreate() {
-    const { newData, loadNewData } = this.props;
     const { newParameter } = this.state;
-    if (!newData && !newParameter) loadNewData(); 
     this.setState({ newParameter: !newParameter });
   }
   render() {
-    const { title, create, data, onChange, onDelete } = this.props;
+    const { title, create, data, newData, onAdd, onChange, onDelete } = this.props;
     const { newParameter } = this.state;
-    const weightedElements = this.props.data && this.props.data.map((element, index) => {
+    const weightedElements = data && data.map((element, index) => {
       return (
-       <WeightedParameter key={ `weighted-element-${ index } `} index={ index } data={ element } onChange={ onChange } onDelete={ onDelete } />
-      )
+        <WeightedParameter key={ `weighted-element-${ index } ` } index={ index } data={ element } onChange={ onChange } onDelete={ onDelete } />
+      );
     });
     return (
       <div className='weighted-parameters'>
@@ -43,11 +41,9 @@ export default class WeightedParameterList extends PureComponent {
         <ul className='weighted-parameters__list'>
           { weightedElements }
         </ul>
-        <div className='weighted-parameters__create icon icon__add--red' onClick={ () => this.setState({ newParameter: !newParameter }) }>{ create }</div>
+        <div className='weighted-parameters__create icon icon__add--red' onClick={ () => this.setState({ newParameter: !newParameter }) }>{ create.title }</div>
         <Collapse isOpened={ newParameter }>
-          <div className='weighted-parameters__new-parameter'>
-
-          </div>
+          <NewParameter title={ create.selector } placeholder={ create.placeholder } data={ newData } onAdd={ onAdd } />
         </Collapse>
       </div>
     );

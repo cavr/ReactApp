@@ -21,8 +21,8 @@ export function loadSubindexes(selectedIndex) {
   return (dispatch) => {
     dispatch({ type: CLEAR_ADMIN_SUBINDEXES });
     AdminServices.getSubindexes({ selectedIndex }).then((response) => {
-      const indexes = response.indexes;
-      dispatch({ type: SET_ADMIN_SUBINDEXES, indexes });
+      const subindexes = response.subindexes;
+      dispatch({ type: SET_ADMIN_SUBINDEXES, subindexes });
     });
   };
 }
