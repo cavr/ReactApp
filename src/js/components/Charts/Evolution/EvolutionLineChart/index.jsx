@@ -59,29 +59,45 @@ export default class EvolutionLineChart extends PureComponent {
     return `M0,${ this.height } ${ pointsString } L${ this.width },${ this.height } Z`;
   }
   render() {
-    const { points } = this.props;
+    const { points, target } = this.props;
+    const lastMonth = points[points.length - 1];
+    const firstMonth = points[0];
+    const targetPoint = this.normalizePoint(target);
+    const targetPosition = ((targetPoint / this.height) * 100);
     let pointsString = '';
     const lines = [];
 
     for (let i = 0, l = points.length, incr = this.width / (l - 1); i < l; i++) {
       pointsString += ` L${ i * incr }, ${ this.height }`;
-      lines.push(<line key={ `line-${ i * incr }` } x1={ i * incr } x2={ i * incr } y1='0' y2={ this.height } />);
+      lines.push(<line key={ `line-${ i * incr }` } x1={ i * incr } x2={ i * incr } y1='0' y2={ this.height } strokeDasharray='5, 5' />);
     }
 
     return (
       <div className='evolution-line-chart'>
-        <svg className='evolution-line-chart__svg' viewBox={ `0 0 ${ this.width } ${ this.height }` } preserveAspectRatio='none'>
-          <defs>
-            <linearGradient x1='25%' y1='75%' x2='75%' y2='75%' id='evolution-gradient'>
-              <stop stopColor='#F2745F' offset='0%' />
-              <stop stopColor='#E14031' offset='100%' />
-            </linearGradient>
-          </defs>
-          <path ref={ (path) => this.path = path } fill='url(#evolution-gradient)' fillOpacity='0.4' d={ `M0,${ this.height } ${ pointsString } L${ this.width },${ this.height } Z` } />
-          <g>
-            { lines }
-          </g>
-        </svg>
+        <div className='evolution-line-chart__svg-wrapper'>
+          <div className='evolution-line-chart__dates'>
+            <div className='evolution-line-chart__date evolution-line-chart__date--first'>{ firstMonth.date.replace('-', ' ') }</div>
+            <div className='evolution-line-chart__date evolution-line-chart__date--last'>{ lastMonth.date.replace('-', ' ') }</div>
+          </div>
+          <div className='evolution-line-chart__target' style={ { top: `${ targetPosition }%` } }>
+            <div className='evolution-line-chart__target-line' />
+            <div className='evolution-line-chart__target-number'>{ Math.abs(target) } pt</div>
+            <div className='evolution-line-chart__target-text'>target</div>
+          </div>
+          <svg className='evolution-line-chart__svg' viewBox={ `0 0 ${ this.width } ${ this.height }` } preserveAspectRatio='none'>
+            <defs>
+              <linearGradient x1='25%' y1='75%' x2='75%' y2='75%' id='evolution-gradient'>
+                <stop stopColor='#F2745F' offset='0%' />
+                <stop stopColor='#E14031' offset='100%' />
+              </linearGradient>
+            </defs>
+            <path ref={ (path) => this.path = path } fill='url(#evolution-gradient)' fillOpacity='0.4' d={ `M0,${ this.height } ${ pointsString } L${ this.width },${ this.height } Z` } />
+            <g>
+              { lines }
+            </g>
+            <line className='target-line' x1='0' x2={ this.width } y1={ targetPoint } y2={ targetPoint } />
+          </svg>
+        </div>
       </div>
     );
   }

@@ -14,6 +14,7 @@ export const UPDATE_METRIC_DESCRIPTION = 'UPDATE_METRIC_DESCRIPTION';
 export const UPDATE_METRIC_FORMULA = 'UPDATE_METRIC_FORMULA';
 export const SET_ADMIN_METRIC_TARGETS = 'SET_ADMIN_METRIC_TARGETS';
 export const UPDATE_ADMIN_METRIC_TARGET = 'UPDATE_ADMIN_METRIC_TARGET';
+export const CHANGE_GRAPH_TYPE_IN_ADMIN_METRIC = 'CHANGE_GRAPH_TYPE_IN_ADMIN_METRIC';
 
 export const ADD_OPERATION = 'ADD_OPERATION';
 export const DELETE_OPERATION = 'DELETE_OPERATION';
@@ -81,6 +82,10 @@ export function updateTarget(index, target) {
   return { type: UPDATE_ADMIN_METRIC_TARGET, index, target };
 }
 
+export function changeGraphType(graph) {
+  return { type: CHANGE_GRAPH_TYPE_IN_ADMIN_METRIC, graph };
+}
+
 export function updateIndexData() {
   return (dispatch, getState) => {
     const state = getState();
@@ -123,14 +128,14 @@ export function closeBracket() {
   return { type: ADD_OPERATION, operation: { type: 'endBracket' } };
 }
 
+export function addComma() {
+  return { type: ADD_OPERATION, operation: { type: 'comma' } };
+}
+
 export function deleteOperation() {
   return { type: DELETE_OPERATION };
 }
 
 export function clearOperations() {
   return { type: CLEAR_OPERATIONS };
-}
-
-export function clearData() {
-  return { type: CLEAR_CREATE_DATA };
 }

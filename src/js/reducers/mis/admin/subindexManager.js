@@ -52,7 +52,7 @@ const actionsMap = {
       title: '',
       description: '',
       formula: List(),
-      graphType: 1,
+      graphType: '1',
     });
   },
   [CLEAR_ADMIN_SUBINDEX_DATA]: (state) => {

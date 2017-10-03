@@ -1,7 +1,7 @@
 {
   "title": "Indice de ejemplo",
   "description": "Description del subindice.",
-  "type": 1,
+  "type": "1",
   "formula": [
     {
       "id": "M1",

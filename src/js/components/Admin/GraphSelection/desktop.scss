@@ -1,0 +1,46 @@
+@import '../../../../scss/theme/variables';
+
+.graph-selection {
+  .graph-selection__title {
+    font-size: get-rem(13px);
+    font-weight: 500;
+    color: $bluetab-gray;
+    border-bottom: 1px solid $bluetab-light-gray-2;
+    padding-bottom: get-rem(12px);
+    margin-bottom: get-rem(30px);
+  }
+  .graph-selection__wrapper {
+    display: flex;
+    justify-content: space-between;
+    .graph-selection__options {
+      background-color: $bluetab-light-gray;
+      .graph-selection__option {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: get-rem(12px);
+        height: get-rem(55px);
+        width: get-rem(190px);
+        border-bottom: 1px solid $bluetab-light-gray-2;
+        margin-top: -1px;
+        transition: all 0.3s $easing;
+        color: $bluetab-gray;
+        cursor: pointer;
+        &:hover,
+        &.graph-selection__option--selected {
+          
+          border-color: white;
+          background-color: white;
+          box-shadow: 0 0 get-rem(2px) 0 rgba(0,0,0,0.12), get-rem(2px) get-rem(3px) get-rem(5px) 0 rgba(132,129,129,0.24);
+          z-index: 2;
+        }
+      }
+    }
+    .graph-selection__current-value {
+      flex: 1 1 auto;
+      text-align: center;
+      font-size: get-rem(12px);
+      color: $bluetab-gray;
+    }
+  }
+}

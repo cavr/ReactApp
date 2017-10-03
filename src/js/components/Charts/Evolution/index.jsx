@@ -20,15 +20,21 @@ export default class Evolution extends PureComponent {
     let variationClass = 'green';
     if (variation === 0) variationClass = 'yellow';
     else if (variation < 0) variationClass = 'red';
-
+    const lastMonth = points[points.length - 1];
     return (
       <div className='evolution'>
-        <div className='evolution__label'>{ label } evolution</div>
-        <div className='evolution__variation'>
-          <div className={ `evolution__variation-number evolution__variation-number--${ variationClass }` }>{ Math.abs(variation) } %</div>
-          <div className='evolution__variation-text'>MoM Variation</div>
+        <div className='inner-wrapper'>
+          <div className='evolution__label'>{ label } evolution</div>
+          <div className='evolution__variation'>
+            <div className={ `evolution__variation-number evolution__variation-number--${ variationClass }` }>{ Math.abs(variation) } %</div>
+            <div className='evolution__variation-text'>MoM Variation</div>
+          </div>
+          <div className='evolution__variation evolution__variation--month'>
+            <div className='evolution__variation-number'>{ Math.abs(lastMonth.value) } pt</div>
+            <div className='evolution__variation-text'>{ lastMonth.date.replace('-', ' ') }</div>
+          </div>
+          <EvolutionLineChart points={ points } maxValue={ maxValue } minValue={ minValue } target={ target } />
         </div>
-        <EvolutionLineChart points={ points } maxValue={ maxValue } minValue={ minValue } target={ target }/>
       </div>
     );
   }

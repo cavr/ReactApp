@@ -24,6 +24,11 @@
       justify-content: space-between;
       margin-right: get-rem(-4px);
       margin-left: get-rem(-4px);
+      .formula-input__placeholder {
+        margin: get-rem(4px);
+        width: get-rem(58px);
+        height: get-rem(48px);
+      }
       .formula-input__button {
         margin: get-rem(4px);
         width: get-rem(58px);

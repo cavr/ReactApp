@@ -10,14 +10,15 @@ export default class FormulaEdition extends PureComponent {
   static propTypes = {
     operations: PropTypes.object,
     openBrackets: PropTypes.object,
+    negatedParameter: PropTypes.bool,
     parameters: PropTypes.array,
   };
 
   render() {
-    const { operations, openBrackets, parameters } = this.props;
+    const { operations, openBrackets, negatedParameter, parameters } = this.props;
     return (
       <div className='formula-edition'>
-        <FormulaDisplay operations={ operations } openBrackets={ openBrackets } />
+        <FormulaDisplay operations={ operations } openBrackets={ openBrackets } negatedParameter={ negatedParameter } />
         <FormulaInput parameters={ parameters } />
       </div>
     );

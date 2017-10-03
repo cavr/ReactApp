@@ -1,0 +1,20 @@
+@import '../../../../scss/theme/variables';
+
+.bluetab-sns-mis__wrapper {
+  margin-bottom: get-rem(100px);
+  .data-manager {
+    padding: 0 get-rem(45px);
+    .data-manager__selector {
+      padding-top: get-rem(15px);
+      padding-bottom: get-rem(5px);
+    }
+    .data-manager__form {
+      display: flex;
+      flex-direction: column;
+      .bluetab-button {
+        margin-top: get-rem(40px);
+        align-self: center;
+      }
+    }
+  }
+}

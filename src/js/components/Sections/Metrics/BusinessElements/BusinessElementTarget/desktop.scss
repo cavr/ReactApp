@@ -56,7 +56,8 @@ $semaphore-margin: 15px;
     }
   }
   .evolution {
-    padding: get-rem(13px) 0;
+    padding: get-rem(23px) 0;
+    padding-right: get-rem(30px);
     border-bottom: get-rem(1px) solid $bluetab-light-gray-2;
     flex-wrap: wrap;
   }

@@ -1,0 +1,14 @@
+[
+  {
+    "id": "1",
+    "label": "Bullet",
+    "description": "Descripcion de la grafica de bullet",
+    "icon": "bullet-graph"
+  },
+  {
+    "id": "2",
+    "label": "Semaphore",
+    "description": "Descripcion de la grafica de semaphore",
+    "icon": "semaphore-graph"
+  }
+]

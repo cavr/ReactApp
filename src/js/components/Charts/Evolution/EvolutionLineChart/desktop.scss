@@ -1,19 +1,83 @@
 @import '../../../../../scss/theme/variables';
-
 .evolution-line-chart {
-  width: get-rem(230px);
-  height: get-rem(65px);
-  .evolution-line-chart__svg {
-    width: 100%;
-    height: 100%;
-  }
-  line {
-    stroke:$bluetab-red;
-    stroke-width:1px;
-    stroke-opacity:0.3;
-  }
-  path {
-    stroke: $bluetab-red;
-    stroke-width: 2;
+  display: flex;
+  position: relative;
+  padding-top: get-rem(35px);
+  padding-right: get-rem(30px);
+  .evolution-line-chart__svg-wrapper {
+    position: relative;
+    width: get-rem(230px);
+    height: get-rem(65px);
+    .evolution-line-chart__target {
+      position: absolute;
+      right: get-rem(-50px);
+      color: $bluetab-green;
+      transform: translateY(-50%);
+      .evolution-line-chart__target-number {
+        font-size: get-rem(14px);
+        font-weight: 500;
+      }
+      .evolution-line-chart__target-text {
+        font-size: get-rem(10px);
+      }
+    }
+    .evolution-line-chart__dates {
+      width: 100%;
+      height: get-rem(45px);
+      position: absolute;
+      top: get-rem(-35px);
+      left: 0;
+      .evolution-line-chart__date {
+        position: absolute;
+        padding: get-rem(7px) get-rem(7px);
+        text-align: center;
+        background-color: #F7F7F7;
+        color: #959395;
+        font-size: get-rem(10px);
+        border-radius: get-rem(3px);
+        z-index: 2;
+        &:after {
+          z-index: -1;
+          content: "";
+          position: absolute;
+          bottom: get-rem(-10px);
+          width: get-rem(20px);
+          height: get-rem(20px);
+          background: url('../../../../../assets/icons/common/bubble-detail.svg') no-repeat center;
+          background-size: contain;
+        }
+        &.evolution-line-chart__date--first {
+          left: 0;
+          &:after {
+            left: 0;
+          }
+        }
+        &.evolution-line-chart__date--last {
+          right: 0;
+          &:after {
+            right: 0;
+            transform: scaleX(-1);
+          }
+        }
+      }
+    }
+    .evolution-line-chart__svg {
+      height: 100%;
+      width: 100%;
+      .target-line {
+        stroke: $bluetab-light-green;
+        stroke-width: 1.5;
+        stroke-opacity: 1;
+      }
+    }
+    line {
+      stroke: $bluetab-red;
+      stroke-width: 1px;
+      stroke-opacity: 0.3;
+    }
+    path {
+      stroke: $bluetab-red;
+      stroke-width: 2;
+    }
   }
 }

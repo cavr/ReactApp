@@ -3,9 +3,10 @@ import PropTypes from 'prop-types';
 
 import MainAdminMenu from './MainAdminMenu';
 import DataManagement from './DataManagement';
-import IndexManager from './DataManagement/IndexManager';
-import SubindexManager from './DataManagement/SubindexManager';
-import MetricManager from './DataManagement/MetricManager';
+import UserManagement from './UserManagement';
+import IndexManager from './IndexManager';
+import SubindexManager from './SubindexManager';
+import MetricManager from './MetricManager';
 
 import './desktop.scss';
 
@@ -29,7 +30,7 @@ export default class MISAdmin extends PureComponent {
         }
         {
           params.section === 'users' &&
-          <DataManagement currentStep={ currentStep } />
+          <UserManagement currentStep={ currentStep } />
         }
         {
           params.subsection === 'indexes' &&

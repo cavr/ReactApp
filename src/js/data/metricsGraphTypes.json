@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "label": "Linear",
+    "description": "Descripcion de la grafica linear",
+    "icon": "linear-graph"
+  },
+  {
+    "id": "2",
+    "label": "Exponential",
+    "description": "Descripcion de la grafica exponencial",
+    "icon": "exp-graph"
+  },
+  {
+    "id": "3",
+    "label": "Inverse",
+    "description": "Descripcion de la grafica inversa",
+    "icon": "inverse-graph"
+  },
+  {
+    "id": "4",
+    "label": "Logarithmic",
+    "description": "Descripcion de la grafica logaritmica",
+    "icon": "log-graph"
+  }
+]

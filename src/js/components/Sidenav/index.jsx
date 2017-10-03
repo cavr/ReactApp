@@ -27,14 +27,20 @@ export class Sidenav extends PureComponent {
       showSubmenu: false,
     };
     this.handleNavLink = this.handleNavLink.bind(this);
+    this.handleSubmenu = this.handleSubmenu.bind(this);
   }
 
   handleNavLink(route) {
     const { currentRoute, mobileMenu, hideMenu } = this.props;
-    if(currentRoute !== route) {
+    if (currentRoute !== route) {
       if (mobileMenu) hideMenu();
       browserHistory.push(route);
     }
+  }
+
+  handleSubmenu(e) {
+    e.stopPropagation();
+    this.setState({ showSubmenu: !this.state.showSubmenu });
   }
 
   render() {
@@ -55,7 +61,7 @@ export class Sidenav extends PureComponent {
           <Avatar />
           <ul className='sidenav__nav'>
             <div className='sidenav__nav-button sidenav__nav-button--MIS' onClick={ () => this.handleNavLink(routeCodes.MIS) }>
-              <div className='sidenav__submenu-button' onClick={ () => this.setState({ showSubmenu: !showSubmenu }) }/>
+              <div className='sidenav__submenu-button' onClick={ this.handleSubmenu } />
               <i className='sidenav__icon icon icon__MIS' />
               MIS
               <i className={ `sidenav__menu-icon ${ showSubmenu ? 'sidenav__menu-icon--close' : '' } icon icon__menu-arrow` } />

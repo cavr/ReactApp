@@ -1,5 +1,7 @@
 @import '../../../../scss/theme/variables';
 
-html.mobile .evolution {
+html.mobile .evolution .inner-wrapper {
   flex-wrap: wrap;
+  padding-top: get-rem(20px);
+  height: auto;
 }

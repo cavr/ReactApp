@@ -1,6 +1,9 @@
 @import '../../../../../scss/theme/variables';
-
 html.mobile .evolution-line-chart {
   width: 100%;
-  margin-top: get-rem(20px);
+  margin-top: get-rem(40px);
+  .evolution-line-chart__svg-wrapper {
+    width: calc(100% - #{get-rem(20px)});
+    height: auto;
+  }
 }

@@ -8,10 +8,11 @@ export default class FormulaDisplay extends PureComponent {
   static propTypes = {
     operations: PropTypes.object,
     openBrackets: PropTypes.object,
+    negatedParameter: PropTypes.bool,
   };
 
   render() {
-    const { operations, openBrackets } = this.props;
+    const { operations, openBrackets, negatedParameter } = this.props;
     let displayString = '';
     operations.forEach((operation) => {
       let formattedString = operation.data;
@@ -24,7 +25,8 @@ export default class FormulaDisplay extends PureComponent {
       displayString += `${ formattedString } `;
     });
     let additionalBrackets = '';
-    openBrackets.forEach((brackets) => {
+    openBrackets.forEach((brackets, index) => {
+      additionalBrackets += index > 0 ? ' )' : '';
       for (let i = 0; i < brackets; i++) {
         additionalBrackets += ' )';
       }
@@ -33,9 +35,8 @@ export default class FormulaDisplay extends PureComponent {
     return (
       <div className='formula-display'>
         <div className='formula-display__title'>Create formula to calculate your metric</div>
-        { /* <i className='formula-display__icon icon icon__trash' onClick={ console.log('delete') } /> */ }
         <div className='formula-display__input'>
-          <div className='formula-display__inner-wrapper'>{ displayString }<span className='incomplete-bracket'>{ additionalBrackets }</span></div>
+          <div className='formula-display__inner-wrapper'>{ displayString }{ negatedParameter && <span>-</span> }<span className='incomplete-bracket'>{ additionalBrackets }</span></div>
         </div>
       </div>
     );

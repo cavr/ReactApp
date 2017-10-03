@@ -41,12 +41,12 @@ export class IndexManager extends PureComponent {
     const { selectIndex, updateDescription, updateSubindex, addSubindex, deleteSubindex, updateIndexData } = this.props;
     return (
       <Section currentStep={ currentStep } sectionNumber={ 3 } title='Index' loading={ false } unNumbered={ true }>
-        <div className='index-manager'>
-          <h2 className='index-manager__title bluetab-subtitle--centered'>Select the index of which you want to see the evolution or the subindices that form it</h2>
+        <div className='data-manager'>
+          <h2 className='data-manager__title bluetab-subtitle--centered'>Select the index of which you want to see the evolution or the subindices that form it</h2>
           {
             indexes &&
             <Selector
-              className='index-manager__selector'
+              className='data-manager__selector'
               title={ 'Select the desired index' }
               values={ indexes }
               currentValue={ selectedIndex }
@@ -58,7 +58,7 @@ export class IndexManager extends PureComponent {
           {
             selectedIndex &&
             <Collapse isOpened={ description !== null } id={ `${ selectedIndex }` }>
-              <div className='index-manager__form'>
+              <div className='data-manager__form'>
                 <TextInput editEnabled={ true } title='Description' textarea value={ description } onChange={ updateDescription } />
                 <WeightedParameterList title={ 'List of subindexes' } create={ { title: 'Create new subindex', selector: 'Select a subindex', placeholder: 'Subindex' } } data={ formula } newData={ newData } onChange={ updateSubindex } onDelete={ deleteSubindex } onAdd={ addSubindex } />
                 <Button title={ 'Save index' } onClick={ updateIndexData } />
