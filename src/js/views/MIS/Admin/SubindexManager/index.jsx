@@ -51,7 +51,7 @@ export class SubindexManager extends PureComponent {
     return (
       <Section currentStep={ currentStep } sectionNumber={ 3 } title='Subindex' loading={ false } unNumbered={ true }>
         <div className='data-manager'>
-          <h2 className='data-manager__title bluetab-subtitle--centered'>Select the subindex of which you want to see the evolution or the subindices that form it</h2>
+          <h2 className='data-manager__title bluetab-subtitle--centered'>Please select one of the options, create or edit a subindex</h2>
           <ModeSelection
             selected={ mode }
             create={ 'Create subindex' }
@@ -85,7 +85,7 @@ export class SubindexManager extends PureComponent {
             <div className='data-manager__form'>
               <TextInput editEnabled={ mode === 'edition' } title='Title' value={ title } onChange={ updateTitle } />
               <TextInput editEnabled={ mode === 'edition' } title='Description' textarea value={ description } onChange={ updateDescription } />
-              <WeightedParameterList title={ 'List of metrics' } create={ { title: 'Create new metric', selector: 'Select a metric', placeholder: 'Metric' } } data={ formula } newData={ newData } onChange={ updateMetric } onDelete={ deleteMetric } onAdd={ addMetric } />
+              <WeightedParameterList title={ 'List of metrics' } create={ { title: 'Add a metric', selector: 'Select a metric', placeholder: 'Metric' } } data={ formula } newData={ newData } onChange={ updateMetric } onDelete={ deleteMetric } onAdd={ addMetric } />
               <GraphSelection title={ 'Select how you want to draw the graph' } data={ graphData } currentValue={ graphType } onChange={ changeGraphType } />
               <Button title={ 'Save subindex' } onClick={ () => console.log('save') } />
             </div>

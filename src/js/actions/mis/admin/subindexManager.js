@@ -32,6 +32,10 @@ export function selectIndex(index) {
     if (mode === 'create') {
       dispatch({ type: INIT_ADMIN_SUBINDEX_DATA });
     } else {
+      if (getState().subindexManager.get('selectedSubindex')) {
+        dispatch({ type: CLEAR_ADMIN_SUBINDEX_DATA });
+        dispatch({ type: SET_SELECTED_SUBINDEX_IN_ADMIN_SUBINDEX, subindex: null });
+      }
       dispatch(loadSubindexes(index));
     }
   };

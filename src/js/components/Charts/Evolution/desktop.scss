@@ -34,6 +34,9 @@
     align-self: center;
     &.evolution__variation--month {
       color: $bluetab-gray-2;
+      .evolution__variation-number {
+        padding-left: 0;
+      }
     }
     .evolution__variation-number {
       padding-left: get-rem(20px);

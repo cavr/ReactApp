@@ -1,6 +1,7 @@
 @import '../../../../scss/theme/variables';
 
 .graph-selection {
+  margin-top: get-rem(65px);
   .graph-selection__title {
     font-size: get-rem(13px);
     font-weight: 500;
@@ -11,13 +12,14 @@
   }
   .graph-selection__wrapper {
     display: flex;
+    align-items: center;
     justify-content: space-between;
     .graph-selection__options {
+      align-self: flex-start;
       background-color: $bluetab-light-gray;
       .graph-selection__option {
         display: flex;
         align-items: center;
-        justify-content: center;
         font-size: get-rem(12px);
         height: get-rem(55px);
         width: get-rem(190px);
@@ -26,9 +28,18 @@
         transition: all 0.3s $easing;
         color: $bluetab-gray;
         cursor: pointer;
+        .graph-selection__option__icon {
+          display: inline-block;
+          width: get-rem(28px);
+          height: get-rem(28px);
+          margin-left: get-rem(21px);
+          margin-right: get-rem(15px);
+          &.icon__bullet-graph {
+            background-size: get-rem(15px);
+          }
+        }
         &:hover,
         &.graph-selection__option--selected {
-          
           border-color: white;
           background-color: white;
           box-shadow: 0 0 get-rem(2px) 0 rgba(0,0,0,0.12), get-rem(2px) get-rem(3px) get-rem(5px) 0 rgba(132,129,129,0.24);
@@ -41,6 +52,21 @@
       text-align: center;
       font-size: get-rem(12px);
       color: $bluetab-gray;
+      .graph-selection__current-value__icon {
+        display: block;
+        width: 100%;
+        background-size: get-rem(80px);
+        height: get-rem(80px);
+        margin-bottom: get-rem(25px);
+        &.icon__bullet-graph {
+          height: get-rem(30px);
+          background-size: get-rem(30px);
+        }
+        &.icon__semaphore-graph {
+          height: get-rem(30px);
+          background-size: get-rem(50px);
+        }
+      }
     }
   }
 }

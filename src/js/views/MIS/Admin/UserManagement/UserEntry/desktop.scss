@@ -1,0 +1,30 @@
+@import '../../../../../../scss/theme/variables';
+
+.user-entry {
+  display: flex;
+  align-items: center;
+  height: get-rem(61px);
+  padding: 0 get-rem(23px);
+  cursor: pointer;
+  transition: background-color 0.3s $easing;
+  .user-entry__image {
+    width: get-rem(40px);
+    height: get-rem(40px);
+    border-radius: 50%;
+  }
+  .user-entry__info-wrapper {
+    margin-left: get-rem(10px);
+    font-size: get-rem(12px);
+    .user-entry__name {
+      color: $bluetab-gray;
+    }
+    .user-entry__role {
+      font-weight: 300;
+      color: $bluetab-light-gray-2;
+    }
+  }
+  &:hover,
+  &.user-entry--selected {
+    background-color: $bluetab-light-gray;
+  }
+}

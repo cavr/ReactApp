@@ -81,4 +81,19 @@
     }
   }
 
+  $list:
+  'bullet-graph',
+  'exp-graph',
+  'inverse-graph',
+  'linear-graph',
+  'log-graph',
+  'semaphore-graph';
+
+  @each $key in $list {
+    &.icon__#{$key} {
+      background: url('../assets/icons/graph-icons/#{$key}.svg') center no-repeat;
+      background-size: contain;
+    }
+  }
+
 }

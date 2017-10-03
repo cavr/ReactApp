@@ -2,7 +2,6 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { showMobileMenu, showSummaryMenu } from 'actions/app';
-import Hammer from 'react-hammerjs';
 
 import logo from '../../../assets/img/common/logo.png';
 import './common.scss';
@@ -16,9 +15,9 @@ export class MobileNav extends PureComponent {
     const { showMobileMenu, showSummaryMenu } = this.props;
     return (
       <div className='mobile-nav'>
-        <div className='mobile-nav__menu icon icon__nav-menu--mobile' onClick={ showMobileMenu }/>
+        <div className='mobile-nav__menu icon icon__nav-menu--mobile' onClick={ showMobileMenu } />
         <img className='mobile-nav__logo' src={ logo } alt='logo' />
-        <div className='mobile-nav__summary icon icon__summary' onClick={ showSummaryMenu }/>
+        <div className='mobile-nav__summary icon icon__summary' onClick={ showSummaryMenu } />
       </div>
     );
   }

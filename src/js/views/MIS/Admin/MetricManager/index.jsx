@@ -52,7 +52,7 @@ export class MetricManager extends PureComponent {
     return (
       <Section currentStep={ currentStep } sectionNumber={ 3 } title='Metrics' loading={ false } unNumbered={ true }>
         <div className='data-manager'>
-          <h2 className='data-manager__title bluetab-subtitle--centered'>Select the subindex of which you want to see the evolution or the subindices that form it</h2>
+          <h2 className='data-manager__title bluetab-subtitle--centered'>Please select one of the options, create or edit a metric</h2>
           <ModeSelection
             selected={ mode }
             create={ 'Create metric' }

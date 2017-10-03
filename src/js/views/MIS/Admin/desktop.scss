@@ -4,15 +4,19 @@
   margin-bottom: get-rem(100px);
   .data-manager {
     padding: 0 get-rem(45px);
+    .data-manager__title {
+      margin-bottom: get-rem(40px);
+    }
     .data-manager__selector {
-      padding-top: get-rem(15px);
-      padding-bottom: get-rem(5px);
+      margin: 0;
+      padding-bottom: get-rem(30px);
     }
     .data-manager__form {
+      padding-top: get-rem(15px);
       display: flex;
       flex-direction: column;
       .bluetab-button {
-        margin-top: get-rem(40px);
+        margin-top: get-rem(60px);
         align-self: center;
       }
     }

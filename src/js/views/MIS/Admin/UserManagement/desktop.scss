@@ -1,5 +1,28 @@
 @import '../../../../../scss/theme/variables';
 
-.data-management {
-
+.user-management {
+  .user-management__wrapper {
+    display: flex;
+    margin-top: get-rem(25px);
+    .user-management__list-wrapper {
+      flex: 1 1 auto;
+      width: 50%;
+      padding: get-rem(23px) 0;
+      background-color: $bluetab-light-gray-4;
+      height: get-rem(450px);
+      .user-management__list__title {
+        color: $bluetab-red;
+        font-size: get-rem(14px);
+        padding-left: get-rem(23px);
+        margin-bottom: get-rem(10px);
+      }
+      .user-management__actual {
+        margin-bottom: get-rem(30px);
+      }
+    }
+    .user-management__selected {
+      flex: 1 1 auto;
+      width: 50%;
+    }
+  }
 }

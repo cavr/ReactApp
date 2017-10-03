@@ -4,6 +4,10 @@ import PropTypes from 'prop-types';
 import Section from 'components/Sections/SectionContainer';
 import UserEntry from './UserEntry';
 
+import jefe from '../../../../../assets/img/dev/jorge.png';
+import user1 from '../../../../../assets/img/dev/user-placeholder.jpg';
+import user2 from '../../../../../assets/img/dev/user-placeholder-2.jpg';
+
 import './desktop.scss';
 
 export default class UserManagement extends PureComponent {
@@ -16,14 +20,26 @@ export default class UserManagement extends PureComponent {
 
     this.state = {
       currentUser: {
-
+        name: 'Jorge Najera',
+        role: 'Managing Director',
+        image: jefe,
+        internalRole: 'Administrator',
       },
       users: [
         {
-  
+          name: 'Ricardo Domínguez',
+          role: 'Front-end developer',
+          image: user1,
+          internalRole: 'Administrator',
+        },
+        {
+          name: 'Cristina Calavia',
+          role: 'Lead Artist',
+          image: user2,
+          internalRole: 'User',
         },
       ],
-      selected: 0,
+      selected: -1,
     };
 
     this.onSelect = this.onSelect.bind(this);
@@ -37,7 +53,7 @@ export default class UserManagement extends PureComponent {
     const { currentStep } = this.props;
     const { users, currentUser, selected } = this.state;
     const otherUsers = users.map((user, index) => {
-      return <UserEntry data={ user } selected={ index === selected } onSelect={ () => this.onSelect(index) } />;
+      return <UserEntry key={ `user-entry-${ index }` } data={ user } selected={ index === selected } onSelect={ () => this.onSelect(index) } />;
     });
     const selectedUser = users[selected];
     return (
@@ -46,9 +62,11 @@ export default class UserManagement extends PureComponent {
           <h2 className='user-management__title bluetab-subtitle--centered'>Select the index of which you want to see the evolution or the subindices that form it</h2>
           <div className='user-management__wrapper'>
             <div className='user-management__list-wrapper'>
+              <div className='user-management__list__title'>Actual user</div>
               <ul className='user-management__actual'>
                 <UserEntry data={ currentUser } selected={ selected === -1 } onSelect={ () => this.onSelect(-1) } />
               </ul>
+              <div className='user-management__list__title'>Other users</div>
               <ul className='user-management__other-users'>
                 { otherUsers }
               </ul>

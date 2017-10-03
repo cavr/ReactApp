@@ -30,8 +30,23 @@ export function changeMode(mode) {
 }
 
 export function selectIndex(index) {
-  return (dispatch) => {
+  return (dispatch, getState) => {
+    const mode = getState().metricManager.get('mode');
     dispatch({ type: SET_SELECTED_INDEX_IN_ADMIN_METRIC, index });
+    if (mode === 'create') {
+      if (getState().metricManager.get('selectedSubindex')) {
+        dispatch({ type: SET_SELECTED_SUBINDEX_IN_ADMIN_METRIC, subindex: null });
+        dispatch({ type: CLEAR_ADMIN_METRIC_DATA });
+      }
+    } else {
+      if (getState().metricManager.get('selectedMetric')) {
+        dispatch({ type: SET_SELECTED_METRIC_IN_ADMIN_METRIC, metric: null });
+        dispatch({ type: CLEAR_ADMIN_METRIC_DATA });
+      }
+      if (getState().metricManager.get('selectedSubindex')) {
+        dispatch({ type: SET_SELECTED_SUBINDEX_IN_ADMIN_METRIC, subindex: null });
+      }
+    }
     dispatch(loadSubindexes(index));
   };
 }
@@ -48,6 +63,10 @@ export function selectSubindex(subindex) {
       });
       dispatch({ type: INIT_ADMIN_METRIC_DATA });
     } else {
+      if (getState().metricManager.get('selectedMetric')) {
+        dispatch({ type: SET_SELECTED_METRIC_IN_ADMIN_METRIC, metric: null });
+        dispatch({ type: CLEAR_ADMIN_METRIC_DATA });
+      }
       dispatch(loadMetrics(index, subindex));
     }
   };
