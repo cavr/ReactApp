@@ -38,16 +38,3 @@ export function addSubindex(subindex) {
   return { type: UPDATE_INDEX_FORMULA, action: 'add', subindex };
 }
 
-export function updateIndexData() {
-  return (dispatch, getState) => {
-    const state = getState();
-    const index = state.indexManager.get('index');
-    const indexData = {
-      description: state.get('description'),
-      formula: state.get('formula').toArray(),
-    };
-    AdminServices.updateIndexData({ index, indexData }).then((response) => {
-      const indexes = response.indexes;
-    });
-  };
-}

@@ -4,6 +4,7 @@ import jefe from '../../assets/img/dev/jorge.png';
 import {
   LOGIN,
   LOGIN_LOAD,
+  LOGIN_END_LOAD,
   LOGOUT,
   SET_STEP,
   SHOW_MOBILE_MENU,
@@ -14,7 +15,7 @@ import {
 
 const initialState = Map({
   loading: false,
-  token: null,
+  token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1MDU5MDM2NzZ9.4hVM5xGL9lSufvB5fNFD1G2lQKKKDjARGeCAPozHCJ8',
   userInfo: {
     name: 'Jorge Nájera',
     role: 'Managing Director',
@@ -31,6 +32,9 @@ const actionsMap = {
   },
   [LOGIN_LOAD]: (state) => {
     return state.set('loading', true);
+  },
+  [LOGIN_END_LOAD]: (state) => {
+    return state.set('loading', false);
   },
   [LOGOUT]: (state) => {
     return state.set('token', null).set('userInfo', null);

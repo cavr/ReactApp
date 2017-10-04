@@ -2,13 +2,13 @@
   {
     "id": "1",
     "label": "Bullet",
-    "description": "Descripcion de la grafica de bullet",
+    "description": "Graphic that represents progress for a given objective",
     "icon": "bullet-graph"
   },
   {
     "id": "2",
     "label": "Semaphore",
-    "description": "Descripcion de la grafica de semaphore",
+    "description": "Graphic that represents accomplished, near accomplished and unaccomplished for a given objective",
     "icon": "semaphore-graph"
   }
 ]

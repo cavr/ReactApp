@@ -31,6 +31,11 @@ $subindex-heat-color--target: #7ED321;
     }
   }
 
+  .subindex-heat-chart__target {
+    position: absolute;
+    top: get-rem(-1px);
+  }
+
   .subindex-chart__labels {
     position: absolute;
     top: get-rem(16px);
@@ -52,7 +57,7 @@ $subindex-heat-color--target: #7ED321;
         border-radius: get-rem(7px);
         margin-right: get-rem(6px);
         &.subindex-heat-chart__legend-icon--target {
-          background-color: $subindex-heat-color--target;
+          background-color: $bluetab-green;
         }
         &.subindex-heat-chart__legend-icon--current {
           background-color: $bluetab-gray-2;

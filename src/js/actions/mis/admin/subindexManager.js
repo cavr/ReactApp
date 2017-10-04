@@ -12,6 +12,7 @@ export const UPDATE_SUBINDEX_TITLE = 'UPDATE_SUBINDEX_TITLE';
 export const UPDATE_SUBINDEX_DESCRIPTION = 'UPDATE_SUBINDEX_DESCRIPTION';
 export const UPDATE_SUBINDEX_FORMULA = 'UPDATE_SUBINDEX_FORMULA';
 export const CHANGE_GRAPH_TYPE_IN_ADMIN_SUBINDEX = 'CHANGE_GRAPH_TYPE_IN_ADMIN_SUBINDEX';
+export const CLEAR_ADMIN_SUBINDEX_NEW_DATA = 'CLEAR_ADMIN_SUBINDEX_NEW_DATA';
 export const SET_ADMIN_SUBINDEX_NEW_DATA = 'SET_ADMIN_SUBINDEX_NEW_DATA';
 
 
@@ -78,18 +79,4 @@ export function addMetric(metric) {
 
 export function changeGraphType(graph) {
   return { type: CHANGE_GRAPH_TYPE_IN_ADMIN_SUBINDEX, graph };
-}
-
-export function updateIndexData() {
-  return (dispatch, getState) => {
-    const state = getState();
-    const index = state.subindexManager.get('index');
-    const indexData = {
-      description: state.get('description'),
-      formula: state.get('formula').toArray(),
-    };
-    AdminServices.updateIndexData({ index, indexData }).then((response) => {
-      const indexes = response.indexes;
-    });
-  };
 }

@@ -12,4 +12,18 @@ export default class SubindexesServices {
         return response.json();
       });
   }
+
+  /*
+  static getSubindexes(body, token) {
+    const params = {
+      method: 'POST',
+      body,
+      headers: {
+        Authorization: `Bearer ${ token }`,
+      },
+    };
+    return fetch(`${ endpoint }/getIndexes`, params)
+      .then(response => response.json());
+  }
+  */
 }

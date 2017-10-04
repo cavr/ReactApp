@@ -1,0 +1,97 @@
+Api : https://bt-sns-back.azurewebsites.net/api
+
+Login-> POST
+Body ->
+username : prueba
+password : prueba
+https://bt-sns-back.azurewebsites.net/api/auth/sign_in 
+
+Selectors -> GET
+Headers Authorization -> JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1MDU5MDM2NzZ9.4hVM5xGL9lSufvB5fNFD1G2lQKKKDjARGeCAPozHCJ8
+https://bt-sns-back.azurewebsites.net/api/selectors
+
+Selectors -> POST
+Headers Authorization -> JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1MDU5MDM2NzZ9.4hVM5xGL9lSufvB5fNFD1G2lQKKKDjARGeCAPozHCJ8
+Body -> 
+{
+  "selectors": {
+    "1": "1",
+    "2": "3",
+    "3": "1",
+    "4": "2",
+    "5": "1",
+    "6": "3"
+  }
+}
+https://bt-sns-back.azurewebsites.net/api/getIndexes
+
+Selectors -> POST
+Headers Authorization -> JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1MDU5MDM2NzZ9.4hVM5xGL9lSufvB5fNFD1G2lQKKKDjARGeCAPozHCJ8
+Body -> 
+{
+  "selectors": {
+    "1": "1",
+    "2": "ALL",
+    "3": "1",
+    "4": "2",
+    "5": "1",
+    "6": "3"
+  },
+  "index": "I1"
+}
+https://bt-sns-back.azurewebsites.net/api/getSubindexes
+
+Selectors -> POST
+Headers Authorization -> JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1MDU5MDM2NzZ9.4hVM5xGL9lSufvB5fNFD1G2lQKKKDjARGeCAPozHCJ8
+Body -> 
+{
+  "selectors": {
+    "1": "1",
+    "2": "ALL",
+    "3": "1",
+    "4": "2",
+    "5": "1",
+    "6": "3"
+  },
+  "index": "I1",
+  "subindex": "S2"
+}
+https://bt-sns-back.azurewebsites.net/api/getMetrics
+
+Selectors -> POST
+Headers Authorization -> JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1MDU5MDM2NzZ9.4hVM5xGL9lSufvB5fNFD1G2lQKKKDjARGeCAPozHCJ8
+Body -> 
+{
+  "selectors": {
+    "1": "1",
+    "2": "ALL",
+    "3": "1",
+    "4": "2",
+    "5": "1",
+    "6": "3"
+  },
+  "index": "I1"
+}
+https://bt-sns-back.azurewebsites.net/api/getIndexEvolution
+
+Selectors -> POST
+Headers Authorization -> JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1MDU5MDM2NzZ9.4hVM5xGL9lSufvB5fNFD1G2lQKKKDjARGeCAPozHCJ8
+Body -> 
+{
+  "selectors": {
+    "1": "1",
+    "2": "ALL",
+    "3": "1",
+    "4": "2",
+    "5": "1",
+    "6": "3"
+  },
+  "index": "I1",
+  "subindex": "S7",
+  "metric": "M1",
+  "businessElement": { "1": "1" }
+}
+https://bt-sns-back.azurewebsites.net/api/getBusinessElementMetricEvolution
+
+
+

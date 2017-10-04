@@ -40,13 +40,10 @@ export default class Section extends PureComponent {
           }
           <div className='section-title__background' />
         </div>
-        <Collapse isOpened={ sectionNumber <= currentStep } id={ `${ loading }` } >
-          {
-            loading ? <Loading /> :
-            <div className={ `section__content ${ noPadding ? 'section__content--no-padding' : '' }` }>
-              { React.cloneElement(children, { key: `section-${ sectionNumber }` }) }
-            </div>
-          }
+        <Collapse isOpened={ sectionNumber <= currentStep } loading={ loading }>
+          <div className={ `section__content ${ noPadding ? 'section__content--no-padding' : '' }` }>
+            { React.cloneElement(children, { key: `section-${ sectionNumber }` }) }
+          </div>
         </Collapse>
       </section>
     );

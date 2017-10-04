@@ -1,5 +1,5 @@
 import AdminServices from 'services/api/admin';
-import { loadSubindexes, loadMetrics } from './common';
+import { loadSubindexes, loadMetrics, loadParameters } from './common';
 
 export const CHANGE_METRIC_MODE = 'CHANGE_METRIC_MODE';
 export const RESET_ADMIN_METRIC = 'RESET_ADMIN_METRIC';
@@ -56,6 +56,7 @@ export function selectSubindex(subindex) {
     const index = getState().metricManager.get('selectedIndex');
     const mode = getState().metricManager.get('mode');
     dispatch({ type: SET_SELECTED_SUBINDEX_IN_ADMIN_METRIC, subindex });
+    dispatch(loadParameters(index, subindex));
     if (mode === 'create') {
       AdminServices.getDefaultTargets({ index, subindex }).then((response) => {
         const targets = response.targets;
@@ -103,20 +104,6 @@ export function updateTarget(index, target) {
 
 export function changeGraphType(graph) {
   return { type: CHANGE_GRAPH_TYPE_IN_ADMIN_METRIC, graph };
-}
-
-export function updateIndexData() {
-  return (dispatch, getState) => {
-    const state = getState();
-    const index = state.subindexManager.get('index');
-    const indexData = {
-      description: state.get('description'),
-      formula: state.get('formula').toArray(),
-    };
-    AdminServices.updateIndexData({ index, indexData }).then((response) => {
-      const indexes = response.indexes;
-    });
-  };
 }
 
 export function addNumber(number) {

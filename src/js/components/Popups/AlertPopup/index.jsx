@@ -60,7 +60,7 @@ export class AlertPopup extends PureComponent {
             values={ this.options }
             onChange={ (option) => this.setState({ selectedBusinessElement: option.value }) }
           />
-          <Button title={ 'Create' } onClick={ () => console.log('boom') } />
+          <Button title={ 'Create' } onClick={ () => console.log('The real popup') } />
         </div>
         {
           loading === false && alertData ? (<div className='business-element__alerts'>{ alerts }</div>) :

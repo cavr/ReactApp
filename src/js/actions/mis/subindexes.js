@@ -1,4 +1,6 @@
 import SubindexesServices from 'services/api/subindexes';
+import FormatRequestServices from 'services/formatRequest';
+
 import { setStep } from 'actions/app';
 
 export const SET_SUBINDICES = 'SET_SUBINDICES';
@@ -11,7 +13,7 @@ export function loadSubindexes() {
   return (dispatch, getState) => {
     const state = getState();
     dispatch({ type: BEGIN_SUBINDICES_LOAD });
-    const selectors = state.selectors.get('selected').toObject();
+    const selectors = FormatRequestServices.formatSelectors(state.selectors.get('selected').toObject());
     const index = state.mainGraph.get('selected').value;
     SubindexesServices.getSubindexes({ selectors, index }).then((response) => {
       const data = response.subindexes;

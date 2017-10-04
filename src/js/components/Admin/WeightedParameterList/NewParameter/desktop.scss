@@ -1,11 +1,11 @@
 @import '../../../../../scss/theme/variables';
 .new-weighted-parameter {
-  margin-top: get-rem(40px);
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  height: get-rem(37px);
+  padding-top: get-rem(3px);
+  height: get-rem(40px);
   .new-weighted-parameter__selector {
     width: get-rem(310px);
     margin: 0;

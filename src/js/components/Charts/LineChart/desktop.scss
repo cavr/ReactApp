@@ -4,6 +4,7 @@ $subindex-line-color: #50E3C2;
 .subindex-line-chart {
   position: relative;
   width: 100%;
+  height: get-rem(35px);
   .subindex-line-chart__line {
     width: 100%;
     height: get-rem(14px);
@@ -26,8 +27,37 @@ $subindex-line-color: #50E3C2;
       fill: $subindex-line-color;
     }
   }
+  .subindex-line-chart__target {
+    position: absolute;
+    top: get-rem(-1px);
+  }
   .subindex-chart__labels {
     position: absolute;
-    top: 100%;
+    top: get-rem(16px);
+  }
+
+  .subindex-line-chart__legend-wrapper {
+    @include horizontal-center;
+    bottom: get-rem(-25px);
+    display: flex;
+    .subindex-line-chart__legend {
+      display: inline-flex;
+      align-items: center;
+      color: $bluetab-gray-2;
+      font-size: get-rem(11px);
+      margin: 0 get-rem(15px);
+      .subindex-line-chart__legend-icon {
+        width: get-rem(10px);
+        height: get-rem(10px);
+        border-radius: get-rem(7px);
+        margin-right: get-rem(6px);
+        &.subindex-line-chart__legend-icon--target {
+          background-color: $bluetab-green;
+        }
+        &.subindex-line-chart__legend-icon--current {
+          background-color: $subindex-line-color;
+        }
+      }
+    }
   }
 }

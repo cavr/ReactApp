@@ -1,3 +1,3 @@
-const endpoint = 'http://loogif.lesap.es/api/1.0';
+const endpoint = 'https://bt-sns-back.azurewebsites.net/api';
 
 export default endpoint;

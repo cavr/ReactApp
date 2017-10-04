@@ -37,9 +37,7 @@ export default class GraphSelection extends PureComponent {
           </ul>
           <div className='graph-selection__current-value'>
             <i className={ `graph-selection__current-value__icon icon icon__${ selectedGraph.icon }` } />
-            <div className='graph-selection__current-value__description'>
-              { selectedGraph.description }
-            </div>
+            <div className='graph-selection__current-value__description' dangerouslySetInnerHTML={ { __html: selectedGraph.description } } />
           </div>
         </div>
       </div>

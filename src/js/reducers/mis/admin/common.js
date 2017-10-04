@@ -7,12 +7,15 @@ import {
   SET_ADMIN_SUBINDEXES,
   CLEAR_ADMIN_METRICS,
   SET_ADMIN_METRICS,
+  CLEAR_ADMIN_PARAMETERS,
+  SET_ADMIN_PARAMETERS,
 } from 'actions/mis/admin/common';
 
 const initialState = Map({
   indexes: [],
   subindexes: [],
   metrics: [],
+  parameters: [],
 });
 
 const actionsMap = {
@@ -33,6 +36,12 @@ const actionsMap = {
   },
   [SET_ADMIN_METRICS]: (state, action) => {
     return state.set('metrics', action.metrics);
+  },
+  [CLEAR_ADMIN_PARAMETERS]: (state) => {
+    return state.set('parameters', []);
+  },
+  [SET_ADMIN_PARAMETERS]: (state, action) => {
+    return state.set('parameters', action.parameters);
   },
 };
 

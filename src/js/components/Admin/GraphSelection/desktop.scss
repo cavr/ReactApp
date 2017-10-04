@@ -52,6 +52,10 @@
       text-align: center;
       font-size: get-rem(12px);
       color: $bluetab-gray;
+      .graph-selection__current-value__description {
+        width: 70%;
+        margin: 0 auto;
+      }
       .graph-selection__current-value__icon {
         display: block;
         width: 100%;

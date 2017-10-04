@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import ValueDroplet from 'components/Charts/Details/ValueDroplet';
+import Target from 'components/Charts/Details/Target';
 import Labels from 'components/Charts/Details/Labels';
 import Waypoint from 'react-waypoint';
 
@@ -45,7 +46,6 @@ export default class LineChart extends PureComponent {
     const minValue = data.sections.low;
     const maxValue = data.sections.high;
     
-    const value = (data.value * 100) / maxValue;
     anime({
       duration: '350ms',
       targets: this.line,
@@ -61,6 +61,7 @@ export default class LineChart extends PureComponent {
     const maxValue = data.sections.high;
 
     const value = this.normalizeValue(data.value, minValue, maxValue);
+    const target = this.normalizeValue(data.target, minValue, maxValue);
     return (
       <div className='subindex-line-chart'>
         <Waypoint onEnter={ this.handleWaypoint } />
@@ -68,7 +69,18 @@ export default class LineChart extends PureComponent {
           <div ref={ (line) => this.line = line } className='subindex-line-chart__filled' />
         </div>
         { inScreen && <ValueDroplet className='subindex-line-chart__droplet' value={ data.value } position={ value } /> }
+        { inScreen && <Target className='subindex-line-chart__target' value={ data.target } position={ target } /> }
         <Labels sections={ data.sections } />
+        <div className='subindex-line-chart__legend-wrapper'>
+          <div className='subindex-line-chart__legend'>
+            <i className='subindex-line-chart__legend-icon subindex-line-chart__legend-icon--target' />
+            Target
+          </div>
+          <div className='subindex-line-chart__legend'>
+            <i className='subindex-line-chart__legend-icon subindex-line-chart__legend-icon--current' />
+            Actuals
+          </div>
+        </div>
       </div>
     );
   }

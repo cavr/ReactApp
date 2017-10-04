@@ -2,25 +2,25 @@
   {
     "id": "1",
     "label": "Linear",
-    "description": "Descripcion de la grafica linear",
+    "description": "<h3>Linear</h3>Not Scale Change<br/>Normalizes data between 0 and 100<br/>For more information click <a href='http://sns.bluetab.net/normalization_guide.html' target='_blank'>here</a>",
     "icon": "linear-graph"
   },
   {
     "id": "2",
     "label": "Exponential",
-    "description": "Descripcion de la grafica exponencial",
+    "description": "<h3>Exponential</h3>Applies exponential function to data<br/>Normalizes data between 0 and 100<br/>For more information click <a href='http://sns.bluetab.net/normalization_guide.html' target='_blank'>here</a>",
     "icon": "exp-graph"
   },
   {
     "id": "3",
     "label": "Inverse",
-    "description": "Descripcion de la grafica inversa",
+    "description": "<h3>Reverse</h3>Changes data gradient to the opposite<br/>Normalizes data between 0 and 100<br/>For more information click <a href='http://sns.bluetab.net/normalization_guide.html' target='_blank'>here</a>",
     "icon": "inverse-graph"
   },
   {
     "id": "4",
     "label": "Logarithmic",
-    "description": "Descripcion de la grafica logaritmica",
+    "description": "<h3>Logarithmic</h3>Applies Logarithm function to data<br/>Normalizes data between 0 and 100<br/>For more information click <a href='http://sns.bluetab.net/normalization_guide.html' target='_blank'>here</a>",
     "icon": "log-graph"
   }
 ]

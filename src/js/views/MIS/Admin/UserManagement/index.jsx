@@ -55,7 +55,7 @@ export default class UserManagement extends PureComponent {
     const otherUsers = users.map((user, index) => {
       return <UserEntry key={ `user-entry-${ index }` } data={ user } selected={ index === selected } onSelect={ () => this.onSelect(index) } />;
     });
-    const selectedUser = users[selected];
+    const selectedUser = selected === -1 ? currentUser : users[selected];
     return (
       <Section currentStep={ currentStep } sectionNumber={ 2 } title='User settings' loading={ false } unNumbered={ true }>
         <div className='user-management'>
@@ -72,6 +72,14 @@ export default class UserManagement extends PureComponent {
               </ul>
             </div>
             <div className='user-management__selected'>
+              <img className='selected-user__image' src={ selectedUser.image } />
+              <div className='selected-user__info-wrapper'>
+                <div className='selected-user__name'>{ selectedUser.name }</div>
+                <div className='selected-user__role'>{ selectedUser.role }</div>
+              </div>
+              <div className='selected-user__menu-placeholder'>
+                <div className='selected-user__menu-placeholder-background'>Under development</div>
+              </div>
             </div>
           </div>
         </div>

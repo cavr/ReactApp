@@ -21,6 +21,7 @@
     padding-left: get-rem(23px);
     background-position: left !important;
     margin-top: get-rem(25px);
+    margin-bottom: get-rem(40px);
     cursor: pointer;
     &.weighted-parameters__create--gray {
       color: $bluetab-light-gray-2;

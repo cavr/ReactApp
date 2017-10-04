@@ -1,0 +1,28 @@
+@import '../../../../../scss/theme/variables';
+
+.bluetab-target-line {
+  position: relative;
+  transform-origin: center 100%;
+  animation: appear 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transform: translateX(-50%);
+  transition: all 0.3s $easing;
+
+  .bluetab-target-line__text {
+    @include horizontal-center;
+    top: get-rem(-22px);
+    font-size: get-rem(14px);
+    color: $bluetab-light-green;
+  }
+
+  .bluetab-target-line__line {
+    margin-bottom: -1px;
+    height: get-rem(17px);
+    width: get-rem(3px);
+    background-color: $bluetab-dark-green;
+  }
+
+  @keyframes appear {
+    from { transform: translateX(-50%) scale(0.01); }
+    to { transform: translateX(-50%) scale(1); }
+  }
+}

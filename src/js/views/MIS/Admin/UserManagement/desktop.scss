@@ -21,8 +21,47 @@
       }
     }
     .user-management__selected {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
       flex: 1 1 auto;
       width: 50%;
+      .selected-user__image {
+        margin-top: get-rem(25px);
+        width: get-rem(108px);
+        border-radius: 50%;
+      }
+      .selected-user__info-wrapper {
+        margin-top: get-rem(7px);
+        .selected-user__name {
+          font-size: get-rem(14px);
+          color: $bluetab-gray;
+        }
+        .selected-user__role {
+          font-size: get-rem(12px);
+          color: #9B9B9B;
+          font-weight: 300;
+        }
+      }
+      .selected-user__menu-placeholder {
+        position: relative;
+        margin-top: get-rem(20px);
+        width: get-rem(180px);
+        height: get-rem(198px);
+        background: url('../../../../../assets/img/dev/placeholder-user-menu.jpg') no-repeat center;
+        background-size: contain;
+        .selected-user__menu-placeholder-background {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-weight: 500;
+          font-size: get-rem(20px);
+          width: 100%;
+          height: 100%;
+          background-color: rgba(255, 255, 255, 0.7);
+        }
+      }
     }
   }
 }

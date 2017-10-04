@@ -48,7 +48,7 @@ export class MainGraph extends PureComponent {
     const showingEvolution = loadingEvolution || evolutionData !== null;
 
     return (
-      <Section currentStep={ currentStep } sectionNumber={ 2 } title='Index Analysis' loading={ loading } hasNestedCollapse={ true }>
+      <Section currentStep={ currentStep } sectionNumber={ 2 } title='Index Analysis' loading={ loading }>
         <div className='main-graph'>
           <h2 className='bluetab-subtitle--centered'>Select one of the four Indexes and take a look at either its evolution or its building SubIndexes. Alternatively you could draw an additional web for benchmarking</h2>
           <div className='main-graph__graph-wrapper'>
@@ -67,12 +67,9 @@ export class MainGraph extends PureComponent {
           </div>
           <hr className='main-graph__separator' />
           <div className='main-graph__details'>
-            <Collapse isOpened={ showingEvolution } id={ `${ loadingEvolution }` }>
+            <Collapse isOpened={ showingEvolution } loading={ loadingEvolution } small>
               <div className='main-graph__details-wrapper'>
-                {
-                  loadingEvolution === false && evolutionData !== null ? <Evolution label={ evolutionData.label } variation={ evolutionData.variation } points={ evolutionData.points } target={ evolutionData.target } maxValue={ evolutionData.maxValue } minValue={ evolutionData.minValue } /> :
-                  <Loading small={ true } />
-                }
+                { evolutionData && <Evolution label={ evolutionData.label } variation={ evolutionData.variation } points={ evolutionData.points } target={ evolutionData.target } maxValue={ evolutionData.maxValue } minValue={ evolutionData.minValue } /> }
               </div>
             </Collapse>
           </div>

@@ -28,7 +28,7 @@ export default class MainAdminMenu extends PureComponent {
   }
 
   handleUpload(event) {
-    Popup.queue(informationPopup('Information', <ConfirmationPopup description={ 'Load successfully' } />))
+    Popup.queue(informationPopup('Information', <ConfirmationPopup description={ 'Load successfully' } />));
   }
 
   render() {

@@ -1,4 +1,5 @@
 import MainGraphServices from 'services/api/mainGraph';
+import FormatRequestServices from 'services/formatRequest';
 
 import { setStep } from 'actions/app';
 
@@ -13,11 +14,14 @@ export const CLEAR_EVOLUTION_DATA = 'CLEAR_EVOLUTION_DATA';
 export const SHOW_COMPARATIVE_DATA = 'SHOW_COMPARATIVE_DATA';
 export const HIDE_COMPARATIVE_DATA = 'HIDE_COMPARATIVE_DATA';
 
+
 export function loadMainGraph() {
   return (dispatch, getState) => {
     dispatch({ type: BEGIN_MAINGRAPH_LOAD });
-    const selectors = getState().selectors.get('selected').toObject();
-    MainGraphServices.getMainGraphData({ selectors }).then((response) => {
+    const state = getState();
+    const selectors = FormatRequestServices.formatSelectors(state.selectors.get('selected').toObject());
+    const token = state.app.get('token');
+    MainGraphServices.getMainGraphData({ selectors }, token).then((response) => {
       const data = response.indexes;
       dispatch({ type: SET_MAINGRAPH, data });
       dispatch({ type: SET_SELECTED_INDEX, value: data[0].id, label: data[0].label });
@@ -32,9 +36,10 @@ export function setEvolutionData() {
     const loadingEvolution = state.mainGraph.get('loadingEvolution');
     if (loadingEvolution) return;
     dispatch({ type: BEGIN_EVOLUTION_DATA_LOAD });
-    const selectors = state.selectors.get('selected').toObject();
+    const selectors = FormatRequestServices.formatSelectors(state.selectors.get('selected').toObject());
     const index = state.mainGraph.get('selected').value;
-    MainGraphServices.getIndexEvolution({ selectors, index, evolution: true }).then((response) => {
+    const token = state.app.get('token');
+    MainGraphServices.getIndexEvolution({ selectors, index, evolution: true }, token).then((response) => {
       const data = response;
       dispatch({ type: SET_EVOLUTION_DATA, data });
       dispatch({ type: END_EVOLUTION_DATA_LOAD });

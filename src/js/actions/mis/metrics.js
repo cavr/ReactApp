@@ -1,4 +1,6 @@
 import MetricsServices from 'services/api/metrics';
+import FormatRequestServices from 'services/formatRequest';
+
 import { loadMainGraph } from 'actions/mis/mainGraph';
 
 import { setStep } from 'actions/app';
@@ -16,10 +18,11 @@ export function loadMetrics() {
   return (dispatch, getState) => {
     const state = getState();
     dispatch({ type: BEGIN_METRICS_LOAD });
-    const selectors = state.selectors.get('selected').toObject();
+    const selectors = FormatRequestServices.formatSelectors(state.selectors.get('selected').toObject());
     const index = state.mainGraph.get('selected').value;
     const subindex = state.subindexes.get('selected').value;
-    MetricsServices.getMetrics({ selectors, index, subindex }).then((response) => {
+    const token = state.app.get('token');
+    MetricsServices.getMetrics({ selectors, index, subindex }, token).then((response) => {
       dispatch({ type: SET_METRICS, data: response.metrics });
       dispatch({ type: END_METRICS_LOAD });
     });
@@ -39,13 +42,14 @@ export function loadEvolution(metric, selector, value) {
     const state = getState();
     dispatch({ type: BEGIN_BUSINESS_ELEMENT_EVOLUTION_LOAD, metric, selector, value });
     const request = {
-      selectors: state.selectors.get('selected').toObject(),
+      selectors: FormatRequestServices.formatSelectors(state.selectors.get('selected').toObject()),
       index: state.mainGraph.get('selected').value,
       subindex: state.subindexes.get('selected').value,
       metric,
       businessElement: { id: selector, value },
     };
-    MetricsServices.getBusinessElementEvolution(request).then((response) => {
+    const token = state.app.get('token');
+    MetricsServices.getBusinessElementEvolution(request, token).then((response) => {
       dispatch({ type: SET_BUSINESS_ELEMENT_EVOLUTION_DATA, metric, data: response, selector, value });
     });
   };

@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import ValueDroplet from 'components/Charts/Details/ValueDroplet';
+import Target from 'components/Charts/Details/Target';
 import Labels from 'components/Charts/Details/Labels';
 import Waypoint from 'react-waypoint';
 
@@ -47,7 +48,7 @@ export default class HeatChart extends PureComponent {
         <Waypoint onEnter={ this.handleWaypoint } />
         <div className='subindex-heat-chart__line' style={ { backgroundImage: 'linear-gradient(-90deg, #98DA65 0%, #E14031 100%)' } } />
         { inScreen && <ValueDroplet className='subindex-heat-chart__droplet subindex-heat-chart__droplet--current' value={ data.value } position={ currentValue } /> }
-        { inScreen && <ValueDroplet className='subindex-heat-chart__droplet subindex-heat-chart__droplet--target' value={ data.target } position={ targetValue } /> }
+        { inScreen && <Target className='subindex-heat-chart__target' value={ data.target } position={ targetValue } /> }
         <Labels sections={ data.sections } />
         <div className='subindex-heat-chart__legend-wrapper'>
           <div className='subindex-heat-chart__legend'>

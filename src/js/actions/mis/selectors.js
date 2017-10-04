@@ -7,9 +7,10 @@ export const SET_ALL_SELECTORS_VALUES = 'SET_ALL_SELECTORS_VALUES';
 export const SET_SELECTOR_VALUE = 'SET_SELECTOR_VALUE';
 
 export function loadSelectors() {
-  return (dispatch) => {
+  return (dispatch, getState) => {
     dispatch({ type: BEGIN_SELECTORS_LOAD });
-    SelectorsServices.getSelectors().then((response) => {
+    const token = getState().app.get('token');
+    SelectorsServices.getSelectors(token).then((response) => {
       const data = response.selectors;
       dispatch({ type: SET_SELECTORS, data });
       const selected = {};

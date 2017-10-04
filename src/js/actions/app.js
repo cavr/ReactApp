@@ -7,9 +7,11 @@ import { loadSubindexes } from 'actions/mis/subindexes';
 import { loadMetrics } from 'actions/mis/metrics';
 
 import LoginServices from 'services/api/login';
+import jefe from '../../assets/img/dev/jorge.png';
 
 export const LOGIN = 'LOGIN';
 export const LOGIN_LOAD = 'LOGIN_LOAD';
+export const LOGIN_END_LOAD = 'LOGIN_END_LOAD';
 export const LOGOUT = 'LOGOUT';
 export const SET_STEP = 'SET_STEP';
 export const SHOW_MOBILE_MENU = 'SHOW_MOBILE_MENU';
@@ -19,11 +21,16 @@ export const HIDE_SUMMARY_MENU = 'HIDE_SUMMARY_MENU';
 
 export function login(user, password) {
   return (dispatch) => {
+    dispatch({ type: LOGIN_LOAD });
     LoginServices.login(user, password).then((response) => {
-      const userInfo = response;
-      const token = 'token';
-      dispatch({ type: LOGIN, token, userInfo });
-      browserHistory.push(routeCodes.MIS);
+      if (response.error) {
+        dispatch({ type: LOGIN_END_LOAD });
+      } else {
+        const userInfo = { name: 'Jorge Nájera', role: 'Managing Director', image: jefe };
+        const token = response.token;
+        dispatch({ type: LOGIN, token, userInfo });
+        browserHistory.push(routeCodes.MIS);
+      }
     });
   };
 }

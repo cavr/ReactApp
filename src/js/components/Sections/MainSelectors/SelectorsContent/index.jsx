@@ -33,13 +33,13 @@ export default class SelectorsContent extends PureComponent {
       );
     });
     return (
-        <div className='selectors'>
-          <h2 className='bluetab-subtitle--centered'>Select the fields that you want to compare</h2>
-          <div className='selectors__selector-wrapper'>
-            { selectors }
-          </div>
-          <Button title={ 'Draw Spider Web' } onClick={ () => setStep(2) } />
+      <div className='selectors'>
+        <h2 className='bluetab-subtitle--centered'>Select the fields that you want to compare</h2>
+        <div className='selectors__selector-wrapper'>
+          { selectors }
         </div>
+        <Button title={ 'Draw Spider Web' } onClick={ () => setStep(2) } />
+      </div>
     );
   }
 }

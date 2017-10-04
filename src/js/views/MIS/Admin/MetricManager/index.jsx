@@ -12,6 +12,12 @@ import FormulaEdition from 'components/Admin/FormulaEdition';
 import TargetEdition from 'components/Admin/TargetEdition';
 import GraphSelection from 'components/Admin/GraphSelection';
 
+import AdminServices from 'services/api/admin';
+
+import Popup from 'react-popup';
+import ConfirmationPopup from 'components/Popups/ConfirmationPopup';
+import { informationPopup } from 'services/popups.js';
+
 import { loadIndexes } from 'actions/mis/admin/common';
 import { changeMode, selectIndex, selectSubindex, selectMetric, updateTitle, updateDescription, updateTarget, changeGraphType } from 'actions/mis/admin/metricManager';
 
@@ -20,11 +26,13 @@ import './desktop.scss';
 
 export class MetricManager extends PureComponent {
   static propTypes = {
+    token: PropTypes.string,
     currentStep: PropTypes.number,
     mode: PropTypes.string,
     indexes: PropTypes.array,
     subindexes: PropTypes.array,
     metrics: PropTypes.array,
+    parameters: PropTypes.array,
     selectedIndex: PropTypes.string,
     selectedSubindex: PropTypes.string,
     selectedMetric: PropTypes.string,
@@ -42,15 +50,42 @@ export class MetricManager extends PureComponent {
     loadIndexes: PropTypes.func,
   };
 
+  constructor() {
+    super();
+
+    this.updateMetric = this.updateMetric.bind(this);
+  }
+
   componentDidMount() {
     this.props.loadIndexes();
   }
 
+  updateMetric() {
+    const { token, mode, selectedIndex, selectedSubindex, selectedMetric, title, description, operations, openBrackets, targets, graphType } = this.props;
+    const finalOperations = operations;
+    openBrackets.forEach((brackets, index) => {
+      for (let i = 0; i < brackets; i++) {
+        finalOperations.push({ type: 'endBracket' });
+      }
+      if (index > 0) finalOperations.push({ type: 'endFunction' });
+    });
+    const data = {
+      title,
+      description,
+      operations: finalOperations.toArray(),
+      targets: targets.toArray(),
+      type: graphType,
+    };
+    AdminServices.updateMetricData({ index: selectedIndex, subindex: selectedSubindex, metric: selectedMetric, data }, token).then((response) => {
+      Popup.queue(informationPopup('Information', <ConfirmationPopup description={ `${ mode === 'create' ? 'Created' : 'Updated' } metric` } />));
+    });
+  }
+
   render() {
-    const { currentStep, mode, indexes, subindexes, metrics, selectedIndex, selectedSubindex, selectedMetric, title, description, operations, openBrackets, negatedParameter, targets, graphType } = this.props;
+    const { currentStep, mode, indexes, subindexes, metrics, parameters, selectedIndex, selectedSubindex, selectedMetric, title, description, operations, openBrackets, negatedParameter, targets, graphType } = this.props;
     const { changeMode, selectIndex, selectSubindex, selectMetric, updateTitle, updateDescription, updateTarget, changeGraphType } = this.props;
     return (
-      <Section currentStep={ currentStep } sectionNumber={ 3 } title='Metrics' loading={ false } unNumbered={ true }>
+      <Section currentStep={ currentStep } sectionNumber={ 3 } title='Metrics' loading={ !indexes } unNumbered={ true }>
         <div className='data-manager'>
           <h2 className='data-manager__title bluetab-subtitle--centered'>Please select one of the options, create or edit a metric</h2>
           <ModeSelection
@@ -59,19 +94,16 @@ export class MetricManager extends PureComponent {
             edition={ 'Edit metric' }
             onChange={ changeMode }
           />
-          {
-            indexes &&
-            <Selector
-              className='data-manager__selector'
-              title={ 'Select the desired index' }
-              values={ indexes }
-              currentValue={ selectedIndex }
-              placeholder='Index'
-              inline={ true }
-              onChange={ selectIndex }
-            />
-          }
-          <Collapse isOpened={ selectedIndex && subindexes }>
+          <Selector
+            className='data-manager__selector'
+            title={ 'Select the desired index' }
+            values={ indexes }
+            currentValue={ selectedIndex }
+            placeholder='Index'
+            inline={ true }
+            onChange={ selectIndex }
+          />
+          <Collapse isOpened={ selectedIndex } loading={ !subindexes } small>
             <Selector
               className='data-manager__selector'
               title={ 'Select the desired subindex' }
@@ -82,7 +114,7 @@ export class MetricManager extends PureComponent {
               onChange={ selectSubindex }
             />
           </Collapse>
-          <Collapse isOpened={ selectedSubindex && metrics && mode === 'edition' }>
+          <Collapse isOpened={ selectedSubindex && mode === 'edition' } loading={ !metrics } small>
             <Selector
               className='data-manager__selector'
               title={ 'Select the desired metric' }
@@ -93,14 +125,14 @@ export class MetricManager extends PureComponent {
               onChange={ selectMetric }
             />
           </Collapse>
-          <Collapse isOpened={ description !== null } id={ `${ selectedSubindex ? selectedSubindex : 'subindex-collapse' }` }>
+          <Collapse isOpened={ (selectedMetric && mode === 'edition') || (selectedSubindex && mode === 'create') } loading={ !(description !== null && parameters !== null) }>
             <div className='data-manager__form'>
               <TextInput editEnabled={ mode === 'edition' } title='Title' value={ title } onChange={ updateTitle } />
               <TextInput editEnabled={ mode === 'edition' } title='Description' textarea value={ description } onChange={ updateDescription } />
-              <FormulaEdition operations={ operations } openBrackets={ openBrackets } parameters={ [{ value: 'MTA', label: 'MTA' }, { value: 'POC', label: 'POC' }] } negatedParameter={ negatedParameter } />
+              <FormulaEdition operations={ operations } openBrackets={ openBrackets } parameters={ parameters } negatedParameter={ negatedParameter } />
               <TargetEdition title={ 'Define and edit targets' } data={ targets } onChange={ updateTarget } />
               <GraphSelection title={ 'Select how you want to draw the graph' } data={ graphData } currentValue={ graphType } onChange={ changeGraphType } />
-              <Button title={ 'Save subindex' } onClick={ () => console.log('save') } />
+              <Button title={ 'Save metric' } onClick={ this.updateMetric } />
             </div>
           </Collapse>
         </div>
@@ -110,9 +142,11 @@ export class MetricManager extends PureComponent {
 }
 
 const mapStateToProps = (state) => ({
+  token: state.app.get('token'),
   indexes: state.admin.get('indexes'),
   subindexes: state.admin.get('subindexes'),
   metrics: state.admin.get('metrics'),
+  parameters: state.admin.get('parameters'),
   mode: state.metricManager.get('mode'),
   selectedIndex: state.metricManager.get('selectedIndex'),
   selectedSubindex: state.metricManager.get('selectedSubindex'),

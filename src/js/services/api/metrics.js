@@ -16,6 +16,20 @@ export default class MetricsServices {
       });
   }
 
+  /*
+  static getMetrics(request, token) {
+    const params = {
+      method: 'POST',
+      body,
+      headers: {
+        Authorization: `Bearer ${ token }`,
+      },
+    };
+    return fetch(`${ endpoint }/getMetrics`, params)
+      .then(response => response.json());
+  }
+  */
+
   static getBusinessElementEvolution(request) {
     return fetch(`/data/${ buildJsonName(request) }`)
       .then((response) => {
@@ -25,6 +39,20 @@ export default class MetricsServices {
         return response.json();
       });
   }
+
+  /*
+  static getBusinessElementEvolution(request, token) {
+    const params = {
+      method: 'POST',
+      body,
+      headers: {
+        Authorization: `Bearer ${ token }`,
+      },
+    };
+    return fetch(`${ endpoint }/getBusinessElementMetricEvolution`, params)
+      .then(response => response.json());
+  }
+  */
 
   static generateXLS(request) {
     return fetch('/data/xlsTest.json')
