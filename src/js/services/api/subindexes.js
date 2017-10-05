@@ -17,12 +17,13 @@ export default class SubindexesServices {
   static getSubindexes(body, token) {
     const params = {
       method: 'POST',
-      body,
-      headers: {
-        Authorization: `Bearer ${ token }`,
-      },
+      body: JSON.stringify(body),
+      headers: new Headers({
+        'Content-Type': 'application/json',
+        Authorization: `JWT ${ token }`,
+      }),
     };
-    return fetch(`${ endpoint }/getIndexes`, params)
+    return fetch(`${ endpoint }/getSubindexes`, params)
       .then(response => response.json());
   }
   */

@@ -18,11 +18,13 @@ export function loadMetrics() {
   return (dispatch, getState) => {
     const state = getState();
     dispatch({ type: BEGIN_METRICS_LOAD });
-    const selectors = FormatRequestServices.formatSelectors(state.selectors.get('selected').toObject());
-    const index = state.mainGraph.get('selected').value;
-    const subindex = state.subindexes.get('selected').value;
+    const request = {
+      selectors: FormatRequestServices.formatSelectors(state.selectors.get('selected').toObject()),
+      index: state.mainGraph.get('selected').value,
+      subindex: state.subindexes.get('selected').value,
+    };
     const token = state.app.get('token');
-    MetricsServices.getMetrics({ selectors, index, subindex }, token).then((response) => {
+    MetricsServices.getMetrics(request, token).then((response) => {
       dispatch({ type: SET_METRICS, data: response.metrics });
       dispatch({ type: END_METRICS_LOAD });
     });

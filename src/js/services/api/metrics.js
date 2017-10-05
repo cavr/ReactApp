@@ -20,10 +20,11 @@ export default class MetricsServices {
   static getMetrics(request, token) {
     const params = {
       method: 'POST',
-      body,
-      headers: {
-        Authorization: `Bearer ${ token }`,
-      },
+      body: JSON.stringify(body),
+      headers: new Headers({
+        'Content-Type': 'application/json',
+        Authorization: `JWT ${ token }`,
+      }),
     };
     return fetch(`${ endpoint }/getMetrics`, params)
       .then(response => response.json());
@@ -44,10 +45,11 @@ export default class MetricsServices {
   static getBusinessElementEvolution(request, token) {
     const params = {
       method: 'POST',
-      body,
-      headers: {
-        Authorization: `Bearer ${ token }`,
-      },
+      body: JSON.stringify(body),
+      headers: new Headers({
+        'Content-Type': 'application/json',
+        Authorization: `JWT ${ token }`,
+      }),
     };
     return fetch(`${ endpoint }/getBusinessElementMetricEvolution`, params)
       .then(response => response.json());

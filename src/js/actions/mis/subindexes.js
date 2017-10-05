@@ -13,9 +13,12 @@ export function loadSubindexes() {
   return (dispatch, getState) => {
     const state = getState();
     dispatch({ type: BEGIN_SUBINDICES_LOAD });
-    const selectors = FormatRequestServices.formatSelectors(state.selectors.get('selected').toObject());
-    const index = state.mainGraph.get('selected').value;
-    SubindexesServices.getSubindexes({ selectors, index }).then((response) => {
+    const request = {
+      selectors: FormatRequestServices.formatSelectors(state.selectors.get('selected').toObject()),
+      index: state.mainGraph.get('selected').value,
+    };
+    const token = state.app.get('token');
+    SubindexesServices.getSubindexes(request, token).then((response) => {
       const data = response.subindexes;
       dispatch({ type: SET_SUBINDICES, data });
       dispatch({ type: CLEAR_SUBINDEX_VALUE });

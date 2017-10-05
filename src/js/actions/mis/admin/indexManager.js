@@ -8,15 +8,16 @@ export const UPDATE_INDEX_FORMULA = 'UPDATE_INDEX_FORMULA';
 export const SET_ADMIN_INDEX_NEW_DATA = 'SET_ADMIN_INDEX_NEW_DATA';
 
 export function selectIndex(index) {
-  return (dispatch) => {
+  return (dispatch, getState) => {
     dispatch({ type: SET_SELECTED_INDEX_IN_ADMIN_INDEX, index });
     dispatch({ type: CLEAR_ADMIN_INDEX_DATA });
-    AdminServices.getIndexData({ index }).then((response) => {
+    const token = getState().app.get('token');
+    AdminServices.getIndexData({ index }, token).then((response) => {
       const description = response.description;
       const formula = response.formula;
       dispatch({ type: SET_ADMIN_INDEX_DATA, description, formula });
     });
-    AdminServices.getSubindexes({ index }).then((response) => {
+    AdminServices.getSubindexes({ index }, token).then((response) => {
       dispatch({ type: SET_ADMIN_INDEX_NEW_DATA, subindexes: response.subindexes });
     });
   };

@@ -27,7 +27,8 @@ export function selectIndex(index) {
   return (dispatch, getState) => {
     dispatch({ type: SET_SELECTED_INDEX_IN_ADMIN_SUBINDEX, index });
     const mode = getState().subindexManager.get('mode');
-    AdminServices.getMetrics({ index }).then((response) => {
+    const token = getState().app.get('token');
+    AdminServices.getMetrics({ index }, token).then((response) => {
       dispatch({ type: SET_ADMIN_SUBINDEX_NEW_DATA, metrics: response.metrics });
     });
     if (mode === 'create') {
@@ -47,7 +48,8 @@ export function selectSubindex(subindex) {
     dispatch({ type: SET_SELECTED_SUBINDEX_IN_ADMIN_SUBINDEX, subindex });
     dispatch({ type: CLEAR_ADMIN_SUBINDEX_DATA });
     const index = getState().subindexManager.get('selectedIndex');
-    AdminServices.getSubindexData({ index, subindex }).then((response) => {
+    const token = getState().app.get('token');
+    AdminServices.getSubindexData({ index, subindex }, token).then((response) => {
       const title = response.title;
       const description = response.description;
       const graphType = response.type;

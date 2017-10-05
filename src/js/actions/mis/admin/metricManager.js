@@ -79,7 +79,8 @@ export function selectMetric(metric) {
     dispatch({ type: CLEAR_ADMIN_METRIC_DATA });
     const index = getState().metricManager.get('selectedIndex');
     const subindex = getState().metricManager.get('selectedSubindex');
-    AdminServices.getMetricData({ index, subindex, metric }).then((response) => {
+    const token = getState().app.get('token');
+    AdminServices.getMetricData({ index, subindex, metric }, token).then((response) => {
       const title = response.title;
       const description = response.description;
       const graphType = response.type;

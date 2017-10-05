@@ -1,0 +1,410 @@
+Api : https://bt-sns-back.azurewebsites.net/api
+
+Login-> POST
+Body ->
+username : prueba
+password : prueba
+https://bt-sns-back.azurewebsites.net/api/auth/sign_in 
+
+Selectors -> GET
+Headers Authorization -> JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1MDU5MDM2NzZ9.4hVM5xGL9lSufvB5fNFD1G2lQKKKDjARGeCAPozHCJ8
+https://bt-sns-back.azurewebsites.net/api/selectors
+
+Selectors -> POST
+Headers Authorization -> JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1MDU5MDM2NzZ9.4hVM5xGL9lSufvB5fNFD1G2lQKKKDjARGeCAPozHCJ8
+Body -> 
+{
+  "selectors": {
+    "1": "1",
+    "2": "3",
+    "3": "1",
+    "4": "2",
+    "5": "1",
+    "6": "3"
+  }
+}
+https://bt-sns-back.azurewebsites.net/api/getIndexes
+
+Selectors -> POST
+Headers Authorization -> JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1MDU5MDM2NzZ9.4hVM5xGL9lSufvB5fNFD1G2lQKKKDjARGeCAPozHCJ8
+Body -> 
+{
+  "selectors": {
+    "1": "1",
+    "2": "ALL",
+    "3": "1",
+    "4": "2",
+    "5": "1",
+    "6": "3"
+  },
+  "index": "I1"
+}
+https://bt-sns-back.azurewebsites.net/api/getSubindexes
+
+Selectors -> POST
+Headers Authorization -> JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1MDU5MDM2NzZ9.4hVM5xGL9lSufvB5fNFD1G2lQKKKDjARGeCAPozHCJ8
+Body -> 
+{
+  "selectors": {
+    "1": "1",
+    "2": "ALL",
+    "3": "1",
+    "4": "2",
+    "5": "1",
+    "6": "3"
+  },
+  "index": "I1",
+  "subindex": "S2"
+}
+https://bt-sns-back.azurewebsites.net/api/getMetrics
+
+Selectors -> POST
+Headers Authorization -> JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1MDU5MDM2NzZ9.4hVM5xGL9lSufvB5fNFD1G2lQKKKDjARGeCAPozHCJ8
+Body -> 
+{
+  "selectors": {
+    "1": "1",
+    "2": "ALL",
+    "3": "1",
+    "4": "2",
+    "5": "1",
+    "6": "3"
+  },
+  "index": "I1"
+}
+https://bt-sns-back.azurewebsites.net/api/getIndexEvolution
+
+Selectors -> POST
+Headers Authorization -> JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1MDU5MDM2NzZ9.4hVM5xGL9lSufvB5fNFD1G2lQKKKDjARGeCAPozHCJ8
+Body -> 
+{
+  "selectors": {
+    "1": "1",
+    "2": "ALL",
+    "3": "1",
+    "4": "2",
+    "5": "1",
+    "6": "3"
+  },
+  "index": "I1",
+  "subindex": "S7",
+  "metric": "M1",
+  "businessElement": { "1": "1" }
+}
+https://bt-sns-back.azurewebsites.net/api/getBusinessElementMetricEvolution
+
+
+Selectors -> POST
+Headers Authorization -> JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1MDU5MDM2NzZ9.4hVM5xGL9lSufvB5fNFD1G2lQKKKDjARGeCAPozHCJ8
+Body -> 
+//Mismo endpoint que update, si no se envia ID de metrica se entiende que se tiene que crear
+{
+  "index": "I1",
+  "subindex": "S2",
+  "metric": "",
+  "data": {
+    "title": "Titulo metrica",
+    "description": "Description del metrica.",
+    "formula": [{
+        "type": "bracket"
+      },
+      {
+        "type": "number",
+        "data": 9
+      },
+      {
+        "type": "operation",
+        "data": "+"
+      },
+      {
+        "type": "parameter",
+        "data": "MTA"
+      },
+      {
+        "type": "endBracket"
+      },
+      {
+        "type": "operation",
+        "data": "-"
+      },
+      {
+        "type": "function",
+        "data": "MIN"
+      },
+      {
+        "type": "number",
+        "data": 45
+      },
+      {
+        "type": "parameter",
+        "data": "MTA"
+      },
+      {
+        "type": "endFunction"
+      }
+    ],
+    "type": 1,
+    "targets": [{
+        "id": "S1",
+        "label": "Other sites",
+        "values": {
+          "low": 20,
+          "high": 50
+        }
+      },
+      {
+        "id": "S2",
+        "label": "Data center",
+        "values": {
+          "low": 20,
+          "high": 50
+        }
+      }
+    ]
+  }
+}
+https://bt-sns-back.azurewebsites.net/api/admin/createMetric
+
+
+Selectors -> POST
+Headers Authorization -> JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1MDU5MDM2NzZ9.4hVM5xGL9lSufvB5fNFD1G2lQKKKDjARGeCAPozHCJ8
+Body -> 
+//Mismo endpoint que update, si no se envia ID de metrica se entiende que se tiene que crear
+{
+  "index": "I1",
+  "subindex": "S2",
+  "metric": "",
+  "data": {
+    "title": "Titulo metrica",
+    "description": "Description del metrica.",
+    "formula": [{
+        "type": "bracket"
+      },
+      {
+        "type": "number",
+        "data": 9
+      },
+      {
+        "type": "operation",
+        "data": "+"
+      },
+      {
+        "type": "parameter",
+        "data": "MTA"
+      },
+      {
+        "type": "endBracket"
+      },
+      {
+        "type": "operation",
+        "data": "-"
+      },
+      {
+        "type": "function",
+        "data": "MIN"
+      },
+      {
+        "type": "number",
+        "data": 45
+      },
+      {
+        "type": "parameter",
+        "data": "MTA"
+      },
+      {
+        "type": "endFunction"
+      }
+    ],
+    "type": 1,
+    "targets": [{
+        "id": "S1",
+        "label": "Other sites",
+        "values": {
+          "low": 20,
+          "high": 50
+        }
+      },
+      {
+        "id": "S2",
+        "label": "Data center",
+        "values": {
+          "low": 20,
+          "high": 50
+        }
+      }
+    ]
+  }
+}
+https://bt-sns-back.azurewebsites.net/api/admin/updateMetric
+
+Selectors -> POST
+Headers Authorization -> JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1MDU5MDM2NzZ9.4hVM5xGL9lSufvB5fNFD1G2lQKKKDjARGeCAPozHCJ8
+Body -> 
+//Mismo endpoint que update, si no se envia ID de metrica se entiende que se tiene que crear
+{
+  "index": "I1",
+  "subindex": "S2",
+  "metric": "M1"
+}
+https://bt-sns-back.azurewebsites.net/api/admin/getMetricData
+
+Selectors -> POST
+Headers Authorization -> JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1MDU5MDM2NzZ9.4hVM5xGL9lSufvB5fNFD1G2lQKKKDjARGeCAPozHCJ8
+Body -> 
+//Mismo endpoint que update, si no se envia ID de metrica se entiende que se tiene que crear
+{
+  "index": "I1",
+  "subindex": "S1"
+}
+https://bt-sns-back.azurewebsites.net/api/admin/getMetric
+
+Selectors -> POST
+Headers Authorization -> JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1MDU5MDM2NzZ9.4hVM5xGL9lSufvB5fNFD1G2lQKKKDjARGeCAPozHCJ8
+Body -> 
+//Mismo endpoint que update, si no se envia ID de metrica se entiende que se tiene que crear
+{
+  "index": "I1"
+}
+https://bt-sns-back.azurewebsites.net/api/admin/getIndexData
+
+Selectors -> POST
+Headers Authorization -> JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1MDU5MDM2NzZ9.4hVM5xGL9lSufvB5fNFD1G2lQKKKDjARGeCAPozHCJ8
+Body -> 
+//Mismo endpoint que update, si no se envia ID de metrica se entiende que se tiene que crear
+{
+  "index": "I1",
+  "data": {
+    "description": "Description del subindice.",
+    "formula": [
+      {
+        "id": "S1",
+        "label": "Nombre subindice",
+        "value": 50
+      },
+      {
+        "id": "S2",
+        "label": "Nombre subindice",
+        "value": 50
+      }
+    ]
+  }
+}
+https://bt-sns-back.azurewebsites.net/api/admin/updateIndex
+
+Selectors -> POST
+Headers Authorization -> JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1MDU5MDM2NzZ9.4hVM5xGL9lSufvB5fNFD1G2lQKKKDjARGeCAPozHCJ8
+Body -> 
+//Mismo endpoint que update, si no se envia ID de metrica se entiende que se tiene que crear
+
+https://bt-sns-back.azurewebsites.net/api/admin/getIndexes
+
+Selectors -> POST
+Headers Authorization -> JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1MDU5MDM2NzZ9.4hVM5xGL9lSufvB5fNFD1G2lQKKKDjARGeCAPozHCJ8
+Body -> 
+//Mismo endpoint que update, si no se envia ID de metrica se entiende que se tiene que crear
+{
+  "index": "I1",
+  "subindex": "",
+  "data": {
+    "title": "Titulo del subindice",
+    "description": "Description del subindice.",
+    "type": 1,
+    "formula": [
+      {
+        "id": "M1",
+        "label": "Nombre metrica",
+        "value": 50
+      },
+      {
+        "id": "M2",
+        "label": "Nombre metrica",
+        "value": 50
+      }
+    ]
+  }
+}
+https://bt-sns-back.azurewebsites.net/api/admin/updateIndex
+
+Selectors -> POST
+Headers Authorization -> JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1MDU5MDM2NzZ9.4hVM5xGL9lSufvB5fNFD1G2lQKKKDjARGeCAPozHCJ8
+Body -> 
+//Mismo endpoint que update, si no se envia ID de metrica se entiende que se tiene que crear
+
+https://bt-sns-back.azurewebsites.net/api/admin/createSubindex
+
+Selectors -> POST
+Headers Authorization -> JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1MDU5MDM2NzZ9.4hVM5xGL9lSufvB5fNFD1G2lQKKKDjARGeCAPozHCJ8
+Body -> 
+//Mismo endpoint que update, si no se envia ID de metrica se entiende que se tiene que crear
+{
+  "index": "I1",
+  "subindex": "S2",
+  "data": {
+    "title": "Titulo del subindice",
+    "description": "Description del subindice.",
+    "type": 1,
+    "formula": [
+      {
+        "id": "M1",
+        "label": "Nombre metrica",
+        "value": 50
+      },
+      {
+        "id": "M2",
+        "label": "Nombre metrica",
+        "value": 50
+      }
+    ]
+  }
+}
+https://bt-sns-back.azurewebsites.net/api/admin/updateIndex
+
+Selectors -> POST
+Headers Authorization -> JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1MDU5MDM2NzZ9.4hVM5xGL9lSufvB5fNFD1G2lQKKKDjARGeCAPozHCJ8
+Body -> 
+//Mismo endpoint que update, si no se envia ID de metrica se entiende que se tiene que crear
+
+https://bt-sns-back.azurewebsites.net/api/admin/updateSubindex
+
+Selectors -> POST
+Headers Authorization -> JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1MDU5MDM2NzZ9.4hVM5xGL9lSufvB5fNFD1G2lQKKKDjARGeCAPozHCJ8
+Body -> 
+//Mismo endpoint que update, si no se envia ID de metrica se entiende que se tiene que crear
+{
+  "index": "I1",
+  "subindex": "S2"
+}
+https://bt-sns-back.azurewebsites.net/api/admin/updateIndex
+
+Selectors -> POST
+Headers Authorization -> JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1MDU5MDM2NzZ9.4hVM5xGL9lSufvB5fNFD1G2lQKKKDjARGeCAPozHCJ8
+Body -> 
+//Mismo endpoint que update, si no se envia ID de metrica se entiende que se tiene que crear
+
+https://bt-sns-back.azurewebsites.net/api/admin/getSubindexData
+
+Selectors -> POST
+Headers Authorization -> JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1MDU5MDM2NzZ9.4hVM5xGL9lSufvB5fNFD1G2lQKKKDjARGeCAPozHCJ8
+Body -> 
+//Mismo endpoint que update, si no se envia ID de metrica se entiende que se tiene que crear
+{
+  "index": "I1",
+  "subindex": "S2"
+}
+https://bt-sns-back.azurewebsites.net/api/admin/updateIndex
+
+Selectors -> POST
+Headers Authorization -> JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1MDU5MDM2NzZ9.4hVM5xGL9lSufvB5fNFD1G2lQKKKDjARGeCAPozHCJ8
+Body -> 
+{
+  "index": "I1"
+}
+//Mismo endpoint que update, si no se envia ID de metrica se entiende que se tiene que crear
+
+https://bt-sns-back.azurewebsites.net/api/admin/getSubindexes
+
+
+
+
+
+

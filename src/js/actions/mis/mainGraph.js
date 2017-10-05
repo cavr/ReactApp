@@ -36,10 +36,12 @@ export function setEvolutionData() {
     const loadingEvolution = state.mainGraph.get('loadingEvolution');
     if (loadingEvolution) return;
     dispatch({ type: BEGIN_EVOLUTION_DATA_LOAD });
-    const selectors = FormatRequestServices.formatSelectors(state.selectors.get('selected').toObject());
-    const index = state.mainGraph.get('selected').value;
+    const request = {
+      selectors: FormatRequestServices.formatSelectors(state.selectors.get('selected').toObject()),
+      index: state.mainGraph.get('selected').value,
+    };
     const token = state.app.get('token');
-    MainGraphServices.getIndexEvolution({ selectors, index, evolution: true }, token).then((response) => {
+    MainGraphServices.getIndexEvolution(request, token).then((response) => {
       const data = response;
       dispatch({ type: SET_EVOLUTION_DATA, data });
       dispatch({ type: END_EVOLUTION_DATA_LOAD });

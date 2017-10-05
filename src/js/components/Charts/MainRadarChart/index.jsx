@@ -70,7 +70,7 @@ export default class MainRadarChart extends PureComponent {
       In this case
       (val - 0) * (50 - 0) / (B - 0) + 0
       */
-      const point = (originalPoint.value * 50) / originalPoint.max;
+      const point = ((originalPoint.value - originalPoint.min) * (50 - 0) / (originalPoint.max - originalPoint.min));
       if (index === 0 || index === 3) return 50 - point;
       return point + 50;
     });
@@ -106,15 +106,15 @@ export default class MainRadarChart extends PureComponent {
     const targetPoints = [];
     const indexNames = [];
     for (let i = 0, l = data ? data.length : 0; i < l; i++) {
-      currentPoints.push({ value: data[i].value, max: 11 });
-      targetPoints.push({ value: data[i].target, max: 11 });
+      currentPoints.push({ value: data[i].value, min: data[i].minValue, max: data[i].maxValue });
+      targetPoints.push({ value: data[i].target, min: data[i].minValue, max: data[i].maxValue });
       indexNames.push({ id: data[i].id, label: data[i].label });
     }
 
     let extraPoints = null;
-    if (comparative) extraPoints = [{ value: 3, max: 11 }, { value: 6, max: 11 }, { value: 6, max: 11 }, { value: 4, max: 11 }];
-    if (peers) extraPoints = [{ value: 10, max: 11 }, { value: 5, max: 11 }, { value: 7, max: 11 }, { value: 4, max: 11 }];
-    if (market) extraPoints = [{ value: 6, max: 11 }, { value: 6, max: 11 }, { value: 6, max: 11 }, { value: 6, max: 11 }];
+    if (comparative) extraPoints = [{ value: 3, min: 0, max: 11 }, { value: 6, min: 0, max: 11 }, { value: 6, min: 0, max: 11 }, { value: 4, min: 0, max: 11 }];
+    if (peers) extraPoints = [{ value: 10, min: 0, max: 11 }, { value: 5, min: 0, max: 11 }, { value: 7, min: 0, max: 11 }, { value: 4, min: 0, max: 11 }];
+    if (market) extraPoints = [{ value: 6, min: 0, max: 11 }, { value: 6, min: 0, max: 11 }, { value: 6, min: 0, max: 11 }, { value: 6, min: 0, max: 11 }];
 
     return (
       <div className='main-graph-chart'>
