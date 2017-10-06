@@ -1,7 +1,7 @@
 import endpoint from 'services/api/config';
 
 export default class AdminServices {
-  /*
+
   static getIndexes(request, token) {
     return fetch('/data/admin/indexes.json')
       .then((response) => {
@@ -11,7 +11,6 @@ export default class AdminServices {
         return response.json();
       });
   }
-  */
 
   /*
   static getIndexes(token) {
@@ -65,10 +64,12 @@ export default class AdminServices {
         Authorization: `JWT ${ token }`,
       }),
     };
+    console.log(params.body);
     return fetch(`${ endpoint }/admin/updateIndex`, params)
       .then(response => response.json());
   }
   
+
   static getSubindexes(request, token) {
     return fetch('/data/admin/subindexes.json')
       .then((response) => {
@@ -104,8 +105,32 @@ export default class AdminServices {
       });
   }
 
-  static updateSubindexData(request, token) {
-    
+  /*
+  static getSubindexData(body, token) {
+    const params = {
+      method: 'POST',
+      body: JSON.stringify(body),
+      headers: new Headers({
+        'Content-Type': 'application/json',
+        Authorization: `JWT ${ token }`,
+      }),
+    };
+    return fetch(`${ endpoint }/admin/getSubindexData`, params)
+      .then(response => response.json());
+  }
+  */
+
+  static updateSubindexData(body, token) {
+    const params = {
+      method: 'POST',
+      body: JSON.stringify(body),
+      headers: new Headers({
+        'Content-Type': 'application/json',
+        Authorization: `JWT ${ token }`,
+      }),
+    };
+    return fetch(`${ endpoint }/admin/updateSubindex`, params)
+      .then(response => response.json());
   }
 
   static getMetrics(request, token) {
@@ -143,6 +168,21 @@ export default class AdminServices {
       });
   }
 
+  /*
+  static getMetricData(body, token) {
+    const params = {
+      method: 'POST',
+      body: JSON.stringify(body),
+      headers: new Headers({
+        'Content-Type': 'application/json',
+        Authorization: `JWT ${ token }`,
+      }),
+    };
+    return fetch(`${ endpoint }/admin/getMetricData`, params)
+      .then(response => response.json());
+  }
+  */
+
   static getParameters(request, token) {
     return fetch('/data/admin/parameters.json')
       .then((response) => {
@@ -152,8 +192,23 @@ export default class AdminServices {
         return response.json();
       });
   }
+
+  /*
+  static getParameters(body, token) {
+    const params = {
+      method: 'POST',
+      body: JSON.stringify(body),
+      headers: new Headers({
+        'Content-Type': 'application/json',
+        Authorization: `JWT ${ token }`,
+      }),
+    };
+    return fetch(`${ endpoint }/admin/getParameters`, params)
+      .then(response => response.json());
+  }
+  */
   
-  static getDefaultTargets(request) {
+  static getDefaultTargets(body, token) {
     return fetch('/data/admin/defaultTargets.json')
       .then((response) => {
         if (response.status !== 200) {
@@ -163,13 +218,31 @@ export default class AdminServices {
       });
   }
 
-  static updateMetricData(request, token) {
-    return fetch('/data/admin/indexes.json')
-      .then((response) => {
-        if (response.status !== 200) {
-          return {};
-        }
-        return response.json();
-      });
+  /*
+  static getDefaultTargets(body, token) {
+    const params = {
+      method: 'POST',
+      body: JSON.stringify(body),
+      headers: new Headers({
+        'Content-Type': 'application/json',
+        Authorization: `JWT ${ token }`,
+      }),
+    };
+    return fetch(`${ endpoint }/admin/getDefaultTargets`, params)
+      .then(response => response.json());
+  }
+  */
+
+  static updateMetricData(body, token) {
+    const params = {
+      method: 'POST',
+      body: JSON.stringify(body),
+      headers: new Headers({
+        'Content-Type': 'application/json',
+        Authorization: `JWT ${ token }`,
+      }),
+    };
+    return fetch(`${ endpoint }/admin/updateMetric`, params)
+      .then(response => response.json());
   }
 }

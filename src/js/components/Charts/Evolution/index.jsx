@@ -30,7 +30,7 @@ export default class Evolution extends PureComponent {
             <div className='evolution__variation-text'>MoM Variation</div>
           </div>
           <div className='evolution__variation evolution__variation--month'>
-            <div className='evolution__variation-number'>{ Math.abs(lastMonth.value) } pt</div>
+            <div className='evolution__variation-number'>{ Math.abs(lastMonth.value).toFixed(2).replace(/\.00$/, '') } pt</div>
             <div className='evolution__variation-text'>{ lastMonth.date.replace('-', ' ') }</div>
           </div>
           <EvolutionLineChart points={ points } maxValue={ maxValue } minValue={ minValue } target={ target } />

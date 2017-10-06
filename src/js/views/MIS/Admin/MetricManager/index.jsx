@@ -16,10 +16,10 @@ import AdminServices from 'services/api/admin';
 
 import Popup from 'react-popup';
 import ConfirmationPopup from 'components/Popups/ConfirmationPopup';
+import WarningPopup from 'components/Popups/WarningPopup';
 import { informationPopup } from 'services/popups.js';
 
-import { loadIndexes } from 'actions/mis/admin/common';
-import { changeMode, selectIndex, selectSubindex, selectMetric, updateTitle, updateDescription, updateTarget, changeGraphType } from 'actions/mis/admin/metricManager';
+import { initSection, resetData, changeMode, selectIndex, selectSubindex, selectMetric, updateTitle, updateDescription, updateTarget, changeGraphType } from 'actions/mis/admin/metricManager';
 
 import graphData from 'data/metricsGraphTypes.json';
 import './desktop.scss';
@@ -47,7 +47,8 @@ export class MetricManager extends PureComponent {
     selectIndex: PropTypes.func,
     selectSubindex: PropTypes.func,
     changeGraphType: PropTypes.func,
-    loadIndexes: PropTypes.func,
+    initSection: PropTypes.func,
+    resetData: PropTypes.func,
   };
 
   constructor() {
@@ -57,7 +58,13 @@ export class MetricManager extends PureComponent {
   }
 
   componentDidMount() {
-    this.props.loadIndexes();
+    this.section.scrollIntoView({ behavior: 'smooth' });
+    this.props.initSection();
+  }
+
+  componentWillUnmount() {
+    const { selectedIndex, resetData } = this.props;
+    if (selectedIndex) resetData();
   }
 
   updateMetric() {
@@ -77,7 +84,11 @@ export class MetricManager extends PureComponent {
       type: graphType,
     };
     AdminServices.updateMetricData({ index: selectedIndex, subindex: selectedSubindex, metric: selectedMetric, data }, token).then((response) => {
-      Popup.queue(informationPopup('Information', <ConfirmationPopup description={ `${ mode === 'create' ? 'Created' : 'Updated' } metric` } />));
+      if (response.error) {
+        Popup.queue(informationPopup('Information', <WarningPopup description={ response.error } />));
+      } else {
+        Popup.queue(informationPopup('Information', <ConfirmationPopup description={ `${ mode === 'create' ? 'Created' : 'Updated' } metric` } />));
+      }
     });
   }
 
@@ -86,7 +97,7 @@ export class MetricManager extends PureComponent {
     const { changeMode, selectIndex, selectSubindex, selectMetric, updateTitle, updateDescription, updateTarget, changeGraphType } = this.props;
     return (
       <Section currentStep={ currentStep } sectionNumber={ 3 } title='Metrics' loading={ !indexes } unNumbered={ true }>
-        <div className='data-manager'>
+        <div className='data-manager' ref={ (section) => this.section = section }>
           <h2 className='data-manager__title bluetab-subtitle--centered'>Please select one of the options, create or edit a metric</h2>
           <ModeSelection
             selected={ mode }
@@ -162,7 +173,8 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    loadIndexes: () => dispatch(loadIndexes()),
+    initSection: () => dispatch(initSection()),
+    resetData: () => dispatch(resetData()),
     changeMode: (mode) => dispatch(changeMode(mode)),
     selectIndex: (option) => dispatch(selectIndex(option.value)),
     selectSubindex: (option) => dispatch(selectSubindex(option.value)),

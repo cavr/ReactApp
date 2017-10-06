@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Collapse from 'components/Sections/Collapse';
-import Loading from 'components/Loading';
 
 import './desktop.scss';
 import './mobile.scss';

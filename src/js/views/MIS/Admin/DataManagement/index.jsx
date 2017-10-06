@@ -14,11 +14,15 @@ export default class DataManagement extends PureComponent {
     subsection: PropTypes.string,
   };
 
+  componentDidMount() {
+    this.section.scrollIntoView({ behavior: 'smooth' });
+  }
+
   render() {
     const { currentStep, subsection } = this.props;
     return (
-      <Section currentStep={ currentStep } sectionNumber={ 2 } title='Admin tools' loading={ false } unNumbered={ true }>
-        <div className='data-management'>
+      <Section currentStep={ currentStep } sectionNumber={ 2 } title='Data element selection' loading={ false } unNumbered={ true }>
+        <div className='data-management' ref={ (section) => this.section = section }>
           <h2 className='data-managementu__title bluetab-subtitle--centered'>Please select one of the Data elements</h2>
           <ul className='data-management__options'>
             <Button title={ 'Index' } selected={ subsection === 'indexes' } onClick={ () => browserHistory.push(routeCodes.MIS_ADMIN_INDEX) } />

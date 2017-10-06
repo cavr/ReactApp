@@ -3,6 +3,7 @@ import devData from 'data/subindexes.json';
 import { buildJsonName } from 'services/jsonNameBuilder';
 
 export default class SubindexesServices {
+  /*
   static getSubindexes(request) {
     return fetch(`/data/${ buildJsonName(request) }`)
       .then((response) => {
@@ -12,8 +13,9 @@ export default class SubindexesServices {
         return response.json();
       });
   }
+  */
 
-  /*
+  
   static getSubindexes(body, token) {
     const params = {
       method: 'POST',
@@ -26,5 +28,5 @@ export default class SubindexesServices {
     return fetch(`${ endpoint }/getSubindexes`, params)
       .then(response => response.json());
   }
-  */
+  
 }

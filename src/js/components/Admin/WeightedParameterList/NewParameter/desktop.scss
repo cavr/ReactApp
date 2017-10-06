@@ -1,35 +1,42 @@
 @import '../../../../../scss/theme/variables';
 .new-weighted-parameter {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  padding-top: get-rem(3px);
-  height: get-rem(40px);
-  .new-weighted-parameter__selector {
-    width: get-rem(310px);
-    margin: 0;
-    margin-right: get-rem(40px);
+  .new-weighted-parameter__error {
+    padding-top: get-rem(10px);
+    font-size: get-rem(10px);
+    color: $bluetab-red;
   }
-  .new-weighted-parameter__title {
-    font-size: get-rem(14px);
-    font-weight: 500;
-    color: $bluetab-gray;
-  }
-  .new-weighted-parameter__input-wrapper {
+  .new-weighted-parameter__editor {
     display: flex;
     align-items: center;
-    margin-right: get-rem(32px);
-    height: 100%;
-    .new-weighted-parameter__input {
-      margin-left: get-rem(12px);
-      height: 100%;
-      width: get-rem(74px);
+    justify-content: space-between;
+    width: 100%;
+    padding-top: get-rem(3px);
+    height: get-rem(40px);
+    .new-weighted-parameter__selector {
+      width: get-rem(310px);
+      margin: 0;
+      margin-right: get-rem(40px);
     }
-  }
-  .new-weighted-parameter__download {
-    width: get-rem(24px);
-    height: get-rem(24px);
-    cursor: pointer;
+    .new-weighted-parameter__title {
+      font-size: get-rem(14px);
+      font-weight: 500;
+      color: $bluetab-gray;
+    }
+    .new-weighted-parameter__input-wrapper {
+      display: flex;
+      align-items: center;
+      margin-right: get-rem(32px);
+      height: 100%;
+      .new-weighted-parameter__input {
+        margin-left: get-rem(12px);
+        height: 100%;
+        width: get-rem(74px);
+      }
+    }
+    .new-weighted-parameter__download {
+      width: get-rem(24px);
+      height: get-rem(24px);
+      cursor: pointer;
+    }
   }
 }

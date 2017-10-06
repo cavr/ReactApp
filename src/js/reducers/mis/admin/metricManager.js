@@ -173,7 +173,7 @@ const actionsMap = {
       return state;
     } else if (newOperation.type === 'comma') {
       if (openBrackets.size < 2) return state;
-      if (lastOperation.type === 'function' || lastOperation.type === 'bracket' || lastOperation.type === 'comma') return state;
+      if (lastOperation.type === 'function' || lastOperation.type === 'bracket' || lastOperation.type === 'comma' || lastOperation.type === 'operator') return state;
 
       let operationsToAdd = operations;
       for (let i = 0, l = openBrackets.last(); i < l; i++) {
@@ -195,7 +195,7 @@ const actionsMap = {
     const openBracketsIndex = openBrackets.size - 1;
 
     if (lastOperation.type === 'endBracket') return state.set('operations', operations.pop()).set('openBrackets', openBrackets.set(openBracketsIndex, nestedOpenBrackets + 1));
-    else if (lastOperation.type === 'endFunction') return state.set('operations', operations.pop()).set('openBrackets', openBrackets.push(1));
+    else if (lastOperation.type === 'endFunction') return state.set('operations', operations.pop()).set('openBrackets', openBrackets.push(0));
     else if (lastOperation.type === 'bracket') return state.set('operations', operations.pop()).set('openBrackets', openBrackets.set(openBracketsIndex, nestedOpenBrackets - 1));
     else if (lastOperation.type === 'function') return state.set('operations', operations.pop()).set('openBrackets', openBrackets.pop());
     else if (lastOperation.type === 'number') {

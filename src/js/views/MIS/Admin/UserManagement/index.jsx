@@ -45,6 +45,10 @@ export default class UserManagement extends PureComponent {
     this.onSelect = this.onSelect.bind(this);
   }
 
+  componentDidMount() {
+    this.section.scrollIntoView({ behavior: 'smooth' });
+  }
+
   onSelect(user) {
     this.setState({ selected: user });
   }
@@ -58,7 +62,7 @@ export default class UserManagement extends PureComponent {
     const selectedUser = selected === -1 ? currentUser : users[selected];
     return (
       <Section currentStep={ currentStep } sectionNumber={ 2 } title='User settings' loading={ false } unNumbered={ true }>
-        <div className='user-management'>
+        <div className='user-management' ref={ (section) => this.section = section }>
           <h2 className='user-management__title bluetab-subtitle--centered'>Select the index of which you want to see the evolution or the subindices that form it</h2>
           <div className='user-management__wrapper'>
             <div className='user-management__list-wrapper'>

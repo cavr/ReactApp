@@ -1,5 +1,7 @@
 import AdminServices from 'services/api/admin';
 
+import { loadIndexes } from 'actions/mis/admin/common';
+
 export const CLEAR_ADMIN_INDEX_DATA = 'CLEAR_ADMIN_INDEX_DATA';
 export const SET_ADMIN_INDEX_DATA = 'SET_ADMIN_INDEX_DATA';
 export const SET_SELECTED_INDEX_IN_ADMIN_INDEX = 'SET_SELECTED_INDEX_IN_ADMIN_INDEX';
@@ -37,5 +39,18 @@ export function updateSubindex(index, subindex) {
 
 export function addSubindex(subindex) {
   return { type: UPDATE_INDEX_FORMULA, action: 'add', subindex };
+}
+
+export function resetData() {
+  return (dispatch) => {
+    dispatch({ type: SET_SELECTED_INDEX_IN_ADMIN_INDEX, index: null });
+    dispatch({ type: CLEAR_ADMIN_INDEX_DATA });
+  };
+}
+export function initSection() {
+  return (dispatch) => {
+    dispatch(resetData());
+    dispatch(loadIndexes());
+  };
 }
 

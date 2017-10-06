@@ -16,7 +16,12 @@ export function loadSelectors() {
       const selected = {};
       for (let i = 0, l = data.length; i < l; i++) {
         const selector = data[i];
-        selected[selector.id] = selector.values[0];
+        for (let j = 0, lj = selector.values.length; j < lj; j++) {
+          if (!selector.values[j].disabled) {
+            selected[selector.id] = selector.values[j];
+            break;
+          }
+        }
       }
       dispatch({ type: SET_ALL_SELECTORS_VALUES, selected });
       dispatch({ type: END_SELECTORS_LOAD });

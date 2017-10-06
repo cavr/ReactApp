@@ -1,5 +1,5 @@
 import AdminServices from 'services/api/admin';
-import { loadSubindexes, loadMetrics, loadParameters } from './common';
+import { loadIndexes, loadSubindexes, loadMetrics, loadParameters } from './common';
 
 export const CHANGE_METRIC_MODE = 'CHANGE_METRIC_MODE';
 export const RESET_ADMIN_METRIC = 'RESET_ADMIN_METRIC';
@@ -145,4 +145,19 @@ export function deleteOperation() {
 
 export function clearOperations() {
   return { type: CLEAR_OPERATIONS };
+}
+
+export function resetData() {
+  return (dispatch) => {
+    dispatch({ type: SET_SELECTED_INDEX_IN_ADMIN_METRIC, index: null });
+    dispatch({ type: SET_SELECTED_SUBINDEX_IN_ADMIN_METRIC, subindex: null });
+    dispatch({ type: SET_SELECTED_METRIC_IN_ADMIN_METRIC, metric: null });
+    dispatch({ type: CLEAR_ADMIN_METRIC_DATA });
+  };
+}
+export function initSection() {
+  return (dispatch) => {
+    dispatch(resetData());
+    dispatch(loadIndexes());
+  };
 }

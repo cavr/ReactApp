@@ -6,7 +6,6 @@ import App from 'components/App';
 import Login from 'views/Login';
 import MIS from 'views/MIS';
 import MISAdmin from 'views/MIS/Admin';
-import DataManagement from 'views/MIS/Admin/DataManagement';
 import RO from 'views/RO';
 import Change from 'views/Change';
 import Innovation from 'views/Innovation';

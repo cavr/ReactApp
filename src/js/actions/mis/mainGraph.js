@@ -2,6 +2,7 @@ import MainGraphServices from 'services/api/mainGraph';
 import FormatRequestServices from 'services/formatRequest';
 
 import { setStep } from 'actions/app';
+import { loadSubindexes } from 'actions/mis/subindexes';
 
 export const SET_MAINGRAPH = 'SET_MAINGRAPH';
 export const BEGIN_MAINGRAPH_LOAD = 'BEGIN_MAINGRAPH_LOAD';
@@ -55,6 +56,7 @@ export function setSelectedIndex(value, label) {
     const currentStep = state.app.get('currentStep');
     dispatch({ type: SET_SELECTED_INDEX, value, label });
     if (state.mainGraph.get('evolutionData')) dispatch(setEvolutionData());
+    if (currentStep > 3) dispatch(loadSubindexes());
     if (currentStep > 2) dispatch(setStep(3));
   };
 }

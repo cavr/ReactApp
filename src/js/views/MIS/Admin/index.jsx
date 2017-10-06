@@ -14,7 +14,6 @@ export default class MISAdmin extends PureComponent {
   static propTypes = {
     params: PropTypes.object,
   };
-
   render() {
     const { params } = this.props;
     let currentStep = 1;

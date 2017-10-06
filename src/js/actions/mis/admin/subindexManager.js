@@ -1,5 +1,5 @@
 import AdminServices from 'services/api/admin';
-import { loadSubindexes } from './common';
+import { loadIndexes, loadSubindexes } from './common';
 
 export const CHANGE_SUBINDEX_MODE = 'CHANGE_SUBINDEX_MODE';
 export const RESET_ADMIN_SUBINDEX = 'RESET_ADMIN_SUBINDEX';
@@ -81,4 +81,18 @@ export function addMetric(metric) {
 
 export function changeGraphType(graph) {
   return { type: CHANGE_GRAPH_TYPE_IN_ADMIN_SUBINDEX, graph };
+}
+
+export function resetData() {
+  return (dispatch) => {
+    dispatch({ type: SET_SELECTED_INDEX_IN_ADMIN_SUBINDEX, index: null });
+    dispatch({ type: SET_SELECTED_SUBINDEX_IN_ADMIN_SUBINDEX, subindex: null });
+    dispatch({ type: CLEAR_ADMIN_SUBINDEX_DATA });
+  };
+}
+export function initSection() {
+  return (dispatch) => {
+    dispatch(resetData());
+    dispatch(loadIndexes());
+  };
 }

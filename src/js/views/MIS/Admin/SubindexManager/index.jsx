@@ -15,10 +15,10 @@ import AdminServices from 'services/api/admin';
 
 import Popup from 'react-popup';
 import ConfirmationPopup from 'components/Popups/ConfirmationPopup';
+import WarningPopup from 'components/Popups/WarningPopup';
 import { informationPopup } from 'services/popups.js';
 
-import { loadIndexes } from 'actions/mis/admin/common';
-import { changeMode, selectIndex, selectSubindex, updateTitle, updateDescription, updateMetric, addMetric, deleteMetric, changeGraphType } from 'actions/mis/admin/subindexManager';
+import { initSection, resetData, changeMode, selectIndex, selectSubindex, updateTitle, updateDescription, updateMetric, addMetric, deleteMetric, changeGraphType } from 'actions/mis/admin/subindexManager';
 
 import graphData from 'data/subindexGraphTypes.json';
 
@@ -42,7 +42,8 @@ export class SubindexManager extends PureComponent {
     changeMode: PropTypes.func,
     selectIndex: PropTypes.func,
     selectSubindex: PropTypes.func,
-    loadIndexes: PropTypes.func,
+    initSection: PropTypes.func,
+    resetData: PropTypes.func,
     updateMetric: PropTypes.func,
     addMetric: PropTypes.func,
     deleteMetric: PropTypes.func,
@@ -55,7 +56,13 @@ export class SubindexManager extends PureComponent {
   }
 
   componentDidMount() {
-    this.props.loadIndexes();
+    this.section.scrollIntoView({ behavior: 'smooth' });
+    this.props.initSection();
+  }
+
+  componentWillUnmount() {
+    const { selectedIndex, resetData } = this.props;
+    if (selectedIndex) resetData();
   }
 
   updateSubindex() {
@@ -66,8 +73,12 @@ export class SubindexManager extends PureComponent {
       formula,
       type: graphType,
     };
-    AdminServices.updateMetricData({ index: selectedIndex, subindex: selectedSubindex, data }, token).then((response) => {
-      Popup.queue(informationPopup('Information', <ConfirmationPopup description={ `${ mode === 'create' ? 'Created' : 'Updated' } subindex` } />));
+    AdminServices.updateSubindexData({ index: selectedIndex, subindex: selectedSubindex, data }, token).then((response) => {
+      if (response.error) {
+        Popup.queue(informationPopup('Information', <WarningPopup description={ response.error } />));
+      } else {
+        Popup.queue(informationPopup('Information', <ConfirmationPopup description={ `${ mode === 'create' ? 'Created' : 'Updated' } subindex` } />));
+      }
     });
   }
 
@@ -76,7 +87,7 @@ export class SubindexManager extends PureComponent {
     const { changeMode, selectIndex, selectSubindex, updateTitle, updateDescription, updateMetric, addMetric, deleteMetric, changeGraphType } = this.props;
     return (
       <Section currentStep={ currentStep } sectionNumber={ 3 } title='Subindex' loading={ !indexes } unNumbered={ true }>
-        <div className='data-manager'>
+        <div className='data-manager' ref={ (section) => this.section = section }>
           <h2 className='data-manager__title bluetab-subtitle--centered'>Please select one of the options, create or edit a subindex</h2>
           <ModeSelection
             selected={ mode }
@@ -134,7 +145,8 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    loadIndexes: () => dispatch(loadIndexes()),
+    initSection: () => dispatch(initSection()),
+    resetData: () => dispatch(resetData()),
     changeMode: (mode) => dispatch(changeMode(mode)),
     selectIndex: (option) => dispatch(selectIndex(option.value)),
     selectSubindex: (option) => dispatch(selectSubindex(option.value)),
