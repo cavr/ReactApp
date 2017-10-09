@@ -3456,6 +3456,7 @@ h2 {
 .bluetab-sns-popup {
   position: fixed;
   top: 0;
+  left: 0;
   margin-left: 21.2rem;
   width: calc(100vw - 21.2rem);
   height: 100%;

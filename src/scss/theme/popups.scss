@@ -6,6 +6,7 @@ $popup-padding: 42px;
 .bluetab-sns-popup {
   position: fixed;
   top: 0;
+  left: 0;
   margin-left: get-rem($sidenav-width);
   width: calc(100vw - #{get-rem($sidenav-width)});
   height: 100%;
