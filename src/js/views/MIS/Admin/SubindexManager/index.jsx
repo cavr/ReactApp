@@ -67,6 +67,14 @@ export class SubindexManager extends PureComponent {
 
   updateSubindex() {
     const { token, mode, selectedIndex, selectedSubindex, title, description, formula, graphType } = this.props;
+    let totalWeights = 0;
+    for (let i = 0, l = formula.length; i < l; i++) {
+      totalWeights += formula[i].value;
+    }
+    if (totalWeights !== 100) {
+      Popup.queue(informationPopup('Error', <WarningPopup description={ 'Total weights must be equal to 100' } />));
+      return;
+    }
     const data = {
       title,
       description,
@@ -75,7 +83,7 @@ export class SubindexManager extends PureComponent {
     };
     AdminServices.updateSubindexData({ index: selectedIndex, subindex: selectedSubindex, data }, token).then((response) => {
       if (response.error) {
-        Popup.queue(informationPopup('Information', <WarningPopup description={ response.error } />));
+        Popup.queue(informationPopup('Error', <WarningPopup description={ response.error } />));
       } else {
         Popup.queue(informationPopup('Information', <ConfirmationPopup description={ `${ mode === 'create' ? 'Created' : 'Updated' } subindex` } />));
       }
