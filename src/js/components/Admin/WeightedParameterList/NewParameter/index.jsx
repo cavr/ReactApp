@@ -11,6 +11,7 @@ export default class WeightedParameterList extends PureComponent {
     title: PropTypes.string,
     placeholder: PropTypes.string,
     data: PropTypes.array,
+    accumulatedValue: PropTypes.number,
     onAdd: PropTypes.func,
   };
 
@@ -28,6 +29,7 @@ export default class WeightedParameterList extends PureComponent {
 
   handleAdd() {
     const { selectedParameter, weight } = this.state;
+    const { accumulatedValue } = this.props;
     if (selectedParameter === null) {
       this.setState({ error: 'Please select an element to add' });
       return;
@@ -36,14 +38,19 @@ export default class WeightedParameterList extends PureComponent {
       this.setState({ error: 'Weight must be a number' });
       return;
     }
-    if (weight === 0 || !weight || Number(weight) < 0) {
+    if (weight === 0 || !weight || weight < 0) {
       this.setState({ error: 'Weight must be greater than 0' });
+      return;
+    }
+    console.log(accumulatedValue + weight);
+    if (accumulatedValue + weight > 100) {
+      this.setState({ error: 'Total weights must be less than or equal to 100' });
       return;
     }
     const data = {
       id: selectedParameter.value,
       label: selectedParameter.label,
-      value: Number(weight),
+      value: weight,
     };
     this.props.onAdd(data);
   }
@@ -65,7 +72,7 @@ export default class WeightedParameterList extends PureComponent {
           />
           <div className='new-weighted-parameter__input-wrapper'>
             <div className='new-weighted-parameter__title'>Weight </div>
-            <input className='new-weighted-parameter__input' value={ weight } onChange={ (event) => this.setState({ error: null, weight: event.target.value }) } />
+            <input className='new-weighted-parameter__input' value={ weight } onChange={ (event) => this.setState({ error: null, weight: isNaN(event.target.value) ? 0 : Number(event.target.value) }) } />
           </div>
           <i className='new-weighted-parameter__download icon icon__download--red' onClick={ this.handleAdd } />
         </div>

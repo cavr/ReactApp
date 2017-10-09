@@ -30,7 +30,9 @@ export default class WeightedParameterList extends PureComponent {
   render() {
     const { title, create, data, newData, onAdd, onChange, onDelete } = this.props;
     const { newParameter } = this.state;
+    let accumulatedValue = 0;
     const weightedElements = data && data.map((element, index) => {
+      accumulatedValue += element.value;
       return (
         <WeightedParameter key={ `weighted-element-${ index } ` } index={ index } data={ element } onChange={ onChange } onDelete={ onDelete } />
       );
@@ -48,7 +50,7 @@ export default class WeightedParameterList extends PureComponent {
           { create.title }
         </div>
         <Collapse isOpened={ newParameter } loading={ !newData }>
-          <NewParameter title={ create.selector } placeholder={ create.placeholder } data={ newData } onAdd={ onAdd } />
+          <NewParameter title={ create.selector } placeholder={ create.placeholder } data={ newData } onAdd={ onAdd } accumulatedValue={ accumulatedValue } />
         </Collapse>
       </div>
     );
