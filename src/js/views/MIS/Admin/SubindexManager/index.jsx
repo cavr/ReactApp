@@ -68,8 +68,8 @@ export class SubindexManager extends PureComponent {
   updateSubindex() {
     const { token, mode, selectedIndex, selectedSubindex, title, description, formula, graphType } = this.props;
     let totalWeights = 0;
-    for (let i = 0, l = formula.length; i < l; i++) {
-      totalWeights += formula[i].value;
+    for (let i = 0, l = formula.size; i < l; i++) {
+      totalWeights += formula.get(i).value;
     }
     if (totalWeights !== 100) {
       Popup.queue(informationPopup('Error', <WarningPopup description={ 'Total weights must be equal to 100' } />));

@@ -42,7 +42,6 @@ export default class WeightedParameterList extends PureComponent {
       this.setState({ error: 'Weight must be greater than 0' });
       return;
     }
-    console.log(accumulatedValue + weight);
     if (accumulatedValue + weight > 100) {
       this.setState({ error: 'Total weights must be less than or equal to 100' });
       return;
