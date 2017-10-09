@@ -17,6 +17,7 @@ $selector-left-padding: 14px;
     .bluetab-selector__title {
       font-size: get-rem($selector-font-size);
       color: $bluetab-gray;
+      font-weight: 500;
     }
   }
   .bluetab-selector__selector-wrapper {

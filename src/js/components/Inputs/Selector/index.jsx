@@ -30,7 +30,7 @@ export class Selector extends PureComponent {
       return <option key={ `${ id }-option-${ option.value }` } value={ option.value } disabled={ option.disabled }>{ option.label }</option>;
     });
     return (
-      <div className={ `bluetab-selector ${ inline ? 'bluetab-selector--inline' : '' } ${ className ? className : '' }` }>
+      <div className={ `bluetab-selector ${ inline && !isMobile ? 'bluetab-selector--inline' : '' } ${ className ? className : '' }` }>
         <div className='bluetab-selector__title-wrapper'>
           { icon && <i className={ `bluetab-selector__icon icon icon__${ icon }` } /> }
           <div className='bluetab-selector__title'>{ title }</div>

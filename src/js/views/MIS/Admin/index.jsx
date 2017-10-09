@@ -9,11 +9,21 @@ import SubindexManager from './SubindexManager';
 import MetricManager from './MetricManager';
 
 import './desktop.scss';
+import './mobile.scss';
 
 export default class MISAdmin extends PureComponent {
   static propTypes = {
     params: PropTypes.object,
   };
+
+  componentDidMount() {
+    document.documentElement.classList.add('admin');
+  }
+
+  componentWillUnmount() {
+    document.documentElement.classList.remove('admin');
+  }
+
   render() {
     const { params } = this.props;
     let currentStep = 1;

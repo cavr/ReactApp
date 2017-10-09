@@ -27,16 +27,12 @@ export default class AdminServices {
   */
 
   static getIndexData(request, token) {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-				  resolve(fetch('/data/admin/indexData.json')
-            .then((response) => {
-              if (response.status !== 200) {
-                return {};
-              }
-              return response.json();
-            }));
-      }, 1000);
+    return fetch('/data/admin/indexData.json')
+    .then((response) => {
+      if (response.status !== 200) {
+        return {};
+      }
+      return response.json();
     });
   }
 
@@ -64,7 +60,6 @@ export default class AdminServices {
         Authorization: `JWT ${ token }`,
       }),
     };
-    console.log(params.body);
     return fetch(`${ endpoint }/admin/updateIndex`, params)
       .then(response => response.json());
   }
@@ -134,17 +129,13 @@ export default class AdminServices {
   }
 
   static getMetrics(request, token) {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-				  resolve(fetch('/data/admin/metrics.json')
-            .then((response) => {
-              if (response.status !== 200) {
-                return {};
-              }
-              return response.json();
-            }));
-      }, 1000);
-    });
+    return fetch('/data/admin/metrics.json')
+      .then((response) => {
+        if (response.status !== 200) {
+          return {};
+        }
+        return response.json();
+      });
   }
 
   /*

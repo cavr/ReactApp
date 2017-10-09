@@ -1,0 +1,15 @@
+@import '../../../../../scss/theme/variables';
+
+.user-management {
+  .user-management__wrapper {
+    flex-wrap: wrap;
+    .user-management__list-wrapper {
+      width: 100%;
+      height: auto;
+    }
+    .user-management__selected {
+      width: 100%;
+      margin-bottom: get-rem(30px);
+    }
+  }
+}

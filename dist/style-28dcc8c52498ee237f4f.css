@@ -312,6 +312,10 @@ html.tablet-v .mobile-nav {
 html.tablet-h .mobile-nav,
 html.desktop .mobile-nav {
   display: none; }
+
+html.admin .mobile-nav .mobile-nav__summary {
+  opacity: 0;
+  pointer-events: none; }
 .bluetab-sns-app {
   min-height: 100vh;
   background-color: #F83838; }
@@ -768,7 +772,8 @@ html.mobile section {
       margin-right: 0.8rem; }
     .bluetab-selector .bluetab-selector__title-wrapper .bluetab-selector__title {
       font-size: 1.2rem;
-      color: #4A4A4A; }
+      color: #4A4A4A;
+      font-weight: 500; }
   .bluetab-selector .bluetab-selector__selector-wrapper {
     position: relative;
     -webkit-flex: 1 1 auto;
@@ -2124,6 +2129,15 @@ html.tablet-v .bluetab-sns-app__wrapper .bluetab-sns-mis {
           justify-content: space-between;
   margin-top: 4.5rem;
   padding: 0 4.5rem; }
+html.mobile .admin-menu .admin-menu__options {
+  padding: 0;
+  margin-top: 2rem;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
 .data-management .data-management__options {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2133,6 +2147,15 @@ html.tablet-v .bluetab-sns-app__wrapper .bluetab-sns-mis {
           justify-content: space-between;
   margin-top: 4.5rem;
   padding: 0 4.5rem; }
+html.mobile .data-management .data-management__options {
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  margin-top: 2rem;
+  padding: 0; }
+  html.mobile .data-management .data-management__options .bluetab-button {
+    margin-top: 2rem;
+    width: 100%; }
 .user-entry {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2228,6 +2251,16 @@ html.tablet-v .bluetab-sns-app__wrapper .bluetab-sns-mis {
         width: 100%;
         height: 100%;
         background-color: rgba(255, 255, 255, 0.7); }
+.user-management .user-management__wrapper {
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap; }
+  .user-management .user-management__wrapper .user-management__list-wrapper {
+    width: 100%;
+    height: auto; }
+  .user-management .user-management__wrapper .user-management__selected {
+    width: 100%;
+    margin-bottom: 3rem; }
 .bluetab-textinput {
   position: relative;
   margin-bottom: 2.7rem; }
@@ -2632,6 +2665,8 @@ html.tablet-v .bluetab-sns-app__wrapper .bluetab-sns-mis {
             -ms-flex-item-align: center;
                     -ms-grid-row-align: center;
                 align-self: center; }
+html.mobile .bluetab-sns-mis__wrapper .data-manager {
+  padding: 0; }
 .section-placeholder {
   padding: 7rem 3rem; }
   .section-placeholder .section-placeholder__title {

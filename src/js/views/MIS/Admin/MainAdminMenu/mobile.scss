@@ -1,0 +1,10 @@
+@import '../../../../../scss/theme/variables';
+
+html.mobile .admin-menu {
+  .admin-menu__options {
+    padding: 0;
+    margin-top: get-rem(20px);
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

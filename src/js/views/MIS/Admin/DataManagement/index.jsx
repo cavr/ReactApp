@@ -7,6 +7,7 @@ import { browserHistory } from 'react-router';
 import { routeCodes } from 'routes';
 
 import './desktop.scss';
+import './mobile.scss';
 
 export default class DataManagement extends PureComponent {
   static propTypes = {

@@ -36,14 +36,14 @@ export default class WeightedParameterList extends PureComponent {
       this.setState({ error: 'Weight must be a number' });
       return;
     }
-    if (weight === 0 || !weight || weight > 0) {
+    if (weight === 0 || !weight || Number(weight) < 0) {
       this.setState({ error: 'Weight must be greater than 0' });
       return;
     }
     const data = {
       id: selectedParameter.value,
       label: selectedParameter.label,
-      value: weight,
+      value: Number(weight),
     };
     this.props.onAdd(data);
   }

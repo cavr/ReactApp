@@ -9,6 +9,7 @@ import user1 from '../../../../../assets/img/dev/user-placeholder.jpg';
 import user2 from '../../../../../assets/img/dev/user-placeholder-2.jpg';
 
 import './desktop.scss';
+import './mobile.scss';
 
 export default class UserManagement extends PureComponent {
   static propTypes = {

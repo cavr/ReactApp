@@ -11,6 +11,7 @@ import ConfirmationPopup from 'components/Popups/ConfirmationPopup';
 import { informationPopup } from 'services/popups.js';
 
 import './desktop.scss';
+import './mobile.scss';
 
 export default class MainAdminMenu extends PureComponent {
   static propTypes = {
