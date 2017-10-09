@@ -14,14 +14,15 @@
 @import '../../node_modules/react-select/dist/react-select.min.css';
 
 html {
-  width: 100vw;
-  overflow-x: hidden;
+  //width: 100vw;
+  //overflow-x: hidden;
   &.fullscreen {
     overflow: hidden;
   }
 }
 
 html.desktop {
+  margin-left: calc(100vw - 100%);
   font-size: get-desktop-vw(10px);
   @media screen and (min-aspect-ratio: 1282/980) {
     font-size: get-desktop-vh(12px);

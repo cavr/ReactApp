@@ -3,8 +3,8 @@
 .stepbar-navigation {
   position: fixed;
   top: 0;
-  right: 0;
-  width: calc(100% - #{get-rem($sidenav-width)});
+  left: get-rem($sidenav-width);
+  width: calc(100vw - #{get-rem($sidenav-width)});
   height: get-rem($stepbar-height);
   background-color: $bluetab-light-gray;
   z-index: 95;
