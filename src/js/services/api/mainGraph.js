@@ -5,7 +5,7 @@ import devDataEvolution from 'data/evolutionData.json';
 import { buildJsonName } from 'services/jsonNameBuilder';
 
 export default class MainGraphServices {
-  /*
+  
   static getMainGraphData(request) {
     return fetch(`/data/${ buildJsonName(request) }`)
     .then((response) => {
@@ -15,8 +15,8 @@ export default class MainGraphServices {
       return response.json();
     });
   }
-  */
   
+  /*
   static getMainGraphData(body, token) {
     const params = {
       method: 'POST',
@@ -29,8 +29,8 @@ export default class MainGraphServices {
     return fetch(`${ endpoint }/getIndexes`, params)
       .then(response => response.json());
   }
-  
-  /*
+  */
+
   static getIndexEvolution(request) {
     return fetch(`/data/${ buildJsonName(request) }`)
     .then((response) => {
@@ -40,9 +40,8 @@ export default class MainGraphServices {
       return response.json();
     });
   }
-  */
 
-  
+  /*
   static getIndexEvolution(body, token) {
     const params = {
       method: 'POST',
@@ -55,5 +54,6 @@ export default class MainGraphServices {
     return fetch(`${ endpoint }/getIndexEvolution`, params)
       .then(response => response.json());
   }
+  */
   
 }
