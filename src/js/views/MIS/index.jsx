@@ -1,6 +1,8 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { routeCodes } from 'routes';
+import { Link, browserHistory } from 'react-router';
 
 import MobileHandlers from 'components/MobileHandlers';
 import SelectionSummary from 'components/SelectionSummary';
@@ -16,8 +18,15 @@ import './tablet.scss';
 
 export class MIS extends PureComponent {
   static propTypes = {
+    token: PropTypes.string,
     currentStep: PropTypes.number,
   };
+
+  constructor(props) {
+    super(props);
+
+    if (props.token === null) browserHistory.push(routeCodes.LOGIN);
+  }
 
   render() {
     const { currentStep, children } = this.props;
@@ -42,6 +51,7 @@ export class MIS extends PureComponent {
 }
 
 const mapStateToProps = (state) => ({
+  token: state.app.get('token'),
   currentStep: state.app.get('currentStep'),
 });
 

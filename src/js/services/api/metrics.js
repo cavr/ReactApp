@@ -5,9 +5,9 @@ import devDataEvolution from 'data/businessElementEvolution.json';
 import { buildJsonName } from 'services/jsonNameBuilder';
 
 export default class MetricsServices {
-
-  static getMetrics(request) {
-    return fetch(`/data/${ buildJsonName(request) }`)
+  /*
+  static getMetrics(body) {
+    return fetch(`/data/${ buildJsonName(body) }`)
       .then((response) => {
         if (response.status !== 200) {
           return devData;
@@ -15,9 +15,9 @@ export default class MetricsServices {
         return response.json();
       });
   }
-
-  /*
-  static getMetrics(request, token) {
+  */
+  
+  static getMetrics(body, token) {
     const params = {
       method: 'POST',
       body: JSON.stringify(body),
@@ -29,10 +29,10 @@ export default class MetricsServices {
     return fetch(`${ endpoint }/getMetrics`, params)
       .then(response => response.json());
   }
-  */
-
-  static getBusinessElementEvolution(request) {
-    return fetch(`/data/${ buildJsonName(request) }`)
+  
+  /*
+  static getBusinessElementEvolution(body) {
+    return fetch(`/data/${ buildJsonName(body) }`)
       .then((response) => {
         if (response.status !== 200) {
           return devDataEvolution;
@@ -40,9 +40,9 @@ export default class MetricsServices {
         return response.json();
       });
   }
+  */
 
-  /*
-  static getBusinessElementEvolution(request, token) {
+  static getBusinessElementEvolution(body, token) {
     const params = {
       method: 'POST',
       body: JSON.stringify(body),
@@ -54,9 +54,8 @@ export default class MetricsServices {
     return fetch(`${ endpoint }/getBusinessElementMetricEvolution`, params)
       .then(response => response.json());
   }
-  */
 
-  static generateXLS(request) {
+  static generateXLS(body) {
     return fetch('/data/xlsTest.json')
       .then((response) => {
         if (response.status !== 200) {

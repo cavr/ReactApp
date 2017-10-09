@@ -1,10 +1,9 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
-import { Link } from 'react-router';
 import { routeCodes } from 'routes';
 import { connect } from 'react-redux';
-import { browserHistory } from 'react-router';
+import { Link, browserHistory } from 'react-router';
 import { showMobileMenu, hideMobileMenu } from 'actions/app';
 import Collapse from 'components/Sections/Collapse';
 import Avatar from './Avatar';
