@@ -116,7 +116,7 @@ const actionsMap = {
       if (lastOperation.type === 'parameter') {
         return state.set('operations', operations.pop().push(newOperation));
       }
-      if (lastOperation.type !== 'closeBracket' && lastOperation.type !== 'closeFunction' && lastOperation.type !== 'number') {
+      if (lastOperation.type !== 'endBracket' && lastOperation.type !== 'endFunction' && lastOperation.type !== 'number') {
         if (negatedParameter) return state.set('operations', operations.push({ type: 'parameter', data: `-${ newOperation.data }` })).set('negatedParameter', false);
         return state.set('operations', operations.push(newOperation));
       }
@@ -133,14 +133,14 @@ const actionsMap = {
           return state.set('operations', operations.pop().push({ type: 'number', data: (Math.abs(lastOperation.data * 10) + newOperation.data) * -1 }));
         }
       }
-      if (lastOperation.type !== 'closeBracket' && lastOperation.type !== 'closeFunction' && lastOperation.type !== 'parameter') {
+      if (lastOperation.type !== 'endBracket' && lastOperation.type !== 'endFunction' && lastOperation.type !== 'parameter') {
         if (negatedParameter) return state.set('operations', operations.push({ type: 'number', data: newOperation.data * -1 })).set('negatedParameter', false);
         return state.set('operations', operations.push(newOperation));
       }
       return state;
     } else if (newOperation.type === 'operator') {
       if (newOperation.data === '-') {
-        if (!lastOperation || (lastOperation.type !== 'closeBracket' && lastOperation.type !== 'closeFunction' && lastOperation.type !== 'parameter' && lastOperation.type !== 'number')) return state.set('negatedParameter', true);
+        if (!lastOperation || (lastOperation.type !== 'endBracket' && lastOperation.type !== 'endFunction' && lastOperation.type !== 'parameter' && lastOperation.type !== 'number')) return state.set('negatedParameter', true);
       }
       if (newOperation.data === '+' && negatedParameter) {
         return state.set('negatedParameter', false);

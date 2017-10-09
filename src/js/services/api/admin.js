@@ -134,13 +134,17 @@ export default class AdminServices {
   }
 
   static getMetrics(request, token) {
-    return fetch('/data/admin/metrics.json')
-      .then((response) => {
-        if (response.status !== 200) {
-          return {};
-        }
-        return response.json();
-      });
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+				  resolve(fetch('/data/admin/metrics.json')
+            .then((response) => {
+              if (response.status !== 200) {
+                return {};
+              }
+              return response.json();
+            }));
+      }, 1000);
+    });
   }
 
   /*

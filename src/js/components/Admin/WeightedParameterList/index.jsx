@@ -47,7 +47,7 @@ export default class WeightedParameterList extends PureComponent {
         >
           { create.title }
         </div>
-        <Collapse isOpened={ newParameter }>
+        <Collapse isOpened={ newParameter } loading={ !newData }>
           <NewParameter title={ create.selector } placeholder={ create.placeholder } data={ newData } onAdd={ onAdd } />
         </Collapse>
       </div>

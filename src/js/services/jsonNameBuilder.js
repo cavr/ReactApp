@@ -2,7 +2,7 @@ export function buildJsonName(request) {
   const { selectors, index, subindex, evolution, metric, businessElement } = request;
   let name = 'S';
   Object.keys(selectors).forEach((key) => {
-    name += `${ key },${ selectors[key].value }_`;
+    name += `${ key },${ selectors[key] }_`;
   });
   name = name.slice(0, -1);
   if (index !== null && index !== undefined) name += `-${ index }`;
