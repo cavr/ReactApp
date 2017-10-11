@@ -78,7 +78,7 @@ export class FormulaInput extends PureComponent {
 const mapDispatchToProps = (dispatch) => {
   return {
     addNumber: (number) => dispatch(addNumber(number)),
-    addParameter: (parameter) => dispatch(addParameter(parameter.label)),
+    addParameter: (parameter) => dispatch(addParameter(parameter.value)),
     addOperator: (operator) => dispatch(addOperator(operator)),
     addFunction: (func) => dispatch(addFunction(func)),
     deleteOperation: () => dispatch(deleteOperation()),

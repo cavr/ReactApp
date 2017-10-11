@@ -136,7 +136,7 @@ export class MetricManager extends PureComponent {
               onChange={ selectMetric }
             />
           </Collapse>
-          <Collapse isOpened={ (selectedMetric && mode === 'edition') || (selectedSubindex && mode === 'create') } loading={ !(description !== null && parameters !== null) }>
+          <Collapse isOpened={ (selectedMetric && mode === 'edition') || (selectedSubindex && mode === 'create') } loading={ !(description !== null && parameters.length !== 0) }>
             <div className='data-manager__form'>
               <TextInput editEnabled={ mode === 'edition' } title='Title' value={ title } onChange={ updateTitle } />
               <TextInput editEnabled={ mode === 'edition' } title='Description' textarea value={ description } onChange={ updateDescription } />
